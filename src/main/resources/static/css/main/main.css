@@ -1,0 +1,397 @@
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: list-item;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-lists {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    min-height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.banner-list {
+    flex: 0 0 auto;
+    user-select: none;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+.banner-list1 {
+    width: 100%;
+    background-color: #F7F9FA;
+    overflow: hidden;
+}
+
+@media (min-width: 0px) {
+    .banner-list2 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .banner-list2 {
+        height: 270px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .banner-list2 {
+        height: 380px;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .css-1qd6flo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+    } }
+
+.banner-img2 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 24px;
+    width: calc(100% - 48px);
+    margin-left: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.banner-list2 {
+    position: relative;
+}
+
+.banner-img {
+
+}
+
+/**배너 끝*/
+/** 카테고리*/
+    @media (min-width: 1256px) {
+    .category {
+        max-width: 1256px;
+        margin: 10px auto;
+        padding: 10px 60px;
+    }
+    }
+    @media (min-width: 1024px) {
+    .category {
+        padding: 10px 60px;
+    }}
+
+    @media (min-width: 768px) {
+    .category {
+        padding: 10px 40px;
+    }
+    }
+
+.category {
+    padding: 30px 16px;
+    box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+    .category-list {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0px 40px;
+    } }
+
+ .category-list {
+     display: grid;
+     grid-template-columns: repeat(10, 1fr);
+     margin: 16px 0px 20px;
+ }
+
+.category-part {
+    flex: 1 1 0%;
+    text-align: center;
+}
+
+    @media (min-width: 1024px) {
+    .category-list1 {
+        max-width: 88px;
+    }}
+
+ .category-list1 {
+     width: 100%;
+     max-width: 50px;
+ }
+
+ .category-icon {
+     display: block;
+     margin-top: 6px;
+     font-size: 12px;
+     line-height: 16px;
+     color: rgb(47, 52, 56);
+ }
+
+@media (min-width: 1024px){
+.category-icon {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 20px;
+}}
+
+/**상품 리스트*/
+.product-list {
+    padding: 26px 16px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+
+}
+@media (min-width: 768px){
+.product-list {
+    margin: 40px auto;
+    padding: 0px 40px;
+}
+}
+
+@media (min-width: 1024px){
+.product-list {
+    padding: 0px 60px;
+}}
+
+@media (min-width: 1256px){
+.product-list {
+    max-width: 1256px;
+    margin: 0px auto;
+    padding: 0px 60px;
+}}
+
+
+.product-list-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0px;
+    font-size: 0px;
+    line-height: 1;
+}
+
+.product-list1 {
+    flex: 1 1 0%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0px;
+}
+
+.more-view {
+    display: flex;
+    align-items: center;
+    height: 0px;
+    margin-left: 10px;
+}
+
+.product-list-title2 {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.product-list-text {
+    overflow: hidden;
+    display: inline-block;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.more-view1 {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #eacaff;
+    cursor: pointer;
+}
+
+.product-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.products {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0px;
+    flex-flow: column;
+}
+
+.product-img:hover {
+    transform:scale(1.2);
+}
+
+.product-img {
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+.product-img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: transform 0.2s ease 0s;
+}
+
+.product-img22 {
+    position: absolute;
+    padding: 8px;
+    font-size: 0px;
+    z-index: 1;
+    left: 0px;
+    bottom: 0px;
+}
+
+.product-img3 {
+    display: flex;
+    align-items: center;
+}
+
+.scrap {
+    position: absolute;
+    padding: 8px;
+    font-size: 0px;
+    z-index: 1;
+    right: 0px;
+    bottom: 0px;
+}
+
+.scrap-button {
+    margin: 0px -6px -6px 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    font: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    position: relative;
+}
+
+.scrap-button1 {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    transform: translateZ(0px);
+}
+
+.scrap-button1 > svg {
+    filter: drop-shadow(rgba(63, 71, 77, 0.25) 0px 2px 5px);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.scrap-button-svg {
+    opacity: 0;
+}
+
+.product-img::after {
+    content: "";
+    display: block;
+    padding-top: 66.6667%;
+}
+
+.products .margin10 {
+    margin-top: 10px;
+}
+
+.product-title {
+    min-width: 0px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(47, 52, 56);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.product-textarea {
+    overflow: hidden;
+}
+
+.product-textarea-head {
+    color: mediumpurple;
+    font-weight: 700;
+}
+
+.product-ex {
+    position: absolute;
+    inset: 0px;
+    cursor: pointer;
+}
+
+.product-exp {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.product-exp2 {
+    overflow: hidden;
+    margin-top: 2px;
+    font-size: 16px;
+    line-height: 24px;
+    height: 100px;
+    text-overflow: ellipsis;
+}
+
+.product-nav1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

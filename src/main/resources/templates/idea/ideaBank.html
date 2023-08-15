@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>소중한 당신의 아이디어 - iContact에서 보여주세요!</title>
+    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="../../static/css/idea/ideaBank.css">
+
+    <style>
+        /*돋보기 아이콘을 위한 폰트*/
+        @font-face{
+            font-family:OhouseIcon;
+            src:url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2");
+        }
+
+
+        @font-face {
+            font-family: 'Pretendard Variable';
+            src: url('../../static/font/PretendardVariable.woff2');
+        }
+    </style>
+</head>
+<body>
+    <div class="full-height">
+        <div class="layout">
+            <div id="headers"></div>
+
+            <div class="category-feed-container">
+                <div class="category-feed-wrap container">
+                    <div class="row">
+                        <div class="category-feed-side-bar bar-col bar-layout">
+                            <section class="commerce-category-list">
+                                <h2 class="commerce-category-list-title">
+                                    <a href="">식품</a> <!--상위 카테고리-->
+                                </h2>
+
+                                <ul class="commerce-category-tree commerce-category-list-categories">
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">디저트</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">베이커리</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">전통간식</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">음료</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">주류</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">반찬</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">요리·식사</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <!--나머지 상위 카테고리-->
+                                <ul class="commerce-category-list-others">
+                                    <li class="commerce-category-list-others-item">
+                                        <a href="">패션</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item">
+                                        <a href="">가구</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item">
+                                        <a href="">문구</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item">
+                                        <a href="">디자인</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item">
+                                        <a href="">기타</a>
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+
+                        <div class="category-feed-content bar-col bar-second-layout">
+                            <div class="category-feed-content-filter">
+                                <div class="filter-wrapper">
+                                    <div class="filter">
+                                        <div class="category-feed-container">
+                                            <div class="category-filter-bar-control-list">
+                                                <ul class="category-filter-bar-control-list-left">
+                                                    <!--체크 표시 형태(비활성화)-->
+                                                    <li class="category-filter-check">
+                                                        <button type="button" class="category-filter-check-btn"> <!--비활성화 클래스-->
+                                                            <svg class="icon" width="12" height="10" fill="none">
+                                                                <path d="M4.51 6.84L10.322.85 11.5 1.993 4.569 9.138.5 5.35l1.119-1.202L4.51 6.84z"></path>
+                                                            </svg>
+                                                            비활성화 상태
+                                                        </button>
+                                                    </li>
+
+                                                    <!--체크 표시 형태(활성화)-->
+                                                    <li class="category-filter-check">
+                                                        <button type="button" class="category-filter-check-btn-active"> <!--활성화 클래스-->
+                                                            <svg class="icon" width="12" height="10" fill="none">
+                                                                <path d="M4.51 6.84L10.322.85 11.5 1.993 4.569 9.138.5 5.35l1.119-1.202L4.51 6.84z"></path>
+                                                            </svg>
+                                                            활성화 상태
+                                                        </button>
+                                                    </li>
+
+                                                    <!--메뉴 선택 형태(비활성화)-->
+                                                    <li class="category-filter-bar-control-list-item">
+                                                        <div class="panel-drop-down">
+                                                            <button type="button" class="category-filter-bar-button">
+                                                                대상
+                                                                <svg class="chevron" width="12" height="12">
+                                                                    <g fill="none" fill-rule="evenodd">
+                                                                        <path d="M0 0h12v12H0z"></path>
+                                                                        <path fill="currentColor" fill-rule="nonzero" d="M2.154 3L1 4.125 6 9l5-4.875L9.846 3 6 6.75z"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+
+                                                    <!--메뉴 선택 형태(활성화)-->
+                                                    <li class="category-filter-bar-control-list-item">
+                                                        <div class="panel-drop-down">
+                                                            <button type="button" class="category-filter-bar-button category-filter-bar-button-active">
+                                                                희망 가격
+                                                                <svg class="chevron" width="12" height="12">
+                                                                    <g fill="none" fill-rule="evenodd">
+                                                                        <path d="M0 0h12v12H0z"></path>
+                                                                        <path fill="currentColor" fill-rule="nonzero" d="M2.154 3L1 4.125 6 9l5-4.875L9.846 3 6 6.75z"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="category-filter-bar-tag-list-placeholder"></div> <!--아무것도 선택되지 않았을 때-->
+
+                                            <div class="category-filter-bar-tag-list"> <!--하나라도 선택된 것이 있을 때-->
+                                                <!--선택된 무언가들의 태그-->
+                                                <div class="category-filter-bar-tag-list-container">
+                                                    <ul class="category-filter-bar-tag-list-content">
+                                                        <!--무언가가 선택될 때마다 아래의 li 태그 추가-->
+                                                        <li class="category-filter-bar-tag-list-item">
+                                                            <button class="category-filter-bar-tag">
+                                                                선택된 무언가
+                                                                <svg width="12" height="12">
+                                                                    <g fill="none" fill-rule="evenodd" opacity=".5">
+                                                                        <path d="M0 0h12v12H0z"></path>
+                                                                        <path fill="currentColor" fill-rule="nonzero" d="M9.778 1.5l.722.75-3.778 3.722L6.75 6l-.028.028L10.5 9.75l-.722.75L6 6.745 2.222 10.5 1.5 9.75l3.777-3.723L5.25 6l.027-.027L1.5 2.25l.722-.75L6 5.255 9.778 1.5z"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <!--초기화 버튼-->
+                                                <button class="category-filter-bar-tag-list-clear">
+                                                    <svg class="icon" width="1em" height="1em" viewBox="0 0 20 20">
+                                                        <g fill="none" fill-rule="evenodd">
+                                                            <path d="M0 0h20v20H0z"></path>
+                                                            <path fill="currentColor" fill-rule="nonzero" d="M8.958.833c3.844 0 7.157 2.488 8.417 6.019l.887-1.538a.834.834 0 011.444.833L17.67 9.671a.833.833 0 01-1.138.305l-3.524-2.035a.833.833 0 11.833-1.443l2.054 1.186C14.943 4.654 12.174 2.5 8.958 2.5c-4.022 0-7.291 3.353-7.291 7.5s3.269 7.5 7.291 7.5c2.47 0 4.73-1.272 6.075-3.35a.833.833 0 011.399.905c-1.647 2.546-4.43 4.112-7.474 4.112C4.006 19.167 0 15.058 0 10S4.006.833 8.958.833z"></path>
+                                                        </g>
+                                                    </svg>
+                                                    <span class="text">초기화</span>
+                                                </button>
+                                            </div>
+
+                                            <div class="category-filter-all-items">
+                                                <p class="all-text">전체 200개</p>
+                                                <div class="sort-menu-wrapper">
+                                                    <div class="sort-menu">
+                                                        <div class="panel-drop-down">
+                                                            <button type="button" class="category-filter-bar-order-button">
+                                                                최신순
+                                                                <svg class="icon" width="8" height="8" viewBox="0 0 8 8">
+                                                                    <path fill="#BDBDBD" d="M0 2l4 4 4-4z"></path>
+                                                                </svg>
+                                                            </button> <!--스크랩 많은 순, 조회수 높은 순-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="row" style="padding-top: 0px; padding-bottom: 5359px; transform: translateY(0px);">
+                                    <!--바로 아래의 div가 반복됨-->
+                                    <div class="category-feed-content-item-wrap item-col item-layout">
+                                        <article class="production-item">
+                                            <a href="" class="production-item-overlay"></a>
+
+                                            <div class="production-item-image">
+                                                <img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
+                                                <button type="button" class="production-item-scrap-badge">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
+                                                        <defs>
+                                                            <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
+                                                            <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                                                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+                                                                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
+                                                            </filter>
+                                                            <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
+                                                                <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix>
+                                                            </filter>
+                                                        </defs>
+                                                        <g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)">
+                                                            <use fill="#000" filter="url(#scrap-icon-217-a)" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#FFF" fill-opacity=".4" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#000" filter="url(#scrap-icon-217-c)" href="#scrap-icon-217-b"></use>
+                                                            <path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </div>
+
+                                            <div class="production-item-content">
+                                                <h1 class="production-item-title">아이디어 제목</h1>
+                                                <address class="item-profile-layout">
+                                                    <!--프로필 이미지-->
+                                                    <a href="" class="item-profile-writer">
+                                                        <img class="item-profile-writer-image" src="" alt="">
+                                                        <span class="item-profile-writer-name">사용자 아이디</span>
+                                                    </a>
+                                                </address>
+                                                <footer class="production-item-status">
+                                                    <span class="entry">
+                                                        스크랩
+                                                        22
+                                                    </span>
+                                                    <span class="entry">
+                                                        조회
+                                                        1,893
+                                                    </span>
+                                                </footer>
+                                            </div>
+
+                                        </article>
+                                    </div>
+
+                                    <div class="category-feed-content-item-wrap item-col item-layout">
+                                        <article class="production-item">
+                                            <a href="" class="production-item-overlay"></a>
+
+                                            <div class="production-item-image">
+                                                <img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
+                                                <button type="button" class="production-item-scrap-badge">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
+                                                        <defs>
+                                                            <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
+                                                            <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                                                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+                                                                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
+                                                            </filter>
+                                                            <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
+                                                                <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix>
+                                                            </filter>
+                                                        </defs>
+                                                        <g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)">
+                                                            <use fill="#000" filter="url(#scrap-icon-217-a)" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#FFF" fill-opacity=".4" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#000" filter="url(#scrap-icon-217-c)" href="#scrap-icon-217-b"></use>
+                                                            <path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </div>
+
+                                            <div class="production-item-content">
+                                                <h1 class="production-item-title">아이디어 제목</h1>
+                                                <address class="item-profile-layout">
+                                                    <!--프로필 이미지-->
+                                                    <a href="" class="item-profile-writer">
+                                                        <img class="item-profile-writer-image" src="" alt="">
+                                                        <span class="item-profile-writer-name">사용자 아이디</span>
+                                                    </a>
+                                                </address>
+                                                <footer class="production-item-status">
+                                                    <span class="entry">
+                                                        스크랩
+                                                        22
+                                                    </span>
+                                                    <span class="entry">
+                                                        조회
+                                                        1,893
+                                                    </span>
+                                                </footer>
+                                            </div>
+
+                                        </article>
+                                    </div>
+
+                                    <div class="category-feed-content-item-wrap item-col item-layout">
+                                        <article class="production-item">
+                                            <a href="" class="production-item-overlay"></a>
+
+                                            <div class="production-item-image">
+                                                <img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
+                                                <button type="button" class="production-item-scrap-badge">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
+                                                        <defs>
+                                                            <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
+                                                            <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                                                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+                                                                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
+                                                            </filter>
+                                                            <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
+                                                                <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix>
+                                                            </filter>
+                                                        </defs>
+                                                        <g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)">
+                                                            <use fill="#000" filter="url(#scrap-icon-217-a)" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#FFF" fill-opacity=".4" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#000" filter="url(#scrap-icon-217-c)" href="#scrap-icon-217-b"></use>
+                                                            <path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </div>
+
+                                            <div class="production-item-content">
+                                                <h1 class="production-item-title">아이디어 제목</h1>
+                                                <address class="item-profile-layout">
+                                                    <!--프로필 이미지-->
+                                                    <a href="" class="item-profile-writer">
+                                                        <img class="item-profile-writer-image" src="" alt="">
+                                                        <span class="item-profile-writer-name">사용자 아이디</span>
+                                                    </a>
+                                                </address>
+                                                <footer class="production-item-status">
+                                                    <span class="entry">
+                                                        스크랩
+                                                        22
+                                                    </span>
+                                                    <span class="entry">
+                                                        조회
+                                                        1,893
+                                                    </span>
+                                                </footer>
+                                            </div>
+
+                                        </article>
+                                    </div>
+
+                                    <div class="category-feed-content-item-wrap item-col item-layout">
+                                        <article class="production-item">
+                                            <a href="" class="production-item-overlay"></a>
+
+                                            <div class="production-item-image">
+                                                <img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
+                                                <button type="button" class="production-item-scrap-badge">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
+                                                        <defs>
+                                                            <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
+                                                            <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                                                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+                                                                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
+                                                            </filter>
+                                                            <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
+                                                                <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix>
+                                                            </filter>
+                                                        </defs>
+                                                        <g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)">
+                                                            <use fill="#000" filter="url(#scrap-icon-217-a)" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#FFF" fill-opacity=".4" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#000" filter="url(#scrap-icon-217-c)" href="#scrap-icon-217-b"></use>
+                                                            <path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </div>
+
+                                            <div class="production-item-content">
+                                                <h1 class="production-item-title">아이디어 제목</h1>
+                                                <address class="item-profile-layout">
+                                                    <!--프로필 이미지-->
+                                                    <a href="" class="item-profile-writer">
+                                                        <img class="item-profile-writer-image" src="" alt="">
+                                                        <span class="item-profile-writer-name">사용자 아이디</span>
+                                                    </a>
+                                                </address>
+                                                <footer class="production-item-status">
+                                                    <span class="entry">
+                                                        스크랩
+                                                        22
+                                                    </span>
+                                                    <span class="entry">
+                                                        조회
+                                                        1,893
+                                                    </span>
+                                                </footer>
+                                            </div>
+
+                                        </article>
+                                    </div>
+
+                                    <div class="category-feed-content-item-wrap item-col item-layout">
+                                        <article class="production-item">
+                                            <a href="" class="production-item-overlay"></a>
+
+                                            <div class="production-item-image">
+                                                <img class="image" alt="" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=360&amp;h=360&amp;c=c&amp;q=0.8&amp;webp=1" srcset="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=640&amp;h=640&amp;c=c&amp;q=0.8&amp;webp=1 1.5x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=720&amp;h=720&amp;c=c&amp;q=0.8&amp;webp=1 2x,https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/164325182439107818.jpg?gif=1&amp;w=1080&amp;h=1080&amp;c=c&amp;q=0.8&amp;webp=1 3x">
+                                                <button type="button" class="production-item-scrap-badge">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
+                                                        <defs>
+                                                            <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
+                                                            <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                                                                <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+                                                                <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
+                                                            </filter>
+                                                            <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                                <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
+                                                                <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                                                                <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
+                                                                <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"></feColorMatrix>
+                                                            </filter>
+                                                        </defs>
+                                                        <g fill="none" fill-rule="nonzero" transform="matrix(1 0 0 -1 0 24)">
+                                                            <use fill="#000" filter="url(#scrap-icon-217-a)" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#FFF" fill-opacity=".4" href="#scrap-icon-217-b"></use>
+                                                            <use fill="#000" filter="url(#scrap-icon-217-c)" href="#scrap-icon-217-b"></use>
+                                                            <path stroke="#FFF" d="M12.71 7.37h-.002a1.5 1.5 0 0 1-1.417 0L4.236 3.56a.499.499 0 0 0-.736.442v15.496c0 .553.448 1.002 1 1.002h15c.552 0 1-.449 1-1.002V4.002a.499.499 0 0 0-.734-.443l-7.057 3.81zm-.475-.88h-.001z"></path>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </div>
+
+                                            <div class="production-item-content">
+                                                <h1 class="production-item-title">아이디어 제목</h1>
+                                                <address class="item-profile-layout">
+                                                    <!--프로필 이미지-->
+                                                    <a href="" class="item-profile-writer">
+                                                        <img class="item-profile-writer-image" src="" alt="">
+                                                        <span class="item-profile-writer-name">사용자 아이디</span>
+                                                    </a>
+                                                </address>
+                                                <footer class="production-item-status">
+                                                    <span class="entry">
+                                                        스크랩
+                                                        22
+                                                    </span>
+                                                    <span class="entry">
+                                                        조회
+                                                        1,893
+                                                    </span>
+                                                </footer>
+                                            </div>
+
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div type="button" class="scroll-to-top-wrap">
+                        <button type="button" class="scroll-to-top" onclick="clickme()">
+                            <span class="scroll-arrow"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footers"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="../../static/js/fix/header.js"></script>
+<script src="../../static/js/fix/scroll.js"></script>
+
+
+</html>
+

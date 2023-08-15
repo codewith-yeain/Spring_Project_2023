@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.app.icontact.domain.MemberVO" alias="memberVO" />
+        <typeAlias type="com.app.icontact.domain.ProfileVO" alias="profileVO" />
+        <typeAlias type="com.app.icontact.domain.PaymentVO" alias="paymentVO" />
+        <typeAlias type="com.app.icontact.domain.IdeaVO" alias="ideaVO" />
+        <typeAlias type="com.app.icontact.domain.IdeaFileVO" alias="ideaFileVO" />
+        <typeAlias type="com.app.icontact.domain.CommunityVO" alias="communityVO" />
+        <typeAlias type="com.app.icontact.domain.CommunityFileVO" alias="communityFileVO" />
+        <typeAlias type="com.app.icontact.domain.CommentVO" alias="commentVO" />
+        <typeAlias type="com.app.icontact.domain.CertificateVO" alias="certificateVO" />
+        <typeAlias type="com.app.icontact.domain.BusinessVO" alias="businessVo" />
+    </typeAliases>
+</configuration>

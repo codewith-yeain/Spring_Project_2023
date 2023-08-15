@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../static/css/fix/header.css">
+
+    <style>
+        /*돋보기 아이콘을 위한 폰트*/
+        @font-face{
+            font-family:OhouseIcon;
+            src:url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2");
+        }
+
+
+        @font-face {
+            font-family: 'Pretendard Variable';
+            src: url('../../static/font/PretendardVariable.woff2');
+        }
+    </style>
+</head>
+<body>
+
+<!--<div class="full-height">
+    <div class="layout">
+
+    </div>
+</div>-->
+
+<header>
+    <div class="sticky-container">
+        <div class="top-header white">
+            <div class="top-header-layout">
+
+                <!--1-->
+                <div class="logo-wrapper">
+                    <a class="logo-container" href="">
+                        <img src="../../static/images/icon/logo.png" class="logo">
+                    </a> <!--iContact 로고-->
+                </div>
+
+                <!--2-->
+                <div class="side-menu">
+                    <div class="side-menu-layout">
+                        <!--1-->
+                        <div class="search-bar-wrapper">
+                            <div class="full-flex">
+                                <div class="search-bar-layout">
+                                    <span class="magnifier"></span>
+                                    <input type="text" placeholder="통합검색" autocomplete="off" class="search-bar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--2-->
+                        <div class="menu-wrapper">
+                            <div class="menu-layout">
+                                <a href="" class="menu">로그인</a>
+                                <a href="" class="menu">회원가입</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky-container nav-bar">
+        <div class="nav-bar-wrapper">
+            <div class="nav-bar-container">
+                <div class="nav-bar-layout">
+                    <nav class="nav-bar-content">
+                        <!--아래의 span 태그가 메뉴 개수만큼 반복됨-->
+
+                        <span class="nav-element">
+                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
+                                <div>
+                                    <p>IDEA BANK</p> <!--hover 활성화 되는 부분2-->
+                                </div>
+                            </a>
+                        </span>
+
+                        <span class="nav-element">
+                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
+                                <div>
+                                    <p>문의하기</p> <!--hover 활성화 되는 부분2-->
+                                </div>
+                            </a>
+                        </span>
+
+                        <!--비 활성화 시-->
+                        <span class="nav-element">
+                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
+                                <div>
+                                    <p>커뮤니티</p> <!--hover 활성화 되는 부분2-->
+                                </div>
+                            </a>
+                        </span>
+
+                        <!--비 활성화 시-->
+                        <span class="nav-element">
+                            <a href="#" class="inactive"> <!--hover 활성화 되는 부분1-->
+                                <div>
+                                    <p>ABOUT US</p> <!--hover 활성화 되는 부분2-->
+                                </div>
+                            </a>
+                        </span>
+
+                        <!--비 활성화 시-->
+                        <span class="nav-element">
+                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
+                                <div>
+                                    <p>아이디어 등록하기</p> <!--hover 활성화 되는 부분2-->
+                                </div>
+                            </a>
+                        </span>
+                    </nav>
+                </div>
+            </div>
+            <div class="open-active dropdown" style="position: absolute; inset: 0px auto auto 0px; transform: translate(710px, 50px);">
+                <div class="popper-item">
+                    <a class="open-menu-wrapper" href="">
+                        <div class="menu-item">
+                            <div class="menu-content">사이트 소개</div>
+                        </div>
+                    </a>
+
+                    <a class="open-menu-wrapper" href="">
+                        <div class="menu-item">
+                            <div class="menu-content">자주하는 FAQ</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".nav-element").click(function() {
+            $(".dropdown").toggle();
+        });
+    });
+</script>
+
+
+</html>

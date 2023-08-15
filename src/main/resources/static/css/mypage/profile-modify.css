@@ -1,0 +1,287 @@
+* {
+    font-family: 'Pretendard Variable';
+}
+
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+label {
+    cursor: default;
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space-collapse: collapse;
+    /*text-wrap: nowrap;*/
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+.button {
+    user-select: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    background: none;
+    font-family: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: color .1s,background-color .1s,border-color .1s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px){
+body, html {
+    font-size: 15px;
+}}
+
+/*menu-nav*/
+.menu-nav {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/*회원수정*/
+.edit-user-info_wrap.container {
+    position: relative;
+    margin: 50px auto;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+    padding: 50px;
+    color: #292929;
+
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - 30px);
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1px
+}
+
+@media(min-width: 375px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        width: calc(100% - 30px);
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+@media(min-width: 768px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        width: calc(100% - 80px);
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+@media(min-width: 1024px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        width: calc(100% - 120px);
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+@media(min-width: 1256px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        width: 1136px;
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+.edit-user-info_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.edit-user-info_header-title {
+    font-size: 24px;
+    font-weight: 700;
+    flex: 1 0 0px;
+}
+
+.edit-user-info_header_withdrawals {
+    font-size: 16px;
+    color: mediumpurple;
+}
+
+.edit-user-info_form-item {
+    display: flex;
+}
+
+.edit-user-info_form-item_title {
+    padding-top: 30px;
+    width: 100px;
+}
+
+.edit-user-info_form-item_title_require {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #757575;
+}
+
+.edit-user-info_form-item_group {
+    max-width: 400px;
+    flex: 1 0 0px;
+}
+
+.expert-form-group {
+    padding: 20px 0;
+}
+
+.edit-user-info_form-item_field {
+    position: relative;
+}
+
+.email-input {
+    display: flex;
+}
+
+.form-check-group, .form-control, .form-radio-group, .input-group {
+      flex: 1 0 auto;
+}
+
+.email-input_domain, .email-input_local {
+    position: relative;
+    flex: 1 1 0px;
+}
+
+.expert-form-group.edit-user-info_form-item_group .form-control {
+    text-align: left;
+}
+
+.expert-form-group_input .form-control {
+    font-size: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.form-control {
+    transition: border-color .2s,box-shadow .2s,background-color .2s;
+    display: block;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+    padding: 0 15px;
+    line-height: 40px;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+    background-color: #fff;
+    color: #424242;
+    font-size: 12px;
+}
+
+.email-input_domain .form-control-blind, .email-input_local .form-control-blind {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+}
+
+.email-input_separator {
+    flex: 0 0 20px;
+    text-align: center;
+    line-height: 40px;
+    color: #dbdbdb;
+}
+
+.email-input_domain .form-control :disabled, .email-input_local .form-control :disabled {
+    color: #757575;
+    opacity: 1;
+}
+
+.email-input_domain .form-control option, .email-input_local .form-control option {
+    color: #424242;
+}
+
+.edit-user-info_form-item_field_warning {
+    margin-top: 10px;
+    color: #9e9e9e;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.edit-user-info_form-item_field-profile, .edit-user-info_form-item_field-profile .image-single-input_entry_button {
+    width: 200px;
+    height: 200px;
+}
+
+.image-single-input {
+    display: block;
+}
+
+.image-single-input_entry, .image-single-input_pending, .image-single-input_upload {
+    display: block;
+    margin: 0 0 10px;
+}
+
+.image-single-input_entry_button {
+    position: relative;
+    min-width: 200px;
+    min-height: 200px;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0px solid #dbdbdb;
+    background-color: #F8F8F8;
+    font-size: 0;
+    cursor: pointer;
+    transition: opacity .1s;
+}
+
+.image-single-input_entry_image {
+    width: 100%;
+    height: 100%;
+}
+
+.edit-user-info_submit.button {
+    margin: 50px 0 0 100px;
+    width: 290px;
+}
+
+.button-size-50 {
+    padding: 11px 10px;
+    font-size: 17px;
+    line-height: 26px;
+}
+
+.button-color {
+    background-color: #eacaff;
+    border-color: #eacaff;
+    color: #fff;
+}

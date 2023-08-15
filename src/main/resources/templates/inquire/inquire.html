@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>문의하기</title>
+
+    <link rel="stylesheet" href="../../static/css/inquire/inquire.css" />
+    <link rel="icon" href="../../static/images/icon/favicon.png">
+
+</head>
+<body>
+<div class="full-height">
+    <div class="layout">
+        <div id="headers"></div>
+        <div class="body-born">
+            <div class="inquire-header">
+                <p class="inquire-header-title">이메일 문의하기</p>
+                <p class="inquire-header-subtitle">
+                    상품/배송 등 쇼핑 관련 문의는
+                    <a href="">고객센터</a>
+                    에서 요청해주세요.
+                </p>
+            </div>
+            <div class="inquire-body">
+                <form>
+                    <div class="inquire-body2">
+                        <div width="343" class="">
+                            <div class="lay1">
+                                <select class="lay2 lay4 lay3 inquire-menu" name="type">
+                                    <option selected="" value="" disabled="">문의 유형</option>
+                                    <option value="0">회원정보 문의</option>
+                                    <option value="1">쿠폰/포인트 문의</option>
+                                    <option value="2">주문/결제 관련 문의</option>
+                                    <option value="3">취소/환불 관련 문의</option>
+                                    <option value="4">배송 관련 문의</option>
+                                    <option value="5">주문 전 상품 정보 문의</option>
+                                    <option value="6">서비스 개선 제안</option>
+                                    <option value="7">시스템 오류 제보</option>
+                                    <option value="8">불편 신고</option>
+                                    <option value="9">기타문의</option>
+                                </select>
+                                <svg width="1em" height="1em" viewBox="0 0 10 10" fill="currentColor" class="inquire-menu-button">
+                                    <path d="M0 3l5 5 5-5z"></path>
+                                </svg>
+                            </div>
+                            <span class="inquire-menu-exp">앱 개선 제안은 '서비스 개선 제안'으로 선택해 주세요.</span>
+                            <span class="inquire-menu-exp">앱 장애 신고는 '시스템 오류 제보'로 선택해 주세요.</span>
+                        </div>
+                    </div>
+                        <div class="inquire-body2">
+                            <div width="343" class="">
+                                <input class="lay2 lay4 inquire-menu" value="" name="name" placeholder="이름">
+                            </div>
+                         </div>
+                        <div class="inquire-body2">
+                            <div width="343" class="">
+                                <input class="lay2 lay4 inquire-menu" value="" name="email" placeholder="이메일">
+                            </div>
+                        </div>
+                        <div class="inquire-body2">
+                            <input class="lay2 lay4 inquire-menu" value="" name="title" placeholder="제목">
+                        </div>
+                    <div class="inquire-body2">
+                        <textarea class="lay2 lay4 text-nav" name="message" maxlength="500" placeholder="문의 내용" rows="1" style="overflow: hidden; overflow-wrap: break-word; height: 160px;"></textarea>
+                        <span class="text-count">0<!-- -->자 / 최대 <!-- -->500<!-- -->자</span>
+                    </div>
+                    <div class="inquire-body2">
+                        <label class="file-area">
+                            <span class="file-area2">
+                                <span></span>
+                            </span>
+                            <span class="file-text">첨부파일</span>
+                            <input type="file" name="file" hidden="">
+                        </label>
+                    </div>
+                    <div class="button-area">
+                        <button class="lay6 button-commit" type="button">제출하기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="../../static/js/fix/header.js"></script>
+
+</html>

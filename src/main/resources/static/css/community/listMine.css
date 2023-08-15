@@ -1,0 +1,225 @@
+/* listMine.html */
+@charset "utf-8";
+
+* {
+    font-family: 'Pretendard Variable';
+}
+
+.myhome-nav{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.myhome-nav{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.page-navigation{
+    border-bottom: 1px solid #ededed;
+    width: 100%;
+    overflow: hidden;
+}
+
+.page-navigation>ul {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.myhome-nav-owner{
+    overflow: visible;
+    font-size: 16px;
+}
+
+@media (min-width: 768px){
+    .myhome-nav-owner{
+        font-size: 18px;
+    }
+}
+
+.page-navigation-item{
+    display: inline-block;
+    user-select: none;
+}
+
+.page-navigation-item>a{
+    display: block;
+    padding: 0 10px;
+    font-weight: 700;
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    transition: color .15s ease;
+}
+
+.page-navigation-item>a.active{
+    color: #eacaff;
+}
+
+.myhome-nav-owner .page-navigation-item>a.active:before{
+    margin-top: -10px;
+    border-color: transparent transparent #dbdbdb;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    background-color: transparent;
+    margin-left: -5px;
+    border-width: 0 5px 10px;
+    z-index: 1;
+}
+
+.myhome-nav-owner .page-navigation-item>a.active:after{
+    margin-top: -8px;
+    border-color: transparent transparent #fff;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    background-color: transparent;
+    margin-left: -5px;
+    border-width: 0 5px 10px;
+    z-index: 1;
+}
+
+.page-navigation-item>a.active:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #eacaff;
+    left: 0;
+    bottom: 0;
+    color: #eacaff;
+}
+
+.customer-notice-list-content{
+    margin: 0 15px 60px;
+}
+
+@media (min-width: 768px){
+    .customer-notice-list-content{
+        margin: 60px auto 20px;
+        width: 100%;
+        max-width: 630px;
+    }
+}
+
+.customer-notice-list-title{
+    display: none;
+    margin: 0 0 20px;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #292929;
+}
+
+@media (min-width: 768px){
+    .customer-notice-list-title{
+        display: block;
+    }
+}
+
+.customer-notice-list-item{
+
+}
+
+.customer-notice-feed-item{
+    display: block;
+    margin: 0 -15px;
+    padding: 26px 15px;
+    border-bottom: 1px solid #dbdbdb;
+    transition: opacity .1s;
+}
+
+@media (min-width: 768px){
+    .customer-notice-feed-item{
+        margin: 0;
+        padding: 26px 0;
+    }
+}
+
+.customer-notice-feed-item-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.customer-notice-feed-item-title{
+    margin: 0 0 8px;
+    color: #000;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.customer-notice-feed-item-date{
+    display: block;
+    color: #828c94;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+}
+
+.customer-notice-feed-item-sort{
+    color: mediumpurple;
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 17px;
+    letter-spacing: -.3px;
+    transition: color .25s;
+}
+
+.card-item-action-list{
+    flex: 0 0 auto;
+    display: flex;
+    margin-bottom: -12px;
+}
+
+.card-item-action-list-action{
+    cursor: pointer;
+    flex: 1 0 0px;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 13px 0 16px;
+    background: none;
+    border: none;
+    text-align: center;
+    transition: opacity .1s;
+    z-index: 2;
+    color: inherit;
+    text-decoration: none;
+    min-width: 85px;
+}
+
+.card-item-action-list-action>.like{
+    vertical-align: -7px;
+    fill: transparent;
+    stroke: #424242;
+    stroke-width: 1.1px;
+    transition: fill .1s,stroke .1s;
+}
+
+.card-item-action-list-action>.comment{
+    vertical-align: -7px;
+    fill: #424242;
+}
+
+.card-item-action-list-action>.count{
+    margin-left: 6px;
+    font-size: 12px;
+    color: #424242;
+}

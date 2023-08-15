@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>커뮤니티</title>
+    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="../../static/css/community/write.css">
+
+    <style>
+        /*돋보기 아이콘을 위한 폰트*/
+        @font-face{
+            font-family:OhouseIcon;
+            src:url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2");
+        }
+
+
+        @font-face {
+            font-family: 'Pretendard Variable';
+            src: url('../../static/font/PretendardVariable.woff2');
+        }
+    </style>
+</head>
+<body>
+
+<div class="full-height">
+    <div class="write-community-layout">
+        <div class="write-community-header-wrapper-mobile">
+            <!--모바일 화면에서 보이는 작성도구 툴-->
+            <div class="write-community-header-mobile">
+                <div class="write-community-header-mobile-top">
+                    <div class="write-community-header-back-btn-wrapper">
+                        <button type="button" class="write-community-header-back-btn">
+                            <svg class="icon" width="24" height="24">
+                                <path d="M3.7 12.5h18.8v-1H3.7l7.8-7.8-.7-.7L2 11.7l.3.3-.3.3 8.8 8.7.7-.7-7.8-7.8z" fill="#000" fill-opacity=".7" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <h1 class="write-community-header-title">글쓰기</h1>
+                    <div class="write-community-header-save-btn-wrapper">
+                        <button type="button" class="write-community-header-save-btn">발행</button>
+                    </div>
+                </div>
+                <div class="write-community-header-mobile-bottom">
+                    <div class="flex-width">
+                        <div class="write-community-header-mobile-bottom-layout">
+                            <div class="write-community-header-mobile-btn-wrapper">
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                        <g fill-rule="evenodd" fill="none">
+                                            <rect rx="4" height="29" width="29"></rect>
+                                            <g stroke-width="1.6" stroke="#525b61" transform="translate(4 4)">
+                                                <rect rx="4" height="19.4" width="19.4" y=".8" x=".8"></rect>
+                                                <path stroke-linejoin="round" d="M.8 15.24L5.98 9.7l7.11 6.11 3.88-3.05 3.23 2.5"></path>
+                                                <circle r="2.03" cy="6.87" cx="14.13"></circle>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+
+                                <div class="drop-down editor-command-list-dropdown">
+                                    <button type="button" class="editor-command-list-dropdown-item">
+                                        <span class="editor-command-list-dropdown-item-text">본문</span> <!--제목 1, 제목 2, 제목 3-->
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="editor-command-list-dropdown-item-text-btn">
+                                            <path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" width="29" height="29" viewBox="0 0 29 29">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <rect width="29" height="29" rx="4"></rect>
+                                            <path d="M8 6h5.46c2.49 0 4.3.34 5.42 1.03 1.13.68 1.69 1.77 1.69 3.27.04.89-.22 1.76-.74 2.5a2.96 2.96 0 01-1.96 1.17v.12c1.11.24 1.9.69 2.39 1.35.52.77.78 1.7.73 2.62a4.27 4.27 0 01-1.73 3.64c-1.16.87-2.73 1.3-4.71 1.3H8zm3.72 6.73h2.16c1.01 0 1.74-.15 2.2-.45.47-.36.73-.92.68-1.5a1.49 1.49 0 00-.74-1.4 4.94 4.94 0 00-2.34-.43h-1.96zm0 2.86V20h2.43c1.02 0 1.78-.19 2.26-.57.52-.43.79-1.08.73-1.74 0-1.4-1.04-2.11-3.12-2.11z" fill="#525b61" fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                        <g fill-rule="evenodd" fill="none">
+                                            <rect rx="4" height="29" width="29"></rect>
+                                            <g fill="#525b61" transform="translate(9 5)">
+                                                <rect rx="1" height="2" width="8" y="16"></rect>
+                                                <rect rx="1" height="2" width="8" y="1" x="3"></rect>
+                                                <rect rx="1" height="17" width="2" y="1.04" x="4.55" transform="rotate(10 5.55 9.54)"></rect>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                        <g fill-rule="evenodd" fill="none">
+                                            <rect rx="4" height="29" width="29"></rect>
+                                            <g transform="translate(6 7)">
+                                                <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.1" stroke="#525b61" d="M3.19 0v5.35c0 3.5 2.38 6.34 5.31 6.34 2.93 0 5.31-2.84 5.31-6.34V0"></path>
+                                                <rect rx="1" height="2.13" width="17" y="14.88" fill="#525b61"></rect>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </button>
+
+                                <div class="drop-down editor-command-list-dropdown">
+                                    <button type="button" class="editor-command-list-dropdown-item">
+                                        <svg class="icon" width="29" height="29" viewBox="0 0 29 29">
+                                            <circle cx="14.5" cy="14.5" r="8.5" fill="#424242"></circle>
+                                            <path fill="#424242" d="M10.75 10.59v1.07h3.01c-.24 2.04-1.38 3.5-3.52 4.6l.74 1.01a6.92 6.92 0 004.11-6.68zm8.08 2.57h-1.29V9.64h-1.32v9.2h1.32v-4.59h1.29z"></path>
+                                        </svg>
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="editor-command-list-dropdown-item-text-btn">
+                                            <path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="drop-down editor-command-list-dropdown">
+                                    <button type="button" class="editor-command-list-dropdown-item">
+                                        <svg class="icon" width="29" height="29" viewBox="0 0 29 29">
+                                            <g fill="none" fill-rule="evenodd">
+                                                <rect width="29" height="29" rx="4"></rect>
+                                                <g transform="translate(6 6)" fill="#525b61" fill-rule="nonzero">
+                                                    <rect width="16.98" height="1.7" rx=".85"></rect>
+                                                    <rect y="4.77" width="12.73" height="1.7" rx=".85"></rect>
+                                                    <rect y="9.54" width="16.98" height="1.7" rx=".85"></rect>
+                                                    <rect y="14.65" width="8.49" height="1.7" rx=".85"></rect>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="arrow-icon">
+                                            <path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="drop-down">
+                                    <button type="button" class="write-community-header-mobile-btn">
+                                        <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                            <g fill-rule="evenodd" fill="none">
+                                                <rect rx="4" height="29" width="29"></rect>
+                                                <path fill-rule="nonzero" fill="#525b61" stroke-width=".2" stroke="#525b61" d="M14.24 8.82l2.51-2.52a4.37 4.37 0 012.7-1.29 4.24 4.24 0 014.5 3.6 4.25 4.25 0 01-1.19 3.62l-4.24 4.24a4.2 4.2 0 01-5.98 0 2.47 2.47 0 01-.33-.37.64.64 0 01.07-.88v0a.68.68 0 011 .05 2.85 2.85 0 002.28 1.1c.75 0 1.49-.3 2.04-.85l4.2-4.2c.5-.5.82-1.15.9-1.84a2.92 2.92 0 00-1.99-3.02 2.93 2.93 0 00-2.95.72l-1.9 1.91-.68.67a.68.68 0 01-.94 0v0a.68.68 0 010-.94zm.48 11.4a.68.68 0 000-.94v0a.68.68 0 00-.94 0l-2.53 2.53a2.89 2.89 0 01-2.93.72 2.9 2.9 0 01-1.15-4.8l4.26-4.26a2.85 2.85 0 012.05-.85c.78 0 1.5.3 2.05.85l.28.3c.23.32.69.37.99.1l.02-.03a.66.66 0 00.07-.85 4.15 4.15 0 00-3.64-1.68 4.38 4.38 0 00-2.79 1.28l-4.23 4.2A4.24 4.24 0 009.22 24a4.2 4.2 0 003-1.24z"></path>
+                                            </g>
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div class="drop-down editor-command-list-dropdown">
+                                    <button type="button" class="editor-command-list-dropdown-item">
+                                        <svg class="icon" viewBox="0 0 29 29" height="29" width="29"><g fill-rule="evenodd" fill="none"><rect rx="4" height="29" width="29"></rect><path d="M14.5 7.07a.8.8 0 00-.81.8v5.8H7.8a.8.8 0 00-.81.8c0 .44.36.8.81.8h5.88v5.8c0 .44.36.8.81.8a.8.8 0 00.81-.8v-5.8h5.88a.8.8 0 00.81-.8.8.8 0 00-.81-.8H15.3v-5.8a.8.8 0 00-.81-.8z" fill-rule="nonzero" fill="#525b61"></path></g></svg>
+                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="arrow-icon"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                                    </button>
+                                </div>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                        <g fill-rule="evenodd" fill="none">
+                                            <path d="M0 0h29v29H0z"></path>
+                                            <path d="M14.97 5.89a.55.55 0 00-.8 0L8.6 11.42a.56.56 0 000 .8.55.55 0 00.79 0L14 7.65v10.71a.56.56 0 101.13 0V7.65l4.63 4.57a.55.55 0 00.8 0 .56.56 0 000-.8l-5.6-5.53zM21.98 22H7.18a.57.57 0 000 1.13h14.8a.57.57 0 000-1.13z" stroke-width=".86" stroke="#525b61" fill-rule="nonzero" fill="#525b61"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29"><g fill-rule="evenodd" fill="none"><path d="M30 29.5H1V.5h29z"></path><path d="M14.1 23.04a.55.55 0 00.8 0l5.59-5.54a.56.56 0 000-.8.55.55 0 00-.8 0l-4.63 4.58V10.56a.56.56 0 10-1.12 0v10.72L9.3 16.7a.55.55 0 00-.79 0 .56.56 0 000 .8l5.59 5.54zm-7-16.11h14.8a.57.57 0 000-1.13H7.1a.57.57 0 000 1.13z" stroke-width=".86" stroke="#525b61" fill-rule="nonzero" fill="#525b61"></path></g></svg>
+                                </button>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29"><g transform="scale(1.07407)" fill-rule="evenodd" fill="none"><rect rx="4" height="27" width="27"></rect><path d="M9.13 16.25a.84.84 0 101.17-1.18l-2.79-2.75h5.55c3.69 0 6.68 2.15 6.68 5.85v1.67a.84.84 0 101.67 0v-1.67c0-4.62-3.74-7.52-8.35-7.52H7.53L10.3 7.9a.84.84 0 00-1.17-1.19L4.91 10.9a.83.83 0 000 1.19z" fill-rule="nonzero" fill="#525b61"></path></g></svg>
+                                </button>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29"><g transform="scale(1.07407)" fill-rule="evenodd" fill="none"><rect rx="4" height="27" width="27"></rect><path d="M17.87 16.25a.84.84 0 11-1.17-1.18l2.79-2.75h-5.55c-3.69 0-6.68 2.15-6.68 5.85v1.67a.84.84 0 11-1.67 0v-1.67c0-4.62 3.74-7.52 8.35-7.52h5.53L16.7 7.9a.84.84 0 011.17-1.19l4.22 4.18a.83.83 0 010 1.19z" fill-rule="nonzero" fill="#525b61"></path></g></svg>
+                                </button>
+
+                                <button type="button" class="write-community-header-mobile-btn">
+                                    <svg class="small-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--PC 화면에서 보이는 작성도구 툴-->
+            <div class="write-community-header-pc">
+                <div class="write-community-header-layout">
+                    <a href="" class="logo-wrapper">
+                        <img src="../../static/images/icon/logo.png" class="logo">
+                    </a>
+
+                    <div class="write-community-editor-wrapper">
+                        <div class="write-community-editor-layout">
+                            <button class="editor-btn">
+                                <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                    <g fill-rule="evenodd" fill="none">
+                                        <rect rx="4" height="29" width="29"></rect>
+                                        <g stroke-width="1.6" stroke="#525b61" transform="translate(4 4)">
+                                            <rect rx="4" height="19.4" width="19.4" y=".8" x=".8"></rect>
+                                            <path stroke-linejoin="round" d="M.8 15.24L5.98 9.7l7.11 6.11 3.88-3.05 3.23 2.5"></path>
+                                            <circle r="2.03" cy="6.87" cx="14.13"></circle>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
+                            <span class="break-line"></span>
+                            <div class="drop-down">
+                                <button type="button" class="editor-btn-pc">
+                                    <span class="editor-btn-pc-text">본문</span>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="editor-btn-icon">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="break-line"></span>
+                            <button type="button" class="editor-btn">
+                                <svg class="icon" width="29" height="29" viewBox="0 0 29 29">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <rect width="29" height="29" rx="4"></rect>
+                                        <path d="M8 6h5.46c2.49 0 4.3.34 5.42 1.03 1.13.68 1.69 1.77 1.69 3.27.04.89-.22 1.76-.74 2.5a2.96 2.96 0 01-1.96 1.17v.12c1.11.24 1.9.69 2.39 1.35.52.77.78 1.7.73 2.62a4.27 4.27 0 01-1.73 3.64c-1.16.87-2.73 1.3-4.71 1.3H8zm3.72 6.73h2.16c1.01 0 1.74-.15 2.2-.45.47-.36.73-.92.68-1.5a1.49 1.49 0 00-.74-1.4 4.94 4.94 0 00-2.34-.43h-1.96zm0 2.86V20h2.43c1.02 0 1.78-.19 2.26-.57.52-.43.79-1.08.73-1.74 0-1.4-1.04-2.11-3.12-2.11z" fill="#525b61" fill-rule="nonzero"></path>
+                                    </g>
+                                </svg>
+                            </button>
+                            <button type="button" class="editor-btn">
+                                <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                    <g fill-rule="evenodd" fill="none">
+                                        <rect rx="4" height="29" width="29"></rect>
+                                        <g fill="#525b61" transform="translate(9 5)">
+                                            <rect rx="1" height="2" width="8" y="16"></rect>
+                                            <rect rx="1" height="2" width="8" y="1" x="3"></rect>
+                                            <rect rx="1" height="17" width="2" y="1.04" x="4.55" transform="rotate(10 5.55 9.54)"></rect>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
+                            <button type="button" class="editor-btn">
+                                <svg class="icon" viewBox="0 0 29 29" height="29" width="29">
+                                    <g fill-rule="evenodd" fill="none">
+                                        <rect rx="4" height="29" width="29"></rect>
+                                        <g transform="translate(6 7)">
+                                            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.1" stroke="#525b61" d="M3.19 0v5.35c0 3.5 2.38 6.34 5.31 6.34 2.93 0 5.31-2.84 5.31-6.34V0"></path>
+                                            <rect rx="1" height="2.13" width="17" y="14.88" fill="#525b61"></rect>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
+                            <span class="break-line"></span>
+                            <div class="drop-down">
+                                <button type="button" class="editor-btn-pc">
+                                    <svg class="icon" width="29" height="29" viewBox="0 0 29 29"><circle cx="14.5" cy="14.5" r="8.5" fill="#424242"></circle><path fill="#424242" d="M10.75 10.59v1.07h3.01c-.24 2.04-1.38 3.5-3.52 4.6l.74 1.01a6.92 6.92 0 004.11-6.68zm8.08 2.57h-1.29V9.64h-1.32v9.2h1.32v-4.59h1.29z"></path></svg>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="editor-btn-icon"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                                </button>
+                            </div>
+                            <span class="break-line"></span>
+                            <div class="drop-down">
+                                <button type="button" class="editor-btn-pc">
+                                    <svg class="icon" width="29" height="29" viewBox="0 0 29 29" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><rect width="29" height="29" rx="4"></rect><g transform="translate(6 6)" fill="#525b61" fill-rule="nonzero"><rect width="16.98" height="1.7" rx=".85"></rect><rect y="4.77" width="12.73" height="1.7" rx=".85"></rect><rect y="9.54" width="16.98" height="1.7" rx=".85"></rect><rect y="14.65" width="8.49" height="1.7" rx=".85"></rect></g></g></svg>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="editor-arrow"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                                </button>
+                            </div>
+                            <span class="break-line"></span>
+                            <div class="drop-down">
+                                <button type="button" class="editor-btn">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29" preserveAspectRatio="xMidYMid meet"><g fill-rule="evenodd" fill="none"><rect rx="4" height="29" width="29"></rect><path fill-rule="nonzero" fill="#525b61" stroke-width=".2" stroke="#525b61" d="M14.24 8.82l2.51-2.52a4.37 4.37 0 012.7-1.29 4.24 4.24 0 014.5 3.6 4.25 4.25 0 01-1.19 3.62l-4.24 4.24a4.2 4.2 0 01-5.98 0 2.47 2.47 0 01-.33-.37.64.64 0 01.07-.88v0a.68.68 0 011 .05 2.85 2.85 0 002.28 1.1c.75 0 1.49-.3 2.04-.85l4.2-4.2c.5-.5.82-1.15.9-1.84a2.92 2.92 0 00-1.99-3.02 2.93 2.93 0 00-2.95.72l-1.9 1.91-.68.67a.68.68 0 01-.94 0v0a.68.68 0 010-.94zm.48 11.4a.68.68 0 000-.94v0a.68.68 0 00-.94 0l-2.53 2.53a2.89 2.89 0 01-2.93.72 2.9 2.9 0 01-1.15-4.8l4.26-4.26a2.85 2.85 0 012.05-.85c.78 0 1.5.3 2.05.85l.28.3c.23.32.69.37.99.1l.02-.03a.66.66 0 00.07-.85 4.15 4.15 0 00-3.64-1.68 4.38 4.38 0 00-2.79 1.28l-4.23 4.2A4.24 4.24 0 009.22 24a4.2 4.2 0 003-1.24z"></path></g></svg>
+                                </button>
+                            </div>
+                            <span class="break-line"></span>
+                            <div class="drop-down">
+                                <button type="button" class="editor-btn-pc">
+                                    <svg class="icon" viewBox="0 0 29 29" height="29" width="29" preserveAspectRatio="xMidYMid meet"><g fill-rule="evenodd" fill="none"><rect rx="4" height="29" width="29"></rect><path d="M14.5 7.07a.8.8 0 00-.81.8v5.8H7.8a.8.8 0 00-.81.8c0 .44.36.8.81.8h5.88v5.8c0 .44.36.8.81.8a.8.8 0 00.81-.8v-5.8h5.88a.8.8 0 00.81-.8.8.8 0 00-.81-.8H15.3v-5.8a.8.8 0 00-.81-.8z" fill-rule="nonzero" fill="#525b61"></path></g></svg>
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" class="editor-arrow"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="save-community-btn-wrapper">
+                        <div class="save-community-btn-layout">
+                            <button type="button" class="save-community-btn">
+                                <span class="save-community-btn-text">게시글 등록</span>
+                                <span class="save-community-btn-text-mobile">등록</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="write-community-top">
+            <div>
+                <div class="write-community-top-content-wrapper">
+
+                    <div class="write-community-top-content">
+                        <button type="button" class="write-community-top-btn">
+                            <div class="write-community-top-btn-layout">
+                                <div class="write-community-top-btn-icon">
+                                    <svg class="icon" width="25" height="25" viewBox="0 0 25 25" preserveAspectRatio="xMidYMid meet"><rect width="25" height="25" fill="#6ADFC4" rx="10"></rect><g fill="#FFF" transform="translate(7 8)"><rect width="7" height="1.5" rx=".8"></rect><rect width="11" height="1.5" y="4" rx=".8"></rect><rect width="11" height="1.5" y="8" rx=".8"></rect></g></svg>
+                                </div>
+                                <div class="write-community-top-btn-title">커뮤니티 작성 가이드</div>
+                                <div class="write-community-top-btn-sub-title">원활한 등록을 위해 꼭 읽어주세요</div>
+                            </div>
+                            <div class="open-btn-wrap">
+                                <svg class="open-btn" width="1em" height="1em" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                            </div>
+                        </button>
+                        <div class="open expanded">
+                            <div class="open-content-wrapper">
+                                <ul class="write-community-guide">
+                                    <li>
+                                        특정인 저격, 비방 등 윤리적 문제를 초래하는 경우에는 확인 후
+                                        <b>게시글 오픈이 반려될 수도 있습니다.</b>
+                                        오픈 및 반려 여부는
+                                        <b>댓글로</b>
+                                        안내 드립니다.
+                                    </li>
+                                    <li>
+                                        오픈 및 반려 여부 확인은 작성해주신 시점을 기준으로 일주일-10일 가량 소요되며,
+                                        <b>댓글로</b>
+                                        결과를 안내 드립니다.
+                                    </li>
+                                    <li>
+                                        간단한 자기 소개 후 iContact에 이야기를 들려주세요.
+                                    </li>
+                                    <li>
+                                        게시글 작성에 관련해서 고민이 될 땐 아래의 링크를 참고해주세요
+                                        <ul>
+                                            <li>
+                                                앗! iContact에 커뮤니티도 있다고?
+                                                <a href="">바로가기</a>
+                                            </li>
+                                            <li>
+                                                더 좋은 게시글 작성을 위한 모든 것
+                                                <a href="">바로가기</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        사진이 있으면 좋아요(손그림도 OK)
+                                    </li>
+                                    <li>
+                                        사진 설명도 본문에 최대한 적어주세요
+                                    </li>
+                                    <li>
+                                        사진 첨부 시 용량은 장당 최대 20MB까지 업로드 할 수 있고,  jpg, png 포맷을 지원합니다.
+                                    </li>
+                                    <li>
+                                        정보를 많이 입력할수록 검색 결과에 많이 노출되어 조회수가 올라갑니다.
+                                    </li>
+                                    <li>
+                                        커버사진과 제목은 에디터에 의해 변경될 수 있습니다.
+                                    </li>
+                                    <li>
+                                        글 작성과 이미지 업로드 시, 타인의 지식재산권을 침해하지 않도록 유의해주세요.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="write-community-top-content">
+                        <button type="button" class="write-community-top-btn">
+                            <div class="write-community-top-btn-layout">
+                                <div class="write-community-top-btn-icon">
+                                    <svg class="icon" width="26" height="26" viewBox="0 0 26 26"><rect width="26" height="26" fill="#F8C332" rx="10"></rect><g fill="none" stroke="#FFF"><path stroke-linejoin="round" stroke-width="1.2" d="M15.06 8.65l-6.9 6.88L7 18.98l3.45-1.15 6.9-6.9-2.3-2.28z"></path><path stroke-width="1.2" d="M15.04 8.64l1.45-1.45a.65.65 0 01.93 0l1.37 1.38a.65.65 0 010 .92l-1.45 1.45"></path><path d="M8.27 15.2l2.48 2.47"></path></g></svg>
+                                </div>
+                                <div class="write-community-top-btn-title">필수 정보 입력</div>
+                                <div class="write-community-top-btn-sub-title">게시글을 이해하는데 필요한 정보이니 꼼꼼하게 확인해주세요.</div>
+                            </div>
+                            <div class="open-btn-wrap">
+                                <svg class="open-btn" width="1em" height="1em" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M2.87 4L1.33 5.5 8 12l6.67-6.5L13.13 4 8 9z"></path></svg>
+                            </div>
+                        </button>
+                        <div class="open expanded">
+                            <div class="open-content-wrapper">
+                                <div class="write-community-info">
+                                    <!--아래의 div 태그 반복-->
+                                    <div class="write-community-info-content">
+                                        <div class="write-community-info-title">
+                                            내용
+                                            <span class="asterisk">*</span>
+                                        </div>
+                                        <div class="write-community-info-flex">
+                                            <div>
+                                                <div class="write-community-info-item-wrapper">
+                                                    <span class="write-community-info-item">
+                                                        <div class="input-group select-input errored">
+                                                            <select class="form-control empty error">
+                                                                <option value="" disabled="">선택해주세요.</option>
+                                                                <option value="0">선택</option>
+                                                                <option value="1">선택</option>
+                                                                <option value="2">선택</option>
+                                                                <option value="3">선택</option>
+                                                                <option value="4">선택</option>
+                                                                <option value="5">선택</option>
+                                                                <option value="6">선택</option>
+                                                                <option value="7">선택</option>
+                                                                <option value="8">선택</option>
+                                                                <option value="9">선택</option>
+                                                            </select>
+                                                            <span class="select-input-icon">
+                                                                <svg class="icon" width="10" height="10" style="fill: currentcolor;">
+                                                                    <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </div>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="notice-text">필수 입력 항목입니다.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="write-community-info-content">
+                                        <div class="write-community-info-title">
+                                            내용
+                                            <span class="asterisk">*</span>
+                                        </div>
+                                        <div class="write-community-info-flex">
+                                            <div>
+                                                <div class="write-community-info-item-wrapper">
+                                                    <ul class="radio-group-input editor-metadata-form-input-radio">
+                                                        <li>
+                                                            <div class="form-radio">
+                                                                <label class="form-radio-label">
+                                                                    <input class="form-radio" type="radio" name="connect">
+                                                                    <span class="radio-img"></span>
+                                                                    선택
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="form-radio">
+                                                                <label class="form-radio-label">
+                                                                    <input class="form-radio" type="radio" name="connect">
+                                                                    <span class="radio-img"></span>
+                                                                    선택
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="form-radio">
+                                                                <label class="form-radio-label">
+                                                                    <input class="form-radio" type="radio" name="connect">
+                                                                    <span class="radio-img"></span>
+                                                                    선택
+                                                                </label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="write-community-info-content">
+                                        <div class="write-community-info-title">
+                                            내용
+                                            <!--<span class="asterisk">*</span>-->
+                                        </div>
+                                        <div class="write-community-info-flex">
+                                            <div>
+                                                <span class="write-community-info-item">
+                                                    <div class="input-group select-input">
+                                                        <select name="" class="form-control empty">
+                                                            <option value="" disabled="">선택해주세요.</option>
+                                                            <option value="0">선택</option>
+                                                            <option value="1">선택</option>
+                                                            <option value="2">선택</option>
+                                                            <option value="3">선택</option>
+                                                            <option value="4">선택</option>
+                                                            <option value="5">선택</option>
+                                                        </select>
+
+                                                        <span class="select-input-icon">
+                                                            <svg class="icon" width="10" height="10" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                                                        </span>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="write-community-img-input-layout">
+                        <button type="button" class="write-community-img-input-btn">
+                            <p class="write-community-img-input-btn-title">
+                                <span class="write-community-img-input-btn-inner-title">드래그 앤 드롭이나 추가하기 버튼으로<br></span>
+                                커버 사진을 업로드해주세요
+                            </p>
+                            <p class="write-community-img-input-btn-sub-title">
+                                *권장 사이즈<br>모바일: 1920 x 1920, 최소 1400 x 1400(1:1 비율)<br>PC: 1920 x 1080, 최소 1400 x 787(16:9 비율)<br>
+                            </p>
+                            <div class="write-community-img-input-inner-btn">
+                                커버사진 추가하기
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="write-community-title-wrapper">
+                    <input type="text" placeholder="제목을 입력해주세요." maxlength="80" class="write-community-title" value="">
+                    <div class="max-length">0/80</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="write-community-content-wrapper">
+            <div class="write-community-content">
+                <div class="write-community-content-layout">
+                    <textarea name="" id="" cols="30" rows="10" class="write-community-content-text" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="write-community-help-btn-wrapper">
+            <button type="button" class="write-community-help-btn">
+                <svg class="icon" width="28" height="28" viewBox="0 0 28 28">
+                    <rect width="28" height="28" fill="#FFF" rx="10" style=""></rect>
+                    <path fill="#828C94" d="M14.24 6.22c.56.06 1.1.15 1.65.27 1.66.47 2.64 1.8 2.77 3.56A3.24 3.24 0 0117.35 13c-.44.35-.9.66-1.35 1a2.2 2.2 0 00-1 1.95 1.24 1.24 0 01-.89 1.25 1.38 1.38 0 01-1.6-.48 1.3 1.3 0 01-.2-.65 4.32 4.32 0 011.78-3.63c.5-.38.97-.8 1.41-1.24.21-.25.34-.55.36-.87.08-.88-.49-1.45-1.4-1.51-1.1-.07-2.03.22-2.68 1.19a1.3 1.3 0 01-1.35.62c-.93-.15-1.34-.91-.95-1.79a4 4 0 011.94-1.93 6.75 6.75 0 012.82-.69zm.93 13.96c.01 1-.55 1.6-1.53 1.6s-1.63-.58-1.64-1.41c0-1.16.52-1.74 1.56-1.77.84-.03 1.72.49 1.61 1.58z"></path>
+                </svg>
+            </button>
+            <div class="write-community-help-content-wrapper">
+                <div class="write-community-help-content-layout">
+                    <button type="button" class="write-community-help-content-close-btn">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 11.3l8.13-8.14.7.7L12.72 12l8.13 8.13-.7.7L12 12.72l-8.13 8.13-.7-.7L11.28 12 3.16 3.87l.7-.71L12 11.29z"></path></svg>
+                    </button>
+                    <section class="write-community-help-content">
+                        <h2 class="write-community-help-content-title">커뮤니티 에디터 도움말</h2>
+                        <ul class="write-community-help-content-text-wrapper">
+                            <li class="write-community-help-content-text">
+                                사진과 글은 드래그&드롭으로 자유롭게 이동할 수 있습니다.
+                            </li>
+                            <li class="write-community-help-content-text">
+                                내 컴퓨터에 있는 사진을 드래그&드롭으로 간단히 추가할 수 있습니다.
+                            </li>
+                            <li class="write-community-help-content-text">
+                                외부에 있는 사진을 그대로 복사&붙여넣기 하여 추가할 수 있습니다.
+                            </li>
+                            <li class="write-community-help-content-text">
+                                ‘임시저장’ 버튼을 누르면 작성 중인 글이 저장됩니다. 저장된 글은 임시저장 목록에서 불러와 언제든지 이어서 작성할 수 있습니다.
+                            </li>
+                            <li class="write-community-help-content-text">
+                                ‘발행신청’이 완료된 글은 마이페이지 > 집들이 항목에서 확인 및 수정이 가능합니다.
+                            </li>
+                        </ul>
+
+                        <h2 class="write-community-help-content-title">제목</h2>
+                        <ul class="write-community-help-content-text-wrapper">
+                            <li class="write-community-help-content-text">
+                                내용
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="../../static/js/community/write.js"></script>
+
+
+</html>

@@ -1,0 +1,169 @@
+* {
+    font-family: 'Pretendard Variable';
+}
+
+body, html {
+    line-height: 1;
+    font-family: "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 13px;
+}
+
+[role=button], a, button, input[type=button], input[type=reset], input[type=submit] {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.login-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    /*background-color: rgb(250, 250, 250);*/
+    margin: 100px;
+}
+
+.login-body2 {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}
+.login {
+    flex: 1 0 auto;
+    margin: 0px auto;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 40px 0px;
+}
+
+.logo {
+    width: 150px;
+    /*height: 42px;*/
+}
+
+.login-logo {
+margin-bottom: 30px;
+
+}
+
+.login-form {
+width: 300px;
+}
+
+.email-form{
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.login-email {
+position: relative;
+display: block;
+width: 100%;
+border-radius: 4px 4px 0px 0px;
+transition: box-shadow 0.2s ease 0s, background-color 0.2s ease 0s;
+}
+
+.login-button {
+margin: 20px 0px;
+width: 100%;
+}
+
+.lay1 {
+padding: 13px 15px 14px;
+}
+
+.lay2 {
+display: inline-block;
+width: 100%;
+margin: 0px;
+padding: 8px 15px 9px;
+border: 1px solid rgb(219, 219, 219);
+background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
+border-radius: 4px;
+box-sizing: border-box;
+font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+font-size: 15px;
+line-height: 21px;
+transition: border-color 0.1s ease 0s, background-color 0.1s ease 0s;
+resize: none;
+appearance: none;
+}
+
+.lay3 {
+padding: 15px 10px;
+line-height: 20px;
+font-size: 17px;
+min-height: 50px;
+}
+
+.lay4 {
+background-color: #eacaff;
+border-color: #eacaff;
+color: #fff;
+}
+
+.lay5 {
+user-select: none;
+position: relative;
+display: inline-flex;
+justify-content: center;
+align-items: center;
+box-sizing: border-box;
+font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+font-weight: 700;
+text-align: center;
+cursor: pointer;
+/*    margin: 0px;*/
+    /*padding: 0px;*/
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    /*background: none;*/
+    text-decoration: none;
+    transition: color 0.1s ease 0s, background-color 0.1s ease 0s, border-color 0.1s ease 0s;
+    border-radius: 4px;
+}
+
+.login-join {
+    width: 100%;
+    text-align: center;
+}
+
+.new:first-of-type {
+    margin-left: 0px;
+}
+
+.new:last-of-type {
+    margin-left: 20px;
+}
+
+.sns-text-p {
+    margin: 35px 0px 15px;
+    color: rgb(117, 117, 117);
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.33;
+    text-align: center;
+}
+
+.sns-button {
+    margin: 0px 10px;
+    transition: opacity 0.1s ease 0s;
+}

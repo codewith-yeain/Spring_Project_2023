@@ -1,0 +1,130 @@
+/* news.html */
+@charset "utf-8";
+
+* {
+    font-family: 'Pretendard Variable';
+}
+
+.news-container { /*.css-yrqts6*/
+    width: 100%;
+    max-width: 750px;
+    margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+    .news-container {
+        margin: 40px auto;
+    }
+}
+
+.news-title { /*css-1f09m21*/
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #2F3438;
+    padding: 0 16px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .news-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+
+.news-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 16px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 18px;
+    color: #2F3438;
+    line-height: 20px;
+    background: #fdf5ff;
+}
+
+.favicon-wrapper {
+    display: inline-block;
+    margin-right: 10px;
+    line-height: 0;
+}
+
+.favicon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+    .favicon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.news-content-link {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news-content-link-text-wrapper {
+    line-height: 20px;
+}
+
+@media (min-width: 768px) {
+    .news-content-link-text-wrapper {
+        line-height: 18px;
+    }
+}
+
+.news-content-link-text{
+    display: block;
+    color: #2F3438;
+}
+
+@media (min-width: 768px) {
+    .news-content-link-text {
+        margin-bottom: 6px;
+    }
+}
+
+.news-content-time{
+    font-size: 12px;
+    line-height: 20px;
+    color: #828C94;
+}
+
+@media (min-width: 768px){
+    .news-content-time{
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+
+.news-content-link:after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+    height: 1px;
+    background: #EAEDEF;
+}
+
+@media (min-width: 768px) {
+    .news-content-link:after {
+        left: 0;
+        right: 0;
+    }
+}

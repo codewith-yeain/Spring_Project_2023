@@ -1,0 +1,396 @@
+* {
+    font-family: 'Pretendard Variable';
+}
+
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+[role=button], a, button, input[type=button], input[type=reset], input[type=submit] {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+.lay1 {
+    padding: 5px 7px 6px;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+.lay2 {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color: #757575;
+}
+
+.lay3 {
+    user-select: none;
+    display: inline-block;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    margin: 0px;
+    padding: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    background: none;
+    text-decoration: none;
+    transition: color 0.1s ease 0s, background-color 0.1s ease 0s, border-color 0.1s ease 0s;
+    border-radius: 4px;
+}
+
+/*menu-nav*/
+.menu-nav {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.page-navigation {
+    border-bottom: 1px solid #ededed;
+    width: 100%;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.page-navigation>ul {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.page-navigation_item {
+    display: inline-block;
+    user-select: none;
+}
+
+.page-navigation_item>a {
+    display: block;
+    padding: 0 10px;
+    font-weight: 700;
+    position: relative;
+    height: 60px;
+    line-height: 60px;
+    transition: color .15s ease;
+}
+
+.page-navigation_item>a.active, .page-navigation_item>a:not(.active):hover {
+    color: mediumpurple;
+}
+
+.menu-nav .page-navigation_item>a.active:after, .menu-nav .page-navigation_item>a.active:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    background-color: transparent;
+    margin-left: -5px;
+    border-width: 0 5px 10px;
+    z-index: 1;
+}
+
+.menu-nav .page-navigation_item>a.active:before {
+    margin-top: -10px;
+    border-color: transparent transparent #dbdbdb;
+}
+
+.menu-nav .page-navigation_item>a.active:after {
+    margin-top: -8px;
+    border-color: transparent transparent #fff;
+}
+
+.menu-nav .page-navigation_item>a.active:after, .menu-nav .page-navigation_item>a.active:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    background-color: transparent;
+    margin-left: -5px;
+    border-width: 0 5px 10px;
+    z-index: 1;
+}
+/*메뉴바 하단*/
+
+.page-navigation_item>a.active:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #eacaff;
+    left: 0;
+    bottom: 0;
+}
+
+.low {
+    font-size: 15px;
+}
+/**마이페이지*/
+.mypage-body {
+    width: 100%;
+    max-width: 1256px;
+    margin: 0px auto;
+    box-sizing: border-box;
+    padding: 0px 60px;
+}
+
+.mypage-body1 {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 0px -10px;
+}
+
+.mypage-left {
+    box-sizing: border-box;
+    width: 25%;
+    position: relative;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sticky-container1 {
+    position: sticky;
+    top: 81px;
+    transition: top 0.1s ease 0s;
+}
+
+.sticky-child {
+    position: relative;
+}
+
+.mypage-card {
+    position: relative;;
+    padding: 30px 25px 18px;
+    border-radius: 4px;
+    border: 1px solid rgb(218, 220, 224);
+    box-shadow: rgba(63, 71, 77, 0.06) 0px 2px 4px 0px;
+}
+
+.mypage-profile {
+    padding: 0px;
+    min-height: 120px;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0px 0px 20px;
+}
+
+.mypage-profile-img {
+    top: 0px;
+    left: 0px;
+    border-radius: 100%;
+    background-color: rgb(237, 237, 237);
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin: 0px auto 24px;
+}
+
+.mypage-profile-img1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.mypage-profile-img1::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 100%;
+}
+
+.mypage-profile-text {
+    text-align: center;
+}
+
+.mypage-profile-id {
+    line-height: 1.15;
+    margin: 0px 0px 10px;
+    font-weight: bold;
+    color: rgb(41, 41, 41);
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.mypage-profile-button {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 6px;
+    font-weight: normal;
+    font-size: 12px;
+    color: mediumpurple;
+}
+
+.scrap-button {
+    padding: 24px 0px 6px;
+    border-top: 1px solid rgb(234, 235, 239);
+}
+
+.scrap-button1 {
+    display: flex;
+    color: rgb(41, 41, 41);
+}
+
+.scrap-button2 {
+    padding: 0px;
+    flex: 1 0 0px;
+    display: block;
+    min-width: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: opacity 0.1s ease 0s;
+}
+
+.scrap-icon {
+    margin: 0px auto 4px;
+}
+
+.scrap-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.scrap-text {
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: normal;
+    text-align: center;
+    color: rgb(66, 66, 66);
+}
+
+.scrap-num {
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(66, 66, 66);
+}
+
+.side-padding {
+    width: 8.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.side-padding1 {
+    margin: 0px -10px 20px;
+    border-bottom: 1px solid rgb(237, 237, 237);
+    display: none;
+}
+
+.mypage-main {
+    width: 66.6667%;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.mypage-main-bady {
+    max-width: 700px;
+    margin: 0px auto;
+    padding: 50px 0px 0px;
+    color: rgb(41, 41, 41);
+}
+
+.mypage-main-bady1 {
+    margin: 0px 0px 60px;
+}
+
+.mypage-main-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 20px;
+}
+
+.mypage-main-text1 {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.mypage-main-num {
+    margin-left: 0.4ch;
+    color: mediumpurple;
+}
+
+.mypage-main-part {
+    margin: 0px;
+    padding: 0px;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 175px;
+    border: 1px dashed rgb(219, 219, 219);
+    color: rgb(117, 117, 117);
+    font-size: 13px;
+    font-weight: bold;
+    transition: color 0.1s ease 0s;
+}
+
+.mypage-main-part1 {
+    margin: 0px 5px -2px 0px;
+}

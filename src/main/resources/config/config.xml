@@ -11,6 +11,6 @@
         <typeAlias type="com.app.icontact.domain.CommunityFileVO" alias="communityFileVO" />
         <typeAlias type="com.app.icontact.domain.CommentVO" alias="commentVO" />
         <typeAlias type="com.app.icontact.domain.CertificateVO" alias="certificateVO" />
-        <typeAlias type="com.app.icontact.domain.BusinessVO" alias="businessVo" />
+        <typeAlias type="com.app.icontact.domain.BusinessVO" alias="businessVO" />
     </typeAliases>
 </configuration>

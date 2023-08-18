@@ -13,7 +13,7 @@ public class CustomExceptionHandler {
     @ExceptionHandler(LoginFailedException.class)
     protected RedirectView handleLoginFailedException(LoginFailedException loginFailedException, RedirectAttributes redirectAttributes){
         redirectAttributes.addFlashAttribute("login", "false");
-        return new RedirectView("/member/login");
+        return new RedirectView("/user/login");
     }
 
 }

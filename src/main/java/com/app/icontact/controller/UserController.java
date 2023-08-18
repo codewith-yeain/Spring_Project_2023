@@ -1,8 +1,8 @@
 package com.app.icontact.controller;
 
-import com.app.icontact.domain.MemberVO;
+import com.app.icontact.domain.UserVO;
 import com.app.icontact.exception.LoginFailedException;
-import com.app.icontact.service.MemberService;
+import com.app.icontact.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -17,28 +17,29 @@ import javax.servlet.http.HttpSession;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/member/*")
-public class MemberController {
-    private final MemberService memberService;
+@RequestMapping("/user/*")
+public class UserController {
+    private final UserService userService;
 
 //    회원가입
     @GetMapping("join")
-    public void goToJoinForm(MemberVO memberVO){;}
+    public void goToJoinForm(UserVO userVO){;}
 
     @PostMapping("join")
-    public RedirectView join(MemberVO memberVO){
-        memberService.join(memberVO);
-        return new RedirectView("/member/login");
+    public RedirectView join(UserVO userVO){
+        userService.join(userVO);
+        return new RedirectView("/user/login");
     }
 
 //    로그인
     @GetMapping("login")
-    public void login(MemberVO memberVO){;}
+    public void login(UserVO userVO){;}
 
     @PostMapping("login")
-    public RedirectView login(MemberVO memberVO, HttpSession session){
-        session.setAttribute("Id", memberService.login(memberVO).orElseThrow(() -> {throw new LoginFailedException("아이디 또는 비밀번호 오류");}));
-        return new RedirectView("/main/main");
+    public RedirectView login(UserVO userVO, HttpSession session){
+        session.setAttribute("id", userService.login(userVO).orElseThrow(() -> {throw new LoginFailedException("아이디 또는 비밀번호 오류");}));
+        log.info("{}..........", userVO.getId());
+        return new RedirectView("/idea/ideaBank");
     }
 
 //    로그아웃
@@ -51,8 +52,8 @@ public class MemberController {
 //    이메일 중복검사
     @GetMapping("/check-email")
     @ResponseBody
-    public boolean checkEmail(String memberEmail){
-    return memberService.checkEmail(memberEmail).isPresent();
+    public boolean checkEmail(String userEmail){
+    return userService.checkEmail(userEmail).isPresent();
 }
 
 }

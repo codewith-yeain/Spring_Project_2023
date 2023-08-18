@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleag.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="/css/member/login.css">
+    <link rel="stylesheet" href="/css/user/login.css">
+    <link rel="stylesheet" href="/css/modal/modal.css">
     <link rel="icon" href="/images/icon/favicon.png">
 
     <style>
@@ -28,19 +29,19 @@
             <a class="login-logo">
                 <img src="/images/icon/logo.png" class="logo">
             </a>
-            <form class="login-form" action="">
+            <form class="login-form" th:action="@{/user/login}" name="login" method="post" th:object="${userVO}">
                 <div class="email-form">
-                    <input class="lay1 lay2 login-email" name="email" type="email" position="top" placeholder="이메일" value="">
+                    <input class="lay1 lay2 login-email" id="email" name="email" type="email" position="top" th:field="*{userEmail}" autocomplete="off" placeholder="이메일" value="">
                 </div>
                 <div class="email-form">
-                    <input class="lay1 lay2 login-email" name="password" type="password" position="bottom" placeholder="비밀번호" value="">
+                    <input class="lay1 lay2 login-email" id="password" name="password" type="password" th:field="*{userPassword}" autocomplete="off" position="bottom" placeholder="비밀번호" value="">
                 </div>
-                <button class="lay3 lay4 lay5 login-button" type="submit">로그인</button>
+                <button class="lay3 lay4 lay5 login-button" type="button" onclick="send()">로그인</button>
                 <section class="login-join">
                     <a class="new" href="">비밀번호 재설정</a>
                     <a class="new" href="">회원가입</a>
-                    <input type="hidden" name="user[email]" value="">
-                    <input type="hidden" name="user[password]" value="">
+<!--                    <input type="hidden" name="user[email]" value="">-->
+<!--                    <input type="hidden" name="user[password]" value="">-->
                 </section>
             </form>
             <section>
@@ -74,4 +75,14 @@
     </div>
 </main>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/js/user/login.js"></script>
+<script src="/js/modal/modal.js"></script>
+<script th:inline="javascript">
+    let check = [[${login}]];
+    if(check){
+        showWarnModal("<span>아이디 또는 비밀번호를</span><span>확인해주세요.</span>");
+    }
+</script>
 </html>

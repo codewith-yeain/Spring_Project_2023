@@ -2,7 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="com.app.icontact.domain.MemberVO" alias="memberVO" />
+        <typeAlias type="com.app.icontact.domain.UserVO" alias="userVO" />
         <typeAlias type="com.app.icontact.domain.ProfileVO" alias="profileVO" />
         <typeAlias type="com.app.icontact.domain.PaymentVO" alias="paymentVO" />
         <typeAlias type="com.app.icontact.domain.IdeaVO" alias="ideaVO" />

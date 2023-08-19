@@ -1,18 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>마이페이지 메인</title>
-    <link rel="stylesheet" href="../../static/css/mypage/mypage.css" />
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/mypage/mypage.css" />
+    <link rel="icon" href="/images/icon/favicon.png">
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
         <div class="menu-nav">
             <nav class="page-navigation">
                 <ul style="transform: translateX(0px);">
@@ -152,6 +152,6 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
+<script src="/js/fix/header.js"></script>
 
 </html>

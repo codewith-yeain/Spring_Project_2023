@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>스크랩 목록</title>
 
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/mypage/scrap-list.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/mypage/scrap-list.css">
 
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
         <main class="main-body">
             <div class="main-header">
                 <div class="main-header-title">
@@ -23,7 +23,7 @@
                 <div class="proflie">
                     <a href="">
                         <figure class="profile-img">
-                            <img src="../../static/images/icon/favicon.png" class="profile-img2">
+                            <img src="/images/icon/favicon.png" class="profile-img2">
                         </figure>
                         <span class="profile-name">아이컨택</span>
                     </a>
@@ -680,6 +680,6 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
+<script src="/js/fix/header.js"></script>
 
 </html>

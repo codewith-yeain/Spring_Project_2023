@@ -2,7 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="com.app.icontact.domain.MemberVO" alias="memberVO" />
+        <typeAlias type="com.app.icontact.domain.UserVO" alias="userVO" />
         <typeAlias type="com.app.icontact.domain.ProfileVO" alias="profileVO" />
         <typeAlias type="com.app.icontact.domain.PaymentVO" alias="paymentVO" />
         <typeAlias type="com.app.icontact.domain.IdeaVO" alias="ideaVO" />
@@ -11,6 +11,14 @@
         <typeAlias type="com.app.icontact.domain.CommunityFileVO" alias="communityFileVO" />
         <typeAlias type="com.app.icontact.domain.CommentVO" alias="commentVO" />
         <typeAlias type="com.app.icontact.domain.CertificateVO" alias="certificateVO" />
-        <typeAlias type="com.app.icontact.domain.BusinessVO" alias="businessVo" />
+        <typeAlias type="com.app.icontact.domain.BusinessVO" alias="businessVO" />
+        <typeAlias type="com.app.icontact.domain.SortVO" alias="sortVO" />
+        <typeAlias type="com.app.icontact.domain.AnswerVO" alias="answerVO" />
+        <typeAlias type="com.app.icontact.domain.IdeaStatusVO" alias="ideaStatusVO" />
+        <typeAlias type="com.app.icontact.domain.InquiryVO" alias="inquiryVO" />
+        <typeAlias type="com.app.icontact.domain.InterestVO" alias="interestVO" />
+        <typeAlias type="com.app.icontact.domain.NoticeVO" alias="noticeVO" />
+        <typeAlias type="com.app.icontact.domain.SubCategoryVO" alias="subCategoryVO" />
+        <typeAlias type="com.app.icontact.domain.TopCategoryVO" alias="topCategoryVO" />
     </typeAliases>
 </configuration>

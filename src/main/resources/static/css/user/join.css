@@ -1,3 +1,6 @@
+/* join.html */
+@charset "utf-8";
+
 * {
     font-family: 'Pretendard Variable';
 }
@@ -6,6 +9,9 @@ blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6,
     margin: 0;
     padding: 0;
 }
+
+input:focus { outline: none; }
+
 
 [role=button], a, button, input[type=button], input[type=reset], input[type=submit] {
     cursor: pointer;
@@ -349,7 +355,7 @@ option {
 }
 
 .check-box {
-    position: absolute;
+    /*position: absolute;*/
     top: 0px;
     left: 0px;
     opacity: 0;

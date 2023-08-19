@@ -1,155 +1,290 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleag.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../static/css/fix/header.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <title>Document</title>
 
-    <style>
-        /*돋보기 아이콘을 위한 폰트*/
-        @font-face{
-            font-family:OhouseIcon;
-            src:url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2");
-        }
-
-
-        @font-face {
-            font-family: 'Pretendard Variable';
-            src: url('../../static/font/PretendardVariable.woff2');
-        }
-    </style>
 </head>
 <body>
 
-<!--<div class="full-height">
-    <div class="layout">
-
-    </div>
-</div>-->
-
-<header>
-    <div class="sticky-container">
-        <div class="top-header white">
+<header id="login-header">
+    <div style="height: 80.75px;">
+        <div class="top-header" style="position: fixed; transition: top 0.1s ease 0s; z-index: 1102; top: 0px; width: 100%;">
             <div class="top-header-layout">
-
-                <!--1-->
-                <div class="logo-wrapper">
-                    <a class="logo-container" href="">
-                        <img src="../../static/images/icon/logo.png" class="logo">
-                    </a> <!--iContact 로고-->
+                <div class="mobile-hamburger-wrapper">
+                    <button type="button" class="mobile-hamburger-btn">
+                        <span class="menu"></span>
+                    </button>
                 </div>
 
-                <!--2-->
-                <div class="side-menu">
-                    <div class="side-menu-layout">
-                        <!--1-->
-                        <div class="search-bar-wrapper">
+                <div class="logo-layout">
+                    <a href="" class="logo-wrapper">
+                        <img src="/images/icon/logo.png" class="logo">
+                    </a>
+                </div>
+
+                <div class="top-header-items-wrapper">
+                    <div class="top-header-items-layout">
+                        <div class="search-bar-layout">
                             <div class="full-flex">
-                                <div class="search-bar-layout">
+                                <div class="search-bar-wrapper">
                                     <span class="magnifier"></span>
-                                    <input type="text" placeholder="통합검색" autocomplete="off" class="search-bar">
+                                    <input type="text" class="search-bar">
                                 </div>
                             </div>
                         </div>
 
-                        <!--2-->
-                        <div class="menu-wrapper">
-                            <div class="menu-layout">
-                                <a href="" class="menu">로그인</a>
-                                <a href="" class="menu">회원가입</a>
-                            </div>
+                        <div class="mobile-magnifier-wrapper">
+                            <button type="button" class="mobile-magnifier-btn">
+                                <span class="mobile-magnifier"></span>
+                            </button>
                         </div>
 
+                        <div>
+                            <a href="" class="link-btn-wrapper">
+                                <span class="link-btn scrap"></span>
+                            </a>
+                        </div>
+
+                        <div>
+                            <a href="" class="link-btn-wrapper">
+                                <span class="link-btn news"></span>
+                            </a>
+                        </div>
+
+                        <div class="flex-center">
+                            <div class="top-header-side-menu-layout">
+                                <span class="line-height-zero">
+                                    <button type="button" class="profile-img-btn">
+                                        <img src="/images/icon/null.png" class="profile-img">
+                                    </button>
+                                </span>
+                            </div>
+
+                            <div class="member-menu-wrapper">
+                                <a href="" class="member-menu-link">로그아웃</a>
+                            </div>
+
+                            <span class="line-height-zero">
+                                <button type="button" class="idea-register-btn">
+                                    <span>아이디어 등록</span>
+                                </button>
+                            </span>
+                        </div>
                     </div>
                 </div>
+
 
             </div>
         </div>
     </div>
 
-    <div class="sticky-container nav-bar">
-        <div class="nav-bar-wrapper">
-            <div class="nav-bar-container">
-                <div class="nav-bar-layout">
-                    <nav class="nav-bar-content">
-                        <!--아래의 span 태그가 메뉴 개수만큼 반복됨-->
-
-                        <span class="nav-element">
-                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
-                                <div>
-                                    <p>IDEA BANK</p> <!--hover 활성화 되는 부분2-->
-                                </div>
-                            </a>
+    <div stype="height: 51.75px;">
+        <div class="layout-navigation" style="position: fixed; z-index: 1101; transition: top 0.1s ease 0s; width: 100%;">
+            <div class="navbar-layout">
+                <div class="navbar-wrapper">
+                    <nav class="navbar">
+                        <!--아래의 span태그가 메뉴 개수만큼 반복-->
+                        <!--활성화 상태-->
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="" class="active">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>홈</p>
+                                    </div>
+                                </a>
+                            </div>
                         </span>
 
-                        <span class="nav-element">
-                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
-                                <div>
-                                    <p>문의하기</p> <!--hover 활성화 되는 부분2-->
-                                </div>
-                            </a>
+                        <!--비활성화 상태-->
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>IDEA BANK</p>
+                                    </div>
+                                </a>
+                            </div>
                         </span>
 
-                        <!--비 활성화 시-->
-                        <span class="nav-element">
-                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
-                                <div>
-                                    <p>커뮤니티</p> <!--hover 활성화 되는 부분2-->
-                                </div>
-                            </a>
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>문의하기</p>
+                                    </div>
+                                </a>
+                            </div>
                         </span>
 
-                        <!--비 활성화 시-->
-                        <span class="nav-element">
-                            <a href="#" class="inactive"> <!--hover 활성화 되는 부분1-->
-                                <div>
-                                    <p>ABOUT US</p> <!--hover 활성화 되는 부분2-->
-                                </div>
-                            </a>
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>커뮤니티</p>
+                                    </div>
+                                </a>
+                            </div>
                         </span>
 
-                        <!--비 활성화 시-->
-                        <span class="nav-element">
-                            <a href="" class="inactive"> <!--hover 활성화 되는 부분1-->
-                                <div>
-                                    <p>아이디어 등록하기</p> <!--hover 활성화 되는 부분2-->
-                                </div>
-                            </a>
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>ABOUT US</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </span>
+
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>FAQ</p>
+                                    </div>
+                                </a>
+                            </div>
                         </span>
                     </nav>
-                </div>
-            </div>
-            <div class="open-active dropdown" style="position: absolute; inset: 0px auto auto 0px; transform: translate(710px, 50px);">
-                <div class="popper-item">
-                    <a class="open-menu-wrapper" href="">
-                        <div class="menu-item">
-                            <div class="menu-content">사이트 소개</div>
-                        </div>
-                    </a>
-
-                    <a class="open-menu-wrapper" href="">
-                        <div class="menu-item">
-                            <div class="menu-content">자주하는 FAQ</div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<header id="logout-header">
+    <div style="height: 80.75px;">
+        <div class="top-header" style="position: fixed; transition: top 0.1s ease 0s; z-index: 1102; top: 0px; width: 100%;">
+            <div class="top-header-layout">
+                <div class="mobile-hamburger-wrapper">
+                    <button type="button" class="mobile-hamburger-btn">
+                        <span class="menu"></span>
+                    </button>
+                </div>
+
+                <div class="logo-layout">
+                    <a href="" class="logo-wrapper">
+                        <img src="/images/icon/logo.png" class="logo">
+                    </a>
+                </div>
+
+                <div class="top-header-items-wrapper">
+                    <div class="top-header-items-layout">
+                        <div class="search-bar-layout">
+                            <div class="full-flex">
+                                <div class="search-bar-wrapper">
+                                    <span class="magnifier"></span>
+                                    <input type="text" class="search-bar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-magnifier-wrapper">
+                            <button type="button" class="mobile-magnifier-btn">
+                                <span class="mobile-magnifier"></span>
+                            </button>
+                        </div>
+
+                        <div class="flex-center">
+                            <div class="member-menu-wrapper">
+                                <a href="" class="member-menu-link">로그인</a>
+                                <a href="" class="member-menu-link">회원가입</a>
+                            </div>
+
+                            <span class="line-height-zero">
+                                <button type="button" class="idea-register-btn">
+                                    <span>아이디어 등록</span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div stype="height: 51.75px;">
+        <div class="layout-navigation" style="position: fixed; z-index: 1101; transition: top 0.1s ease 0s; width: 100%;">
+            <div class="navbar-layout">
+                <div class="navbar-wrapper">
+                    <nav class="navbar">
+                        <!--아래의 span태그가 메뉴 개수만큼 반복-->
+                        <!--활성화 상태-->
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="" class="active">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>홈</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </span>
+
+                        <!--비활성화 상태-->
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>IDEA BANK</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </span>
+
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>문의하기</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </span>
+
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>커뮤니티</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </span>
+
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>ABOUT US</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </span>
+
+                        <span class="navbar-menu">
+                            <div>
+                                <a href="">
+                                    <div class="navbar-menu-wrapper">
+                                        <p>FAQ</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
 </body>
-
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $(".nav-element").click(function() {
-            $(".dropdown").toggle();
-        });
-    });
-</script>
-
-
 </html>

@@ -16,6 +16,7 @@
         <typeAlias type="com.app.icontact.domain.AnswerVO" alias="answerVO" />
         <typeAlias type="com.app.icontact.domain.IdeaStatusVO" alias="ideaStatusVO" />
         <typeAlias type="com.app.icontact.domain.InquiryVO" alias="inquiryVO" />
+        <typeAlias type="com.app.icontact.DTO.InquiryDTO" alias="inquiryDTO" />
         <typeAlias type="com.app.icontact.domain.InterestVO" alias="interestVO" />
         <typeAlias type="com.app.icontact.domain.NoticeVO" alias="noticeVO" />
         <typeAlias type="com.app.icontact.domain.SubCategoryVO" alias="subCategoryVO" />

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -25,9 +25,9 @@
                 </p>
             </div>
             <div class="inquire-body">
-                <form>
+                <form th:action="@{/inquiry/inquiry}" name="inquiry" method="post" th:object="${inquiryVO}" >
                     <div class="inquire-body2">
-                        <div width="343" class="">
+                       <!-- <div width="343" class="">
                             <div class="lay1">
                                 <select class="lay2 lay4 lay3 inquire-menu" name="type">
                                     <option selected="" value="" disabled="">문의 유형</option>
@@ -48,11 +48,11 @@
                             </div>
                             <span class="inquire-menu-exp">앱 개선 제안은 '서비스 개선 제안'으로 선택해 주세요.</span>
                             <span class="inquire-menu-exp">앱 장애 신고는 '시스템 오류 제보'로 선택해 주세요.</span>
-                        </div>
+                        </div>-->
                     </div>
                         <div class="inquire-body2">
                             <div width="343" class="">
-                                <input class="lay2 lay4 inquire-menu" value="" name="name" placeholder="이름">
+                                <input class="lay2 lay4 inquire-menu" value="" th:text="${inquiryWriterName}" name="name" placeholder="이름">
                             </div>
                          </div>
                         <div class="inquire-body2">
@@ -65,9 +65,9 @@
                         </div>
                     <div class="inquire-body2">
                         <textarea class="lay2 lay4 text-nav" name="message" maxlength="500" placeholder="문의 내용" rows="1" style="overflow: hidden; overflow-wrap: break-word; height: 160px;"></textarea>
-                        <span class="text-count">0<!-- -->자 / 최대 <!-- -->500<!-- -->자</span>
+                        <!--<span class="text-count">0&lt;!&ndash; &ndash;&gt;자 / 최대 &lt;!&ndash; &ndash;&gt;500&lt;!&ndash; &ndash;&gt;자</span>-->
                     </div>
-                    <div class="inquire-body2">
+                    <!--<div class="inquire-body2">
                         <label class="file-area">
                             <span class="file-area2">
                                 <span></span>
@@ -75,7 +75,7 @@
                             <span class="file-text">첨부파일</span>
                             <input type="file" name="file" hidden="">
                         </label>
-                    </div>
+                    </div>-->
                     <div class="button-area">
                         <button class="lay6 button-commit" type="button">제출하기</button>
                     </div>

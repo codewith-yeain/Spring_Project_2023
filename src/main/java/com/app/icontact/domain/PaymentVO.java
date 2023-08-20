@@ -15,6 +15,6 @@ public class PaymentVO {
     private String paymentApproveDate;
     private String paymentCancelDate;
     private String paymentSort;
-    private Long memberId;
+    private Long userId;
     private Long ideaId;
 }

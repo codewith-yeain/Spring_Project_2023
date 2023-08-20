@@ -1,17 +1,17 @@
-package com.app.icontact.domain;
+package com.app.icontact.DTO;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@NoArgsConstructor
-public class InquiryVO {
+public class InquiryDTO {
     private Long id;
     private String inquiryWriterName;
     private String inquiryWriterEmail;
     private String inquiryDate;
     private String inquiryTitle;
     private String inquiryContent;
+    private Long answerId;
+    private String answerDate;
 }

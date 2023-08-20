@@ -15,5 +15,5 @@ public class BusinessVO {
     private String businessSite;
     private Long businessIndustry;
     private String businessIntro;
-    private Long memberId;
+    private Long userId;
 }

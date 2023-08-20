@@ -11,6 +11,6 @@ public class AnswerVO {
     private Long id;
     private String answerContent;
     private String answerDate;
-    private Long memberId;
+    private Long userId;
     private Long inquiryId;
 }

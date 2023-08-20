@@ -11,6 +11,9 @@ blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6,
 }
 
 input:focus { outline: none; }
+select:focus { outline: none; }
+
+select { appearance:none /* 화살표 없애기 */}
 
 
 [role=button], a, button, input[type=button], input[type=reset], input[type=submit] {
@@ -44,13 +47,16 @@ option {
 .logo {
     padding-top: 40px;
     width: calc(100% - 30px);
-    margin: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .joinBody {
     width: 100%;
     margin: 0px auto;
-    padding: 60px 0px;
+    padding: 30px 0px;
     width: 360px;
 }
 
@@ -167,7 +173,8 @@ option {
     padding: 0px;
     background: rgb(247, 248, 250);
     color: rgb(194, 200, 204);
-    border-color: rgb(218, 220, 224);
+    border: 1px solid rgb(218, 220, 224);
+    box-shadow: none;
 }
 
 .email-check {
@@ -182,7 +189,6 @@ option {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
     font-weight: 700;
     text-align: center;
     cursor: pointer;
@@ -238,7 +244,6 @@ option {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     box-sizing: border-box;
-    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
     font-size: 15px;
     line-height: 21px;
     resize: none;
@@ -396,11 +401,11 @@ option {
     margin: 18px 0px;
 }
 
-.check-box-text4 {
+/*.check-box-text4 {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: -0.3px;
-}
+}*/
 
 .check-box-text4::after {
     content: "(필수)";
@@ -455,4 +460,86 @@ option {
 
 .lay8 {
     padding: 11px 10px;
+}
+
+/*-----------------------------------*/
+
+.form-radio {
+    font-size: 13px;
+    flex: 1 1 auto;
+}
+
+@media (min-width: 768px) {
+    .form-radio {
+        font-size: 15px;
+    }
+}
+
+.form-radio>.form-radio-label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 32px;
+    min-height: 22px;
+    line-height: 22px;
+    position: relative;
+}
+
+.radio-group-input>li .form-radio>.form-radio-label {
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.form-radio>.form-radio-label>.form-radio {
+    left: -1000px;
+    position: absolute;
+    opacity: 0;
+}
+
+.form-radio>.form-radio-label>.radio-img {
+    box-sizing: border-box;
+    height: 22px;
+    width: 22px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    display: block;
+    transition: .2s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* 선택되지 않은 라디오 버튼의 스타일링 */
+.form-radio > .form-radio-label > .radio-img:after {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 0;
+    height: 0;
+    border-radius: 11px;
+    transition: .2s ease;
+    border: 7px solid transparent;
+}
+
+
+/* 라디오 버튼이 선택되거나 선택 해제되었을 때 추가적인 스타일링 */
+.form-radio > .form-radio-label .form-radio:not(:disabled):checked + .radio-img,
+.form-radio > .form-radio-label .form-radio:not(:disabled):not(:checked) + .radio-img:after {
+    border: none;
+    overflow: hidden;
+}
+
+/* 선택된 라디오 버튼의 스타일링 */
+.form-radio > .form-radio-label .form-radio:not(:disabled):checked + .radio-img:after {
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-width: 7px;
+    border-color: #eacaff;
 }

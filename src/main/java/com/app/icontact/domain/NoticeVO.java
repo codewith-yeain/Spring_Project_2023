@@ -11,5 +11,4 @@ public class NoticeVO {
     private Long id;
     private String noticeTitle;
     private String noticeContent;
-    private Long memberId;
 }

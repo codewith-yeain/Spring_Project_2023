@@ -28,6 +28,7 @@ public class UserController {
     @PostMapping("join")
     public RedirectView join(UserVO userVO){
         userService.join(userVO);
+        log.info("{}..........", userVO.toString());
         return new RedirectView("/user/login");
     }
 
@@ -38,15 +39,15 @@ public class UserController {
     @PostMapping("login")
     public RedirectView login(UserVO userVO, HttpSession session){
         session.setAttribute("id", userService.login(userVO).orElseThrow(() -> {throw new LoginFailedException("아이디 또는 비밀번호 오류");}));
-        log.info("{}..........", userVO.getId());
-        return new RedirectView("/idea/ideaBank");
+        log.info("{}..........", session.getAttribute("id"));
+        return new RedirectView("/icontact/");
     }
 
 //    로그아웃
     @GetMapping("logout")
     public RedirectView logout(HttpSession session){
         session.invalidate();
-        return new RedirectView("/main/main");
+        return new RedirectView("/icontact/");
     }
 
 //    이메일 중복검사

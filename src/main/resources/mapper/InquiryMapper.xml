@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.icontact.mapper.InquiryMapper">
+    //  문의 작성
+    <insert id="insertInquiry">
+        insert into TBL_INQUIRY (ID, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_TITLE, INQUIRY_CONTENT)
+        values (SEQ_INQUIRY.NEXTVAL, #{inquiryWriterName}, #{inquiryWriterEmail}, #{inquiryTitle}, #{inquiryContent})
+    </insert>
+
+    //문의목록 보기
+    <select id="selectAllInquiry" resultType="inquiryDTO">
+        SELECT I.ID, INQUIRY_TITLE, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_DATE, INQUIRY_CONTENT, A.ID
+        FROM TBL_INQUIRY I JOIN TBL_ANSWER A
+        ON I.ID = A.INQUIRY_ID
+    </select>
+
+
+    //문의 보기
+    <select id="selectInquiry" resultType="answerVO">
+        SELECT ID, INQUIRY_TITLE, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_DATE, INQUIRY_CONTENT
+        FROM TBL_INQUIRY WHERE INQUIRY_ID = #{inquiryId}
+    </select>
+
+    //문의 답변하기
+    <insert id="insertAnswer">
+        INSERT INTO TBL_ANSWER (ID, ANSWER_TITLE, ANSWER_CONTENT, USER_ID, INQUIRY_ID)
+        VALUES (SEQ_ANSWER.NEXTVAL, #{inquiryTitle}, #{answerContent}, #{userId}, #{inquiryId})
+    </insert>
+
+</mapper>

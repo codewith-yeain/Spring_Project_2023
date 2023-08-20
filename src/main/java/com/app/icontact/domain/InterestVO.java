@@ -10,5 +10,5 @@ import org.springframework.stereotype.Component;
 public class InterestVO {
     private Long id;
     private Long subCategoryId;
-    private Long memberId;
+    private Long userId;
 }

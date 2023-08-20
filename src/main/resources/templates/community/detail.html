@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,7 +12,7 @@
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <div th:replace="~{/fix/sub-header :: sub-header}"></div>
 
         <main class="content-detail">
             <div class="content-thumbnail-img-wrapper">
@@ -428,14 +428,13 @@
             <button type="button" class="content-detail-top-button"></button>
         </main>
 
-        <div id="footers"></div>
+        <footer th:replace="~{/fix/sub-footer :: sub-footer}"></footer>
     </div>
 </div>
 
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
 
 
 </html>

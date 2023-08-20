@@ -11,6 +11,10 @@ ol, ul {
     list-style: none;
 }
 
+.content-detail{
+    margin-top: 50px;
+}
+
 .banner {
     position: relative;
     overflow: hidden;

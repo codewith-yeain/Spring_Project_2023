@@ -8,6 +8,8 @@
     <title>소중한 당신의 아이디어 - iContact에서 보여주세요!</title>
     <link rel="icon" href="/images/icon/favicon.png">
     <link rel="stylesheet" href="/css/search/search.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
 </head>
 <body>
 
@@ -16,7 +18,7 @@
     <div class="layout">
         <header th:replace="~{/fix/header :: header}"></header>
 
-        <div class="flex-full-width">
+        <div class="flex-full-width" style="margin-top: 50px">
             <div class="relative">
                 <div style="position: sticky; top: 132px; transition: top 0.1s ease 0s; z-index: 10;">
                     <div class="relative">
@@ -553,7 +555,7 @@
 
 
 
-        <div id="footers"></div>
+        <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 

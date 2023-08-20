@@ -22,11 +22,22 @@ import javax.servlet.http.HttpSession;
 public class IdeaController {
     private final IdeaService ideaService;
 
+    @GetMapping("detail")
+    public void detail(Long id){;}
+
     @GetMapping("ideaBank")
     public void list(){;}
 
+    @GetMapping("update")
+    public void goToUpdateIdeaForm(){;}
+
+    @PostMapping("update")
+    public RedirectView update(IdeaVO ideaVO, RedirectAttributes redirectAttributes){
+        return new RedirectView("/idea/detail");
+    }
+
     @GetMapping("write")
-    public void goToIdeaForm(IdeaVO ideaVO){;}
+    public void goToWriteIdeaForm(IdeaVO ideaVO){;}
 
     @PostMapping("write")
     public RedirectView write(IdeaVO ideaVO, RedirectAttributes redirectAttributes){

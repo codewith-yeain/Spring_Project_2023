@@ -27,10 +27,10 @@ public class CommunityController {
 
     @GetMapping("listMine")
     public void goToComListMine(){;}
-//
+
     @GetMapping("write")
     public void goToComWrite(CommunityVO communityVO){;}
-//
+
     @PostMapping("write")
     public RedirectView writeCom(CommunityVO communityVO, RedirectAttributes redirectAttributes, HttpSession session){
 //        Long userId = (Long)session.getAttribute("id");

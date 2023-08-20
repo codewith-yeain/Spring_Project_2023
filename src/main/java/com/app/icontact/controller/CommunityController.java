@@ -4,6 +4,7 @@ import com.app.icontact.service.CommunityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
@@ -13,9 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CommunityController {
     private final CommunityService communityService;
 
-//    @GetMapping("list")
+    @GetMapping("listAll")
+    public void goToComListAll(){;}
+
+    @GetMapping("listMine")
+    public void goToComListMine(){;}
 //
-//    @GetMapping("wirte")
+    @GetMapping("write")
+    public void goToComWrite(){;}
 //
 //    @PostMapping("wirte")
 //

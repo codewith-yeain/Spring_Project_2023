@@ -21,13 +21,13 @@
     </insert>
 
 <!--    결제목록 보기-->
-    <select id="selectAllPayment" resultType="PaymentVO"
+    <select id="selectAllPayment" resultType="PaymentVO"></select>
 <!--    public List<PaymentVO> selectAllPayment(@Param("pagination") Pagination pagination);-->
 
 <!--    결제 취소-->
-    <update id="updateCancel">
+  <!--  <update id="updateCancel">
         UPDATE TBL_PAYMENT
         SET
     </update>
-    public String updateCancel(String paymentId);
+    public String updateCancel(String paymentId);-->
 </mapper>

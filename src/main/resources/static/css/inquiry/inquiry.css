@@ -42,6 +42,7 @@ p {
     width: 100%;
     max-width: 750px;
     margin: 0 auto;
+    margin-top: 50px;
     padding: 0 16px;
     box-sizing: border-box;
 }

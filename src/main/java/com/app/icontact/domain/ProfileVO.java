@@ -14,5 +14,5 @@ public class ProfileVO {
     private String profileName;
     private String profileType;
     private Long profileSize;
-    private Long memberId;
+    private Long userId;
 }

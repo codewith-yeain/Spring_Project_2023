@@ -1,5 +1,6 @@
-package com.app.icontact.domain;
+package com.app.icontact.DTO;
 
+import com.app.icontact.domain.IdeaFileVO;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Data
 @NoArgsConstructor
-public class IdeaVO {
+public class IdeaDTO {
     private Long id;
     private String ideaTitle;
     private String ideaIntro;
@@ -18,4 +19,5 @@ public class IdeaVO {
     private String ideaType;
     private Long ideaPrice;
     private Long userId;
+    private IdeaFileVO ideaFileVO;
 }

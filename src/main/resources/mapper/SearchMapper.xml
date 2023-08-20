@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.icontact.mapper.SearchMapper">
+<!--    모두보기 유저 검색결과-->
+    <select id="selectUserNickname" resultType="userDTO">
+        SELECT U.ID, INQUIRY_TITLE, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_DATE, INQUIRY_CONTENT, A.ID
+        FROM TBL_INQUIRY I JOIN TBL_ANSWER A
+        ON I.ID = A.INQUIRY_ID
+    </select>
+    회원
+    회원 ID(PK)	USER_ID(PK)	N/A	NUMBER	NOT NULL
+    이메일	USER_EMAIL	N/A	VARCHAR2(500)	NOT NULL
+    비밀번호	USER_PASSWORD	N/A	VARCHAR2(1000)	NOT NULL
+    회원성명	USER_NAME	N/A	VARCHAR2(1000)	NOT NULL
+    회원 별명	USER_NINCKNAME	N/A	VARCHAR2(1000)	NOT NULL
+    회원 타입	USER_TYPE	N/A	VARCHAR2(500)	NOT NULL
+    한줄소개	USER_INTRO	N/A	VARCHAR2(1000)	NULL
+    휴대폰번호	USER_PHONE	N/A	VARCHAR2(500)	NOT NULL
+    회원상태	USER_STATUS	N/A	VARCHAR2(500)	NOT NULL
+
+<!--    모두보기 아이디어 검색결과-->
+    <select id="selectIdeaTitle" resultType="IdeaDTO">
+
+    </select>
+</mapper>

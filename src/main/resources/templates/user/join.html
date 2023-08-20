@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>join</title>
-    <link rel="stylesheet" href="/css/member/join.css"/>
+    <link rel="stylesheet" href="/css/user/join.css">
     <link rel="icon" href="/images/icon/favicon.png">
 
     <style>
@@ -65,21 +65,22 @@
             </ul>
         </div>
         <!--회원가입 시작 -->
-        <form>
+        <form th:action="@{/user/join}" name="join" method="post" th:object="${userVO}">
             <div>
                 <label class="text-title">이메일</label>
                 <div>
                     <div class="email-form">
+                        <input type="email" name="userEmail" hidden th:field="*{userEmail}">
                         <span class="email-input1">
                             <label>
-                                <input class="form-control" placeholder="이메일" size="1" value="">
+                                <input class="form-control" placeholder="이메일" size="1" value="" name="email-first">
                                 <span class="form-control-blind">이메일 앞 주소 입력하기</span>
                             </label>
                         </span>
                         <span class="email-input3">@</span>
                         <span class="email-input2">
-                            <label>
-                                <select class="form-control empty">
+                            <label id="change" name="email-last">
+                                <select id="email-select" class="form-control empty">
                                     <option value="" disabled="">선택해주세요</option>
                                     <option value="naver.com">naver.com</option>
                                     <option value="hanmail.net">hanmail.net</option>
@@ -89,9 +90,9 @@
                                     <option value="hotmail.com">hotmail.com</option>
                                     <option value="outlook.com">outlook.com</option>
                                     <option value="icloud.com">icloud.com</option>
-                                    <option value="_manual">직접입력</option>
+                                    <option value="manual">직접입력</option>
                                 </select>
-                                <span class="form-control-blind">이메일 도메인 선택하기</span>
+                                <!--<span class="form-control-blind">이메일 도메인 선택하기</span>-->
                             </label>
                             <button class="email-input2_expand" aria-label="초기화" type="button" tabindex="-1">
                                 <svg class="icon" width="10" height="10" style="fill: currentcolor;">
@@ -103,36 +104,52 @@
                 </div>
             </div>
             <div class="email-check">
-                <button class="email-lay lay2 email-check-button" name="emailAuth" type="button">이메일 인증하기</button>
+                <button class="email-check-button" name="emailAuth" type="button">이메일 인증하기</button>
             </div>
             <div class="" style="overflow: hidden;"></div>
             <div class="password">
                 <label class="password-label">비밀번호</label>
                 <div class="password2">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</div>
                 <label>
-                    <input class="lay3 lay4" name="password" type="password" placeholder="비밀번호" value="">
+                    <input class="lay3 lay4" name="password" type="password" placeholder="비밀번호">
                     <span class="password-text">비밀번호 입력하기</span>
                 </label>
             </div>
             <div class="password-checker">
                 <label class="password-text2">비밀번호 확인</label>
                 <label>
-                    <input class="lay3 lay4" name="confirmPassword" type="password" placeholder="비밀번호 확인" value="">
+                    <input class="lay3 lay4" name="confirmPassword" type="password" placeholder="비밀번호 확인" th:field="*{userPassword}" >
                     <span class="password-checker2">입력한 비밀번호 확인하기</span>
+                </label>
+            </div>
+            <div class="password-checker">
+                <label class="password-text2">전화번호</label>
+                <div class="doble">사용중인 핸드폰 번호를 입력해주세요.</div>
+                <label>
+                    <input class="lay3 lay4" name="phone" placeholder="전화번호 입력" th:field="*{userPhone}" >
+                    <span class="nickname">전화번호 입력하기</span>
+                </label>
+            </div>
+            <div class="password-checker">
+                <label class="password-text2">성명</label>
+                <div class="doble">본인의 실명을 입력해주세요.</div>
+                <label>
+                    <input class="lay3 lay4" name="name" placeholder="성함 입력" th:field="*{userName}" >
+                    <span class="nickname">성명 입력하기</span>
                 </label>
             </div>
             <div class="password-checker">
                 <label class="password-text2">닉네임</label>
                 <div class="doble">다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</div>
                 <label>
-                    <input class="lay3 lay4" name="nickname" placeholder="별명 (2~15자)" value="">
+                    <input class="lay3 lay4" name="nickname" placeholder="별명 (2~15자)" th:field="*{userNickname}">
                     <span class="nickname">닉네임 입력하기</span>
                 </label>
             </div>
             <div class="password-checker">
             <label class="password-text2">약관동의</label>
             <div class="conditions">
-                <div class="conditions-list1">
+                <!--<div class="conditions-list1">
                     <label class="conditions-list2">
                         <div class="conditions-text">
                             <div class="conditions-text2">
@@ -147,9 +164,18 @@
                             </span>
                         </span>
                     </label>
+                </div>-->
+                <div class="form-radio">
+                    <label class="form-radio-label">
+                        <input class="form-radio" type="checkbox" name="connect">
+                        <span class="radio-img"></span>
+                        전체동의(선택항목에 대한 동의 포함)
+                    </label>
                 </div>
-                <hr class="econditions-line">
-                <div class="conditions-list1">
+
+                <hr class="conditions-line">
+
+ <!--               <div class="conditions-list1">
                     <label class="conditions-list2">
                         <div class="conditions-text2">
                             <span class="conditions-check"></span>
@@ -159,57 +185,37 @@
                 </div>
                 <span class="check-box-text">
                     <span required="" class="check-box-text4">만 14세 이상입니다</span>
-                </span>
+                </span>-->
                 </label>
-            <div class="conditions-list1">
-                <label class="conditions-list2">
-                    <div class="conditions-text">
-                        <div class="conditions-text2">
-                            <span class="conditions-check"></span>
-                        </div>
-                        <input name="agree2" type="checkbox" class="check-box" value="false">
-                    </div>
-                    <span class="check-box-text">
-                        <span required="" class="check-box-text4">이용약관</span>
-                    </span>
-                </label>
-                <a target="_blank" class="" href="/usepolicy">
-                    <span class="right-button"></span>
-                </a>
-            </div>
-            <div class="conditions-list1">
-                <label class="conditions-list2">
-                    <div class="conditions-text">
-                        <div class="conditions-text2">
-                            <span class="conditions-check"></span>
-                        </div>
-                        <input name="agree3" type="checkbox" class="check-box" value="false">
-                    </div>
-                    <span class="check-box-text">
-                        <span required="" class="check-box-text4">개인정보수집 및 이용동의</span>
-                    </span>
-                </label>
-                <a target="_blank" class="" href="/privacy?type=register">
-                    <span class="right-button"></span>
-                </a>
-            </div>
-                <div class="conditions-list1">
-                    <label class="conditions-list2">
-                        <div class="conditions-text">
-                            <div class="conditions-text2">
-                                <span class="conditions-check"></span>
-                            </div>
-                            <input name="agreeMarketUsage" type="checkbox" class="check-box" value="false">
-                        </div>
-                        <span class="check-box-text">
-                            <span class="agree">개인정보 마케팅 활용 동의</span>
-                        </span>
+                <div class="form-radio">
+                    <label class="form-radio-label">
+                        <input class="form-radio" type="checkbox" name="connect">
+                        <span class="radio-img"></span>
+                        이용약관
                     </label>
-                    <a target="_blank" class="" href="">
-                        <span class="right-button"></span>
-                    </a>
                 </div>
-                <div class="conditions-list1">
+                <div class="form-radio">
+                    <label class="form-radio-label check-bot-text4">
+                        <input class="form-radio" type="checkbox" name="connect">
+                        <span class="radio-img"></span>
+                        개인정보 수집 이용 및 이용동의
+                    </label>
+                </div>
+                <div class="form-radio">
+                    <label class="form-radio-label check-box-text4">
+                        <input class="form-radio" type="checkbox" name="connect">
+                        <span class="radio-img"></span>
+                        개인정보 마케팅 활용 동의
+                    </label>
+                </div>
+                <div class="form-radio">
+                    <label class="form-radio-label">
+                        <input class="form-radio" type="checkbox" name="connect">
+                        <span class="radio-img"></span>
+                        알림 메일 및 수신 동의
+                    </label>
+                </div>
+                <!--<div class="conditions-list1">
                     <label class="conditions-list2">
                         <div class="conditions-text">
                             <div class="conditions-text2">
@@ -221,25 +227,21 @@
                             <span class="agree">이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신</span>
                         </span>
                     </label>
-                </div>
+                </div>-->
             </div>
         </div>
-        <!--삭제
-        <div class="g-recaptcha css-1yqaufb e9ksxky1" data-sitekey="6LcZ2tckAAAAAJFHN0VkV2kTYio8Uh3YViGT3ern" data-callback="handleRecaptchaCallback" data-expired-callback="handleRecaptchaExpiredCallback">
-            <div style="width: 304px; height: 78px;">
-                <div>
-                    <iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/enterprise/anchor?ar=1&amp;k=6LcZ2tckAAAAAJFHN0VkV2kTYio8Uh3YViGT3ern&amp;co=aHR0cHM6Ly9vaG91LnNlOjQ0Mw..&amp;hl=ko&amp;v=pCoGBhjs9s8EhFOHJFe8cqis&amp;size=normal&amp;cb=tqnh92mb425e" width="304" height="78" role="presentation" name="a-mhgdlr3q3ujy" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
-                </div>
-                <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea>
-            </div>
-            <iframe style="display: none;"></iframe>
-        </div>
-        <div class="password-checker">
-            <input name="recaptchaToken" class="form-control css-eivff4 e9ksxky0" value="">
-        </div>-->
-        <button class="lay6 lay7 lay8 join-button" type="submit">회원가입하기</button>
+        <button class="lay6 lay7 lay8 join-button" type="button" onclick="send()">회원가입하기</button>
         </form>
     </div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="/js/modal/modal.js"></script>
+<script src="/js/user/join.js"></script>
+
+<script>
+    console.log(btoa($("input[name='confirmPassword']").val()));
+</script>
+
 </body>
 </html>

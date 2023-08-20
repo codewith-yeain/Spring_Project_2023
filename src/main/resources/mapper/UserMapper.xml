@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.icontact.mapper.UserMapper">
     <insert id="insert">
-        INSERT INTO TBL_USER
-        VALUES(SEQ_USER.NEXTVAL, #{userEmail}, #{userPassword}, #{userName}, #{userNickname}, #{userType}, #{userIntro}, #{userPhone}, #{userStatus})
+        INSERT INTO TBL_USER (ID, USER_EMAIL, USER_PASSWORD, USER_NAME, USER_NICKNAME, USER_PHONE)
+        VALUES(SEQ_USER.NEXTVAL, #{userEmail}, #{userPassword}, #{userName}, #{userNickname}, #{userPhone})
     </insert>
 
     <select id="selectId" resultType="string">

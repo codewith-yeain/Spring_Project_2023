@@ -28,6 +28,7 @@ public class UserController {
     @PostMapping("join")
     public RedirectView join(UserVO userVO){
         userService.join(userVO);
+        log.info("{}..........", userVO.toString());
         return new RedirectView("/user/login");
     }
 

@@ -12,4 +12,16 @@ public interface CommunityMapper {
 
 //    커뮤니티 게시글 작성
     public void insertCom(CommunityVO communityVO);
+
+
+
+//        listAll
+    public List<CommunityVO> selectComAll();
+
+
+
+
+
+
+
 }

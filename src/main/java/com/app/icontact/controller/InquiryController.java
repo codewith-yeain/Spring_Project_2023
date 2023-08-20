@@ -19,7 +19,7 @@ public class InquiryController {
 
     //  문의 작성
     @GetMapping("inquiry")
-    public void goToinquiryForm(InquiryVO inquiryVO){;}
+    public void goToInquiryForm(InquiryVO inquiryVO){;}
 
     @PostMapping("inquiry")
     public RedirectView inquiry(InquiryVO inquiryVO){

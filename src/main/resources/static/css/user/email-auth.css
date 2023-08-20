@@ -157,41 +157,46 @@ a{
 }
 
 
+.lay {
+    border-radius: 4px;
+}
+
+.button-lay-a {
+    background-color: rgb(234, 202, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    text-decoration: none;
+    border-color: transparent;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+}
 
 
+.button-color-a {
+    background-color: rgb(234, 202, 255);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    text-decoration: none;
+    border-color: transparent;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.box-border {
+    border-radius: 4px;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.input-box{
+    outline: none;
+}
 
 
 

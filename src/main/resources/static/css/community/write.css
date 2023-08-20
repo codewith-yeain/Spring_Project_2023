@@ -111,6 +111,7 @@ button:focus, input[type=email]:focus, input[type=file]:focus, input[type=number
     font-weight: bold;
     color: mediumpurple;
     transition: opacity 0.1s ease 0s;
+    cursor: pointer;
 }
 
 .write-community-header-mobile-bottom{ /*.css-1lg9r82*/
@@ -144,7 +145,7 @@ button:focus, input[type=email]:focus, input[type=file]:focus, input[type=number
     width: 35px;
     height: 35px;
     margin: 5px 5px 4px;
-    padding: 0px;
+    /*padding: 0px;*/
     border: none;
     background: none;
     border-radius: 4px;
@@ -389,7 +390,9 @@ button:focus, input[type=email]:focus, input[type=file]:focus, input[type=number
     display: inline-block;
     width: 24px;
     height: 24px;
-    padding: 6px;
+    /*padding: 6px;*/
+    padding-right: 5px;
+    padding-top: 10px;
 }
 
 .break-line{

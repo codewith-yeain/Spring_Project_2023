@@ -6,8 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>소중한 당신의 아이디어 - iContact에서 보여주세요!</title>
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/community/listMine.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/community/listMine.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
 
 </head>
 <body>
@@ -59,7 +61,7 @@
             </div>
             <div class="customer-notice-list-content">
                 <!--<h1 class="customer-notice-list-title">공지사항</h1>-->
-                <div>
+                <div id="com-listMine">
                     <!--아래의 div 태그를 내 게시물 갯수만큼 반복-->
                     <div class="customer-notice-list-item">
                         <a href="" class="customer-notice-feed-item">
@@ -331,7 +333,13 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
-
+<script src="/js/fix/header.js"></script>
+<script th:inline="javascript">
+    let posts = [[${posts}]];
+    let nowPage = [[${pagination.page}]]
+    let order = [[${search.order}]]
+    let memberId = [[${session.memberId}]];
+</script>
+<script src="/js/community/listMine.js"></script>
 
 </html>

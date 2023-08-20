@@ -5,11 +5,15 @@ import com.app.icontact.service.CommunityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.HttpSessionRequiredException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 @Slf4j
 @Controller
@@ -25,12 +29,15 @@ public class CommunityController {
     public void goToComListMine(){;}
 //
     @GetMapping("write")
-    public void goToComWrite(){;}
+    public void goToComWrite(CommunityVO communityVO){;}
 //
-    @PostMapping("wirte")
-    public RedirectView writeCom(CommunityVO communityVO, RedirectAttributes redirectAttributes){
+    @PostMapping("write")
+    public RedirectView writeCom(CommunityVO communityVO, RedirectAttributes redirectAttributes, HttpSession session){
+//        Long userId = (Long)session.getAttribute("id");
+
+//        redirectAttributes.addAttribute("id", communityVO.getId());
+        log.info("{}..............", communityVO.toString());
         communityService.writeCom(communityVO);
-        redirectAttributes.addAttribute("id", communityVO.getId());
         return new RedirectView("/community/listAll");
     }
 //

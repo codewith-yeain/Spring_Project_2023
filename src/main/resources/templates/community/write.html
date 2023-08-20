@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>커뮤니티</title>
     <link rel="icon" href="/static/images/icon/favicon.png">
-    <!--<link rel="stylesheet" href="../../static/css/community/write.css">-->
+    <!--<link rel="stylesheet" href="/css/community/write.css">-->
     <link rel="stylesheet" href="/css/community/write.css">
 
     <style>
@@ -20,14 +20,15 @@
 
         @font-face {
             font-family: 'Pretendard Variable';
-            src: url('../../static/font/PretendardVariable.woff2');
+            src: url('/font/PretendardVariable.woff2');
         }
     </style>
 </head>
 <body>
 
 <div class="full-height">
-    <div class="write-community-layout">
+    <form th:action="@{/community/write}" method="post" name="writeForm" th:object="${communityVO}">
+        <div class="write-community-layout">
         <div class="write-community-header-wrapper-mobile">
             <!--모바일 화면에서 보이는 작성도구 툴-->
             <div class="write-community-header-mobile">
@@ -188,7 +189,7 @@
             <div class="write-community-header-pc">
                 <div class="write-community-header-layout">
                     <a href="" class="logo-wrapper">
-                        <img src="../../static/images/icon/logo.png" class="logo">
+                        <img src="/images/icon/logo.png" class="logo">
                     </a>
 
                     <div class="write-community-editor-wrapper">
@@ -214,16 +215,16 @@
 
                     <div class="save-community-btn-wrapper">
                         <div class="save-community-btn-layout">
-                            <button type="button" class="save-community-btn">
+                            <button type="submit" class="save-community-btn">
                                 <span class="save-community-btn-text">게시글 등록</span>
                                 <span class="save-community-btn-text-mobile">등록</span>
                             </button>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
         <div class="write-community-top">
             <div>
@@ -321,23 +322,23 @@
                                         <div class="write-community-info-flex">
                                             <div>
                                                 <div class="write-community-info-item-wrapper">
-                                                    <span class="write-community-info-item">
-                                                        <div class="input-group select-input errored">
-                                                            <select class="form-control empty error">
-                                                                <option value="" disabled="">선택해주세요.</option>
-                                                                <option value="0">창업</option>
-                                                                <option value="1">문화</option>
-                                                                <option value="2">iContact 이용 후기</option>
-                                                                <option value="3">동업 제안</option>
-                                                                <option value="4">기타</option>
-                                                            </select>
-                                                            <span class="select-input-icon">
-                                                                <svg class="icon" width="10" height="10" style="fill: currentcolor;">
-                                                                    <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
-                                                                </svg>
-                                                            </span>
-                                                        </div>
-                                                    </span>
+                                                <span class="write-community-info-item">
+                                                    <div class="input-group select-input errored">
+                                                        <select class="form-control empty error" id="community-sort" th:field="*{sortId}">
+                                                            <option value="" disabled="">선택해주세요.</option>
+                                                            <option value="1">창업</option>
+                                                            <option value="2">문화</option>
+                                                            <option value="3">iContact 이용 후기</option>
+                                                            <option value="4">동업 제안</option>
+                                                            <option value="5">기타</option>
+                                                        </select>
+                                                        <span class="select-input-icon">
+                                                            <svg class="icon" width="10" height="10" style="fill: currentcolor;">
+                                                                <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </div>
+                                                </span>
                                                 </div>
                                             </div>
                                             <div class="notice-text">필수 입력 항목입니다.</div>
@@ -356,7 +357,8 @@
                                                         <li>
                                                             <div class="form-radio">
                                                                 <label class="form-radio-label">
-                                                                    <input class="form-radio" type="checkbox" name="connect">
+                                                                    <input type="text" id="anonym-status" hidden>
+                                                                    <input class="form-radio" type="checkbox" id="community-anonym">
                                                                     <span class="radio-img"></span>
                                                                     익명
                                                                 </label>
@@ -375,23 +377,23 @@
                                         </div>
                                         <div class="write-community-info-flex">
                                             <div>
-                                                <span class="write-community-info-item">
-                                                    <div class="input-group select-input">
-                                                        <select name="" class="form-control empty">
-                                                            <option value="" disabled="">선택해주세요.</option>
-                                                            <option value="0">선택</option>
-                                                            <option value="1">선택</option>
-                                                            <option value="2">선택</option>
-                                                            <option value="3">선택</option>
-                                                            <option value="4">선택</option>
-                                                            <option value="5">선택</option>
-                                                        </select>
+                                            <span class="write-community-info-item">
+                                                <div class="input-group select-input">
+                                                    <select name="" class="form-control empty">
+                                                        <option value="" disabled="">선택해주세요.</option>
+                                                        <option value="0">선택</option>
+                                                        <option value="1">선택</option>
+                                                        <option value="2">선택</option>
+                                                        <option value="3">선택</option>
+                                                        <option value="4">선택</option>
+                                                        <option value="5">선택</option>
+                                                    </select>
 
-                                                        <span class="select-input-icon">
-                                                            <svg class="icon" width="10" height="10" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
-                                                        </span>
-                                                    </div>
-                                                </span>
+                                                    <span class="select-input-icon">
+                                                        <svg class="icon" width="10" height="10" style="fill: currentcolor;"><path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path></svg>
+                                                    </span>
+                                                </div>
+                                            </span>
                                             </div>
                                         </div>
                                     </div>
@@ -421,7 +423,7 @@
 
                 <div class="write-community-title-wrapper">
                     <!--<input type="text" placeholder="제목을 입력해주세요." maxlength="80" class="write-community-title" value="">-->
-                    <textarea placeholder="제목을 입력해주세요." maxlength="80" class="write-community-title" style="width: 754px;/*height: 139px;*/height: 80px;resize: none;" onkeypress="blockEnter()" onkeyup="checkLength(this, 80)"></textarea>
+                    <textarea th:field="*{communityTitle}" name="communityTitle" placeholder="제목을 입력해주세요." maxlength="80" class="write-community-title" style="width: 754px;/*height: 139px;*/height: 80px;resize: none;" onkeypress="blockEnter()" onkeyup="checkLength(this, 80)"></textarea>
                     <div class="max-length">0/80</div>
                 </div>
             </div>
@@ -430,10 +432,12 @@
         <div class="write-community-content-wrapper">
             <div class="write-community-content">
                 <div class="write-community-content-layout">
-                    <textarea name="" id="" cols="30" rows="10" class="write-community-content-text" placeholder="내용을 입력해주세요." onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                    <textarea th:field="*{communityContent}" name="communityContent" id="" cols="30" rows="10" class="write-community-content-text" placeholder="내용을 입력해주세요." onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
                 </div>
             </div>
         </div>
+
+
         <div class="write-community-help-btn-wrapper">
             <button type="button" class="write-community-help-btn">
                 <svg class="icon" width="28" height="28" viewBox="0 0 28 28">
@@ -479,6 +483,7 @@
 
 
     </div>
+    </form>
 </div>
 
 
@@ -487,7 +492,7 @@
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="/js/community/write.js"></script>
-<!--<script src="../../static/js/community/write.js"></script>-->
+<!--<script src="/js/community/write.js"></script>-->
 
 
 </html>

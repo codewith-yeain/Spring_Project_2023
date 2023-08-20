@@ -9,6 +9,6 @@
     
     <insert id="insertCom">
         INSERT INTO TBL_COMMUNITY(ID, COMMUNITY_TITLE, COMMUNITY_CONTENT, SORT_ID, USER_ID)
-        VALUES(SEQ_POST.NEXTVAL, #{communityTitle}, #{communityContent}, #{sortId}, #{userId})
+        VALUES(SEQ_COMMUNITY.NEXTVAL, #{communityTitle}, #{communityContent}, #{sortId}, #{userId})
     </insert>
 </mapper>

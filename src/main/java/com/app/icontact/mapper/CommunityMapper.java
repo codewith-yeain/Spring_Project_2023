@@ -2,7 +2,6 @@ package com.app.icontact.mapper;
 
 import com.app.icontact.domain.CommunityVO;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -10,4 +9,7 @@ import java.util.List;
 public interface CommunityMapper {
     //    listMine 커뮤니티 내 게시글 목록
     public List<CommunityVO> selectComMine(Long id);
+
+//    커뮤니티 게시글 작성
+    public void insertCom(CommunityVO communityVO);
 }

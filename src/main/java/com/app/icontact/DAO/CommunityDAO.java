@@ -17,4 +17,8 @@ public class CommunityDAO {
         return communityMapper.selectComMine(id);
     }
 
+    //    커뮤니티 게시글 작성
+    public void saveCom(CommunityVO communityVO){
+        communityMapper.insertCom(communityVO);
+    }
 }

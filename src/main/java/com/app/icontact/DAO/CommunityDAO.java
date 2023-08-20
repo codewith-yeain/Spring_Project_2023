@@ -21,7 +21,6 @@ public class CommunityDAO {
 
     //    커뮤니티 게시글 작성
     public void saveCom(CommunityVO communityVO){
-        communityVO.setUserId(21L);
         log.info("{}..........", communityVO.toString());
         communityMapper.insertCom(communityVO);
     }

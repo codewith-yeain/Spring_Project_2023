@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>main</title>
-    <link rel="stylesheet" href="../../static/css/main/main.css" />
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
+    <link rel="stylesheet" href="/css/main/main.css">
+    <link rel="icon" href="/images/icon/favicon.png">
 </head>
 <body>
 
 <div class="main-body">
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
     <!--배너-->
         <div class="">
             <div role="region" aria-roledescription="carousel" class="banner">
@@ -97,61 +99,61 @@
         <div class="category-list">
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/1.png" srcset="" class="category-list1">
+                    <img src="/images/icon/1.png" srcset="" class="category-list1">
                     <span class="category-icon">디자인</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/nail.png"  srcset="" class="category-list1">
+                    <img src="/images/icon/nail.png"  srcset="" class="category-list1">
                     <span class="category-icon">네일</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/3.png" srcset="" class="category-list1">
+                    <img src="/images/icon/3.png" srcset="" class="category-list1">
                     <span class="category-icon">가구</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/4.png" srcset="" class="category-list1">
+                    <img src="/images/icon/4.png" srcset="" class="category-list1">
                     <span class="category-icon">인테리어</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/5.png" srcset="" class="category-list1">
+                    <img src="/images/icon/5.png" srcset="" class="category-list1">
                     <span class="category-icon">DIY</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/6.png" srcset="" class="category-list1">
+                    <img src="/images/icon/6.png" srcset="" class="category-list1">
                     <span class="category-icon">도배</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/7.png" srcset="" class="category-list1">
+                    <img src="/images/icon/7.png" srcset="" class="category-list1">
                     <span class="category-icon">사진</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/8.png" srcset="" class="category-list1">
+                    <img src="/images/icon/8.png" srcset="" class="category-list1">
                     <span class="category-icon">음악</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/9.png" srcset="" class="category-list1">
+                    <img src="/images/icon/9.png" srcset="" class="category-list1">
                     <span class="category-icon">영상</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="../../static/images/icon/10.png" srcset="" class="category-list1">
+                    <img src="/images/icon/10.png" srcset="" class="category-list1">
                     <span class="category-icon">그래픽</span>
                 </a>
             </div>
@@ -877,14 +879,13 @@
             </div>
         </div>
     </div>
-    <div id="footers"></div>
+    <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
-<script src="../../static/js/main/main.js"></script>
+<script src="/js/main/main.js"></script>
 
 </html>

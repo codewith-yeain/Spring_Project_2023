@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>문의하기</title>
 
-    <link rel="stylesheet" href="../../static/css/inquire/inquire.css" />
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/inquire/inquire.css">
+    <link rel="icon" href="/images/icon/favicon.png">
 
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
         <div class="body-born">
             <div class="inquire-header">
                 <p class="inquire-header-title">이메일 문의하기</p>
@@ -87,6 +87,6 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
+<script src="/js/fix/header.js"></script>
 
 </html>

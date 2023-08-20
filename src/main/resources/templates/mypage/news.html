@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,7 +13,7 @@
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
 
         <div class="news-container">
             <h1 class="news-title">내 소식</h1>

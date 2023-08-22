@@ -1,7 +1,6 @@
 package com.app.icontact.service;
 
 import com.app.icontact.DAO.CommunityDAO;
-import com.app.icontact.DAO.UserDAO;
 import com.app.icontact.domain.CommunityVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,12 +11,13 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CommunityServiceImpl implements CommunityService {
+
     private final CommunityDAO communityDAO;
 //    private final UserDAO userDAO;
     private final HttpSession session;
 
     @Override
-    public List<CommunityVO> selectComMine(Long id) {
+    public List<CommunityVO> getListComMine(Long id) {
         return communityDAO.findComMine(id);
     }
 
@@ -27,5 +27,10 @@ public class CommunityServiceImpl implements CommunityService {
         Long userId = (Long)session.getAttribute("userId");
         communityVO.setUserId(userId);
         communityDAO.saveCom(communityVO);
+    }
+
+    @Override
+    public List<CommunityVO> getListComAll() {
+        return communityDAO.findComAll();
     }
 }

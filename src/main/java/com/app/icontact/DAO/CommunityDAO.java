@@ -25,4 +25,10 @@ public class CommunityDAO {
         log.info("{}..........", communityVO.toString());
         communityMapper.insertCom(communityVO);
     }
+
+    //        listAll 커뮤니티 내 모든 게시글 목록
+    public List<CommunityVO> findComAll(){
+        return communityMapper.selectComAll();
+    }
+
 }

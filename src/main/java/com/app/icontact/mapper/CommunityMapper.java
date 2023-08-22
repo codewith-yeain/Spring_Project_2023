@@ -15,10 +15,10 @@ public interface CommunityMapper {
 
 
 
-//        listAll
+//        listAll 커뮤니티 내 모든 게시글 목록
     public List<CommunityVO> selectComAll();
 
-
+//
 
 
 

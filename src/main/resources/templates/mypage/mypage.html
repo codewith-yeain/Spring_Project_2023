@@ -1,54 +1,51 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>마이페이지 메인</title>
-    <link rel="stylesheet" href="../../static/css/mypage/mypage.css" />
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/mypage/mypage.css">
+    <link rel="stylesheet" href="/css/community/listMine.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
+    <link rel="icon" href="/images/icon/favicon.png">
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
-        <div class="menu-nav">
-            <nav class="page-navigation">
-                <ul style="transform: translateX(0px);">
-                    <li class="page-navigation_item">
-                        <a class="active" href="/users/5412458" target="_self">프로필</a>
+        <header th:replace="~{/fix/header :: header}"></header>
+        <div class="myhome-nav" style="margin-top: 50px">
+            <nav class="page-navigation myhome-nav-owner">
+                <ul>
+                    <li class="page-navigation-item">
+                        <a href="" class="active">아이디어</a>
                     </li>
-                    <li class="page-navigation_item">
-                        <a class="" href="/user_shopping_pages/order_list" target="_self">나의 쇼핑</a>
+                    <li class="page-navigation-item">
+                        <a href="">설정</a>
                     </li>
-                    <li class="page-navigation_item">
-                        <a class="" href="/production_reviews/write" target="_self">나의 리뷰</a>
-                    </li>
-                    <li class="page-navigation_item">
-                        <a class="" href="/users/5412458/edit" target="_self">설정</a>
+                    <li class="page-navigation-item">
+                        <a href="">사업자 등록</a>
                     </li>
                 </ul>
             </nav>
-            <nav class="page-navigation menu-nav_contents">
-                <ul style="transform: translateX(0px);">
-                    <li class="page-navigation_item">
-                        <a class="active low" href="/users/5412458" target="_self">모두보기</a>
+            <nav class="page-navigation">
+                <ul>
+                    <li class="page-navigation-item">
+                        <a href="" class="active">홈</a>
                     </li>
-                    <li class="page-navigation_item">
-                        <a class="low" href="/users/5412458/card_collections" target="_self">내아이디어</a>
+                    <li class="page-navigation-item">
+                        <a href="">내 아이디어</a>
                     </li>
-                    <li class="page-navigation_item">
-                        <a class="low" href="/users/5412458/projects" target="_self">구현목록</a>
+                    <li class="page-navigation-item">
+                        <a href="">구현 목록</a>
                     </li>
-                    <li class="page-navigation_item">
-                        <a class="low" href="/users/5412458/advices" target="_self">내게시글</a>
+                    <li class="page-navigation-item">
+                        <a href="">내 게시글 </a>
                     </li>
-                    <li class="page-navigation_item">
-                        <a class="low" href="/users/5412458/questions" target="_self">스크랩북</a>
-                    </li>
-                    <li class="page-navigation_item">
-                        <a class="low" href="/users/5412458/praises" target="_self">좋아요</a>
+                    <li class="page-navigation-item">
+                        <a href="">스크랩북 </a>
                     </li>
                 </ul>
             </nav>
@@ -147,11 +144,11 @@
                 </div>
             </div>
         </div>
+        <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
 
 </html>

@@ -1,19 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>소중한 당신의 아이디어 - iContact에서 보여주세요!</title>
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/mypage/ict.css">
-    <link rel="stylesheet" href="../../static/css/community/listMine.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/mypage/ict.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
+    <link rel="stylesheet" href="/css/community/listMine.css">
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
 
         <main class="content-detail">
             <div class="">
@@ -21,38 +23,32 @@
                     <nav class="page-navigation myhome-nav-owner">
                         <ul>
                             <li class="page-navigation-item">
-                                <a href="" class="active">프로필</a>
-                            </li>
-                            <li class="page-navigation-item">
-                                <a href="">나의 쇼핑</a>
-                            </li>
-                            <li class="page-navigation-item">
-                                <a href="">나의 리뷰</a>
+                                <a href="" class="active">아이디어</a>
                             </li>
                             <li class="page-navigation-item">
                                 <a href="">설정</a>
+                            </li>
+                            <li class="page-navigation-item">
+                                <a href="">사업자 등록</a>
                             </li>
                         </ul>
                     </nav>
                     <nav class="page-navigation">
                         <ul>
                             <li class="page-navigation-item">
-                                <a href="">모두보기 </a>
+                                <a href="">홈</a>
                             </li>
                             <li class="page-navigation-item">
                                 <a href="" class="active">내 아이디어</a>
                             </li>
                             <li class="page-navigation-item">
-                                <a href="">구현 목록 </a>
+                                <a href="">구현 목록</a>
                             </li>
                             <li class="page-navigation-item">
                                 <a href="">내 게시글 </a>
                             </li>
                             <li class="page-navigation-item">
                                 <a href="">스크랩북 </a>
-                            </li>
-                            <li class="page-navigation-item">
-                                <a href="">좋아요</a>
                             </li>
                         </ul>
                     </nav>
@@ -315,14 +311,13 @@
             </div>
         </main>
 
-        <div id="footers"></div>
+        <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
 
 
 </html>

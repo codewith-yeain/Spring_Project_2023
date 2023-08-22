@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,14 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>문의하기</title>
 
-    <link rel="stylesheet" href="../../static/css/inquire/inquire.css" />
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/inquiry/inquiry.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="icon" href="/images/icon/favicon.png">
 
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
         <div class="body-born">
             <div class="inquire-header">
                 <p class="inquire-header-title">이메일 문의하기</p>
@@ -25,8 +26,8 @@
                 </p>
             </div>
             <div class="inquire-body">
-                <form>
-                    <div class="inquire-body2">
+                <form th:action="@{/inquiry/inquiry}" name="inquiry" method="post" th:object="${inquiryVO}" >
+                    <!--<div class="inquire-body2">
                         <div width="343" class="">
                             <div class="lay1">
                                 <select class="lay2 lay4 lay3 inquire-menu" name="type">
@@ -49,25 +50,25 @@
                             <span class="inquire-menu-exp">앱 개선 제안은 '서비스 개선 제안'으로 선택해 주세요.</span>
                             <span class="inquire-menu-exp">앱 장애 신고는 '시스템 오류 제보'로 선택해 주세요.</span>
                         </div>
-                    </div>
-                        <div class="inquire-body2">
-                            <div width="343" class="">
-                                <input class="lay2 lay4 inquire-menu" value="" name="name" placeholder="이름">
-                            </div>
-                         </div>
-                        <div class="inquire-body2">
-                            <div width="343" class="">
-                                <input class="lay2 lay4 inquire-menu" value="" name="email" placeholder="이메일">
-                            </div>
-                        </div>
-                        <div class="inquire-body2">
-                            <input class="lay2 lay4 inquire-menu" value="" name="title" placeholder="제목">
-                        </div>
+                    </div>-->
                     <div class="inquire-body2">
-                        <textarea class="lay2 lay4 text-nav" name="message" maxlength="500" placeholder="문의 내용" rows="1" style="overflow: hidden; overflow-wrap: break-word; height: 160px;"></textarea>
-                        <span class="text-count">0<!-- -->자 / 최대 <!-- -->500<!-- -->자</span>
+                        <div width="343" class="">
+                            <input class="lay2 lay4 inquire-menu" name="inquiryWriterName" th:field="*{inquiryWriterName}"  placeholder="이름">
+                        </div>
                     </div>
                     <div class="inquire-body2">
+                        <div width="343" class="">
+                            <input class="lay2 lay4 inquire-menu" name="inquiryWriterEmail" placeholder="이메일" th:field="*{inquiryWriterEmail}">
+                        </div>
+                    </div>
+                    <div class="inquire-body2">
+                        <input class="lay2 lay4 inquire-menu" name="inquiryTitle" placeholder="제목" th:field="*{inquiryTitle}">
+                    </div>
+                    <div class="inquire-body2">
+                        <textarea class="lay2 lay4 text-nav" name="inquiryContent" maxlength="500" placeholder="문의 내용" th:field="*{inquiryContent}" rows="1" style="overflow: hidden; overflow-wrap: break-word; height: 160px;"></textarea>
+                        <!--<span class="text-count">0&lt;!&ndash; &ndash;&gt;자 / 최대 &lt;!&ndash; &ndash;&gt;500&lt;!&ndash; &ndash;&gt;자</span>-->
+                    </div>
+                    <!--<div class="inquire-body2">
                         <label class="file-area">
                             <span class="file-area2">
                                 <span></span>
@@ -75,18 +76,19 @@
                             <span class="file-text">첨부파일</span>
                             <input type="file" name="file" hidden="">
                         </label>
-                    </div>
+                    </div>-->
                     <div class="button-area">
                         <button class="lay6 button-commit" type="button">제출하기</button>
                     </div>
                 </form>
             </div>
         </div>
+        <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
+<script src="/js/modal/modal.js"></script>
 
 </html>

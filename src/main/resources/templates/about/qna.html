@@ -1,19 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>소중한 당신의 아이디어 - iContact에서 보여주세요!</title>
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/about/qna.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/about/qna.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
 </head>
 <body>
 
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
         <div class="relative">
             <section class="hero">
                 <div class="hero-inner">
@@ -340,16 +342,15 @@
                             </p>
                         </div>
                     </li>
-
                 </ul>
             </section>
         </div>
+        <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
 
 </html>

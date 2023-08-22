@@ -1,19 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>프로필 수정하기</title>
-    <link rel="stylesheet" href="../../static/css/mypage/profile-modify.css" />
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/mypage/profile-modify.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
-        <div class="edit-user-info_wrap container">
+        <header th:replace="~{/fix/header :: header}"></header>
+        <div class="edit-user-info_wrap container" style="margin-top: 100px">
             <div class="menu-nav">
                 <nav></nav>
                 <nav></nav>
@@ -172,11 +175,11 @@
                 <button class="button button-color button-size-50 button-shape-4 edit-user-info_submit" type="submit">회원 정보 수정</button>
             </form>
         </div>
+        <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
 
 </html>

@@ -17,5 +17,5 @@ public class IdeaVO {
     private String ideaUpdateDate;
     private String ideaType;
     private Long ideaPrice;
-    private Long memberId;
+    private Long userId;
 }

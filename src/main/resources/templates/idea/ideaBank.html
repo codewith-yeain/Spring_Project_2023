@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleag.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -15,8 +15,7 @@
 <body>
     <div class="full-height">
         <div class="layout">
-            <header th:if="${session.id == null}" th:replace="~{/fix/header :: #logout-header}"></header>
-            <header th:unless="${session.id == null}" th:replace="~{/fix/header :: #login-header}"></header>
+            <header th:replace="~{/fix/header :: header}"></header>
 
             <div class="category-feed-container">
                 <div class="category-feed-wrap container">
@@ -513,11 +512,9 @@
     </div>
 
 </body>
-</html>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/scroll.js"></script>
-
+<script src="/js/fix/scroll.js"></script>
 
 </html>
 

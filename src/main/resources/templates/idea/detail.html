@@ -1,16 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>소중한 당신의 아이디어 - iContact에서 보여주세요!</title>
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/idea/detail.css">
-    <link rel="stylesheet" href="../../static/css/idea/ideaBank.css">
-
-
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/idea/detail.css">
+    <link rel="stylesheet" href="/css/idea/ideaBank.css">
 
     <style>
         /*돋보기 아이콘을 위한 폰트*/
@@ -19,10 +17,9 @@
             src:url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2");
         }
 
-
         @font-face {
             font-family: 'Pretendard Variable';
-            src: url('../../static/font/PretendardVariable.woff2');
+            src: url('/font/PretendardVariable.woff2');
         }
     </style>
 </head>
@@ -30,7 +27,7 @@
 
     <div class="full-height">
         <div class="layout">
-            <div id="headers"></div>
+            <header th:replace="~{/fix/header :: header}"></header>
 
             <div class="production-selling">
                 <!--상단 메인 소개-->
@@ -659,7 +656,7 @@
                 </button>
             </div>
 
-            <div id="footers"></div>
+            <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
 
             <!--아이디어 정보, 상세 설명, 상세 이미지, 회원의 다른 아이디어 1-->
         </div>
@@ -670,6 +667,5 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
 
 </html>

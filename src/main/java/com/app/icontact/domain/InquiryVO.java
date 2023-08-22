@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 public class InquiryVO {
     private Long id;
-    private String inquiryType;
     private String inquiryWriterName;
     private String inquiryWriterEmail;
     private String inquiryDate;

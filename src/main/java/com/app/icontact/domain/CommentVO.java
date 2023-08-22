@@ -14,6 +14,6 @@ public class CommentVO {
     private String commentUpdateDate;
     private Long commentDepth;
     private Long commentGroup;
-    private Long memberId;
+    private Long userId;
     private Long communityId;
 }

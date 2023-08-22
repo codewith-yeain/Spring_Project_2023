@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,14 +7,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>스크랩 목록</title>
 
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/mypage/scrap-list.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/mypage/scrap-list.css">
+    <link rel="stylesheet" href="/css/community/listMine.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
+    <link rel="stylesheet" href="/css/fix/footer.css">
 
 </head>
 <body>
 <div class="full-height">
     <div class="layout">
-        <div id="headers"></div>
+        <header th:replace="~{/fix/header :: header}"></header>
+        <div class="myhome-nav" style="margin-top: 50px">
+            <nav class="page-navigation myhome-nav-owner">
+                <ul>
+                    <li class="page-navigation-item">
+                        <a href="" class="active">아이디어</a>
+                    </li>
+                    <li class="page-navigation-item">
+                        <a href="">설정</a>
+                    </li>
+                    <li class="page-navigation-item">
+                        <a href="">사업자 등록</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="page-navigation">
+                <ul>
+                    <li class="page-navigation-item">
+                        <a href="">홈</a>
+                    </li>
+                    <li class="page-navigation-item">
+                        <a href="">내 아이디어</a>
+                    </li>
+                    <li class="page-navigation-item">
+                        <a href="">구현 목록</a>
+                    </li>
+                    <li class="page-navigation-item">
+                        <a href="">내 게시글 </a>
+                    </li>
+                    <li class="page-navigation-item">
+                        <a href="" class="active">스크랩북 </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <main class="main-body">
             <div class="main-header">
                 <div class="main-header-title">
@@ -23,19 +60,19 @@
                 <div class="proflie">
                     <a href="">
                         <figure class="profile-img">
-                            <img src="../../static/images/icon/favicon.png" class="profile-img2">
+                            <img src="/images/icon/favicon.png" class="profile-img2">
                         </figure>
                         <span class="profile-name">아이컨택</span>
                     </a>
                 </div>
             </div>
-            <div class="sticky-container" style="position: sticky; top: 81px; transition: top 0.1s ease 0s; z-index: 1;">
+            <div class="sticky-container" style="position: sticky; top: 81px; transition: top 0.1s ease 0s;">
                 <div style="position: relative;">
                     <div class="count">
                         <a href="" class="scrap-count">
                             <button class="scrap-button">
                                 <div class="scrap-button-text">
-                                    <p class="scrap-button-text2">모두(65)</p>
+                                    <p class="scrap-button-text2">아이디어 스크랩</p>
                                 </div>
                             </button>
                         </a>
@@ -50,20 +87,20 @@
                             <div class="scrap-parts">
                                 <a href="">
                                     <div class="scrap-parts-img">
-                                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/169174665031318257.jpeg?gif=1&amp;w=320&amp;h=320&amp;c=c&amp;webp=1"">
+                                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/169174665031318257.jpeg?gif=1&amp;w=320&amp;h=320&amp;c=c&amp;webp=1">
 
 
                                         <button type="button" class="production-item-scrap-badge">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -100,13 +137,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -136,13 +173,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -173,13 +210,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -210,13 +247,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -247,13 +284,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -284,13 +321,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -321,13 +358,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -358,13 +395,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -394,13 +431,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -430,13 +467,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -466,13 +503,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -502,13 +539,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -538,13 +575,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -573,13 +610,13 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                             <defs>
                                                 <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                     <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                     <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                     <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                     <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                 </filter>
-                                                <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                     <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                     <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                     <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -609,13 +646,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -645,13 +682,13 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inactive-icon">
                                                 <defs>
                                                     <path id="scrap-icon-217-b" d="M12.472 6.93l7.056-3.811A1 1 0 0 1 21 4.002v15.496c0 .83-.672 1.502-1.5 1.502h-15c-.828 0-1.5-.673-1.5-1.502V4.002a1 1 0 0 1 1.472-.883l7.056 3.811a.999.999 0 0 0 .944 0z"></path>
-                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-a" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feOffset in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
                                                         <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
                                                         <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.26 0"></feColorMatrix>
                                                     </filter>
-                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%" filterUnits="objectBoundingBox">
+                                                    <filter id="scrap-icon-217-c" width="150%" height="150%" x="-25%" y="-25%">
                                                         <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"></feGaussianBlur>
                                                         <feOffset in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
                                                         <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"></feComposite>
@@ -674,12 +711,11 @@
                 </div>
             </div>
         </main>
-        <div id="footers"></div>
+        <footer th:replace="~{/fix/footer :: #main-footer}"></footer>
     </div>
 </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/fix/header.js"></script>
 
 </html>

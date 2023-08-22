@@ -13,5 +13,5 @@ public interface UserService {
     public Optional<String> login(UserVO userVO);
 
 //    이메일 중복 검사
-    public Optional<String> checkEmail(String memberEmail);
+    public Optional<String> checkEmail(String userEmail);
 }

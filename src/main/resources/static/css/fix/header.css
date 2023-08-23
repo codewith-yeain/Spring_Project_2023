@@ -417,6 +417,7 @@ body, div, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td,
     height: 40px;
     border-radius: 100%;
     outline: none;
+    cursor: pointer;
 }
 
 .profile-img{ /*.css-xnm8en*/
@@ -448,17 +449,12 @@ body, div, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td,
     background-color: #eacaff;
     outline: none;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .idea-register-btn span{ /*.css-cdruys*/
     vertical-align: middle;
     white-space: nowrap;
-}
-
-@media (min-width: 1024px){
-    .idea-register-btn span{
-        margin-right: 6px;
-    }
 }
 
 .layout-navigation{ /*.css-sg6sjt*/
@@ -549,7 +545,7 @@ body, div, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td,
     margin: -4px;
 }
 
-.active > div > p{
+.active:hover > div > p{
     font-weight: 700;
     font-size: 16px;
     line-height: 20px;
@@ -558,7 +554,7 @@ body, div, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td,
     color: mediumpurple;
 }
 
-.active:after{
+.active:hover:after{
     content: "";
     display: block;
     position: absolute;
@@ -567,7 +563,7 @@ body, div, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td,
     width: 100%;
     height: 2px;
     background-color: mediumpurple;
-    transition: transform 0.2s ease 0s;
+    transition: transform 1s ease 0s;
     transform: scale(1);
 }
 

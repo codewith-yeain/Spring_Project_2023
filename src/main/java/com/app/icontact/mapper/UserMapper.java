@@ -14,5 +14,8 @@ public interface UserMapper {
 //        이메일 중복검사
     public String selectForEmailCheck(String userEmail);
 
+//    닉네임 중복검사
+    public String selectForNicknameCheck(String userNickname);
+
 
 }

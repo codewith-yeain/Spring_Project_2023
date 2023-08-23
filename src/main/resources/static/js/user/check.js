@@ -1,68 +1,74 @@
-const $checkboxs = $(".checkbox-wrap input[type='checkbox']");
-const $checkAll = $("input[name='checkAll']");
-const $checks = $("input[name='check']");
-const $optionsAll = $(".options-title input[name='check']");
-const $options = $(".options-list input[name='check']");
+document.addEventListener('DOMContentLoaded', function () {
 
-$checkAll.on("change", function(){
-    let isChecked = $(this).prop("checked");
-    isChecked ? checkedAll() : notCheckedAll();
-    $checks.prop("checked", isChecked);
-    $checks.trigger("change");
+    // 전체 동의 체크박스
+    const allAgreeCheckbox = document.querySelector('.conditions .form-radio-label:first-child input[name="connect"]');
+
+    // 전체 동의 체크박스를 제외한 나머지 체크박스들
+    const otherCheckboxes = document.querySelectorAll('.conditions .form-radio:not(:first-child) input[name="connect"]');
+
+    // 전체 동의 체크박스의 이벤트 리스너
+    allAgreeCheckbox.addEventListener('change', function() {
+        otherCheckboxes.forEach(checkbox => {
+            checkbox.checked = allAgreeCheckbox.checked;
+        });
+    });
+
+    // 다른 체크박스들의 이벤트 리스너
+    otherCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            // 모든 체크박스가 선택되면
+            if ([...otherCheckboxes].every(box => box.checked)) {
+                allAgreeCheckbox.checked = true;
+            }
+            // 하나라도 선택되지 않았다면
+            else {
+                allAgreeCheckbox.checked = false;
+            }
+        });
+    });
+
 });
 
-$checks.on("change", function(){
-    let isChecked = $(this).prop("checked");
-    let $img = $(this).next().find("img");
-    isChecked ? checked($img) : notChecked($img);
-});
 
-$optionsAll.on("change", function(){
-    $options.prop("checked", $(".options-title input[type='checkbox']").prop("checked"));
-    $(".options-list .checkbox-wrap img").attr("src", "/images/" + ($(this).prop("checked") ? "checked.png" : "check.png"));
-});
+document.addEventListener('DOMContentLoaded', function () {
+    const allAgreeCheckbox = document.querySelector('.conditions .form-radio-label:first-child input[name="connect"]');
+    const otherCheckboxes = document.querySelectorAll('.conditions .form-radio-label:not(:first-child) input[name="connect"]');
+    const requiredCheckboxes = document.querySelectorAll('.conditions .form-radio-label.check-box-text4 input[name="connect"]');
+    const joinButton = document.querySelector('.join-button');
 
-$options.on("change", function(){
-    $(".options-title input[type='checkbox']").prop("checked", $options.filter(":checked").length);
-    $(".options-title .checkbox-wrap img").attr("src", "/images/" + ($(".options-title input[type='checkbox']").prop("checked") ? "checked.png" : "check.png"));
-});
-
-$checkboxs.on("change", function(){
-    if($checkboxs.length == $checkboxs.filter(":checked").length){
-        $checkAll.prop("checked", true);
-        checkedAll();
-        return;
+    function updateAllAgreeCheckbox() {
+        allAgreeCheckbox.checked = [...otherCheckboxes].every(checkbox => checkbox.checked);
     }
-    $checkAll.prop("checked", false);
-        notCheckedAll();
+
+    function updateJoinButton() {
+        if ([...requiredCheckboxes].every(checkbox => checkbox.checked)) {
+            joinButton.removeAttribute('disabled');
+        } else {
+            joinButton.setAttribute('disabled', 'disabled');
+        }
+    }
+
+    allAgreeCheckbox.addEventListener('change', function () {
+        const isChecked = allAgreeCheckbox.checked;
+        otherCheckboxes.forEach(checkbox => checkbox.checked = isChecked);
+        updateJoinButton();
+    });
+
+    otherCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            updateAllAgreeCheckbox();
+            updateJoinButton();
+        });
+    });
+
+    // 필수 항목 체크박스 상태 변화 감지
+    requiredCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateJoinButton);
+    });
+
+    // 페이지 로딩 시 초기 상태 설정
+    updateJoinButton();
 });
 
-function checkedAll(){
-    $("#check-all-wrap span.checkbox").css("border-color", "rgb(235 124 120)");
-    $("#check-all-wrap span.checkbox").css("background-color", "rgb(235 124 120)");
-}
 
-function notCheckedAll(){
-    $("#check-all-wrap span.checkbox").css("border-color", "");
-    $("#check-all-wrap span.checkbox").css("background-color", "");
-}
 
-function checked($img){
-    $img.attr("src", "/images/checked.png");
-    checkAvaliable();
-}
-
-function notChecked($img){
-    $img.attr("src", "/images/check.png");
-    checkAvaliable();
-}
-
-function checkAvaliable(){
-    if($("#enable").prop("checked")){
-        $("li.options").removeClass("disable");
-        return;
-    }
-    $("li.options").addClass("disable");
-    $(".options input[type='checkbox']").prop("checked", false);
-    $(".options input[type='checkbox']").next().find("img").attr("src", "/images/check.png");
-}

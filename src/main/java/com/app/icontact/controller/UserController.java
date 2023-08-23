@@ -57,4 +57,12 @@ public class UserController {
     return userService.checkEmail(userEmail).isPresent();
 }
 
+    //    닉네임 중복검사
+    @GetMapping("/check-nickname")
+    @ResponseBody
+    public boolean checkNickname(String userNickname){
+        return userService.checkNickname(userNickname).isPresent();
+    }
+
+
 }

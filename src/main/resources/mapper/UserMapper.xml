@@ -16,4 +16,9 @@
         WHERE USER_EMAIL = #{userEmail}
     </select>
 
+    <select id="selectForNicknameCheck" resultType="string">
+        SELECT USER_NICKNAME FROM TBL_USER
+        WHERE USER_NICKNAME = #{userNickname}
+    </select>
+
 </mapper>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>main</title>
+    <title>icontact</title>
     <link rel="stylesheet" href="/css/fix/header.css">
     <link rel="stylesheet" href="/css/fix/footer.css">
+    <link rel="stylesheet" href="/css/main/banner.css">
     <link rel="stylesheet" href="/css/main/main.css">
     <link rel="icon" href="/images/icon/favicon.png">
 </head>
@@ -16,7 +17,7 @@
     <div class="layout">
         <header th:replace="~{/fix/header :: header}"></header>
     <!--배너-->
-        <div class="">
+        <!--<div class="">
             <div role="region" aria-roledescription="carousel" class="banner">
                 <div class="">
                     <ul aria-live="off" class="banner-lists" style="transform: translateX(0%);">
@@ -82,7 +83,7 @@
                         </li>
                     </ul>
                 </div>
-               <!-- <div class="">
+               &lt;!&ndash; <div class="">
                     <div class=" ">
                         <span class=" ">
                             <span></span>
@@ -90,8 +91,40 @@
                             <span>15</span>
                         </span>
                     </div>
-                </div>-->
+                </div>&ndash;&gt;
             </div>
+        </div>-->
+        <div class="slider-container">
+            <div id="slider">
+                <!-- 배너 이미지 -->
+                <div class="img-wrap">
+                    <img src="/images/banner/5.png">
+                </div>
+                <div class="img-wrap">
+                    <img src="/images/banner/1.png">
+                </div>
+                <div class="img-wrap">
+                    <img src="/images/banner/2.png">
+                </div>
+                <div class="img-wrap">
+                    <img src="/images/banner/3.png">
+                </div>
+                <div class="img-wrap">
+                    <img src="/images/banner/4.png">
+                </div>
+                <div class="img-wrap">
+                    <img src="/images/banner/5.png">
+                </div>
+                <div class="img-wrap">
+                    <img src="/images/banner/1.png">
+                </div>
+            </div>
+            <button type="button" class="slide-button-wrapper" style="left: 15%" onclick="prevImage()">
+                <span class="slide-button prev"></span>
+            </button>
+            <button type="button" class="slide-button-wrapper" style="left: 85%" onclick="nextImage()">
+                <span class="slide-button next"></span>
+            </button>
         </div>
     </div>
 <!--카테고리-->
@@ -99,482 +132,75 @@
         <div class="category-list">
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/1.png" srcset="" class="category-list1">
-                    <span class="category-icon">디자인</span>
+                    <img src="/images/main-icon/clothes2.png" srcset="" class="category-list1">
+                    <span class="category-icon">패션</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/nail.png"  srcset="" class="category-list1">
-                    <span class="category-icon">네일</span>
+                    <img src="/images/main-icon/bed2.png"  srcset="" class="category-list1">
+                    <span class="category-icon">리빙홈</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/3.png" srcset="" class="category-list1">
-                    <span class="category-icon">가구</span>
+                    <img src="/images/main-icon/book.png" srcset="" class="category-list1">
+                    <span class="category-icon">문구</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/4.png" srcset="" class="category-list1">
-                    <span class="category-icon">인테리어</span>
+                    <img src="/images/main-icon/seeding.png" srcset="" class="category-list1">
+                    <span class="category-icon">제로웨이스트</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/5.png" srcset="" class="category-list1">
-                    <span class="category-icon">DIY</span>
+                    <img src="/images/main-icon/mug.png" srcset="" class="category-list1">
+                    <span class="category-icon">음료・주류</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/6.png" srcset="" class="category-list1">
-                    <span class="category-icon">도배</span>
+                    <img src="/images/main-icon/salad.png" srcset="" class="category-list1">
+                    <span class="category-icon">디저트</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/7.png" srcset="" class="category-list1">
-                    <span class="category-icon">사진</span>
+                    <img src="/images/main-icon/chef.png" srcset="" class="category-list1">
+                    <span class="category-icon">요리</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/8.png" srcset="" class="category-list1">
-                    <span class="category-icon">음악</span>
+                    <img src="/images/main-icon/paw.png" srcset="" class="category-list1">
+                    <span class="category-icon">반려용품</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/9.png" srcset="" class="category-list1">
-                    <span class="category-icon">영상</span>
+                    <img src="/images/main-icon/child.png" srcset="" class="category-list1">
+                    <span class="category-icon">유아용픔</span>
                 </a>
             </div>
             <div class="category-part">
                 <a>
-                    <img src="/images/icon/10.png" srcset="" class="category-list1">
-                    <span class="category-icon">그래픽</span>
+                    <img src="/images/main-icon/menu-dots.png" srcset="" class="category-list1">
+                    <span class="category-icon">기타</span>
                 </a>
             </div>
         </div>
     </div>
-    <!--상품 리스트 -->
-    <div class="product-list">
-        <div class="product-list-title">
-            <div class="product-list1">
-                <div class="product-list2">
-                    <strong class="product-list-text">주간 20평 대 집들이 BEST 🚩 </strong>
-                </div>
-            </div>
-            <div class="more-view">
-                <button type="button" class="more-view1">더보기</button>
-            </div>
-        </div>
-        <div>
-            <div class="product-nav">
-                <!--1번-->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" srcset="" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="clip0_15409_67579">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">따뜻 포근 26평 !</span>
-                            홈스타일링 노하우만으로 완성✨
-                        </p>
-                    </div>
-                    <a class="product-ex" href="/projects/137852/detail?affect_type=Home&amp;affect_id=0"></a>
-                </div>
-                <!--2번-->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/162961239449141454.jpg?w=360&amp;h=240&amp;c=c" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">24평 구축 좁은 베란다</span>
-                            수납력 좋은 팬트리로 변신
-                        </p>
-                    </div>
-                    <a class="product-ex" href="/projects/60430/detail?affect_type=Home&amp;affect_id=0"></a>
-                </div>
-                <!--3번-->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167843119971065191.jpg?w=360&amp;h=240&amp;c=c"class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">로망 실현!</span>
-                            취향이 비슷한 부부, 깔끔하고 포근한 신혼집 완성!
-                        </p>
-                    </div>
-                    <a class="product-ex" href="/projects/137995/detail?affect_type=Home&amp;affect_id=0"></a>
-                </div>
-                <!--4번째 -->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168734406008463887.png?w=360&amp;h=240&amp;c=c" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">21평 신혼집</span>
-                            몸과 마음이 늘 편안한 공간으로!
-                        </p>
-                    </div>
-                    <a class="product-ex" href="/projects/142066/detail?affect_type=Home&amp;affect_id=0"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--상품리스트2-->
-    <div class="product-list">
-        <div class="product-list-title">
-            <div class="product-list1">
-                <div class="product-list2">
-                    <strong class="product-list-text">이번 주 나온 new 집들이 ✨ </strong>
-                </div>
-            </div>
-            <div class="more-view">
-                <button type="button" class="more-view1">더보기</button>
-            </div>
-        </div>
-        <div>
-            <div class="product-nav">
-                <!--1번-->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168949303808372189.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="clip0_15409_67579">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">시공 없이! 애정을 들여</span>
-                            하나씩 꾸며 나가는 31평 아파트
-                        </p>
-                    </div>
-                    <a class="product-ex" href=""></a>
-                </div>
-                <!--2번-->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168905898942079737.jpeg?w=360&h=240&c=c" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head"> 개성과 취향을! </span>
-                            34평 모던 내추럴 하우스
-                        </p>
-                    </div>
-                    <a class="product-ex" href=""></a>
-                </div>
-                <!--3번-->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/169033677362422603.jpg?w=360&h=240&c=c"class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">모르고 지냈던 감성들이 </span>
-                            새록새록 살아나는 나만의 공간!
-                        </p>
-                    </div>
-                    <a class="product-ex" href=""></a>
-                </div>
-                <!--4번째 -->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168968992675926262.jpg?w=360&h=240&c=c" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">하나부터 열까지</span>
-                            4000만 원 아낀 반셀프 인테리어
-                        </p>
-                    </div>
-                    <a class="product-ex" href=""></a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <div th:replace="/fix/main :: main"></div>
+
     <!--커뮤니티-->
     <div class="product-list">
         <div class="product-list-title">
             <div class="product-list1">
                 <div class="product-list-title2">
-                    <strong class="product-list-text">유저들의 인테리어 시공 리뷰</strong>
+                    <strong class="product-list-text">유저들의 커뮤니티 구경하기</strong>
                 </div>
             </div>
             <div class="more-view">
@@ -679,7 +305,7 @@
         <div class="product-list-title">
             <div class="product-list1">
                 <div class="product-list2">
-                    <strong class="product-list-text"> 놓치기 아쉬운 Weekly Best 😘 </strong>
+                    <strong class="product-list-text"> 놓치기 아쉬운 스크랩 BEST 😘 </strong>
                 </div>
             </div>
             <div class="more-view">
@@ -887,5 +513,6 @@
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="/js/main/main.js"></script>
+<script src="/js/main/banner.js"></script>
 
 </html>

@@ -27,4 +27,10 @@ public class UserServiceImpl implements UserService {
     public Optional<String> checkEmail(String userEmail) {
         return Optional.ofNullable(userDAO.findUserEmailByUserEmail(userEmail));
     }
+
+//    닉네임 중복검사
+    @Override
+    public Optional<String> checkNickname(String userNickname) {
+        return Optional.ofNullable(userDAO.findUserNicknameByUserNickname(userNickname));
+    }
 }

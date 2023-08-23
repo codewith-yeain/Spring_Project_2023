@@ -23,4 +23,10 @@ public class UserDAO {
         return userMapper.selectForEmailCheck(userEmail);
     }
 
+    //    닉네임 중복검사
+    public String findUserNicknameByUserNickname(String userNickname){
+        return userMapper.selectForNicknameCheck(userNickname);
+    }
+
+
 }

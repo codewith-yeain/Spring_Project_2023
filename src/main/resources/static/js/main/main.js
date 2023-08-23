@@ -16,6 +16,7 @@ function nextSlide() {
 setInterval(nextSlide, 5000); // Auto switch slides every 5 seconds
 
 /** 상품 마우스 오버 */
+/*
 const products = document.querySelectorAll('.products');
 const productImg1 = document.querySelectorAll('.product-img1');
 //const productImg2 = document.querySelectorAll('.product-img2');
@@ -29,4 +30,4 @@ products.addEventListener('mouseover', () => {
 products.addEventListener('mouseout', () => {
     productImg1.style.transform = 'scale(1)';
     // productTitle.style.opacity = '0';
-});
+});*/

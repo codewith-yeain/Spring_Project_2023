@@ -196,11 +196,11 @@
     <div th:replace="/fix/main :: main"></div>
 
     <!--커뮤니티-->
-    <div class="product-list">
+    <div class="product-list" style="margin-top: 50px;">
         <div class="product-list-title">
             <div class="product-list1">
                 <div class="product-list-title2">
-                    <strong class="product-list-text">유저들의 커뮤니티 구경하기</strong>
+                    <strong class="product-list-text">유저들의 커뮤니티 구경하기 😊</strong>
                 </div>
             </div>
             <div class="more-view">
@@ -209,6 +209,7 @@
         </div>
         <div>
             <div class="product-nav1">
+                <!--아래의 div가 게시글 수만큼 반복-->
                 <div class="products">
                     <div class="product-img">
                         <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168649136443965580.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
@@ -217,90 +218,59 @@
                         </div>
                     </div>
                     <div class="product-title margin10">
-                        <p class="product-exp">비나인스튜디오</p>
-                        <p class="product-exp2">
-                            첫 인테리어 시공이라 여러가지로 지식이 부족했던 제게 처음부터 끝까지
-            많은 정보와 아이디어 제안을 해주셨고 실제 시공 결과도 만족스러웠습니다.
-
-            무엇보다 생활하면서 필요한 부분이지만, 제가 미처 챙기지 못한 부분도
-            곳곳을 꼼꼼하게 마무리 해주셔서 현재 생활하면서 만족감이 높은것 같습니다.
-            특히 한달 정도 지내보니 그런 부분들이 눈에 들어오고 그런 디테일에 감동했습니다 :)
-
-            전담 디자이너 선생님이 커뮤니케이션에 많이 신경을 써주셨고
-            실제 시공 과정에도 많은 도움을 주셔서 감사하게 생각하고 있습니다.
-            우선 시공 용어 등이 너무 낯설고 제작 방식에 대한 이해도가 낮아서
-            결정을 하는데 어려운 부분을 그때마다 반복해서 잘 설명해주셨고
-            레퍼런스로 설명을 잘 해주셔서 제작 과정을 이해하고 결정하는데 많은 도움이 됬습니다.
-            사실 턴키지만 이 부분이 가장 서로 어려운 부분이라고 생각했었고
-            제가 미숙했는데 처음부터 끝까지 친절한 응대에 감사드립니다.
-
-            인테리어 진행 과정도 데일리로 항상 먼저 체크하셔서 보내주셨고
-            현장 소장님이나 각 제작 과정의 매니저분들의 커뮤니케이션도 좋았습니다.
-            각 과정마다 여러 가지면에서 제가 결정을 하는데 도움이 되는
-            피드백과 제안을 해주셨던것이 좋은 인상으로 남았습니다.
-
-            다음에도 또 좋은 공간을 갖게 된다면 다시 한번 의뢰를 드리고 싶고
-            좋은 공간을 만들어주셔서 감사합니다 :)
-                        </p>
+                        <div>
+                            <p class="product-exp" style="font-size: 20px" th:text="${communityList[0].communityTitle}"></p>
+                            <div style="display:flex; justify-content: space-between; margin-top: 10px">
+                                <p class="product-exp" th:text="${communityList[0].userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="${communityList[0].sortName}"></p>
+                            </div>
+                        </div>
+                        <p class="product-exp2" style="margin-top: 5px" th:text="${communityList[0].communityContent}"></p>
                     </div>
                     <a class="product-ex" href=""></a>
                 </div>
                 <div class="products">
                     <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168630428095280805.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
+                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168649136443965580.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
                         <div class="product-img22">
                             <div class="product-img3"></div>
                         </div>
                     </div>
                     <div class="product-title margin10">
-                        <p class="product-exp">디자인프로그</p>
-                        <p class="product-exp2">
-                            당초 큰 계획을 갖고 시작했던 인테리어는 아니었는데, 디자인프로그 대표님을 만나 같이 알아보고, 공부해가며 고군분투한 집이라 힘들었지만 그만큼 너무 만족스러운 집을 얻게 되었어요!
-
-            원하는 색감에 맞추기 위해 벽 마감을 필름/도배/페인트 각각 나눠서 진행하고, 필름 색감이나 페인트 색감도 대표님과 계속 소통하며 결정했는데 결과적으로는 너무 예쁘게 잘 나와서 만족스럽습니다 ㅎㅎ
-            안방 침대 헤드도 같이 디자인, 설계해가면서 만들었는데 너무 맘에 들어요!
-            집 전체적으로 마감과 디테일(주방, 욕실, 가구, 등등)이 너무 간결하면서 군더더기 없어서 그만큼 집이 더 예뻐 보이는 것 같아요.
-            해외 직구로 구매한 각종 제품들의 납기를 맞추기도 힘들었는데, 대표님이 그때마다 일정 조율을 해주셔서 무사히 시공 할 수 있었어요.
-
-            공사 중간에 크고 작은 문제들이 일어났을 때도 사진으로, 유선 상으로 꼬박꼬박 전달해주시면서 걱정 말라고 절 안심 시키면서 문제들을 다 해결해 주셨습니다!
-            또, 계약 전 미팅 때부터 소통이 제일 중요하다고 하셨는데, 매일 톡방에 시공 과정을 공유해주시면서 소통해주셔서 그만큼 더 신뢰가 갔던 것 같아요.
-
-            입주 후에 간단한 A/S 처리도 바로바로 해주시는 점도 너무 좋습니다ㅎㅎ
-
-            예쁜집 만들어주셔서 감사합니다 사장님!! 번창하시고, 행복하세요!! </p>
+                        <div>
+                            <p class="product-exp" style="font-size: 20px" th:text="${communityList[1].communityTitle}"></p>
+                            <div style="display:flex; justify-content: space-between; margin-top: 10px">
+                                <p class="product-exp" th:text="${communityList[1].userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="${communityList[1].sortName}"></p>
+                            </div>
+                        </div>
+                        <p class="product-exp2" style="margin-top: 5px" th:text="${communityList[1].communityContent}"></p>
                     </div>
-                    <a class="product-ex" href="/experts/review/29342"></a>
+                    <a class="product-ex" href=""></a>
                 </div>
                 <div class="products">
                     <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168644036693797192.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
+                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168649136443965580.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
                         <div class="product-img22">
                             <div class="product-img3"></div>
                         </div>
                     </div>
                     <div class="product-title margin10">
-                        <p class="product-exp">모드니 인테리어</p>
-                        <p class="product-exp2">
-                            신혼집 인테리어를 앞두고 예산과 취향사이의 줄다리기 속에서 합리적인 가격으로 깔끔한 인테리어 포트폴리오를 갖고 있는 업체를 찾으려는 두가지 욕심 하나 놓치지 않고 모드니인테리어 방문 전에 업체 미팅을 여러곳 진행했었습니다.
-            이전에 상담했던 곳들은 예산이랑 취향의 불균형으로 결정하기 어려웠는데, 모드니인테리어 사무실 방문해서 상담과 견적을 받아보니 가격이 합리적으로 느껴졌을뿐 아니라 항목별로 단가와 가격을 볼 수 있어서 투명하게 보였어요.
-            무엇보다 사장님이 쿨내 진동하시게 이건 되고 저건 안될것 같아요. 그렇지만 고객님이 꼭 하고싶으시다면.. 음.. 이렇게 하시죠! 이런 스타일??
-
-            철거가 시작되고 발생되는 문제점들 바로 알려주시고 공사 중에 갑작스럽게 오! 이것도 하고싶다 싶은 것도 다 들어주시고 무엇보다 철거 후 상태가 예상과 같았는지 공사 일정 딜레이 없이 완성되어서 문제없이 완료되었습니다.
-
-            둘 다 직장인이라 시간내서 공사중인 현장 방문이 어려웠는데 단톡방에 항상 사진 공유해주셔서 현장 체크가 바로바로 가능했어요.
-
-            인테리어 욕심은 있는데 구체적인 취향은 없어서 사장님께 추천으로 진행요청 드렸던 부분들도 너무 만족스러웠습니다!
-
-            알잘딱깔센이 인간이라면 모드니 인테리어 실장님이 아닐까요??
-
-            입주청소까지 마치고 집 살펴보니 큰 하자요청할 것도 없었지만 소소하게 수리 요청드린 부분 바로바로 해결해주셔서 너무 시원시원합니다.</p>
-            </div>
-                <a class="product-ex" href="/experts/review/29355"></a>
-            </div>
+                        <div>
+                            <p class="product-exp" style="font-size: 20px" th:text="${communityList[2].communityTitle}"></p>
+                            <div style="display:flex; justify-content: space-between; margin-top: 10px">
+                                <p class="product-exp" th:text="${communityList[2].userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="${communityList[2].sortName}"></p>
+                            </div>
+                        </div>
+                        <p class="product-exp2" style="margin-top: 5px" th:text="${communityList[2].communityContent}"></p>
+                    </div>
+                    <a class="product-ex" href=""></a>
+                </div>
             </div>
         </div>
     </div>
-    <!--상품리스트3-->
+    <!--스크랩수 많은 아이디어 상위 3개-->
     <div class="product-list">
         <div class="product-list-title">
             <div class="product-list1">
@@ -314,149 +284,86 @@
         </div>
         <div>
             <div class="product-nav">
-                <!--1번-->
+                <!--아래의 div가 아이디어 수만큼 반복-->
                 <div class="products">
                     <div class="product-img">
                         <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
                         <div class="product-img2">
                             <div class="product-img3"></div>
                         </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="clip0_15409_67579">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">깔끔한 화장실 필수품✨</span>
-                            물때 박멸 신박템 활용법 10
-                        </p>
+                        <div>
+                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[0].ideaTitle}"></p>
+                            <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                <p class="product-exp" th:text="${scrapTopIdeas[0].userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[0].scrapCount}"></p>
+                            </div>
+                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[0].ideaIntro}"></p>
+                        </div>
                     </div>
                     <a class="product-ex" href=""></a>
                 </div>
-                <!--2번-->
                 <div class="products">
                     <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/168920095065249125.png?w=360&h=240&c=c" class="product-img1">
+                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
                         <div class="product-img2">
                             <div class="product-img3"></div>
                         </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="filter0_d_15409_67579" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head"> 물건 찾아 헤맬 일 x </span>
-                            깔끔한 다용도실 비법은 바로...
-                        </p>
+                        <div>
+                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[1].ideaTitle}"></p>
+                            <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                <p class="product-exp" th:text="${scrapTopIdeas[1].userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[1].scrapCount}"></p>
+                            </div>
+                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[1].ideaIntro}"></p>
+                        </div>
                     </div>
                     <a class="product-ex" href=""></a>
                 </div>
-                <!--3번-->
                 <div class="products">
                     <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/advices/168005927998053631.gif?w=360&h=240&c=c"class="product-img1">
+                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
                         <div class="product-img2">
                             <div class="product-img3"></div>
                         </div>
-                        <div class="scrap">
-                            <button type="button" aria-label="scrap 토글 버튼" class="scrap-button">
-                                <span class="scrap-button1">
-                                    <svg class="scrap-button-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M20 2.75H4C3.44772 2.75 3 3.19771 3 3.75V20.8228C3 21.1988 3.39948 21.4403 3.73242 21.2655L11.5352 17.169C11.8262 17.0162 12.1738 17.0162 12.4648 17.169L20.2676 21.2655C20.6005 21.4403 21 21.1988 21 20.8228V3.75C21 3.19772 20.5523 2.75 20 2.75Z" fill="#35C5F0"></path>
-                                    </svg>
-                                    <svg class="scrap-button-svg-on" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_15409_67579)">
-                                            <g filter="url(#filter0_d_15409_67579)">
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3ZM4 2.75H20C20.5523 2.75 21 3.19772 21 3.75V20.8228C21 21.1988 20.6005 21.4403 20.2676 21.2655L12.4648 17.169C12.1738 17.0162 11.8262 17.0162 11.5352 17.169L3.73242 21.2655C3.39948 21.4403 3 21.1988 3 20.8228V3.75C3 3.19771 3.44772 2.75 4 2.75Z" fill="white"></path>
-                                                <path d="M4.3 4.05V19.4992L10.9309 16.018C11.6003 15.6666 12.3997 15.6666 13.0691 16.018L19.7 19.4992V4.05H4.3Z" fill="white" fill-opacity="0.5"></path>
-                                            </g>
-                                        </g>
-                                        <defs>
-                                            <filter id="" x="-2" y="-0.25" width="28" height="28.5735">
-                                                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-                                                <feOffset dy="2"></feOffset>
-                                                <feGaussianBlur stdDeviation="2.5"></feGaussianBlur>
-                                                <feColorMatrix type="matrix" values="0 0 0 0 0.247059 0 0 0 0 0.278431 0 0 0 0 0.301961 0 0 0 0.15 0"></feColorMatrix>
-                                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_15409_67579"></feBlend>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_15409_67579" result="shape"></feBlend>
-                                            </filter>
-                                            <clipPath id="">
-                                                <rect width="24" height="24" fill="white"></rect>
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
                     </div>
                     <div class="product-title margin10">
-                        <p class="product-textarea">
-                            <span class="product-textarea-head">스크랩 1000 이상! </span>
-                            삶의질을 높여줄 신박 수납팁 5
-                        </p>
+                        <div>
+                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[2].ideaTitle}"></p>
+                            <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                <p class="product-exp" th:text="${scrapTopIdeas[2].userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[2].scrapCount}"></p>
+                            </div>
+                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[2].ideaIntro}"></p>
+                        </div>
                     </div>
                     <a class="product-ex" href=""></a>
                 </div>
-                <!--4번째 -->
                 <div class="products">
+                    <div class="product-img">
+                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
+                        <div class="product-img2">
+                            <div class="product-img3"></div>
+                        </div>
+                    </div>
+                    <div class="product-title margin10">
+                        <div>
+                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[3].ideaTitle}"></p>
+                            <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                <p class="product-exp" th:text="${scrapTopIdeas[3].userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[3].scrapCount}"></p>
+                            </div>
+                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[3].ideaIntro}"></p>
+                        </div>
+                    </div>
+                    <a class="product-ex" href=""></a>
+                </div>
+
+                <!--원래-->
+                <!--<div class="products">
                     <div class="product-img">
                         <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/advices/168783663087562046.JPG?w=360&h=240&c=c" class="product-img1">
                         <div class="product-img2">
@@ -501,7 +408,7 @@
                         </p>
                     </div>
                     <a class="product-ex" href=""></a>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -514,5 +421,14 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="/js/main/main.js"></script>
 <script src="/js/main/banner.js"></script>
+
+<script>
+    $(".product-exp2").each(function() {
+        var content = $(this).text();
+        if(content.length > 100) {
+            $(this).text(content.substring(0, 100) + "...");
+        }
+    });
+</script>
 
 </html>

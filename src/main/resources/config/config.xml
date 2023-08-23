@@ -25,5 +25,7 @@
         <typeAlias type="com.app.icontact.domain.SubCategoryVO" alias="subCategoryVO" />
         <typeAlias type="com.app.icontact.domain.TopCategoryVO" alias="topCategoryVO" />
         <typeAlias type="com.app.icontact.DTO.IdeaDTO2" alias="ideaDTO2" />
+        <typeAlias type="com.app.icontact.DTO.IdeaDTO3" alias="ideaDTO3" />
+        <typeAlias type="com.app.icontact.DTO.CommunityDTO2" alias="communityDTO2" />
     </typeAliases>
 </configuration>

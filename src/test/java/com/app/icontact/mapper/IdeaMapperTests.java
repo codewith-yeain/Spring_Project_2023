@@ -21,4 +21,9 @@ public class IdeaMapperTests {
     public void selectByIdeaCategoryTests(){
         ideaMapper.selectPremiumIdeaByIdeaCategory(1L).stream().map(IdeaDTO2::toString).forEach(log::info);
     }
+
+    @Test
+    public void selectByScrapTests(){
+        ideaMapper.selectByScrap().stream().map(IdeaDTO2::toString).forEach(log::info);
+    }
 }

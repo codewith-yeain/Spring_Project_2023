@@ -1,6 +1,7 @@
 package com.app.icontact.mapper;
 
 import com.app.icontact.DTO.IdeaDTO2;
+import com.app.icontact.DTO.IdeaDTO3;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -14,5 +15,8 @@ public interface IdeaMapper {
 
     // 프리미엄 아이디어 랜덤 4개 조회
     public List<IdeaDTO2> selectPremiumIdeaByIdeaCategory(Long ideaCategory);
+
+    // 스크랩수 상위 4개 조회
+    public List<IdeaDTO3> selectByScrap();
 
 }

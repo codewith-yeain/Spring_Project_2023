@@ -1,6 +1,8 @@
 package com.app.icontact.controller;
 
+import com.app.icontact.DAO.CommunityDAO;
 import com.app.icontact.DAO.SubCategoryDAO;
+import com.app.icontact.DTO.CommunityDTO2;
 import com.app.icontact.service.IdeaService;
 import com.app.icontact.service.MainService;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,7 @@ public class MainController {
     private final MainService mainService;
     private final IdeaService ideaService;
     private final SubCategoryDAO subCategoryDAO;
+    private final CommunityDAO communityDAO;
 
     @GetMapping("/")
     public String goToMain(Model model){
@@ -41,6 +44,12 @@ public class MainController {
         model.addAttribute("firstInterest", ideaService.getPremiumIdeas(1L));
         model.addAttribute("secondInterest", ideaService.getPremiumIdeas(ideaCategory2));
         model.addAttribute("thirdInterest", ideaService.getPremiumIdeas(ideaCategory3));
+
+        /*게시글 조회수 상위 3개*/
+        model.addAttribute("communityList", communityDAO.findCommunityByReadCount());
+
+        /*아이디어 스크랩수 상위 3개*/
+        model.addAttribute("scrapTopIdeas", ideaService.getTopScrapIdeas());
 
         return "/icontact/icontact";
     }

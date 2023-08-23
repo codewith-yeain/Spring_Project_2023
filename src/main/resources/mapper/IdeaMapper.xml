@@ -29,4 +29,19 @@
         ) WHERE ROWNUM <= 4
         ]]>
     </select>
+
+    <select id="selectByScrap" resultType="ideaDTO3">
+        <![CDATA[
+        SELECT I2.*, U.USER_NICKNAME
+        FROM (
+            SELECT I.*, COUNT(S.ID) AS SCRAP_COUNT
+            FROM TBL_IDEA I
+            LEFT JOIN TBL_SCRAP S ON I.ID = S.IDEA_ID
+            GROUP BY I.ID, I.IDEA_TITLE, I.IDEA_INTRO, I.IDEA_DETAIL, I.IDEA_CATEGORY, I.IDEA_REGISTER_DATE, I.IDEA_UPDATE_DATE, I.IDEA_TYPE, I.IDEA_PRICE, I.IDEA_READ_COUNT, I.IDEA_MAX, I.USER_ID
+            ORDER BY SCRAP_COUNT DESC
+        ) I2
+        JOIN TBL_USER U ON I2.USER_ID = U.ID
+        WHERE ROWNUM <= 4
+        ]]>
+    </select>
 </mapper>

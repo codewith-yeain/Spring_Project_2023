@@ -2,6 +2,7 @@ package com.app.icontact.service;
 
 import com.app.icontact.DAO.IdeaDAO;
 import com.app.icontact.DTO.IdeaDTO2;
+import com.app.icontact.DTO.IdeaDTO3;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,5 +21,10 @@ public class IdeaServiceImpl implements IdeaService {
     @Override
     public List<IdeaDTO2> getPremiumIdeas(Long ideaCategory) {
         return ideaDAO.findPremiumIdeaByIdeaCategory(ideaCategory);
+    }
+
+    @Override
+    public List<IdeaDTO3> getTopScrapIdeas() {
+        return ideaDAO.findIdeaByScrap();
     }
 }

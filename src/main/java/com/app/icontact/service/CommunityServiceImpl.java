@@ -1,6 +1,7 @@
 package com.app.icontact.service;
 
 import com.app.icontact.DAO.CommunityDAO;
+import com.app.icontact.DTO.CommunityDTO;
 import com.app.icontact.domain.CommunityVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public List<CommunityVO> getListComMine(Long id) {
+
         return communityDAO.findComMine(id);
     }
 
@@ -30,7 +32,7 @@ public class CommunityServiceImpl implements CommunityService {
     }
 
     @Override
-    public List<CommunityVO> getListComAll() {
+    public List<CommunityDTO> getListComAll() {
         return communityDAO.findComAll();
     }
 }

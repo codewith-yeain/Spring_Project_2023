@@ -1,5 +1,6 @@
 package com.app.icontact.DAO;
 
+import com.app.icontact.DTO.CommunityDTO;
 import com.app.icontact.domain.CommunityVO;
 import com.app.icontact.mapper.CommunityMapper;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +27,7 @@ public class CommunityDAO {
     }
 
     //        listAll 커뮤니티 내 모든 게시글 목록
-    public List<CommunityVO> findComAll(){
+    public List<CommunityDTO> findComAll(){
         return communityMapper.selectComAll();
     }
 

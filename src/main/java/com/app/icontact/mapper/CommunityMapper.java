@@ -1,5 +1,6 @@
 package com.app.icontact.mapper;
 
+import com.app.icontact.DTO.CommunityDTO;
 import com.app.icontact.domain.CommunityVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -16,7 +17,7 @@ public interface CommunityMapper {
 
 
 //        listAll 커뮤니티 내 모든 게시글 목록
-    public List<CommunityVO> selectComAll();
+    public List<CommunityDTO> selectComAll();
 
 //
 

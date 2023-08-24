@@ -5,6 +5,7 @@ import com.app.icontact.service.CommunityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.HttpSessionRequiredException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,9 @@ public class CommunityController {
     public void goToComListAll(){;}
 
     @GetMapping("listMine")
-    public void goToComListMine(){;}
+    public void goToComListMine(Long id, Model model){
+        model.addAttribute("posts", communityService.getListComMine(id));
+    }
 
     @GetMapping("write")
     public void goToComWrite(CommunityVO communityVO){;}

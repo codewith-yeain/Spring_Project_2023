@@ -17,4 +17,26 @@
         INSERT INTO TBL_COMMUNITY(ID, COMMUNITY_TITLE, COMMUNITY_CONTENT, SORT_ID, USER_ID)
         VALUES(SEQ_COMMUNITY.NEXTVAL, #{communityTitle}, #{communityContent}, #{sortId}, #{userId})
     </insert>
+
+    <select id="selectListByReadCount" resultType="communityDTO2">
+        <![CDATA[
+        SELECT
+        C.ID,
+        C.COMMUNITY_TITLE,
+        C.COMMUNITY_CONTENT,
+        C.COMMUNITY_REGISTER_DATE,
+        C.COMMUNITY_UPDATE_DATE,
+        C.COMMUNITY_READ_COUNT,
+        S.SORT_NAME,
+        U.USER_NICKNAME
+        FROM
+        (SELECT *
+        FROM (SELECT *
+        FROM TBL_COMMUNITY
+        ORDER BY COMMUNITY_READ_COUNT DESC)
+        WHERE ROWNUM <= 3) C
+        JOIN TBL_SORT S ON C.SORT_ID = S.ID
+        JOIN TBL_USER U ON C.USER_ID = U.ID
+        ]]>
+    </select>
 </mapper>

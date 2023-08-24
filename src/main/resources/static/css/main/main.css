@@ -1,3 +1,6 @@
+/* ict.html */
+@charset "utf-8";
+
 blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
     margin: 0;
     padding: 0;
@@ -382,7 +385,7 @@ ol, ul {
 .product-exp {
     font-size: 16px;
     line-height: 24px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .product-exp2 {

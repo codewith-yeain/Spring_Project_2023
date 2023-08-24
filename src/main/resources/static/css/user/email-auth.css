@@ -12,12 +12,11 @@ div {
 
 a{
     text-decoration: none;
-    /*==*/
     cursor: pointer;
     touch-action: manipulation;
 }
 
-.layout, .page, body, html {
+.layout, body, html {
     height: 100%;
 }
 
@@ -71,7 +70,7 @@ a{
 .email-write-con {
     border: 1px solid rgb(219, 219, 219);
     padding: 6px 16px;
-    margin: 12px 0px 28px;
+    margin: 12px 0px 20px;
 }
 
 .email-write-area {
@@ -97,16 +96,16 @@ a{
     font-size: 15px;
 }
 
-.email-write-button:disabled {
-    cursor: default;
-    /*====*/
-    background-color: #a3e4f8;
-    border-color: #a3e4f8;
-    color: #e5f9ff;
+.email-write-button[disabled] {
+    cursor: not-allowed;
+    background: rgb(247, 248, 250);
+    color: rgb(194, 200, 204);
+    border: 1px solid rgb(218, 220, 224);
 }
 
 
 .email-write-button {
+    transition: background-color 0.3s ease, color 0.3s ease;
     white-space: pre;
     height: 31px;
     font-size: 14px;
@@ -119,15 +118,16 @@ a{
 
 
 
-.email-getcertification-button:disabled {
-    cursor: default;
-    background-color: #c7effb;
-    border-color: #c7effb;
-    color: #fff;
+.email-getcertification-button[disabled] {
+    cursor: not-allowed;
+    background: rgb(247, 248, 250);
+    color: rgb(194, 200, 204);
+    border: 1px solid rgb(218, 220, 224);
 }
 
 
 .email-getcertification-button {
+    transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
     height: 50px;
 }
@@ -150,7 +150,7 @@ a{
 
 
 .email-dowm-info-call {
-    color: rgb(53, 197, 240);
+    color: mediumpurple;
     font-size: 12px;
     line-height: 20px;
     font-weight: bold;
@@ -187,6 +187,20 @@ a{
     cursor: pointer;
     border-width: 1px;
     border-style: solid;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-color-a[disabled] {
+    background: rgb(247, 248, 250);
+    color: rgb(194, 200, 204);
+    border: 1px solid rgb(218, 220, 224);
+    box-shadow: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    cursor: not-allowed;
 }
 
 .box-border {

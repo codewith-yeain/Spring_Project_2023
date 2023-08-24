@@ -26,7 +26,7 @@
 <main class="login-body">
     <div class="login-body2">
         <div class="login">
-            <a class="login-logo">
+            <a th:href="@{/icontact/}" class="login-logo">
                 <img src="/images/icon/logo.png" class="logo">
             </a>
             <form class="login-form" th:action="@{/user/login}" name="login" method="post" th:object="${userVO}">
@@ -40,8 +40,6 @@
                 <section class="login-join">
                     <a class="new" href="">비밀번호 재설정</a>
                     <a th:href="@{/user/join}" class="new">회원가입</a>
-<!--                    <input type="hidden" name="user[email]" value="">-->
-<!--                    <input type="hidden" name="user[password]" value="">-->
                 </section>
             </form>
             <section>
@@ -82,7 +80,7 @@
 <script th:inline="javascript">
     let check = [[${login}]];
     if(check){
-        showWarnModal("<span>아이디 또는 비밀번호를</span><span>확인해주세요.</span>");
+        alert("아이디 또는 비밀번호를 확인해주세요!");
     }
 </script>
 </html>

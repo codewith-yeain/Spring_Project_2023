@@ -166,7 +166,8 @@ option {
     color: rgba(0,0,0,.3);
 }
 
-.email-check-button {
+.email-check-button[disabled] {
+    border-radius: 5px;
     margin-top: 10px;
     width: 100%;
     height: 45px;
@@ -176,6 +177,46 @@ option {
     border: 1px solid rgb(218, 220, 224);
     box-shadow: none;
 }
+
+.email-check-button{
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #fff;
+    width: 100%;
+    height: 45px;
+    padding: 0px;
+    background: #eacaff;
+    border: none;
+    box-shadow: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nickname-check-button[disabled] {
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    height: 45px;
+    padding: 0px;
+    background: rgb(247, 248, 250);
+    color: rgb(194, 200, 204);
+    border: 1px solid rgb(218, 220, 224);
+    box-shadow: none;
+}
+
+.nickname-check-button{
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #fff;
+    width: 100%;
+    height: 45px;
+    padding: 0px;
+    background: #eacaff;
+    border: none;
+    box-shadow: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+
 
 .email-check {
     margin-bottom: 30px;
@@ -456,6 +497,13 @@ option {
     background-color: #eacaff;
     border-color: #eacaff;
     color: #fff;
+}
+
+.join-button[disabled] {
+    background-color: #f7f8fa;
+    border: 1px solid #dadce0;
+    color: #dadce0;
+    cursor: not-allowed;
 }
 
 .lay8 {

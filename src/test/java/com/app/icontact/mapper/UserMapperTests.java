@@ -12,7 +12,13 @@ public class UserMapperTests {
     private UserMapper userMapper;
 
     @Test
-    public void insertTest(){
+    public void selectNicknameTests(){
+        log.info("{}............", userMapper.selectForNicknameCheck("예인"));
+    }
+
+    @Test
+    public void updatedPasswordTests(){
+        userMapper.updatedPassword("eunyoung.choi@email.com", "young");
     }
 }
 

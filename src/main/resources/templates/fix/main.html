@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="main">
+    <div th:if="${session.id eq null}">
+        <!--FISRT-->
+
+        <!-- 조회수 높은 아이디어를 불러오는 BEST 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${firstCategory}"></span>' 아이디어 조회수 BEST 🚩 </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--아래의 div를 아이디어 개수만큼 반복-->
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[0].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[0].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[0].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[0].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[1].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[1].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[1].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[1].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[2].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[2].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[2].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[2].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[3].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[3].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[3].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[3].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--SECOND-->
+
+        <!-- 조회수 높은 아이디어를 불러오는 BEST 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${secondCategory}"></span>' 아이디어 조회수 BEST 🚩 </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--아래의 div를 아이디어 개수만큼 반복-->
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[0].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[0].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[0].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[0].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[1].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[1].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[1].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[1].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[2].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[2].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[2].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[2].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[3].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[3].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[3].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[3].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--LAST-->
+
+        <!-- 조회수 높은 아이디어를 불러오는 BEST 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${thirdCategory}"></span>' 아이디어 조회수 BEST 🚩 </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1" th:onclick="|location.href='@{}'|">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--아래의 div를 아이디어 개수만큼 반복-->
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[0].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[0].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[0].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[0].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[1].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[1].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[1].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[1].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[2].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[2].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[2].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[2].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <div>
+                                <p class="product-exp" style="font-size: 20px" th:text="${first[3].ideaTitle}"></p>
+                                <div style="display:flex; justify-content: space-between; margin-top: 5px">
+                                    <p class="product-exp" th:text="${first[3].userNickname}"></p>
+                                    <p class="product-exp" style="color: mediumpurple" th:text="'조회수 ' + ${first[3].ideaReadCount}"></p>
+                                </div>
+                                <p class="product-exp2" style="margin-top: 2px" th:text="${first[3].ideaIntro}"></p>
+                            </div>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:unless="${session.id eq null}">
+        <!--FISRT-->
+        <!-- 프리미엄 아이디어를 랜덤으로 뽑아오는 추천 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${firstCategory}"></span>' 아이디어 추천 ✨ </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--아래의 div를 아이디어 개수만큼 반복-->
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${firstInterest[0].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${firstInterest[0].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${firstInterest[1].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${firstInterest[1].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${firstInterest[2].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${firstInterest[2].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${firstInterest[3].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${firstInterest[3].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 조회수 높은 아이디어를 불러오는 BEST 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${firstCategory}"></span>' 아이디어 조회수 BEST 🚩 </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--아래의 div를 아이디어 개수만큼 반복-->
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[0].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[0].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[1].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[1].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[2].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[2].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[3].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[3].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--SECOND-->
+        <!-- 프리미엄 아이디어를 랜덤으로 뽑아오는 추천 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${secondCategory}"></span>' 아이디어 추천 ✨ </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--1번-->
+                    <div class="products">
+                        <div class="product-img">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168949303808372189.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
+                            <div class="product-img2">
+                                <div class="product-img3"></div>
+                            </div>
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <span class="product-textarea-head">시공 없이! 애정을 들여</span>
+                                하나씩 꾸며 나가는 31평 아파트
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 조회수 높은 아이디어를 불러오는 BEST 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${secondCategory}"></span>' 아이디어 조회수 BEST 🚩 </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--아래의 div를 아이디어 개수만큼 반복-->
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[0].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[0].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[1].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[1].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[2].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[2].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[3].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[3].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--LAST-->
+        <!-- 프리미엄 아이디어를 랜덤으로 뽑아오는 추천 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${thirdCategory}"></span>' 아이디어 추천 ✨ </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--1번-->
+                    <div class="products">
+                        <div class="product-img">
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/168949303808372189.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
+                            <div class="product-img2">
+                                <div class="product-img3"></div>
+                            </div>
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <span class="product-textarea-head">시공 없이! 애정을 들여</span>
+                                하나씩 꾸며 나가는 31평 아파트
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 조회수 높은 아이디어를 불러오는 BEST 리스트 -->
+        <div class="product-list">
+            <div class="product-list-title">
+                <div class="product-list1">
+                    <div class="product-list2">
+                        <strong class="product-list-text">'<span th:text="${thirdCategory}"></span>' 아이디어 조회수 BEST 🚩 </strong>
+                    </div>
+                </div>
+                <div class="more-view">
+                    <button type="button" class="more-view1">더보기</button>
+                </div>
+            </div>
+            <div>
+                <div class="product-nav">
+                    <!--아래의 div를 아이디어 개수만큼 반복-->
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[0].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[0].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[1].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[1].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[2].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[2].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                    <div class="products">
+                        <div class="product-img">
+                            <!--아이디어 썸네일-->
+                            <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/projects/167861840082591531.png?w=360&amp;h=240&amp;c=c" class="product-img1">
+                        </div>
+                        <div class="product-title margin10">
+                            <p class="product-textarea">
+                                <!--userNickname-->
+                                <span class="product-textarea-head" th:text="${first[3].userNickname}"></span>
+                                <!--아이디어 제목-->
+                                <span th:text="${first[3].ideaTitle}"></span>
+                            </p>
+                        </div>
+                        <a class="product-ex" href=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

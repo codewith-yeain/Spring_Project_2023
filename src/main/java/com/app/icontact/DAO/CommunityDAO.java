@@ -1,5 +1,6 @@
 package com.app.icontact.DAO;
 
+import com.app.icontact.DTO.CommunityDTO2;
 import com.app.icontact.domain.CommunityVO;
 import com.app.icontact.mapper.CommunityMapper;
 import lombok.RequiredArgsConstructor;
@@ -23,5 +24,10 @@ public class CommunityDAO {
     public void saveCom(CommunityVO communityVO){
         log.info("{}..........", communityVO.toString());
         communityMapper.insertCom(communityVO);
+    }
+
+    // 조회수 상위 3개 조회
+    public List<CommunityDTO2> findCommunityByReadCount(){
+        return communityMapper.selectListByReadCount();
     }
 }

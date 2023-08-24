@@ -1,10 +1,11 @@
+@charset "utf-8";
+
 * {
     font-family: 'Pretendard Variable';
 }
 
 body, html {
     line-height: 1;
-    font-family: "Pretendard Variable", "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", sans-serif;
     font-size: 13px;
 }
 

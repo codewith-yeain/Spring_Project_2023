@@ -2,17 +2,19 @@ package com.app.icontact.controller;
 
 import com.app.icontact.domain.UserVO;
 import com.app.icontact.exception.LoginFailedException;
+import com.app.icontact.service.MailService;
 import com.app.icontact.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
 
 @Slf4j
 @Controller
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/user/*")
 public class UserController {
     private final UserService userService;
+    private final MailService mailService;
 
 //    회원가입
     @GetMapping("join")
@@ -51,10 +54,43 @@ public class UserController {
     }
 
 //    이메일 중복검사
-    @GetMapping("/check-email")
+    @GetMapping("check-email")
     @ResponseBody
     public boolean checkEmail(String userEmail){
     return userService.checkEmail(userEmail).isPresent();
 }
 
+    //    닉네임 중복검사
+    @GetMapping("check-nickname")
+    @ResponseBody
+    public boolean checkNickname(String userNickname){
+        return userService.checkNickname(userNickname).isPresent();
+    }
+
+    // 이메일 인증 번호
+    @GetMapping("email-auth")
+    public void goToEmailAuth(String toEmail){;}
+
+    @ResponseBody
+    @PostMapping("email-auth")
+    public String MailSend(String toEmail) throws UnsupportedEncodingException, MessagingException {
+        String authCode = mailService.sendEmail(toEmail);
+        return authCode;
+    }
+
+    // 로그아웃 상태에서 비밀번호 변경
+    @GetMapping("change-password")
+    public String goToChangePasswordForm(@RequestParam("userEmail") String userEmail, Model model) {
+        // userEmail 값을 Model에 추가하여 뷰에서 사용할 수 있게 합니다.
+        model.addAttribute("userEmail", userEmail);
+        // 비밀번호 변경 페이지 뷰 이름을 반환합니다.
+        // (예: "changePassword"는 실제 뷰 파일 이름이 될 것입니다. 예: changePassword.html)
+        return "user/change-password";
+    }
+
+    @PostMapping("change-password")
+    public RedirectView changePassword(String userEmail, String userPassword, RedirectAttributes redirectAttributes){
+        userService.changePassword(userEmail, userPassword);
+        return new RedirectView("/user/login");
+    }
 }

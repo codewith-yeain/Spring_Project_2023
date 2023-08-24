@@ -2,6 +2,7 @@ package com.app.icontact.controller;
 
 import com.app.icontact.domain.UserVO;
 import com.app.icontact.exception.LoginFailedException;
+import com.app.icontact.service.MailService;
 import com.app.icontact.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
+import java.io.UnsupportedEncodingException;
 
 @Slf4j
 @Controller
@@ -20,6 +23,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/user/*")
 public class UserController {
     private final UserService userService;
+    private final MailService mailService;
 
 //    회원가입
     @GetMapping("join")
@@ -64,5 +68,22 @@ public class UserController {
         return userService.checkNickname(userNickname).isPresent();
     }
 
+    // 이메일 인증 번호
+    @GetMapping("/email-auth")
+    public void goToEmailAuth(String toEmail){;}
+
+    @ResponseBody
+    @PostMapping("/email-auth")
+    public String MailSend(String toEmail) throws UnsupportedEncodingException, MessagingException {
+        String authCode = mailService.sendEmail(toEmail);
+        return authCode;
+    }
+
+    // 로그아웃 상태에서 비밀번호 변경
+    @GetMapping("/change-password")
+    public void goToChangePasswordForm(String userPassword){;}
+
+//    @PostMapping("/change-password")
+//    public Redirec
 
 }

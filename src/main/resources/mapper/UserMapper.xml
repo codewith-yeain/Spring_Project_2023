@@ -21,4 +21,10 @@
         WHERE USER_NICKNAME = #{userNickname}
     </select>
 
+    <update id="updatedPassword">
+        UPDATE TBL_USER
+        SET USER_PASSWORD = #{userPassword}
+        WHERE USER_EMAIL = #{userEmail}
+    </update>
+
 </mapper>

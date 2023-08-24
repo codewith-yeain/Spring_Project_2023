@@ -1,6 +1,7 @@
 package com.app.icontact.mapper;
 
 import com.app.icontact.DTO.IdeaDTO2;
+import com.app.icontact.DTO.IdeaDTO3;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,6 @@ public class IdeaMapperTests {
 
     @Test
     public void selectByScrapTests(){
-        ideaMapper.selectByScrap().stream().map(IdeaDTO2::toString).forEach(log::info);
+        ideaMapper.selectByScrap().stream().map(IdeaDTO3::toString).forEach(log::info);
     }
 }

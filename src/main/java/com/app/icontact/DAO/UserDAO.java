@@ -28,5 +28,10 @@ public class UserDAO {
         return userMapper.selectForNicknameCheck(userNickname);
     }
 
+    // 비밀번호 변경
+    public void changePasswordByUserEmailAndUserPassword(String userEmail, String userPassword){
+        userMapper.updatedPassword(userEmail, userPassword);
+    }
+
 
 }

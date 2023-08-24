@@ -33,4 +33,10 @@ public class UserServiceImpl implements UserService {
     public Optional<String> checkNickname(String userNickname) {
         return Optional.ofNullable(userDAO.findUserNicknameByUserNickname(userNickname));
     }
+
+//    비밀번호 변경
+    @Override
+    public void changePassword(String userEmail, String userPassword) {
+        userDAO.changePasswordByUserEmailAndUserPassword(userEmail, userPassword);
+    }
 }

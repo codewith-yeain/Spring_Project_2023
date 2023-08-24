@@ -15,6 +15,11 @@ public class UserMapperTests {
     public void selectNicknameTests(){
         log.info("{}............", userMapper.selectForNicknameCheck("예인"));
     }
+
+    @Test
+    public void updatedPasswordTests(){
+        userMapper.updatedPassword("eunyoung.choi@email.com", "young");
+    }
 }
 
 

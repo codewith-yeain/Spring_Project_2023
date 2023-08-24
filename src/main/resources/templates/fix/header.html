@@ -48,8 +48,8 @@
 
                             <div class="flex-center">
                                 <div class="member-menu-wrapper">
-                                    <a href="" class="member-menu-link">로그인</a>
-                                    <a href="" class="member-menu-link">회원가입</a>
+                                    <a th:href="@{/user/login}" class="member-menu-link">로그인</a>
+                                    <a th:href="@{/user/join}" class="member-menu-link">회원가입</a>
                                 </div>
 
                                 <span class="line-height-zero">
@@ -72,10 +72,9 @@
                     <div class="navbar-wrapper">
                         <nav class="navbar">
                             <!--아래의 span태그가 메뉴 개수만큼 반복-->
-                            <!--활성화 상태-->
                             <span class="navbar-menu">
                             <div>
-                                <a href="" class="active">
+                                <a th:href="@{/icontact/}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>홈</p>
                                     </div>
@@ -83,10 +82,9 @@
                             </div>
                         </span>
 
-                            <!--비활성화 상태-->
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/idea/ideaBank}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>IDEA BANK</p>
                                     </div>
@@ -96,7 +94,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/inquiry/inquiry}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>문의하기</p>
                                     </div>
@@ -106,7 +104,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/community/listAll}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>커뮤니티</p>
                                     </div>
@@ -116,7 +114,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/about/introduce}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>ABOUT US</p>
                                     </div>
@@ -126,7 +124,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/about/qna}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>FAQ</p>
                                     </div>
@@ -172,7 +170,7 @@
                                 </button>
                             </div>
 
-                            <div>
+                            <!--<div>
                                 <a href="" class="link-btn-wrapper">
                                     <span class="link-btn scrap"></span>
                                 </a>
@@ -182,12 +180,12 @@
                                 <a href="" class="link-btn-wrapper">
                                     <span class="link-btn news"></span>
                                 </a>
-                            </div>
+                            </div>-->
 
                             <div class="flex-center">
                                 <div class="top-header-side-menu-layout">
                                 <span class="line-height-zero">
-                                    <button type="button" class="profile-img-btn">
+                                    <button type="button" class="profile-img-btn" th:onclick="|location.href='@{/mypage/mypage}'|">
                                         <img src="/images/icon/null.png" class="profile-img">
                                     </button>
                                 </span>
@@ -217,10 +215,9 @@
                     <div class="navbar-wrapper">
                         <nav class="navbar">
                             <!--아래의 span태그가 메뉴 개수만큼 반복-->
-                            <!--활성화 상태-->
                             <span class="navbar-menu">
                             <div>
-                                <a href="" class="active">
+                                <a th:href="@{/icontact/}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>홈</p>
                                     </div>
@@ -228,10 +225,9 @@
                             </div>
                         </span>
 
-                            <!--비활성화 상태-->
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/idea/ideaBank}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>IDEA BANK</p>
                                     </div>
@@ -241,7 +237,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/inquiry/inquiry}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>문의하기</p>
                                     </div>
@@ -251,7 +247,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/community/listAll}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>커뮤니티</p>
                                     </div>
@@ -261,7 +257,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/about/introduce}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>ABOUT US</p>
                                     </div>
@@ -271,7 +267,7 @@
 
                             <span class="navbar-menu">
                             <div>
-                                <a href="">
+                                <a th:href="@{/about/qna}" class="active">
                                     <div class="navbar-menu-wrapper">
                                         <p>FAQ</p>
                                     </div>

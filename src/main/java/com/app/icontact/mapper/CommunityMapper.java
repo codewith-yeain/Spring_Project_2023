@@ -1,10 +1,7 @@
 package com.app.icontact.mapper;
 
-<<<<<<< HEAD
 import com.app.icontact.DTO.CommunityDTO;
-=======
 import com.app.icontact.DTO.CommunityDTO2;
->>>>>>> master
 import com.app.icontact.domain.CommunityVO;
 import org.apache.ibatis.annotations.Mapper;
 

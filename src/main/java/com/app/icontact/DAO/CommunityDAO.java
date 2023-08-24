@@ -1,10 +1,7 @@
 package com.app.icontact.DAO;
 
-<<<<<<< HEAD
 import com.app.icontact.DTO.CommunityDTO;
-=======
 import com.app.icontact.DTO.CommunityDTO2;
->>>>>>> master
 import com.app.icontact.domain.CommunityVO;
 import com.app.icontact.mapper.CommunityMapper;
 import lombok.RequiredArgsConstructor;

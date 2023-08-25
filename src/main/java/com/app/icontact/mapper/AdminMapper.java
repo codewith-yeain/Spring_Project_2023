@@ -25,4 +25,16 @@ public interface AdminMapper {
 
     //결제 취소
     public String updateCancel(String paymentId);
+
+    //회원목록보기(최신순)
+
+    //회원상세보기(그 회원의 마이페이지로 이동)
+
+    //커뮤니티 글목록 보기
+
+    //커뮤니티 글 수정(글 수정페이지로 이동)
+
+    //커뮤니티 글 삭제
+
+
 }

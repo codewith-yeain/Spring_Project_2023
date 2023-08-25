@@ -157,6 +157,7 @@ function updateServerPreviews(uuids, addedFiles) {
         // 큰 미리보기 업데이트
         const $bigPreview = $(".idea-img-wrapper").eq(startIndex + i);
         $bigPreview.find('.idea-img').attr("src", FILE_PATH_TEMPLATE + fileName);
+        console.log($bigPreview.find('.idea-img').attr("src"));
         $bigPreview.show();
     }
 }
@@ -176,16 +177,20 @@ $(".idea-write-btn").on("click", function(e){
     let count = 0;
 
     // 클릭 이벤트에서 큰 미리보기를 기준으로 each 반복문 실행
-    $(".idea-img-wrapper .idea-img").each((i, img) => {
+    $(".idea-img").each((i, img) => {
         let fullPath = $(img).attr("src");
         if(!fullPath) {return;}
+        alert(i + '으악' + fullPath);
+
+        // /idea-files/display?fileName=2023/08/26/t_6b9ac53a-bae6-449a-92bb-14899d753f05_IMG_8240.PNG
 
         let datas = fullPath.split("_");
-        let filePath = datas[0].split("=")[1].replace("/t", "");
-        let fileUuid = datas[1];
-        let fileName = datas[2];
-        let fileType = $(img).hasClass("representative");
-        let fileSize = sizes[i]; // 'sizes' 변수가 정의되어 있어야 합니다.
+
+        let ideaFilePath = datas[0].split("=")[1].replace("/t", ""); // 2023/08/26
+        let ideaFileUuid = datas[1]; // 6b9ac53a-bae6-449a-92bb-14899d753f05
+        let ideaFileName = datas.slice(2).join("_"); // IMG_8240.PNG
+        // let ideaFileType = $(img).hasClass("representative");
+        let ideaFileSize = sizes[i]; // 'sizes' 변수가 정의되어 있어야 합니다.
 
         text += `
             <input type="hidden" name="files[${count}].ideaFilePath" value="${ideaFilePath}">
@@ -193,11 +198,14 @@ $(".idea-write-btn").on("click", function(e){
             <input type="hidden" name="files[${count}].ideaFileName" value="${ideaFileName}">
             <input type="hidden" name="files[${count}].ideaFileSize" value="${ideaFileSize}">
         `
-        if(fileType){
+        if(i == 0){
             text += `<input type="hidden" name="files[${count}].ideaFileType" value="REPRESENTATIVE">`;
         }
+
+        // alert(i + '경로' + ideaFilePath + '으악' + ideaFileUuid + '이름' + ideaFileName);
         count++;
     });
+
 
     $(ideaForm).append(text);
     $(ideaForm).submit();

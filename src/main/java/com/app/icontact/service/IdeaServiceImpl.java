@@ -43,7 +43,9 @@ public class IdeaServiceImpl implements IdeaService {
         log.info("파일 들어왔니? {}", ideaDTO4.getFiles());
 
         for(int i=0; i<ideaDTO4.getFiles().size(); i++){
+            log.info("{}...........룰루", ideaDTO4.getId());
             ideaDTO4.getFiles().get(i).setIdeaId(ideaDTO4.getId());
+            log.info("응 들어왔다 !! {}", ideaDTO4.getFiles());
             if(ideaDTO4.getFiles().get(i).getIdeaFileType() == null){
                 ideaDTO4.getFiles().get(i).setIdeaFileType(FileType.NON_REPRESENTATIVE.name());
             }

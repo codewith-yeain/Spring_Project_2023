@@ -3,6 +3,8 @@ package com.app.icontact.mapper;
 import com.app.icontact.domain.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Optional;
+
 @Mapper
 public interface UserMapper {
 //    회원 가입
@@ -20,5 +22,7 @@ public interface UserMapper {
 //    비밀번호 변경
     public void updatedPassword(String userEmail, String userPassword);
 
+    //    회원 조회
+    public Optional<UserVO> selectById(Long id);
 
 }

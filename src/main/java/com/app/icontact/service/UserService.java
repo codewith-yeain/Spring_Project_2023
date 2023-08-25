@@ -20,4 +20,7 @@ public interface UserService {
 
 //    비밀번호 변경
     public void changePassword(String userEmail, String userPassword);
+
+    //    회원 조회
+    public Optional<UserVO> getUser(Long id);
 }

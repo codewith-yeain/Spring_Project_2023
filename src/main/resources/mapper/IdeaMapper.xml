@@ -46,8 +46,10 @@
     </select>
 
     <insert id="insert">
-        INSERT INTO TBL_IDEA (
-          ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY, IDEA_TYPE, IDEA_PRICE, IDEA_MAX, USER_ID)
-          VALUES (SEQ_IDEA.NEXTVAL, #{ideaTitle}, #{ideaIntro}, #{ideaDetail}, #{ideaCategory}, #{ideaType}, #{ideaPrice}, #{ideaMax}, #{userId})
+        <selectKey keyProperty="id" order="BEFORE" resultType="long">
+            SELECT SEQ_IDEA.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO TBL_IDEA (ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY, IDEA_TYPE, IDEA_PRICE, IDEA_MAX, USER_ID)
+        VALUES(#{id}, #{ideaTitle}, #{ideaIntro}, #{ideaDetail}, #{ideaCategory}, #{ideaType}, #{ideaPrice}, #{ideaMax}, #{userId})
     </insert>
 </mapper>

@@ -45,7 +45,9 @@ public class IdeaMapperTests {
 
     @Test
     public void selectIdeasTest(){
-        Long ideaCategory = null;
-        ideaMapper.selectIdeas(ideaCategory).stream().map(IdeaDTO4::toString).forEach(log::info);
+        Long ideaCategory = 1L;
+        Long ideaPrice = 95000L;
+        Long ideaMax = null;
+        ideaMapper.selectIdeas(ideaCategory, ideaPrice, ideaMax).stream().map(IdeaDTO4::toString).forEach(log::info);
     }
 }

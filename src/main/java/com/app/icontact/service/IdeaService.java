@@ -2,6 +2,7 @@ package com.app.icontact.service;
 
 import com.app.icontact.DTO.IdeaDTO2;
 import com.app.icontact.DTO.IdeaDTO3;
+import com.app.icontact.DTO.IdeaDTO4;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface IdeaService {
     public List<IdeaDTO2> getPremiumIdeas(Long ideaCategory);
 
     public List<IdeaDTO3> getTopScrapIdeas();
+
+    public void write(IdeaDTO4 ideaDTO4);
 }

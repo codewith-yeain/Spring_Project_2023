@@ -22,4 +22,10 @@ public class IdeaServiceTests {
     public void selectTests(){
         ideaService.getPremiumIdeas(1L).stream().map(IdeaDTO2::toString).forEach(log::info);
     }
+
+//    @Test
+//    public void writeTests(){
+//
+//    }
+
 }

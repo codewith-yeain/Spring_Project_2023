@@ -3,6 +3,7 @@ package com.app.icontact.controller;
 import com.app.icontact.DAO.InquiryDAO;
 import com.app.icontact.DTO.InquiryDTO;
 import com.app.icontact.DTO.Pagination;
+import com.app.icontact.domain.AnswerVO;
 import com.app.icontact.domain.InquiryVO;
 import com.app.icontact.service.InquiryService;
 import lombok.RequiredArgsConstructor;
@@ -12,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -32,13 +35,6 @@ public class InquiryController {
         inquiryService.inquiry(inquiryVO);
         log.info("{}......",inquiryVO.toString());
         return new RedirectView("/icontact/");
-    }
-
-    //문의목록보기
-    @GetMapping("list")
-    public void showList(Pagination pagination, Model model){
-        pagination.progress();
-        model.addAttribute("inquiries", inquiryService.getList(pagination));
     }
 
 }

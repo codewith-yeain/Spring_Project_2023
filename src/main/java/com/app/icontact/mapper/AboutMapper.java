@@ -16,7 +16,7 @@ public interface AboutMapper {
     public NoticeVO selectNotice(NoticeVO noticeVO);
 
     //공지사항 삭제
-
+    
     //회사소개 배너(조회수 순)
 
 }

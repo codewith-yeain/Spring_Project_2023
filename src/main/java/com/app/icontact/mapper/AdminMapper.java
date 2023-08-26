@@ -1,18 +1,32 @@
 package com.app.icontact.mapper;
 
 import com.app.icontact.DTO.CommunityDTO;
+import com.app.icontact.DTO.InquiryDTO;
 import com.app.icontact.DTO.Pagination;
+import com.app.icontact.domain.AnswerVO;
+import com.app.icontact.domain.InquiryVO;
 import com.app.icontact.domain.NoticeVO;
 import com.app.icontact.domain.PaymentVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface AdminMapper {
     //공지사항 작성
     public void insertNotice(NoticeVO noticeVO);
+
+
+    //문의목록 보기
+    public List<InquiryDTO> selectAllInquiry(@Param("pagination") Pagination pagination);
+
+    //문의 보기
+    public Optional<InquiryVO> selectInquiry(Long id);
+
+    //문의 답변하기
+    public void insertAnswer(AnswerVO answerVO);
 
     //커뮤니티 관리목록 보기
     public List<CommunityDTO> selectAllCommunity (@Param("pagination") Pagination pagination);

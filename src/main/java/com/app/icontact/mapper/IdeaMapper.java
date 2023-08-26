@@ -23,4 +23,6 @@ public interface IdeaMapper {
     // 아이디어 추가
     public void insert(IdeaDTO4 ideaDTO4);
 
+    public List<IdeaDTO4> selectIdeas(Long ideaCategory);
+
 }

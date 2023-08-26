@@ -52,4 +52,18 @@
         INSERT INTO TBL_IDEA (ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY, IDEA_TYPE, IDEA_PRICE, IDEA_MAX, USER_ID)
         VALUES(#{id}, #{ideaTitle}, #{ideaIntro}, #{ideaDetail}, #{ideaCategory}, #{ideaType}, #{ideaPrice}, #{ideaMax}, #{userId})
     </insert>
+
+    <select id="selectIdeas" resultType="ideaDTO4">
+        SELECT ID FROM TBL_IDEA
+        WHERE 1 = 1
+        <if test="ideaCategory != null">
+            AND IDEA_CATEGORY = #{ideaCategory}
+        </if>
+        <if test="ideaPrice != null">
+            <![CDATA[
+            AND (IDEA_PRICE >= #{ideaPrice} + 5000 AND IDEA_PRICE < #{ideaPrice} + 5000)
+            ]]>
+        </if>
+    </select>
+
 </mapper>

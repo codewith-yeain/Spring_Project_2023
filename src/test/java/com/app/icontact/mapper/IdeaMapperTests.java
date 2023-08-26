@@ -42,4 +42,10 @@ public class IdeaMapperTests {
         ideaDTO4.setIdeaMax(9L);
         ideaMapper.insert(ideaDTO4);
     }
+
+    @Test
+    public void selectIdeasTest(){
+        Long ideaCategory = null;
+        ideaMapper.selectIdeas(ideaCategory).stream().map(IdeaDTO4::toString).forEach(log::info);
+    }
 }

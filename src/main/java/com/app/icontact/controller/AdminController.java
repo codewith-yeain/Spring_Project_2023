@@ -13,12 +13,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpSession;
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/admin/*")
 public class AdminController {
     private final AdminService adminService;
+    private final HttpSession session;
+
+   /* //커뮤니티 관리목록
+    @GetMapping("communitygetList")*/
+
+    //커뮤니티 글 삭제
+    @GetMapping("community")
+    public void communitydelete(Long id){
+        adminService.communitydelete(id);
+        return ;
+    }
+
 
     //공지사항 글 작성
     @GetMapping("notice_write")
@@ -51,5 +65,7 @@ public class AdminController {
         log.info("{}......", answerVO.toString());
         return new RedirectView("/inquiry/inquiry-list");
     }*/
+
+    //회원목록
 
 }

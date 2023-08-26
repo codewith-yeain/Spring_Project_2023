@@ -1,12 +1,7 @@
 package com.app.icontact.mapper;
 
-import com.app.icontact.DTO.CommunityDTO;
-import com.app.icontact.DTO.InquiryDTO;
-import com.app.icontact.DTO.Pagination;
-import com.app.icontact.domain.AnswerVO;
-import com.app.icontact.domain.InquiryVO;
-import com.app.icontact.domain.NoticeVO;
-import com.app.icontact.domain.PaymentVO;
+import com.app.icontact.DTO.*;
+import com.app.icontact.domain.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -15,9 +10,14 @@ import java.util.Optional;
 
 @Mapper
 public interface AdminMapper {
+    //커뮤니티 관리목록 보기
+    public List<CommunityDTO> selectAllCommunity (@Param("pagination") Pagination pagination);
+
+    //커뮤니티 글 삭제
+    public void delete(Long id);
+
     //공지사항 작성
     public void insertNotice(NoticeVO noticeVO);
-
 
     //문의목록 보기
     public List<InquiryDTO> selectAllInquiry(@Param("pagination") Pagination pagination);
@@ -28,27 +28,19 @@ public interface AdminMapper {
     //문의 답변하기
     public void insertAnswer(AnswerVO answerVO);
 
-    //커뮤니티 관리목록 보기
-    public List<CommunityDTO> selectAllCommunity (@Param("pagination") Pagination pagination);
-
-    //커뮤니티 글 삭제
-    public String deleteCommunity(String communityId);
-
     //결제목록 보기
     public List<PaymentVO> selectAllPayment(@Param("pagination") Pagination pagination);
 
     //결제 취소
-    public String updateCancel(String paymentId);
+    public void updateCancel(Long id);
 
-    //회원목록보기(최신순)
+    //회원목록보기
+    public List<UserVO> selelctAllUser (UserVO uservo);
 
-    //회원상세보기(그 회원의 마이페이지로 이동)
+    //회원상태변경
+    public void updateUserType (Long id);
 
-    //커뮤니티 글목록 보기
-
-    //커뮤니티 글 수정(글 수정페이지로 이동)
-
-    //커뮤니티 글 삭제
-
+    //회원탈퇴
+    public void updateUserStatus (Long id);
 
 }

@@ -9,7 +9,7 @@
     </select>
 
 <!--    커뮤니티 글 삭제-->
-    <delete id="deleteCommunity">
+    <delete id="delete">
         DELETE FROM TBL_COMMUNITY
         WHERE id = #{communityId}
     </delete>
@@ -43,13 +43,35 @@
 
 
     <!--    결제목록 보기-->
-    <select id="selectAllPayment" resultType="PaymentVO"></select>
-<!--    public List<PaymentVO> selectAllPayment(@Param("pagination") Pagination pagination);-->
+    <select id="selectAllPayment" resultType="PaymentVO">
+        SELECT ID, USER_ID, PAMENT_AMOUNT, PAYMENT_STATUS, PAYMENT_APPROVE_DATE, PAYMENT_SORT
+        FROM TBL_PAYMENT
+    </select>
 
-<!--    결제 취소-->
-  <!--  <update id="updateCancel">
-        UPDATE TBL_PAYMENT
-        SET
+    <!-- 결제취소 -->
+        <update id="updateCancel">
+            UPDATE TBL_PAYMENT
+            SET PAYMENT_CANCEL_DATE = SYSDATE
+            WHERE ID = {iDEA_ID}
+        </update>
+
+    <!-- 회원목록보기 -->
+    <select id="selectAllUser" resultType="UserVO">
+    SELECT ID, USER_NAME, USER_NINCKNAME, USER_EMAIL, USER_STATUS, USER_TYPE
+    FROM TBL_USER
+    </select>
+
+    <!-- 회원상태변경 -->
+    <update id="updateUserType">
+        UPDATE TBL_USER
+            SET USER_TYPE = '회원'
+            WHERE ID = {id}
     </update>
-    public String updateCancel(String paymentId);-->
+
+    <!-- 회원 탈퇴-->
+    <update id="updateUserStatus">
+        UPDATE TBL_USER
+            SET USER_STATUS = '일반'
+            WHERE ID = {id}
+    </update>
 </mapper>

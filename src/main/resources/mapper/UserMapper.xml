@@ -16,4 +16,21 @@
         WHERE USER_EMAIL = #{userEmail}
     </select>
 
+    <select id="selectForNicknameCheck" resultType="string">
+        SELECT USER_NICKNAME FROM TBL_USER
+        WHERE USER_NICKNAME = #{userNickname}
+    </select>
+
+    <update id="updatedPassword">
+        UPDATE TBL_USER
+        SET USER_PASSWORD = #{userPassword}
+        WHERE USER_EMAIL = #{userEmail}
+    </update>
+
+    <select id="selectById" resultType="userVO">
+        SELECT ID, USER_EMAIL, USER_PASSWORD, USER_NAME, USER_NICKNAME, USER_TYPE, USER_INTRO, USER_PHONE, USER_STATUS
+        FROM TBL_USER
+        WHERE ID = #{id}
+    </select>
+
 </mapper>

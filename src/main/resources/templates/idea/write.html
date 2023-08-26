@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>소중한 당신의 아이디어 - iContact에서 보여주세요!</title>
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/idea/write.css">
-    <link rel="stylesheet" href="../../static/css/fix/header.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/idea/write.css">
+    <link rel="stylesheet" href="/css/fix/header.css">
 
     <style>
         /*돋보기 아이콘을 위한 폰트*/
@@ -20,45 +20,151 @@
 
         @font-face {
             font-family: 'Pretendard Variable';
-            src: url('../../static/font/PretendardVariable.woff2');
+            src: url('/font/PretendardVariable.woff2');
         }
     </style>
 </head>
 <body>
 <div class="full-height">
-    <form action="">
+    <form th:action="@{/idea/write}" method="post" name="ideaForm" th:object="${ideaDTO4}" enctype="multipart/form-data">
         <div class="relative">
             <div class="sticky-container z-index500">
                 <div class="sticky-child idea-write-header-wrapper" style="position: fixed; transition: top 0.1s ease 0s; top: 0px; width: 100%;">
                     <div class="idea-write-header-layout">
                         <a href="" class="idea-write-logo-wrapper">
-                            <img src="../../static/images/icon/logo.png" class="logo">
+                            <img src="/images/icon/logo.png" class="logo">
                         </a>
 
-                        <button type="button" class="back-btn">
+                        <!--<button type="button" class="back-btn">
                             <svg class="icon" width="24" height="24">
                                 <path d="M3.7 12.5h18.8v-1H3.7l7.8-7.8-.7-.7L2 11.7l.3.3-.3.3 8.8 8.7.7-.7-7.8-7.8z" fill="#000" fill-opacity=".7" fill-rule="evenodd"></path>
                             </svg>
-                        </button>
+                        </button>-->
 
-                        <div class="idea-write-btn-wrapper">
-                            <button type="submit" class="idea-write-btn">등록하기</button>
-                            <button type="submit" class="idea-write-btn-mobile">등록하기</button>
-                        </div>
+                        <button type="button" class="idea-write-btn">등록하기</button>
+                        <!--<button type="button" class="idea-write-btn-mobile">등록하기</button>-->
                     </div>
                 </div>
+            </div>
+            <div style="margin-top:83px; border-bottom: 1px solid rgb(219, 219, 219);">
+                <ul class="text-bar-wrapper">
+                    <li class="text-bar">
+                        <span>아이디어 작성하기</span>
+                    </li>
+                </ul>
             </div>
 
             <div class="idea-write-wrapper">
                 <div class="flex">
                     <!--미리보기-->
-                    <div></div>
+                    <div>
+                        <ol class="preview-wrapper">
+                            <!--아래의 li 태그가 사진만큼 반복-->
+                            <li>
+                                <!--아래의 div 태그가 미리보기만큼 반복-->
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="preview-layout">
+                                    <div class="flex-center">
+                                        <div class="preview-img-wrapper">
+                                            <img class="preview-img" src="" alt="">
+                                            <!--x표시-->
+                                            <div class="x">
+                                                <img src="/images/icon/x.svg" width="24" height="24">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--사진 첨부 버튼-->
+                            <label for="upload" type="button" class="plus-btn">
+                                <span class="plus"></span>
+                            </label>
+                            <input type="file" id="upload" class="upload" style="display: none;" multiple>
+                        </ol>
+                    </div>
 
                     <ol class="idea-write-form-layout">
                         <li>
                             <div class="idea-write-form-wrap">
-                                <div class="idea-write-form">
-                                    <div class="idea-img-input-wrapper">
+                                <div class="idea-write-form"> <!--양옆 다 감싸고 있음-->
+                                    <!--사진 첨부 전-->
+                                    <div class="idea-img-input-wrapper" id="no-image">
                                         <!--모바일 화면에서 보이는 사진 추가 칸-->
                                         <button type="button" class="idea-img-input-mobile">
                                             <div class="idea-img-input-mobile-layout">
@@ -74,35 +180,63 @@
                                             <div class="full-padding-bottom">
                                                 <div class="idea-img-input-background">
                                                     <span class="camera"></span>
-                                                    <span class="input-notice">사진을 끌어다 놓으세요</span>
-                                                    <span class="input-sub-notice">9장까지 올릴 수 있어요</span>
+                                                    <span class="input-notice">아직 첨부된 사진이 없어요.</span>
+                                                    <span class="input-sub-notice">최대 8장까지 사진을 첨부해보세요.</span>
+                                                    <span class="input-sub-notice">첫 번째로 첨부한 사진은 썸네일이 됩니다 :)</span>
                                                 </div>
-                                                <button type="button" class="idea-img-input-btn">PC에서 불러오기</button>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!--사진 첨부시-->
+                                    <div class="idea-img-input-wrapper" id="big-preview-wrap">
+                                        <!--아래의 div가 이미지 개수만큼 반복됨-->
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                        <div class="idea-img-wrapper" style="display: none">
+                                            <img src="" class="idea-img">
+                                        </div>
+                                    </div>
 
                                     <div class="idea-write-side-wrapper">
                                         <div class="idea-write-side-layout">
                                             <div>
                                                 <h1 class="idea-write-title">아이디어 제목</h1>
                                                 <div class="idea-write-text-input-wrapper">
-                                                    <input type="text" placeholder="아이디어 제목을 작성해주세요" class="idea-write-text-input">
+                                                    <input type="text" placeholder="아이디어 제목을 작성해주세요" class="idea-write-text-input" th:field="*{ideaTitle}">
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <h1 class="idea-write-title">아이디어 기본 정보</h1>
                                                 <div class="idea-write-text-input-wrapper">
-                                                    <input type="text" placeholder="어떤 아이디어인지, 한 줄 설명으로 시작해주세요" class="idea-write-text-input">
+                                                    <input type="text" placeholder="어떤 아이디어인지, 한 줄 설명으로 시작해주세요" class="idea-write-text-input" th:field="*{ideaIntro}">
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <h1 class="idea-write-title">아이디어 상세 설명</h1>
                                                 <div class="idea-write-text-input-wrapper">
-                                                    <textarea placeholder="등록할 아이디어를 자세히 설명해주세요. 소중한 아이디어인만큼, 꼼꼼히 작성할수록 협의 요청이 많을거에요!" class="idea-write-textarea-input" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                                                    <textarea th:field="*{ideaDetail}" placeholder="등록할 아이디어를 자세히 설명해주세요. 소중한 아이디어인만큼, 꼼꼼히 작성할수록 협의 요청이 많을거에요!" class="idea-write-textarea-input" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
                                                 </div>
                                             </div>
 
@@ -110,58 +244,142 @@
                                                 <h1 class="idea-write-title">아이디어 카테고리 선택</h1>
                                                 <div class="idea-category-input-wrapper">
                                                     <div class="relative">
-                                                        <select name="" id="" class="idea-category-input">
+                                                        <select class="idea-category-input" th:field="*{ideaCategory}">
                                                             <option value="" disabled hidden selected>카테고리 선택</option>
-                                                            <optgroup label="상위 카테고리1">
-                                                                <option value="">하위 카테고리</option>
-                                                                <option value="">하위 카테고리</option>
-                                                                <option value="">하위 카테고리</option>
+                                                            <optgroup label="패션">
+                                                                <option value="1">여성의류</option>
+                                                                <option value="2">남성의류</option>
+                                                                <option value="3">언더웨어</option>
+                                                                <option value="4">액세서리</option>
+                                                                <option value="5">신발</option>
+                                                                <option value="6">가방</option>
+                                                                <option value="7">아동의류</option>
+                                                                <option value="8">스포츠・아웃도어</option>
                                                             </optgroup>
-                                                            <optgroup label="상위 카테고리1">
-                                                                <option value="">하위 카테고리</option>
-                                                                <option value="">하위 카테고리</option>
-                                                                <option value="">하위 카테고리</option>
+                                                            <optgroup label="리빙홈">
+                                                                <option value="9">가구</option>
+                                                                <option value="10">조명</option>
+                                                                <option value="11">인테리어 소품</option>
+                                                                <option value="12">침구</option>
+                                                                <option value="13">욕실용품</option>
+                                                                <option value="14">주방용품</option>
                                                             </optgroup>
-                                                            <optgroup label="상위 카테고리1">
-                                                                <option value="">하위 카테고리</option>
-                                                                <option value="">하위 카테고리</option>
-                                                                <option value="">하위 카테고리</option>
+                                                            <optgroup label="문구">
+                                                                <option value="15">필기도구</option>
+                                                                <option value="16">노트</option>
+                                                                <option value="17">데스크용품</option>
+                                                                <option value="18">여행・가방용품</option>
+                                                                <option value="19">기프트・포장</option>
+                                                            </optgroup>
+                                                            <optgroup label="제로웨이스트">
+                                                                <option value="20">재사용 가능 용기</option>
+                                                                <option value="21">패브릭</option>
+                                                                <option value="22">주방용품</option>
+                                                                <option value="23">화장품・뷰티</option>
+                                                                <option value="24">생활용품</option>
+                                                            </optgroup>
+                                                            <optgroup label="음료・주류">
+                                                                <option value="25">차・커피</option>
+                                                                <option value="26">쥬스</option>
+                                                                <option value="27">칵테일</option>
+                                                                <option value="28">와인・맥주</option>
+                                                                <option value="29">전통주・알코올음료</option>
+                                                            </optgroup>
+                                                            <optgroup label="디저트">
+                                                                <option value="30">케이크・빵</option>
+                                                                <option value="31">초콜릿・사탕</option>
+                                                                <option value="32">아이스크림</option>
+                                                                <option value="33">푸딩・젤리</option>
+                                                                <option value="34">전통 디저트</option>
+                                                            </optgroup>
+                                                            <optgroup label="요리">
+                                                                <option value="35">한식</option>
+                                                                <option value="36">중식</option>
+                                                                <option value="37">일식</option>
+                                                                <option value="38">양식</option>
+                                                                <option value="39">그 외 세계요리</option>
+                                                                <option value="40">특색 요리</option>
+                                                            </optgroup>
+                                                            <optgroup label="반려용품">
+                                                                <option value="41">개용품</option>
+                                                                <option value="42">고양이용품</option>
+                                                                <option value="43">소동물용품</option>
+                                                                <option value="44">어류용품</option>
+                                                                <option value="45">훈련・게임용품</option>
+                                                            </optgroup>
+                                                            <optgroup label="유아용품">
+                                                                <option value="46">유아복</option>
+                                                                <option value="47">장난감・교육용품</option>
+                                                                <option value="48">유아식품・간식</option>
+                                                                <option value="49">위생용품</option>
+                                                                <option value="50">유아가구・침구</option>
+                                                            </optgroup>
+                                                            <optgroup label="기타">
+                                                                <option value="51">전자제품・기기</option>
+                                                                <option value="52">여행・레저</option>
+                                                                <option value="53">취미・공예</option>
+                                                                <option value="54">책・출판</option>
+                                                                <option value="55">음악・엔터테인먼트</option>
+                                                                <option value="56">그 외</option>
                                                             </optgroup>
                                                         </select>
                                                         <span class="idea-category-dropdown-btn">
-                                                                <svg class="icon" width="10" height="10" style="fill: currentcolor;">
-                                                                    <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
-                                                                </svg>
-                                                            </span>
+                                                            <svg class="icon" width="10" height="10" style="fill: currentcolor;">
+                                                                <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
+                                                            </svg>
+                                                        </span>
                                                     </div>
-
                                                 </div>
-                                                <!--드롭다운메뉴 -->
-                                                <!--<div class="idea-category-dropdown-menu-wrapper">
-                                                    <div>
-                                                        <div class="idea-category-dropdown-menu">
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                            <div class="idea-category-dropdown-menu-item">메뉴</div>
-                                                        </div>
+                                            </div>
+
+                                            <div class="idea-category-layout">
+                                                <h1 class="idea-write-title">협의자수</h1>
+                                                <div class="idea-category-input-wrapper">
+                                                    <div class="relative">
+                                                        <select class="idea-category-input" th:field="*{ideaMax}">
+                                                            <option value="0" disabled selected>최대 몇 명과 협의할 지 골라주세요</option>
+                                                            <option value="1">1명</option>
+                                                            <option value="2">2명</option>
+                                                            <option value="3">3명</option>
+                                                            <option value="4">4명</option>
+                                                            <option value="5">5명</option>
+                                                            <option value="6">6명</option>
+                                                            <option value="7">7명</option>
+                                                            <option value="8">8명</option>
+                                                            <option value="9">9명</option>
+                                                            <option value="10">10명</option>
+                                                            <option value="11">10명 이상</option>
+                                                            <option value="12">20명 이상</option>
+                                                            <option value="13">제한 없음</option>
+                                                        </select>
+                                                        <span class="idea-category-dropdown-btn">
+                                                            <svg class="icon" width="10" height="10" style="fill: currentcolor;">
+                                                                <path fill-rule="evenodd" d="M0 3l5 5 5-5z"></path>
+                                                            </svg>
+                                                        </span>
                                                     </div>
-                                                </div>-->
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <h1 class="idea-write-title">희망 가격 설정</h1>
+                                                <div class="idea-write-text-input-wrapper">
+                                                    <input type="text" placeholder="아이디어를 얼마에 판매하고 싶은지 적어주세요(쉼표 제외)" class="idea-write-text-input" th:field="*{ideaPrice}">
+                                                </div>
                                             </div>
 
                                             <div class="premium-idea-register-wrapper">
                                                 <div class="form-check checkbox-input">
                                                     <label class="form-check-label">
-                                                        <input class="form-check" type="checkbox">
+                                                        <input class="form-check" type="checkbox" id="premium-check" onchange="handleCheckboxChange(this)">
                                                         <span class="check-img"></span>
                                                         <div class="check-notice">프리미엄 아이디어 등록</div>
                                                     </label>
                                                 </div>
                                             </div>
+
+                                            <input type="text" hidden name="ideaType" value="일반">
+
 
                                         </div>
                                     </div>
@@ -178,7 +396,7 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="../../static/js/idea/write.js"></script>
+<script src="/js/idea/write.js"></script>
 
 
 </html>

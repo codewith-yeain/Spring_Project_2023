@@ -14,7 +14,6 @@
             src:url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2");
         }
 
-
         @font-face {
             font-family: 'Pretendard Variable';
             src: url('/font/PretendardVariable.woff2');
@@ -73,8 +72,7 @@
                         <input type="email" name="userEmail" hidden th:field="*{userEmail}">
                         <span class="email-input1">
                             <label>
-                                <input class="form-control" placeholder="이메일" size="1" value="" name="email-first">
-                                <span class="form-control-blind">이메일 앞 주소 입력하기</span>
+                                <input class="form-control" placeholder="이메일" id="email-first" value="" name="email-first">
                             </label>
                         </span>
                         <span class="email-input3">@</span>
@@ -92,7 +90,6 @@
                                     <option value="icloud.com">icloud.com</option>
                                     <option value="manual">직접입력</option>
                                 </select>
-                                <!--<span class="form-control-blind">이메일 도메인 선택하기</span>-->
                             </label>
                             <button class="email-input2_expand" aria-label="초기화" type="button" tabindex="-1">
                                 <svg class="icon" width="10" height="10" style="fill: currentcolor;">
@@ -104,67 +101,49 @@
                 </div>
             </div>
             <div class="email-check">
-                <button class="email-check-button" name="emailAuth" type="button">이메일 인증하기</button>
+                <button class="email-check-button" name="emailAuth" type="button">이메일 중복확인</button>
             </div>
             <div class="" style="overflow: hidden;"></div>
             <div class="password">
                 <label class="password-label">비밀번호</label>
                 <div class="password2">영문, 숫자를 포함한 8자 이상의 비밀번호를 입력해주세요.</div>
                 <label>
-                    <input class="lay3 lay4" name="password" type="password" placeholder="비밀번호">
-                    <span class="password-text">비밀번호 입력하기</span>
+                    <input class="lay3 lay4" name="password" type="password" placeholder="비밀번호" id="password">
                 </label>
             </div>
             <div class="password-checker">
                 <label class="password-text2">비밀번호 확인</label>
                 <label>
-                    <input class="lay3 lay4" name="confirmPassword" type="password" placeholder="비밀번호 확인" th:field="*{userPassword}" >
-                    <span class="password-checker2">입력한 비밀번호 확인하기</span>
+                    <input class="lay3 lay4" name="confirmPassword" type="password" placeholder="비밀번호 확인" id="confirmPassword" th:field="*{userPassword}" >
                 </label>
             </div>
             <div class="password-checker">
                 <label class="password-text2">전화번호</label>
-                <div class="doble">사용중인 핸드폰 번호를 입력해주세요.</div>
+                <div class="doble">사용중인 핸드폰 번호를 입력해주세요.(ex:01012345678)</div>
                 <label>
-                    <input class="lay3 lay4" name="phone" placeholder="전화번호 입력" th:field="*{userPhone}" >
-                    <span class="nickname">전화번호 입력하기</span>
+                    <input class="lay3 lay4" id="phone" name="phone" placeholder="전화번호 입력" th:field="*{userPhone}" >
                 </label>
             </div>
             <div class="password-checker">
                 <label class="password-text2">성명</label>
-                <div class="doble">본인의 실명을 입력해주세요.</div>
+                <div class="doble">본인의 실명을 입력해주세요.(외자인 경우 포함, 띄어쓰기 제외하여 작성)</div>
                 <label>
-                    <input class="lay3 lay4" name="name" placeholder="성함 입력" th:field="*{userName}" >
-                    <span class="nickname">성명 입력하기</span>
+                    <input class="lay3 lay4" id="name" name="name" placeholder="성함 입력" th:field="*{userName}" >
                 </label>
             </div>
             <div class="password-checker">
                 <label class="password-text2">닉네임</label>
                 <div class="doble">다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</div>
                 <label>
-                    <input class="lay3 lay4" name="nickname" placeholder="별명 (2~15자)" th:field="*{userNickname}">
-                    <span class="nickname">닉네임 입력하기</span>
+                    <input class="lay3 lay4" id="nickname" name="nickname" placeholder="별명 (2~15자)" th:field="*{userNickname}">
                 </label>
+                <div class="email-check">
+                    <button class="nickname-check-button" name="nicknameAuth" type="button">닉네임 중복확인</button>
+                </div>
             </div>
             <div class="password-checker">
             <label class="password-text2">약관동의</label>
             <div class="conditions">
-                <!--<div class="conditions-list1">
-                    <label class="conditions-list2">
-                        <div class="conditions-text">
-                            <div class="conditions-text2">
-                                <span class="conditions-check"></span>
-                            </div>
-                            <input name="agreeAll" type="checkbox" class="check-box" value="false">
-                        </div>
-                        <span class="check-box-text">
-                            <span class="check-box-text2">
-                                전체동의
-                                <span class="check-box-text3">선택항목에 대한 동의 포함</span>
-                            </span>
-                        </span>
-                    </label>
-                </div>-->
                 <div class="form-radio">
                     <label class="form-radio-label">
                         <input class="form-radio" type="checkbox" name="connect">
@@ -175,27 +154,16 @@
 
                 <hr class="conditions-line">
 
- <!--               <div class="conditions-list1">
-                    <label class="conditions-list2">
-                        <div class="conditions-text2">
-                            <span class="conditions-check"></span>
-                        </div>
-                        <input name="agree1" type="checkbox" class="check-box" value="false">
-                    </label>
-                </div>
-                <span class="check-box-text">
-                    <span required="" class="check-box-text4">만 14세 이상입니다</span>
-                </span>-->
                 </label>
                 <div class="form-radio">
-                    <label class="form-radio-label">
+                    <label class="form-radio-label check-box-text4">
                         <input class="form-radio" type="checkbox" name="connect">
                         <span class="radio-img"></span>
                         이용약관
                     </label>
                 </div>
                 <div class="form-radio">
-                    <label class="form-radio-label check-bot-text4">
+                    <label class="form-radio-label check-box-text4">
                         <input class="form-radio" type="checkbox" name="connect">
                         <span class="radio-img"></span>
                         개인정보 수집 이용 및 이용동의
@@ -215,19 +183,6 @@
                         알림 메일 및 수신 동의
                     </label>
                 </div>
-                <!--<div class="conditions-list1">
-                    <label class="conditions-list2">
-                        <div class="conditions-text">
-                            <div class="conditions-text2">
-                                <span class="conditions-check"></span>
-                            </div>
-                            <input name="agreePromotion" type="checkbox" class="check-box" value="false">
-                        </div>
-                        <span class="check-box-text">
-                            <span class="agree">이벤트, 쿠폰, 특가 알림 메일 및 SMS 등 수신</span>
-                        </span>
-                    </label>
-                </div>-->
             </div>
         </div>
         <button class="lay6 lay7 lay8 join-button" type="button" onclick="send()">회원가입하기</button>
@@ -238,10 +193,7 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/js/modal/modal.js"></script>
 <script src="/js/user/join.js"></script>
-
-<script>
-    console.log(btoa($("input[name='confirmPassword']").val()));
-</script>
+<script src="/js/user/check.js"></script>
 
 </body>
 </html>

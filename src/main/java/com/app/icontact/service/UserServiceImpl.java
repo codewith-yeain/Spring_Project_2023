@@ -27,4 +27,21 @@ public class UserServiceImpl implements UserService {
     public Optional<String> checkEmail(String userEmail) {
         return Optional.ofNullable(userDAO.findUserEmailByUserEmail(userEmail));
     }
+
+//    닉네임 중복검사
+    @Override
+    public Optional<String> checkNickname(String userNickname) {
+        return Optional.ofNullable(userDAO.findUserNicknameByUserNickname(userNickname));
+    }
+
+//    비밀번호 변경
+    @Override
+    public void changePassword(String userEmail, String userPassword) {
+        userDAO.changePasswordByUserEmailAndUserPassword(userEmail, userPassword);
+    }
+
+    @Override
+    public Optional<UserVO> getUser(Long id) {
+        return userDAO.findById(id);
+    }
 }

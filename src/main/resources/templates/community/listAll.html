@@ -1,13 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>커뮤니티</title>
-    <link rel="icon" href="../../static/images/icon/favicon.png">
-    <link rel="stylesheet" href="../../static/css/community/listAll.css">
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/community/listAll.css">
+    <link rel="stylesheet" href="/css/community/listAll.css">
 
     <style>
         /*돋보기 아이콘을 위한 폰트*/
@@ -19,7 +20,7 @@
 
         @font-face {
             font-family: 'Pretendard Variable';
-            src: url('../../static/font/PretendardVariable.woff2');
+            src: url('/font/PretendardVariable.woff2');
         }
     </style>
 </head>
@@ -29,7 +30,7 @@
 <div class="navigation-container">
     <nav class="navigation">
         <a href="#" class="navigation-logo">
-            <img src="../../static/images/icon/logo.png" class="logo">
+            <img src="/images/icon/logo.png" class="logo">
         </a>
         <div class="navigation-menu">
             <a class="navigation-menu-item" href="">사이트 소개</a>
@@ -308,7 +309,7 @@
     </li>
 </ul>
 
-<a href="" class="register-button">
+<a th:href="@{/community/write}" class="register-button">
     게시글 등록하기
     <svg class="register-button-icon" width="16" height="14" viewBox="0 0 16 14">
         <path fill="#FFFFFF" d="M9.26 0L16 7.01 9.26 14 8.2 12.9l4.96-5.16H0V6.2h13.1L8.2 1.1 9.26 0z"></path>

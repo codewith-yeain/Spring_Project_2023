@@ -9,6 +9,10 @@ a, p{
     font-style: normal;
 }
 
+.content-detail{
+    margin-top: 50px;
+}
+
 .ict-content-wrapper{ /*.css-1x6h9tu*/
     width: 100%;
     max-width: 1256px;

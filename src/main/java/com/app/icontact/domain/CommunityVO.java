@@ -14,6 +14,6 @@ public class CommunityVO {
     private String communityRegisterDate;
     private String communityUpdateDate;
     private Long communityReadCount;
-    private Long SortId;
+    private Long sortId;
     private Long userId;
 }

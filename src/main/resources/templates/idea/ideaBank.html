@@ -23,78 +23,99 @@
                         <div class="category-feed-side-bar bar-col bar-layout">
                             <section class="commerce-category-list">
                                 <h2 class="commerce-category-list-title">
-                                    <a href="">식품</a> <!--상위 카테고리-->
+                                    <a href="">패션</a> <!--상위 카테고리-->
                                 </h2>
 
                                 <ul class="commerce-category-tree commerce-category-list-categories">
                                     <li class="commerce-category-tree-entry">
                                         <div class="commerce-category-tree-entry-header">
-                                            <a href="" class="commerce-category-tree-entry-title">디저트</a> <!--하위 카테고리-->
+                                            <a href="" class="commerce-category-tree-entry-title">여성의류</a> <!--하위 카테고리-->
                                         </div>
                                     </li>
 
                                     <li class="commerce-category-tree-entry">
                                         <div class="commerce-category-tree-entry-header">
-                                            <a href="" class="commerce-category-tree-entry-title">베이커리</a> <!--하위 카테고리-->
+                                            <a href="" class="commerce-category-tree-entry-title">남성의류</a> <!--하위 카테고리-->
                                         </div>
                                     </li>
 
                                     <li class="commerce-category-tree-entry">
                                         <div class="commerce-category-tree-entry-header">
-                                            <a href="" class="commerce-category-tree-entry-title">전통간식</a> <!--하위 카테고리-->
+                                            <a href="" class="commerce-category-tree-entry-title">언더웨어</a> <!--하위 카테고리-->
                                         </div>
                                     </li>
 
                                     <li class="commerce-category-tree-entry">
                                         <div class="commerce-category-tree-entry-header">
-                                            <a href="" class="commerce-category-tree-entry-title">음료</a> <!--하위 카테고리-->
+                                            <a href="" class="commerce-category-tree-entry-title">액세서리</a> <!--하위 카테고리-->
                                         </div>
                                     </li>
 
                                     <li class="commerce-category-tree-entry">
                                         <div class="commerce-category-tree-entry-header">
-                                            <a href="" class="commerce-category-tree-entry-title">주류</a> <!--하위 카테고리-->
+                                            <a href="" class="commerce-category-tree-entry-title">신발</a> <!--하위 카테고리-->
                                         </div>
                                     </li>
 
                                     <li class="commerce-category-tree-entry">
                                         <div class="commerce-category-tree-entry-header">
-                                            <a href="" class="commerce-category-tree-entry-title">반찬</a> <!--하위 카테고리-->
+                                            <a href="" class="commerce-category-tree-entry-title">가방</a> <!--하위 카테고리-->
                                         </div>
                                     </li>
 
                                     <li class="commerce-category-tree-entry">
                                         <div class="commerce-category-tree-entry-header">
-                                            <a href="" class="commerce-category-tree-entry-title">요리·식사</a> <!--하위 카테고리-->
+                                            <a href="" class="commerce-category-tree-entry-title">아동의류</a> <!--하위 카테고리-->
+                                        </div>
+                                    </li>
+
+                                    <li class="commerce-category-tree-entry">
+                                        <div class="commerce-category-tree-entry-header">
+                                            <a href="" class="commerce-category-tree-entry-title">스포츠·아웃도어</a> <!--하위 카테고리-->
                                         </div>
                                     </li>
                                 </ul>
 
                                 <!--나머지 상위 카테고리-->
                                 <ul class="commerce-category-list-others">
-                                    <li class="commerce-category-list-others-item">
-                                        <a href="">패션</a>
+                                    <li class="commerce-category-list-others-item" data-order="1">
+                                        <a href="">리빙홈</a>
                                     </li>
 
-                                    <li class="commerce-category-list-others-item">
-                                        <a href="">가구</a>
-                                    </li>
-
-                                    <li class="commerce-category-list-others-item">
+                                    <li class="commerce-category-list-others-item" data-order="2">
                                         <a href="">문구</a>
                                     </li>
 
-                                    <li class="commerce-category-list-others-item">
-                                        <a href="">디자인</a>
+                                    <li class="commerce-category-list-others-item" data-order="3">
+                                        <a href="">제로웨이스트</a>
                                     </li>
 
-                                    <li class="commerce-category-list-others-item">
+                                    <li class="commerce-category-list-others-item" data-order="4">
+                                        <a href="">음료・주류</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item" data-order="5">
+                                        <a href="">디저트</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item" data-order="6">
+                                        <a href="">요리</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item" data-order="7">
+                                        <a href="">반려용품</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item" data-order="8">
+                                        <a href="">유아용품</a>
+                                    </li>
+
+                                    <li class="commerce-category-list-others-item" data-order="9">
                                         <a href="">기타</a>
                                     </li>
                                 </ul>
                             </section>
                         </div>
-
                         <div class="category-feed-content bar-col bar-second-layout">
                             <div class="category-feed-content-filter">
                                 <div class="filter-wrapper">
@@ -134,6 +155,11 @@
                                                                     </g>
                                                                 </svg>
                                                             </button>
+                                                            <div class="option-wrap">
+                                                                <div class="opt">ddddd</div>
+                                                                <div class="opt">1213123</div>
+                                                                <div class="opt">asdasd</div>
+                                                            </div>
                                                         </div>
                                                     </li>
 
@@ -515,10 +541,8 @@
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="/js/fix/scroll.js"></script>
-<script th:inline="javascript">
-    let id = [[${session.id}]];
-    console.log(id);
-</script>
+<script src="/js/idea/list.js"></script>
+
 
 </html>
 

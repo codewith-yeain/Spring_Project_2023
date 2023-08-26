@@ -24,7 +24,9 @@ public class CommunityController {
     private final CommunityService communityService;
 
     @GetMapping("listAll")
-    public void goToComListAll(){;}
+    public void goToComListAll(Model model){
+        model.addAttribute("lists", communityService.getListComAll());
+    }
 
     @GetMapping("listMine")
     public void goToComListMine(Long id, Model model){

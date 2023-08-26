@@ -150,5 +150,13 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+
+<script th:inline="javascript">
+    let files = [[${mypageInfos.files}]];
+    let postId = [[${mypageInfos.id}]];
+    let memberId = [[${session.userId}]];
+</script>
+
 <script src="/js/mypage/mypage.js"></script>
 </html>

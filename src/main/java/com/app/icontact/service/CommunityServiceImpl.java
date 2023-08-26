@@ -19,8 +19,8 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public List<CommunityVO> getListComMine(Long id) {
-
-        return communityDAO.findComMine(id);
+        Long userId = (Long)session.getAttribute("userId");
+        return communityDAO.findComMine(userId);
     }
 
 

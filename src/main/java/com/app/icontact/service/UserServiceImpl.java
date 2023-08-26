@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
     public void changePassword(String userEmail, String userPassword) {
         userDAO.changePasswordByUserEmailAndUserPassword(userEmail, userPassword);
     }
+
+    @Override
+    public Optional<UserVO> getUser(Long id) {
+        return userDAO.findById(id);
+    }
 }

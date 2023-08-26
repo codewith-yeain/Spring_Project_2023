@@ -6,6 +6,10 @@ select{
     -webkit-appearance: none;
 }
 
+ol, ul {
+    list-style: none;
+}
+
 .relative{ /*css-bjn8wh*/
     position: relative;
 }
@@ -75,17 +79,10 @@ select{
 }
 
 .idea-write-btn{
+    cursor: pointer;
     margin: 0px;
     border: none;
-    background: none rgb(234, 237, 239);
-    font-style: inherit;
-    font-variant: inherit;
-    font-stretch: inherit;
-    font-family: inherit;
-    font-optical-sizing: inherit;
-    font-kerning: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
+    background-color: mediumpurple;
     font-size: 14px;
     line-height: 18px;
     justify-content: center;
@@ -96,8 +93,7 @@ select{
     font-weight: 400;
     box-sizing: border-box;
     text-align: center;
-    color: rgb(194, 200, 204);
-    pointer-events: none;
+    color: #fff;
     position: relative;
     width: 132px;
     display: none;
@@ -293,11 +289,11 @@ select{
     color: rgb(130, 140, 148);
 }
 
-@media (min-width: 768px){
+/*@media (min-width: 768px){
     .input-sub-notice{
         margin-bottom: 52px;
     }
-}
+}*/
 
 .idea-img-input{ /*.css-2x6i26*/
     width: 100%;
@@ -610,4 +606,180 @@ select{
     font-weight: 700;
     color: rebeccapurple;
     margin: 2px 0px;
+}
+
+.text-bar-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    max-width: 1136px;
+}
+
+@media (min-width: 768px){
+    .text-bar-wrapper{
+        padding: 0px 50px;
+    }
+}
+
+@media (min-width: 1024px){
+    .text-bar-wrapper{
+        padding: 0px 60px;
+    }
+}
+
+.text-bar{
+    flex: 1 0 0px;
+}
+
+@media (min-width: 768px){
+    .text-bar{
+        flex: 0 0 auto;
+        margin-right: 15px;
+    }
+}
+
+.text-bar span{
+    margin: 0px 0px -1px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    background: none;
+    display: block;
+    width: 100%;
+    padding: 12px 5px 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(47, 52, 56);
+    font-weight: 700;
+    border-bottom: 3px solid rgb(47, 52, 56);
+}
+
+@media (min-width: 768px){
+    .text-bar span{
+        padding: 14px 5px 15px;
+        font-size: 15px;
+        border-bottom: 2px solid rgb(47, 52, 56);
+    }
+}
+
+.preview-wrapper{ /*.css-kjmyv4*/
+    position: sticky;
+    top: 80px;
+    display: none;
+    width: 115px;
+    margin-right: 5px;
+}
+
+@media (min-width: 768px){
+    .preview-wrapper{
+        display: block;
+    }
+}
+
+@media (min-width: 1256px){
+    .preview-wrapper{
+        margin-right: 10px;
+        margin-left: -125px;
+    }
+}
+
+
+.preview-layout{ /*.css-o9d932*/
+    padding: 0px 0px 10px;
+    display: none;
+}
+
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+
+.preview-img-wrapper{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: rgb(247, 248, 250);
+    cursor: pointer;
+}
+
+.preview-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.x{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.54);
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity 0.2s ease 0s;
+}
+
+.x:hover{
+    opacity: 1;
+}
+
+.plus-btn{
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    background: none rgb(247, 249, 250);
+    font: inherit;
+    text-align: center;
+    border-radius: 4px;
+    width: 60px;
+    height: 60px;
+    border: 1px dashed rgb(218, 221, 224);
+    color: rgb(130, 140, 148);
+}
+
+.plus{
+    position: absolute;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plus:before{
+    content: "\e90d";
+    font-family: OhouseIcon;
+    vertical-align: top;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.idea-img-wrapper{
+    padding-bottom: 100%;
+    position: relative;
+    background-color: rgb(247, 248, 250);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.idea-img{
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
 }

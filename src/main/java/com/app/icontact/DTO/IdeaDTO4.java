@@ -24,7 +24,7 @@ public class IdeaDTO4 {
     private Long ideaReadCount;
     private Long ideaMax;
     private Long userId;
-    private Long scrapCount;
+    private Long ideaScarpCount;
     private String userNickname; // 작성자 닉네임
     private Long ideaCount; // 현재 몇 명이 이 아이디어에 협의 완료했는지
 

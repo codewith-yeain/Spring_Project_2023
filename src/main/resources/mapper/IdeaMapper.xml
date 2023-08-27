@@ -54,16 +54,85 @@
     </insert>
 
     <select id="selectIdeas" resultType="ideaDTO4">
-        SELECT ID FROM TBL_IDEA
-        WHERE 1 = 1
-        <if test="ideaCategory != null">
-            AND IDEA_CATEGORY = #{ideaCategory}
+        SELECT I.ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY, IDEA_REGISTER_DATE, IDEA_UPDATE_DATE,
+        IDEA_TYPE, IDEA_PRICE, IDEA_READ_COUNT, IDEA_MAX, I.USER_ID, I.USER_NICKNAME, COALESCE(IDEA_SCRAP_COUNT, 0) AS IDEA_SCRAP_COUNT
+        FROM
+        (
+        SELECT ROWNUM R, I2.*
+        FROM
+        (
+        SELECT I1.ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY, IDEA_REGISTER_DATE, IDEA_UPDATE_DATE,
+        IDEA_TYPE, IDEA_PRICE, IDEA_READ_COUNT, IDEA_MAX, I1.USER_ID, U.USER_NICKNAME,
+        COUNT(S.ID) AS IDEA_SCRAP_COUNT
+        FROM TBL_USER U
+        INNER JOIN TBL_IDEA I1 ON U.ID = I1.USER_ID
+        LEFT JOIN TBL_SCRAP S ON I1.ID = S.IDEA_ID
+        WHERE 1=1
+        <if test="search.ideaCategory != null">
+            AND IDEA_CATEGORY = #{search.ideaCategory}
         </if>
-        <if test="ideaPrice != null">
-            <![CDATA[
-            AND (IDEA_PRICE >= #{ideaPrice} + 5000 AND IDEA_PRICE < #{ideaPrice} + 5000)
-            ]]>
+        <if test="search.ideaPrice != null">
+            <choose>
+                <when test="search.ideaPrice == 10">
+                    <![CDATA[ AND IDEA_PRICE >= 100000 ]]>
+                </when>
+                <when test="search.ideaPrice == 0">
+                    <![CDATA[ AND IDEA_PRICE < 10000 ]]>
+                </when>
+                <otherwise>
+                    <![CDATA[ AND (IDEA_PRICE >= #{search.ideaPrice} * 10000 AND IDEA_PRICE < (#{search.ideaPrice} + 1) * 10000 ) ]]>
+                </otherwise>
+            </choose>
+        </if>
+        <if test="search.ideaMax != null">
+            AND IDEA_MAX = #{search.ideaMax}
+        </if>
+        GROUP BY I1.ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY, IDEA_REGISTER_DATE, IDEA_UPDATE_DATE,
+        IDEA_TYPE, IDEA_PRICE, IDEA_READ_COUNT, IDEA_MAX, I1.USER_ID, U.USER_NICKNAME
+        ORDER BY
+        <choose>
+            <when test="search.order == 'popular'.toString()">
+                IDEA_READ_COUNT DESC
+            </when>
+            <when test="search.order == 'scrap'.toString()">
+                IDEA_SCRAP_COUNT DESC
+            </when>
+            <otherwise>
+                I1.ID DESC
+            </otherwise>
+        </choose>
+        ) I2
+        <![CDATA[ WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount} ]]>
+        ) I
+        <![CDATA[ WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount} ]]>
+    </select>
+
+    <select id="selectCountOfIdeas" resultType="_int">
+        SELECT COUNT(I.ID)
+        FROM TBL_USER U
+        JOIN TBL_IDEA I ON U.ID = I.USER_ID
+        WHERE 1=1
+        <if test="search.ideaCategory != null">
+            AND IDEA_CATEGORY = #{search.ideaCategory}
+        </if>
+        <if test="search.ideaPrice != null">
+            <choose>
+                <when test="search.ideaPrice >= 10">
+                    <![CDATA[ AND IDEA_PRICE >= 100000 ]]>
+                </when>
+                <otherwise>
+                    <![CDATA[ AND (IDEA_PRICE >= #{search.ideaPrice} * 10000 AND IDEA_PRICE < (#{search.ideaPrice} + 1) * 10000 ) ]]>
+                </otherwise>
+            </choose>
+        </if>
+        <if test="search.ideaMax != null">
+            AND IDEA_MAX = #{search.ideaMax}
         </if>
     </select>
+
+    <select id="selectCountOfScraps" resultType="long">
+        SELECT COUNT(ID) FROM TBL_SCRAP WHERE IDEA_ID = #{ideaId}
+    </select>
+
 
 </mapper>

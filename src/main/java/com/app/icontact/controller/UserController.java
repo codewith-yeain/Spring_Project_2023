@@ -93,4 +93,7 @@ public class UserController {
         userService.changePassword(userEmail, userPassword);
         return new RedirectView("/user/login");
     }
+
+    @GetMapping("find-password")
+    public void goToFindPasswordForm(UserVO userVO){;}
 }

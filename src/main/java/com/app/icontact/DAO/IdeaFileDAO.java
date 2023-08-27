@@ -20,4 +20,8 @@ public class IdeaFileDAO {
         ideaFileMapper.insert(ideaFileVO);
     }
 
+    //    파일 조회
+    public List<IdeaFileVO> findAll(Long ideaId){
+        return ideaFileMapper.selectAll(ideaId);
+    }
 }

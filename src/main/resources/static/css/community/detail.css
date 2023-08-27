@@ -1013,6 +1013,7 @@
 
 .comment-paginator{
     text-align: center;
+    margin: 40px 0px;
 }
 
 .comment-paginator button * {
@@ -1098,7 +1099,7 @@
     font-weight: 500;
     width: 32px;
     padding: 0px;
-    vertical-align: middle;
+   /* vertical-align: middle;*/
 }
 
 .comment-paginator>.inactive:hover {

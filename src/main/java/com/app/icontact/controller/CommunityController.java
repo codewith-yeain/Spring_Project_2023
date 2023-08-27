@@ -2,6 +2,7 @@ package com.app.icontact.controller;
 
 import com.app.icontact.domain.CommunityVO;
 import com.app.icontact.service.CommunityService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -40,6 +41,10 @@ public class CommunityController {
         communityService.writeCom(communityVO);
         return new RedirectView("/community/listAll");
     }
+
+    @GetMapping("detail")
+    public void goToRead(){;}
+
 //
 //    @GetMapping(value = {"read", "modify"})
 //

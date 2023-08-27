@@ -1,9 +1,8 @@
 package com.app.icontact.mapper;
 
-import com.app.icontact.DTO.IdeaDTO2;
-import com.app.icontact.DTO.IdeaDTO3;
-import com.app.icontact.DTO.IdeaDTO4;
+import com.app.icontact.DTO.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,6 +22,14 @@ public interface IdeaMapper {
     // 아이디어 추가
     public void insert(IdeaDTO4 ideaDTO4);
 
-    public List<IdeaDTO4> selectIdeas(Long ideaCategory, Long ideaPrice, Long ideaMax);
+    // 아이디어 뱅크 목록 출력
+    public List<IdeaDTO4> selectIdeas(@Param("search") Search search, @Param("pagination") Pagination pagination);
+
+    //    아이디어 총 개수
+    public int selectCountOfIdeas(@Param("search") Search search);
+
+    // 해당 아이디어의 총 스크랩수
+    public Long selectCountOfScraps(Long ideaId);
+
 
 }

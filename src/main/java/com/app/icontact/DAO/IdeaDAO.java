@@ -1,8 +1,6 @@
 package com.app.icontact.DAO;
 
-import com.app.icontact.DTO.IdeaDTO2;
-import com.app.icontact.DTO.IdeaDTO3;
-import com.app.icontact.DTO.IdeaDTO4;
+import com.app.icontact.DTO.*;
 import com.app.icontact.mapper.IdeaMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -32,6 +30,21 @@ public class IdeaDAO {
     //    아이디어 추가
     public void save(IdeaDTO4 ideaDTO4){
         ideaMapper.insert(ideaDTO4);
+    }
+
+    //    아이디어 목록
+    public List<IdeaDTO4> findAll(Search search, Pagination pagination){
+        return ideaMapper.selectIdeas(search, pagination);
+    }
+
+    //    게시글 총 개수
+    public int findCountOfIdeas(Search search){
+        return ideaMapper.selectCountOfIdeas(search);
+    }
+
+    // 해당 아이디어의 총 스크랩수
+    public Long findCountOfScraps(Long ideaId){
+        return ideaMapper.selectCountOfScraps(ideaId);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.app.icontact.DAO;
 
+import com.app.icontact.DTO.CommunityDTO;
 import com.app.icontact.DTO.CommunityDTO2;
 import com.app.icontact.domain.CommunityVO;
 import com.app.icontact.mapper.CommunityMapper;
@@ -24,6 +25,11 @@ public class CommunityDAO {
     public void saveCom(CommunityVO communityVO){
         log.info("{}..........", communityVO.toString());
         communityMapper.insertCom(communityVO);
+    }
+
+    //        listAll 커뮤니티 내 모든 게시글 목록
+    public List<CommunityDTO> findComAll(){
+        return communityMapper.selectComAll();
     }
 
     // 조회수 상위 3개 조회

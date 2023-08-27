@@ -161,8 +161,8 @@
                                             <!--<th>상태</th>-->
                                         </tr>
                                     </thead>
-
-                                    <tr>
+                                    <tbody id="community-list">
+                                    <!--<tr>
                                         <td class="checkbox-line">
                                             <input type="checkbox" name="check">
                                         </td>
@@ -181,9 +181,9 @@
                                         <td>
                                             2023.04.23 10:55
                                         </td>
-                                        <!--<td>
+                                        &lt;!&ndash;<td>
                                             진행중
-                                        </td>-->
+                                        </td>&ndash;&gt;
                                     </tr>
 
                                     <tr>
@@ -205,9 +205,9 @@
                                         <td>
                                             2023.04.23 10:55
                                         </td>
-                                        <!--<td>
+                                        &lt;!&ndash;<td>
                                             진행중
-                                        </td>-->
+                                        </td>&ndash;&gt;
                                     </tr>
 
                                     <tr>
@@ -229,9 +229,9 @@
                                         <td>
                                             2023.04.23 10:55
                                         </td>
-                                        <!--<td>
+                                        &lt;!&ndash;<td>
                                             진행중
-                                        </td>-->
+                                        </td>&ndash;&gt;
                                     </tr>
 
                                     <tr>
@@ -253,9 +253,9 @@
                                         <td>
                                             2023.04.23 10:55
                                         </td>
-                                        <!--<td>
+                                        &lt;!&ndash;<td>
                                             진행중
-                                        </td>-->
+                                        </td>&ndash;&gt;
                                     </tr>
 
                                     <tr>
@@ -277,9 +277,9 @@
                                         <td>
                                             2023.04.23 10:55
                                         </td>
-                                        <!--<td>
+                                        &lt;!&ndash;<td>
                                             진행중
-                                        </td>-->
+                                        </td>&ndash;&gt;
                                     </tr>
 
                                     <tr>
@@ -301,10 +301,11 @@
                                         <td>
                                             2023.04.23 10:55
                                         </td>
-                                        <!--<td>
+                                        &lt;!&ndash;<td>
                                             진행중
-                                        </td>-->
-                                    </tr>
+                                        </td>&ndash;&gt;
+                                    </tr>-->
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -392,5 +393,10 @@
 <script src="/js/admin/checkbox.js"></script>
 <script src="/js/admin/board_proposal.js"></script>
 <script src="/js/admin/sidemenu.js"></script>
+<script th:inline="javascript">
+    let posts = [[${lists}]];
+    let memberId = [[${session.userId}]];
+</script>
+<script src="/js/admin/community.js"></script>
 
 </html>

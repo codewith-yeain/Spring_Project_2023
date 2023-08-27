@@ -29,18 +29,18 @@ public interface AdminMapper {
     public void insertAnswer(AnswerVO answerVO);
 
     //결제목록 보기
-    public List<PaymentVO> selectAllPayment(@Param("pagination") Pagination pagination);
+    public List<PaymentVO> selectAllPayment();
 
     //결제 취소
     public void updateCancel(Long id);
 
     //회원목록보기
-    public List<UserVO> selelctAllUser (UserVO uservo);
+    public List<UserVO> selelctAllUser();
 
     //회원상태변경
     public void updateUserType (Long id);
 
-    //회원탈퇴
+    //회원탈퇴 복구
     public void updateUserStatus (Long id);
 
 }

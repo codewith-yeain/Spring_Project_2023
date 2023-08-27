@@ -44,21 +44,21 @@ public class AdminDAO {
     }
 
     //결제목록
-    public List<PaymentVO> showPaymentList ( Pagination pagination){
-        return adminMapper.selectAllPayment(pagination);
+    public List<PaymentVO> showPaymentList(){
+        return adminMapper.selectAllPayment();
     }
 
     //결제취소
     public void cencel(Long id){adminMapper.updateCancel(id);}
 
     //회원목록보기
-    public List<UserVO> showUserList (UserVO uservo){
-        return adminMapper.selelctAllUser(uservo);
+    public List<UserVO> showUserList(){
+        return adminMapper.selelctAllUser();
     }
 
     //회원상태변경
-    public void updateUserType (Long id) {adminMapper.updateUserType(id);}
+    public void updateUserType(Long id) {adminMapper.updateUserType(id);}
 
     //회원탈퇴 복구
-    public void updateUserStatus (Long id) {adminMapper.updateUserStatus(id);}
+    public void updateUserStatus(Long id) {adminMapper.updateUserStatus(id);}
 }

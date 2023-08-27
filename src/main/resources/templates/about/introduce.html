@@ -55,22 +55,22 @@
                 <!--아래의 div가 사진 수 만큼 반복-->
                 <div class="index-page-marquee-images-item">
                     <img class="index-page-marquee-images-item-img" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159168253564046762.png?w=850&webp=1" alt="">
-                    <div class="index-page-marquee-images-item-text">iContact 유저 <span>도토리홀</span>님의 아이디어</div>
+                    <div class="index-page-marquee-images-item-text">iContact 유저 <span th:text="${scrapTopIdeas[0].userNickname}"></span>님의 아이디어</div>
                 </div>
 
                 <div class="index-page-marquee-images-item">
                     <img class="index-page-marquee-images-item-img" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159168253564046762.png?w=850&webp=1" alt="">
-                    <div class="index-page-marquee-images-item-text">iContact 유저 <span>도토리홀</span>님의 아이디어</div>
+                    <div class="index-page-marquee-images-item-text">iContact 유저 <span th:text="${scrapTopIdeas[1].userNickname}"></span>님의 아이디어</div>
                 </div>
 
                 <div class="index-page-marquee-images-item">
                     <img class="index-page-marquee-images-item-img" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159168253564046762.png?w=850&webp=1" alt="">
-                    <div class="index-page-marquee-images-item-text">iContact 유저 <span>도토리홀</span>님의 아이디어</div>
+                    <div class="index-page-marquee-images-item-text">iContact 유저 <span th:text="${scrapTopIdeas[2].userNickname}"></span>님의 아이디어</div>
                 </div>
 
                 <div class="index-page-marquee-images-item">
                     <img class="index-page-marquee-images-item-img" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/snapshots/159168253564046762.png?w=850&webp=1" alt="">
-                    <div class="index-page-marquee-images-item-text">iContact 유저 <span>도토리홀</span>님의 아이디어</div>
+                    <div class="index-page-marquee-images-item-text">iContact 유저 <span th:text="${scrapTopIdeas[3].userNickname}"></span>님의 아이디어</div>
                 </div>
 
                 <div class="index-page-marquee-images-item">
@@ -352,4 +352,5 @@
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="/js/about/introduce.js"></script>
+</script>
 </html>

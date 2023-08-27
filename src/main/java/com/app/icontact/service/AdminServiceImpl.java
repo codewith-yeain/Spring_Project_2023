@@ -57,9 +57,9 @@ public class AdminServiceImpl implements AdminService {
     //결제목록
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<PaymentVO> paymentGetList (Pagination pagination){
-        final List<PaymentVO> tornado = adminDAO.showPaymentList(pagination);
-        return tornado;
+    public List<PaymentVO> paymentGetList (){
+       /* *//*final List<PaymentVO> = *//*adminDAO.showPaymentList(paymentVO);*/
+        return adminDAO.showPaymentList();
     }
 
     //결제취소
@@ -70,9 +70,8 @@ public class AdminServiceImpl implements AdminService {
     //회원목록보기
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<UserVO> showUserList(UserVO userVO) {
-        final List<UserVO> users = adminDAO.showUserList(userVO);
-        return users;
+    public List<UserVO> showUserList() {
+        return adminDAO.showUserList();
     }
 
     //회원상태변경
@@ -84,4 +83,13 @@ public class AdminServiceImpl implements AdminService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void updateUserStatus (Long id) {adminDAO.updateUserStatus(id);}
+
+
+
+    //회원탈퇴
+        /*public void deleteMember(String memberId) {
+            memberRepository.deleteById(memberId);
+        }*/
+
+
 }

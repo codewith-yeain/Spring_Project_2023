@@ -1,16 +1,15 @@
 package com.app.icontact.controller;
 
 import com.app.icontact.DTO.Pagination;
-import com.app.icontact.domain.AnswerVO;
 import com.app.icontact.domain.NoticeVO;
+import com.app.icontact.domain.PaymentVO;
 import com.app.icontact.service.AdminService;
+import com.app.icontact.service.CommunityService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
@@ -22,9 +21,14 @@ import javax.servlet.http.HttpSession;
 public class AdminController {
     private final AdminService adminService;
     private final HttpSession session;
+    private final CommunityService communityService;
 
-   /* //커뮤니티 관리목록
-    @GetMapping("communitygetList")*/
+    /* //커뮤니티 관리목록
+     @GetMapping("communitygetList")*/
+   @GetMapping("community")
+   public void goToComListAll(Model model){
+       model.addAttribute("lists", communityService.getListComAll());
+   }
 
     //커뮤니티 글 삭제
     @GetMapping("community")
@@ -54,7 +58,7 @@ public class AdminController {
     }
 
     //답변하기
-    @GetMapping("inquiry-answer")
+    @GetMapping("inquiry_answer")
     public void read(Long id,Model model){
         model.addAttribute("inquiry-answer",adminService.read(id).get());
     }
@@ -66,6 +70,38 @@ public class AdminController {
         return new RedirectView("/inquiry/inquiry-list");
     }*/
 
-    //회원목록
+    @GetMapping("member")
+    public void goToMember(Model model){
+        model.addAttribute("lists",adminService.showUserList());
+    }
 
+    /*@PostMapping("member")
+    public ResponseEntity<String> deleteMembers(@RequestBody List<String> memberIds) {
+        // memberIds를 기반으로 데이터베이스 업데이트 작업 수행 (회원 삭제 등)
+
+      *//*  // 작업 성공 시
+        return ResponseEntity.ok("Members deleted successfully.");
+
+        // 작업 실패 시
+        // return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error deleting members.");*//*
+    }
+
+
+
+        @PostMapping("/delete-members")
+        public ResponseEntity<String> deleteMembers(@RequestBody List<String> memberIds) {
+            for (String memberId : memberIds) {
+                memberService.deleteMember(memberId); // 회원 정보 삭제
+            }
+
+            return ResponseEntity.ok("Members deleted successfully.");
+        }
+        */
+
+
+
+    @GetMapping("payment")
+    public void paymentGetList(Model model) {
+        model.addAttribute("posts", adminService.paymentGetList());
+    }
 }

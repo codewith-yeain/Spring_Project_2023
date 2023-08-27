@@ -15,4 +15,6 @@ public interface SearchMapper {
     // 아이디어 검색결과
     public List<IdeaDTO> selectIdeaTitle (String ideaTitle);
 
+    //전체검색
+       /* public List<Ida>*/
 }

@@ -29,18 +29,21 @@ public interface AdminService {
     public void answer(AnswerVO answerVO);*/
 
     //결제목록
-    public List<PaymentVO> paymentGetList (Pagination pagination);
+    public List<PaymentVO> paymentGetList();
 
     //결제취소
     public void cencelPayment(Long id);
 
     //회원목록보기
-    public List<UserVO> showUserList (UserVO uservo);
+    public List<UserVO> showUserList();
 
     //회원상태변경
     public void updateUserType (Long id);
 
     //회원탈퇴 복구
     public void updateUserStatus (Long id);
+/*
+    //회원탈퇴
+    public void deleteUser (Long id);*/
 
 }

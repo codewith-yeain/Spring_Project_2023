@@ -26,6 +26,7 @@
         SELECT I.ID, INQUIRY_TITLE, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_DATE, INQUIRY_CONTENT, A.ID
         FROM TBL_INQUIRY I JOIN TBL_ANSWER A
         ON I.ID = A.INQUIRY_ID
+        ORDER BY I.ID DESC
     </select>
 
 
@@ -44,7 +45,7 @@
 
     <!--    결제목록 보기-->
     <select id="selectAllPayment" resultType="PaymentVO">
-        SELECT ID, USER_ID, PAMENT_AMOUNT, PAYMENT_STATUS, PAYMENT_APPROVE_DATE, PAYMENT_SORT
+        SELECT ID, PAYMENT_AMOUNT, PAYMENT_STATUS, PAYMENT_APPROVE_DATE, PAYMENT_SORT, USER_ID, IDEA_ID
         FROM TBL_PAYMENT
     </select>
 
@@ -56,9 +57,10 @@
         </update>
 
     <!-- 회원목록보기 -->
-    <select id="selectAllUser" resultType="UserVO">
-    SELECT ID, USER_NAME, USER_NINCKNAME, USER_EMAIL, USER_STATUS, USER_TYPE
+    <select id="selelctAllUser" resultType="UserVO">
+    SELECT ID, USER_NAME, USER_NICKNAME, USER_EMAIL, USER_STATUS, USER_TYPE
     FROM TBL_USER
+    ORDER BY ID DESC
     </select>
 
     <!-- 회원상태변경 -->

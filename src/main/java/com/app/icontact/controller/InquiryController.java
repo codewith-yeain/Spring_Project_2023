@@ -1,14 +1,20 @@
 package com.app.icontact.controller;
 
+import com.app.icontact.DAO.InquiryDAO;
+import com.app.icontact.DTO.InquiryDTO;
+import com.app.icontact.DTO.Pagination;
 import com.app.icontact.domain.InquiryVO;
 import com.app.icontact.service.InquiryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.view.RedirectView;
+
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -25,6 +31,14 @@ public class InquiryController {
     public RedirectView inquiry(InquiryVO inquiryVO){
         inquiryService.inquiry(inquiryVO);
         log.info("{}......",inquiryVO.toString());
-        return new RedirectView("/icontact/icontact");
+        return new RedirectView("/icontact/");
     }
+
+    //문의목록보기
+    @GetMapping("list")
+    public void showList(Pagination pagination, Model model){
+        pagination.progress();
+        model.addAttribute("inquiries", inquiryService.getList(pagination));
+    }
+
 }

@@ -20,13 +20,16 @@ public class InquiryDAO {
     //  문의 작성
     public void save(InquiryVO inquiryVO) { inquiryMapper.insertInquiry(inquiryVO);}
 
-/*
+
     //문의목록 보기
-    public List<InquiryDTO> selectAllInquiry(@Param("pagination") Pagination pagination);
+    public static List<InquiryDTO> showInquiryList(Pagination pagination) {
+        return inquiryMapper.selectAllInquiry(pagination);
+    }
 
     //문의 보기
+    public static InquiryVO showInquiry(InquiryVO inquiryVO) { inquiyMapper. selectInquiryId};
     public String selectInquiry(String inquiryId);
-
+/*
     //문의 답변하기
     public void insertAnswer(AnswerVO answerVO);
 

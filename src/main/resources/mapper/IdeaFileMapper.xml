@@ -6,4 +6,11 @@
         (ID, IDEA_FILE_PATH, IDEA_FILE_UUID, IDEA_FILE_NAME, IDEA_FILE_TYPE, IDEA_FILE_SIZE, IDEA_ID)
         VALUES(SEQ_IDEA_FILE.NEXTVAL, #{ideaFilePath}, #{ideaFileUuid}, #{ideaFileName}, #{ideaFileType}, #{ideaFileSize}, #{ideaId})
     </insert>
+
+    <select id="selectAll" resultType="ideaFileVO">
+        SELECT ID, IDEA_FILE_PATH, IDEA_FILE_UUID, IDEA_FILE_NAME, IDEA_FILE_SIZE, IDEA_ID, IDEA_FILE_TYPE
+        FROM TBL_IDEA_FILE
+        WHERE IDEA_ID = #{ideaId}
+        ORDER BY IDEA_FILE_TYPE DESC
+    </select>
 </mapper>

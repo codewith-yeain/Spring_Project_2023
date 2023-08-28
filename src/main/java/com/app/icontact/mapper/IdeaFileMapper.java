@@ -19,8 +19,8 @@ public interface IdeaFileMapper {
 //    //    게시글의 파일 전체 삭제
 //    public void deleteAll(Long postId);
 //
-//    //    파일 조회
-//    public List<FileVO> selectAll(Long postId);
+    //    파일 조회
+    public List<IdeaFileVO> selectAll(Long ideaId);
 //
 //    //    어제 날짜 파일 조회
 //    public List<FileVO> selectYesterday();

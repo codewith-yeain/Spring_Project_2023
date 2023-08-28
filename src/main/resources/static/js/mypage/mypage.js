@@ -2,17 +2,18 @@ $(document).ready(function(){
     const $mypageProfileImg = $("#mypage-profile-img");
     const $mypageProfileId = $("#mypage-profile-id");
 
-    let type = $("select[name=type]").val();
-    let keyword = $("input[name=keyword]").val();
+    // let type = $("select[name=type]").val();
+    // let keyword = $("input[name=keyword]").val();
     let textImg = "";
     let textId = "";
 
     console.log("----------");
     console.log(memberId);
+    console.log(myId);
     console.log("----------22");
 
     textId += `
-        <div id="mypage-profile-id" class="mypage-profile-id">${memberId}</div>
+        <div id="mypage-profile-id" class="mypage-profile-id">${myId.userName}</div>
     `
 
 

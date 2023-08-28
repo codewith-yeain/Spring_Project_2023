@@ -19,15 +19,20 @@ public class CommunityServiceImpl implements CommunityService {
 
     @Override
     public List<CommunityVO> getListComMine(Long id) {
-        Long userId = (Long)session.getAttribute("userId");
+//        Long userId = (Long)session.getAttribute("userId");
+        String sessionId = (String)session.getAttribute("id");
+        Long userId = Long.parseLong(sessionId);
         return communityDAO.findComMine(userId);
     }
 
 
     @Override
     public void writeCom(CommunityVO communityVO) {
-        Long userId = (Long)session.getAttribute("userId");
+//        Long userId = (Long)session.getAttribute("userId");
+        String sessionId = (String)session.getAttribute("id");
+        Long userId = Long.parseLong(sessionId);
         communityVO.setUserId(userId);
+
         communityDAO.saveCom(communityVO);
     }
 

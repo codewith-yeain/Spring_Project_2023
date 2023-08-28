@@ -26,23 +26,23 @@
                                 <a href="" class="active">아이디어</a>
                             </li>
                             <li class="page-navigation-item">
-                                <a href="">설정</a>
+                                <a th:href="@{/mypage/profile-modify}">설정</a>
                             </li>
                             <li class="page-navigation-item">
-                                <a href="">사업자 등록</a>
+                                <a th:href="@{/mypage/business-registration}">사업자 등록</a>
                             </li>
                         </ul>
                     </nav>
                     <nav class="page-navigation">
                         <ul>
                             <li class="page-navigation-item">
-                                <a href="">홈</a>
+                                <a th:href="@{/mypage/mypage}">홈</a>
                             </li>
                             <li class="page-navigation-item">
-                                <a href="" class="active">내 아이디어</a>
+                                <a th:href="@{/mypage/mying}" class="active">내 아이디어</a>
                             </li>
                             <li class="page-navigation-item">
-                                <a href="">구현 목록</a>
+                                <a th:href="@{/mypage/ict}">구현 목록</a>
                             </li>
                             <li class="page-navigation-item">
                                 <a href="">내 게시글 </a>
@@ -72,9 +72,9 @@
                                                     <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=240&h=240&c=c&webp=1" class="profile-img">
                                                 </div>
                                                 <div class="profile-content-detail-wrapper">
-                                                    <div class="profile-user-nickname">사용자 닉네임</div>
+                                                    <div id="profile-user-nickname" class="profile-user-nickname">사용자 닉네임</div>
                                                     <div class="profile-content-detail">
-                                                        <dl class="profile-content-detail-text">
+                                                        <dl id="profile-content-detail-text-intro" class="profile-content-detail-text">
                                                             <dt>한 줄 소개</dt>
                                                             <dd>한 줄 소개 입력란</dd>
                                                         </dl>
@@ -83,7 +83,7 @@
                                                             <dd>가구, 요리, 디자인</dd>
                                                         </dl>
                                                         <div class="profile-modify-link-wrapper">
-                                                            <a href="" class="profile-modify-link">설정</a>
+                                                            <a th:href="@{/mypage/profile-modify}" class="profile-modify-link">설정</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -319,5 +319,9 @@
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="/js/mypage/mying.js"></script>
+<script th:inline="javascript">
+    let myId = [[${mypageInfos}]];
+    let memberId = [[${session.id}]];
+</script>
 
 </html>

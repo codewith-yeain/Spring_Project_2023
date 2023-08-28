@@ -11,8 +11,27 @@
         FROM TBL_IDEA WHERE ID = #{id}
     </select>
 
+    <update id="updateUser">
+        UPDATE TBL_USER
+        SET USER_EMAIL = #{userEmail}, USER_NAME = #{userName}, USER_NICKNAME = #{userNickname}, USER_INTRO = #{userIntro}, USER_PHONE = #{userPhone}
+        WHERE ID = #{id}
+    </update>
 
+    <insert id="insertBusinessRegister">
+        INSERT INTO TBL_BUSINESS
+        (ID, BUSINESS_NAME, BUSINESS_NUMBER, BUSINESS_SITE, BUSINESS_INDUSTRY, BUSINESS_INTRO, USER_ID)
+        VALUES(SEQ_BUSINESS.NEXTVAL, #{businessName}, #{businessNumber}, #{businessSite}, #{businessIndustry}, #{businessIntro}, #{id});
+    </insert>
 
+    <select id="selectBusinessRegister" resultType="businessDTO">
+        SELECT B.ID, BUSINESS_NAME, BUSINESS_NUMBER, BUSINESS_SITE, BUSINESS_INDUSTRY, BUSINESS_INTRO, B.USER_ID,USER_EMAIL, USER_NAME, USER_PHONE
+        FROM TBL_USER U JOIN TBL_BUSINESS B
+        ON U.ID = B.USER_ID AND U.ID = #{id};
+    </select>
 
-
+    <update id="updateBusinessRegister">
+        UPDATE TBL_BUSINESS
+        SET BUSINESS_NAME = #{businessName}, BUSINESS_NUMBER = #{businessNumber}, BUSINESS_SITE = #{businessSite}, BUSINESS_INDUSTRY = #{businessIndustry}, BUSINESS_INTRO = #{businessIntro}
+        WHERE USER_ID = #{id}
+    </update>
 </mapper>

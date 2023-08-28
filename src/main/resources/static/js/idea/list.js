@@ -1,6 +1,9 @@
 showList(ideas, total);
 function showList(ideas, total) {
     let $ideasWrap = $("#ideas-wrap");
+    let hopePriceIndex = $("#hope-price-tag").next().val();
+    let ideaMaxIndex = $("#idea-max-tag").next().val();
+
     $ideasWrap.empty();
     let textArray = [];
 
@@ -11,7 +14,7 @@ function showList(ideas, total) {
         let itemText = `
         <div class="category-feed-content-item-wrap item-col item-layout">
             <article class="production-item">
-                <a href="/idea/detail?id=${idea.id}" class="production-item-overlay"></a>
+                <a href="/idea/detail?id=${idea.id}&ideaPrice=${hopePriceIndex}&ideaMax=${ideaMaxIndex}" class="production-item-overlay"></a>
                 <div class="production-item-image">`;
 
         idea.files.forEach(file => {
@@ -32,7 +35,7 @@ function showList(ideas, total) {
             <footer class="production-item-status">
                 <span class="entry">스크랩 ${idea.ideaScarpCount}</span>
                 <span class="entry">조회 ${idea.ideaReadCount}</span>
-                <span class="entry" style="color: mediumpurple; font-weight: 700;">진행상황 1/${idea.ideaMax}명</span>
+                <span class="entry" style="color: mediumpurple; font-weight: 700;">진행상황 ${idea.ideaCount}/${idea.ideaMax}명</span>
                 <p class="item-profile-writer-name" style="display: block; margin-top: 10px; font-size: 18px; color: #444; font-weight: 600;"><span style="color:mediumpurple; padding-right: 5px">희망가격</span>${idea.ideaPrice}원</p>
             </footer>
         </div>

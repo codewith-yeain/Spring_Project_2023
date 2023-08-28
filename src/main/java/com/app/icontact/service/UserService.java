@@ -23,4 +23,7 @@ public interface UserService {
 
     //    회원 조회
     public Optional<UserVO> getUser(Long id);
+
+    // 로그인 시에 비밀번호 변경
+    public void changePasswordWhileLogin(Long id, String userPassword);
 }

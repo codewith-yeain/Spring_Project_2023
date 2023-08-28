@@ -40,5 +40,10 @@ public class UserDAO {
         return userMapper.selectById(id);
     }
 
+    // 로그인 시 비밀번호 변경
+    public void changePasswordByUserIdAndUserPassword(Long id, String userPassword){
+        userMapper.updatePasswordByUserId(id, userPassword);
+    }
+
 
 }

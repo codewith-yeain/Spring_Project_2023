@@ -25,4 +25,7 @@ public interface UserMapper {
     //    회원 조회
     public Optional<UserVO> selectById(Long id);
 
+    // 로그인 시 비밀번호 변경
+    public void updatePasswordByUserId(Long id, String userPassword);
+
 }

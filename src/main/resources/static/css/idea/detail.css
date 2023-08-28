@@ -300,8 +300,9 @@ button{
 
 .production-selling-cover-image-entry-image{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
 }
 
@@ -1235,6 +1236,7 @@ li:first-child>.production-selling-navigation-item {
 }
 
 .production-selling-section-header{
+    z-index: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1461,7 +1463,7 @@ li:first-child>.production-selling-navigation-item {
 }
 
 .production-item-header{
-    margin: 9px 0 0;
+    margin: 20px 0 10px;
 }
 
 .production-item-header-name{
@@ -1476,23 +1478,24 @@ li:first-child>.production-selling-navigation-item {
     transition: opacity .1s;
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    word-wrap: break-word;
+    white-space: nowrap;
 }
 
 .production-item .production-item-price {
-    margin: 2px 0 0;
+    margin: 7px 0 0;
 }
 
 .production-item-price {
+    padding: 5px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     font-size: 17px;
     line-height: 23px;
     font-weight: 700;
+    background: #f8f8f8;
+    /* text-align: center; */
+    justify-content: center;
 }
 
 .production-item-price-rate {
@@ -1511,9 +1514,13 @@ li:first-child>.production-selling-navigation-item {
 
 .production-item-stats{
     font-size: 12px;
-    color: #9e9e9e;
+    color: #636363;
     line-height: 16px;
-    font-weight: 700;
+    font-weight: 600;
+}
+
+.category{
+    color: mediumpurple;
 }
 
 .production-item-stats>.avg {
@@ -1544,3 +1551,13 @@ li:first-child>.production-selling-navigation-item {
 }
 
 /*--------------*/
+
+/* 모든 .interest-item 요소 뒤에 ,를 추가 */
+.interest-item::after {
+    content: ',\00a0';
+}
+
+/* 마지막 .interest-item 요소에는 ,를 추가하지 않음 */
+.interest-item:last-child::after {
+    content: '';
+}

@@ -134,5 +134,35 @@
         SELECT COUNT(ID) FROM TBL_SCRAP WHERE IDEA_ID = #{ideaId}
     </select>
 
+    <select id="select" resultType="ideaDTO5">
+        SELECT I.ID, I.IDEA_TITLE, I.IDEA_INTRO, I.IDEA_DETAIL, I.IDEA_CATEGORY,
+        TO_CHAR(I.IDEA_REGISTER_DATE, 'YYYY"년" MM"월" DD"일"') AS IDEA_REGISTER_DATE,
+        TO_CHAR(I.IDEA_UPDATE_DATE, 'YYYY"년" MM"월" DD"일"') AS IDEA_UPDATE_DATE,
+        I.IDEA_TYPE, I.IDEA_PRICE, I.IDEA_READ_COUNT, I.IDEA_MAX, I.USER_ID,
+        (SELECT COUNT(*) FROM TBL_SCRAP WHERE IDEA_ID = I.ID) AS IDEA_SCRAP_COUNT
+        FROM TBL_IDEA I
+        WHERE I.ID = #{id}
+    </select>
 
+    <update id="updateReadCount">
+        UPDATE TBL_IDEA
+        SET IDEA_READ_COUNT = IDEA_READ_COUNT + 1
+        WHERE ID = #{id}
+    </update>
+
+    <select id="selectFinishUserCountOfIdea" resultType="long">
+        SELECT COUNT(ID) FROM TBL_IDEA_STATUS WHERE IDEA_STATUS_TYPE = '협의완료' AND IDEA_ID = #{id}
+    </select>
+
+    <select id="selectIdeasByUserId" resultType="ideaDTO4">
+        SELECT ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL,
+        IDEA_CATEGORY, IDEA_REGISTER_DATE, IDEA_UPDATE_DATE,
+        IDEA_TYPE, IDEA_PRICE, IDEA_READ_COUNT, IDEA_MAX, USER_ID
+        FROM TBL_IDEA WHERE USER_ID = #{userId}
+    </select>
+
+    <select id="selectCountOfIdeasByUserId" resultType="_int">
+        SELECT COUNT(ID) FROM TBL_IDEA
+        WHERE USER_ID = #{userId}
+    </select>
 </mapper>

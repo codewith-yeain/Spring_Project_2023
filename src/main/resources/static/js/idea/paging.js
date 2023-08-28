@@ -3,7 +3,7 @@ $(document).on("click", "a.change-page", function(e){
     e.preventDefault();
     let page = $(this).data("page");  // 여기서 페이지 번호를 가져옵니다.
     // let page = $(this).text();// 여기서 페이지 번호를 가져옵니다.
-    alert(page);
+    // alert(page);
     let hopePriceIndex = $("#hope-price-tag").next().val();
     let ideaMaxIndex = $("#idea-max-tag").next().val();
     let sortValue = $("#sort-tag").next().val();

@@ -31,5 +31,20 @@ public interface IdeaMapper {
     // 해당 아이디어의 총 스크랩수
     public Long selectCountOfScraps(Long ideaId);
 
+    // 아이디어 1개 조회
+    public Optional<IdeaDTO5> select(Long id);
+
+    // 조회수 증가
+    public void updateReadCount(Long id);
+
+    // 특정 아이디어의 협의완료 수
+    public Long selectFinishUserCountOfIdea(Long id);
+
+    // 특정 유저의 아이디어 조회
+    public List<IdeaDTO4> selectIdeasByUserId(Long userId);
+
+    // 특정 유저가 등록한 아이디어의 총 개수
+    public int selectCountOfIdeasByUserId(Long userId);
+
 
 }

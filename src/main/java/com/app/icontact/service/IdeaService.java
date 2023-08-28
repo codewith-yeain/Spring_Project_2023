@@ -3,6 +3,7 @@ package com.app.icontact.service;
 import com.app.icontact.DTO.*;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IdeaService {
 
@@ -20,4 +21,6 @@ public interface IdeaService {
     public int getTotal(Search search);
 
     public Long getScraps(Long ideaId);
+
+    public Optional<IdeaDTO5> read(Long id);
 }

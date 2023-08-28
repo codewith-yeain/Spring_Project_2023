@@ -4,4 +4,18 @@
     <select id="selectIdeaSubCategoryNameByIdeaCategory" resultType="string">
         SELECT SUB_CATEGORY_NAME FROM TBL_SUB_CATEGORY WHERE ID = #{id}
     </select>
+
+    <select id="selectSubCategoryName" resultType="string">
+        SELECT SUB_CATEGORY_NAME
+        FROM TBL_SUB_CATEGORY SC JOIN TBL_INTEREST I
+        ON I.USER_ID = #{id} AND SC.ID = I.SUB_CATEGORY_ID
+    </select>
+
+    <select id="selectSubCategoryNameAndTopCategoryNameByIdeaId" resultType="ideaCategoryNames">
+        SELECT T.TOP_CATEGORY_NAME, S.SUB_CATEGORY_NAME
+        FROM TBL_IDEA I
+        JOIN TBL_SUB_CATEGORY S ON I.IDEA_CATEGORY = S.ID
+        JOIN TBL_TOP_CATEGORY T ON S.TOP_CATEGORY_ID = T.ID
+        WHERE I.ID = #{id}
+    </select>
 </mapper>

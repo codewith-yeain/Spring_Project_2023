@@ -721,16 +721,6 @@
 
                                 <!--페이징처리-->
                                 <div class="comment-paginator" id="paging-wrap">
-                                    <!--<a class="inactive-moving change-page" th:if="${pagination.prev}" th:href="${pagination.startPage - 1}">
-                                        <span class="prev-arrow"></span>
-                                    </a>
-                                    <th:block th:each="page:${#numbers.sequence(pagination.startPage, pagination.endPage)}">
-                                        <a th:if="${page eq pagination.page}" class="active" th:text="${page}"></a>
-                                        <a th:unless="${page eq pagination.page}" th:href="${page}" class="change-page inactive" th:text="${page}"></a>
-                                    </th:block>
-                                    <a class="active-moving change-page" th:if="${pagination.next}" th:href="${pagination.endPage + 1}">
-                                        <span class="next-arrow"></span>
-                                    </a>-->
                                     <a class="active-moving change-page relist" th:if="${pagination.prev}" th:data-page="${pagination.startPage - 1}">
                                         <span class="prev-arrow"></span>
                                     </a>
@@ -812,7 +802,6 @@
     // 정렬 관련 추가 로직
     function handleSortOrder(index) {
         let order = index == 1 ? 'scrap' : index == 2 ? 'popular' : 'recent';
-        // 필요한 로직을 여기에 추가하십시오.
     }
 
     $("#hope-price .opt").on("click", function(e) {
@@ -852,7 +841,6 @@
             $tagWrap.hide();
         }
 
-        // 태그 삭제 후 AJAX 요청을 다시 보냅니다.
         sendAjaxRequest();
     });
 

@@ -36,7 +36,9 @@ public class IdeaController {
     private final HttpSession session;
 
     @GetMapping("detail")
-    public void detail(Long id){;}
+    public void detail(Long id, Pagination pagination, Search search, Model model){
+        model.addAttribute("idea", ideaService.read(id).get());
+    }
 
     @GetMapping("ideaBank")
     public void ideaList(Pagination pagination, Search search, Model model){

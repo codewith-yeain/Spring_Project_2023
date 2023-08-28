@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>프로필 수정하기</title>
     <link rel="stylesheet" href="/css/mypage/profile-modify.css">
+    <link rel="stylesheet" href="../../static/css/mypage/profile-modify.css">
+    <link rel="stylesheet" href="/css/mypage/find-password.css">
     <link rel="stylesheet" href="/css/fix/header.css">
     <link rel="stylesheet" href="/css/fix/footer.css">
     <link rel="icon" href="/images/icon/favicon.png">
@@ -16,54 +18,188 @@
 <div class="full-height">
     <div class="layout">
         <header th:replace="~{/fix/header :: header}"></header>
-        <div class="edit-user-info_wrap container" style="margin-top: 100px">
-            <div class="menu-nav">
-                <nav></nav>
-                <nav></nav>
-            </div>
+
+        <div class="menu-nav" style="margin-top: 50px;">
+            <nav class="page-navigation">
+                <ul style="transform: translateX(0px);">
+                    <!--                    <li class="page-navigation_item">-->
+                    <!--                        <a class="" href="" target="_self">프로필</a>-->
+                    <!--                    </li>-->
+                    <!--                    <li class="page-navigation_item">-->
+                    <!--                        <a class="" href="" target="_self">나의 쇼핑</a>-->
+                    <!--                    </li>-->
+                    <!--                    <li class="page-navigation_item">-->
+                    <!--                        <a class="" href="" target="_self">나의 리뷰</a>-->
+                    <!--                    </li>-->
+                    <li class="page-navigation_item">
+                        <a class="" th:href="@{/mypage/mypage}" target="_self">아이디어</a>
+                    </li>
+                    <li class="page-navigation_item">
+                        <a class="active" th:href="@{/mypage/profile-modify}" target="_self">설정</a>
+                    </li>
+                    <li class="page-navigation_item">
+                        <a class="" th:href="@{/mypage/business-registration}" target="_self">사업자 등록</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="page-navigation menu-nav_contents">
+                <ul style="transform: translateX(0px);">
+                    <li class="page-navigation_item">
+                        <a class="active low" th:href="@{/mypage/profile-modify}" target="_self">회원정보수정</a>
+                    </li>
+                    <!--                    <li class="page-navigation_item">-->
+                    <!--                        <a class="low" href="" target="_self">알림 설정</a>-->
+                    <!--                    </li>-->
+                    <!--                    <li class="page-navigation_item">-->
+                    <!--                        <a class="low" href="" target="_self">사용자 숨기기 설정</a>-->
+                    <!--                    </li>-->
+                    <li class="page-navigation_item">
+                        <a class="low" th:href="@{/mypage/find-password}" target="_self">비밀번호 변경</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="edit-user-info_wrap container" >    <!--    style="margin-top: 100px"   -->
+
             <div class="edit-user-info_header">
                 <div class="edit-user-info_header-title">회원정보수정</div>
                 <a class="edit-user-info_header_withdrawals" href="/withdrawals/new">탈퇴하기</a>
             </div>
-            <form>
+            <form th:action="@{/mypage/profile-modify}" name="modifyForm" method="post" enctype="multipart/form-data" th:object="${userVO}"><form>
                 <div class="edit-user-info_form-item">
                     <div class="edit-user-info_form-item_title">
                         이메일
+<!--                        <div class="edit-user-info_form-item_title_require"> * 필수항목</div>-->
+                    </div>
+                    <div class="expert-form-group edit-user-info_form-item_group">
+                        <div class="expert-form-group_content">
+                            <div class="expert-form-group_input">
+                                <div class="edit-user-info_form-item_field">
+<!--                                    ==============-->
+                                    <div class="edit-user-info_input">
+                                        <input class="form-control" value="" th:field="*{userEmail}" readonly>
+                                        <div class="edit-user-info_input_error"></div>
+                                    </div>
+<!--                                    ==============-->
+<!--                                    <div class="input-group email-input">-->
+<!--&lt;!&ndash;                                        <input type="email" name="userEmail" hidden th:field="*{userEmail}">&ndash;&gt;-->
+<!--                                        <input type="email" name="userEmail" hidden th:field="*{userEmail}">-->
+<!--                                        <span class="email-input_local">-->
+<!--                                            <label>-->
+<!--&lt;!&ndash;                                                <input class="form-control" placeholder="이메일" size="1" value="">&ndash;&gt;-->
+<!--                                                <input class="form-control" placeholder="이메일" id="email-first" value="" name="email-first">-->
+<!--                                                <span class="form-control-blind">이메일 앞 주소 입력하기</span>-->
+<!--                                            </label>-->
+<!--                                        </span>-->
+<!--                                        <span class="email-input_separator">@</span>-->
+<!--                                        <span class="email-input_domain">-->
+<!--                                            <label id="change" name="email-last">-->
+<!--                                                <select id="email-select" class="form-control empty">-->
+<!--                                                    <option value="" disabled="">선택해주세요</option>-->
+<!--                                                    <option value="naver.com">naver.com</option>-->
+<!--                                                    <option value="hanmail.net">hanmail.net</option>-->
+<!--                                                    <option value="daum.net">daum.net</option>-->
+<!--                                                    <option value="gmail.com">gmail.com</option>-->
+<!--                                                    <option value="nate.com">nate.com</option>-->
+<!--                                                    <option value="hotmail.com">hotmail.com</option>-->
+<!--                                                    <option value="outlook.com">outlook.com</option>-->
+<!--                                                    <option value="icloud.com">icloud.com</option>-->
+<!--                                                    <option value="_manual">직접입력</option></select>-->
+<!--                                                <span class="form-control-blind">이메일 도메인 선택하기</span>-->
+<!--                                            </label>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                    <div class="edit-user-info_form-item_field_warning">이메일을 변경하시려면 운영자에게 이메일을 보내주세요.</div>-->
+                                    <div class="edit-user-info_form-item_field_warning" style="color:rgb(255, 119, 119);">이메일은 변경이 불가합니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    편집 전 (아래 부분)  -->
+<!--                    <div class="expert-form-group edit-user-info_form-item_group">-->
+<!--                        <div class="expert-form-group_content">-->
+<!--                            <div class="expert-form-group_input">-->
+<!--                                <div class="edit-user-info_form-item_field">-->
+<!--                                    <div class="input-group email-input">-->
+<!--                                        <input type="email" name="userEmail" hidden th:field="*{userEmail}">-->
+<!--                                        <span class="email-input_local">-->
+<!--                                            <label>-->
+<!--&lt;!&ndash;                                                <input class="form-control" placeholder="이메일" size="1" value="">&ndash;&gt;-->
+<!--                                                <input class="form-control" placeholder="이메일" id="email-first" value="" name="email-first">-->
+<!--                                                <span class="form-control-blind">이메일 앞 주소 입력하기</span>-->
+<!--                                            </label>-->
+<!--                                        </span>-->
+<!--                                        <span class="email-input_separator">@</span>-->
+<!--                                        <span class="email-input_domain">-->
+<!--                                            <label id="change" name="email-last">-->
+<!--                                                <select id="email-select" class="form-control empty">-->
+<!--                                                    <option value="" disabled="">선택해주세요</option>-->
+<!--                                                    <option value="naver.com">naver.com</option>-->
+<!--                                                    <option value="hanmail.net">hanmail.net</option>-->
+<!--                                                    <option value="daum.net">daum.net</option>-->
+<!--                                                    <option value="gmail.com">gmail.com</option>-->
+<!--                                                    <option value="nate.com">nate.com</option>-->
+<!--                                                    <option value="hotmail.com">hotmail.com</option>-->
+<!--                                                    <option value="outlook.com">outlook.com</option>-->
+<!--                                                    <option value="icloud.com">icloud.com</option>-->
+<!--                                                    <option value="_manual">직접입력</option></select>-->
+<!--                                                <span class="form-control-blind">이메일 도메인 선택하기</span>-->
+<!--                                            </label>-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                    <div class="edit-user-info_form-item_field_warning">이메일을 변경하시려면 운영자에게 이메일을 보내주세요.</div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+
+<!--                아래 부분은 이메일 중복 체크를 위한 버튼     -->
+<!--                <div class="email-check" style="max-width: 400px; margin-left: 105px; margin-bottom: 10px;margin-top: -20px;">-->
+<!--                    <button class="email-check-button" name="emailAuth" type="button">이메일 중복확인</button>-->
+<!--                </div>-->
+<!--                <div class="" style="overflow: hidden;"></div>-->
+
+<!--                변 경 전 (아래 주석 부분)    -->
+<!--                <div class="email-check" style="max-width: 400px; margin-left: 105px; margin-bottom: 10px;margin-top: -20px;">-->
+<!--                    <button class="email-check-button" name="emailAuth" type="button">이메일 중복확인</button>-->
+<!--                </div>-->
+<!--                <div class="" style="overflow: hidden;"></div>-->
+
+                <div class="edit-user-info_form-item">
+                    <div class="edit-user-info_form-item_title">전화번호
                         <div class="edit-user-info_form-item_title_require"> * 필수항목</div>
                     </div>
                     <div class="expert-form-group edit-user-info_form-item_group">
                         <div class="expert-form-group_content">
                             <div class="expert-form-group_input">
                                 <div class="edit-user-info_form-item_field">
-                                    <div class="input-group email-input">
-                                        <span class="email-input_local">
-                                            <label>
-                                                <input class="form-control" placeholder="이메일" size="1" value="">
-                                                <span class="form-control-blind">이메일 앞 주소 입력하기</span>
-                                            </label>
-                                        </span>
-                                        <span class="email-input_separator">@</span>
-                                        <span class="email-input_domain">
-                                            <label>
-                                                <select class="form-control">
-                                                    <option value="" disabled="">선택해주세요</option>
-                                                    <option value="naver.com">naver.com</option>
-                                                    <option value="hanmail.net">hanmail.net</option>
-                                                    <option value="daum.net">daum.net</option>
-                                                    <option value="gmail.com">gmail.com</option>
-                                                    <option value="nate.com">nate.com</option>
-                                                    <option value="hotmail.com">hotmail.com</option>
-                                                    <option value="outlook.com">outlook.com</option>
-                                                    <option value="icloud.com">icloud.com</option>
-                                                    <option value="_manual">직접입력</option></select>
-                                                <span class="form-control-blind">이메일 도메인 선택하기</span>
-                                            </label>
-                                        </span>
+                                    <div class="edit-user-info_input">
+                                        <input class="form-control" value="닉네임" th:field="*{userPhone}">
+                                        <div class="edit-user-info_input_error"></div>
                                     </div>
-                                    <div class="edit-user-info_form-item_field_warning">이메일을 변경하시려면 운영자에게 이메일을 보내주세요.</div>
                                 </div>
                             </div>
                         </div>
+                        <div class="edit-user-info_form-item_field_warning">사용중인 핸드폰 번호를 입력해주세요.(ex:01012345678)</div>
+                    </div>
+                </div>
+                <div class="edit-user-info_form-item">
+                    <div class="edit-user-info_form-item_title">성명
+                        <div class="edit-user-info_form-item_title_require"> * 필수항목</div>
+                    </div>
+                    <div class="expert-form-group edit-user-info_form-item_group">
+                        <div class="expert-form-group_content">
+                            <div class="expert-form-group_input">
+                                <div class="edit-user-info_form-item_field">
+                                    <div class="edit-user-info_input">
+                                        <input class="form-control" value="닉네임" th:field="*{userName}">
+                                        <div class="edit-user-info_input_error"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit-user-info_form-item_field_warning">본인의 실명을 입력해주세요.(외자인 경우 포함, 띄어쓰기 제외하여 작성)</div>
                     </div>
                 </div>
                 <div class="edit-user-info_form-item">
@@ -75,71 +211,89 @@
                             <div class="expert-form-group_input">
                                 <div class="edit-user-info_form-item_field">
                                     <div class="edit-user-info_input">
-                                        <input class="form-control" value="닉네임">
+                                        <input class="form-control" value="닉네임" th:field="*{userNickname}">
                                         <div class="edit-user-info_input_error"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="edit-user-info_form-item_field_warning">다른 유저와 겹치지 않도록 입력해주세요. (2~15자)</div>
                     </div>
                 </div>
-                <div class="edit-user-info_form-item">
-                    <div class="edit-user-info_form-item_title">홈페이지</div>
-                    <div class="expert-form-group edit-user-info_form-item_group">
-                        <div class="expert-form-group_content">
-                            <div class="expert-form-group_input">
-                                <div class="edit-user-info_form-item_field">
-                                    <input placeholder="https://ohou.se" class="form-control" value="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="edit-user-info_form-item">
-                    <div class="edit-user-info_form-item_title">성별</div>
-                    <div class="expert-form-group edit-user-info_form-item_group">
-                        <div class="expert-form-group_content">
-                            <div class="expert-form-group_input">
-                                <div class="edit-user-info_form-item_field edit-user-info_form-item_field-sex">
-                                    <ul class="radio-group-input">
-                                        <li>
-                                            <div class="form-radio">
-                                                <label class="form-radio-label">
-                                                    <input class="form-radio" type="radio">
-                                                    <span class="radio-img"></span>
-                                                    <span>남성</span>
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="form-radio">
-                                                <label class="form-radio-label">
-                                                    <input class="form-radio" type="radio">
-                                                    <span class="radio-img"></span>
-                                                    <span>여성</span>
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="edit-user-info_form-item">
-                    <div class="edit-user-info_form-item_title">생년월일</div>
-                    <div class="expert-form-group edit-user-info_form-item_group">
-                        <div class="expert-form-group_content">
-                            <div class="expert-form-group_input">
-                                <div class="edit-user-info_form-item_field">
-                                    <div class="DayPickerInput">
-                                        <input placeholder="YYYY-MM-DD" class="form-control date-input_text" value="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!--                <div class="edit-user-info_form-item">-->
+<!--                    <div class="edit-user-info_form-item_title">별명-->
+<!--                        <div class="edit-user-info_form-item_title_require"> * 필수항목</div>-->
+<!--                    </div>-->
+<!--                    <div class="expert-form-group edit-user-info_form-item_group">-->
+<!--                        <div class="expert-form-group_content">-->
+<!--                            <div class="expert-form-group_input">-->
+<!--                                <div class="edit-user-info_form-item_field">-->
+<!--                                    <div class="edit-user-info_input">-->
+<!--                                        <input class="form-control" value="닉네임">-->
+<!--                                        <div class="edit-user-info_input_error"></div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="edit-user-info_form-item">-->
+<!--                    <div class="edit-user-info_form-item_title">홈페이지</div>-->
+<!--                    <div class="expert-form-group edit-user-info_form-item_group">-->
+<!--                        <div class="expert-form-group_content">-->
+<!--                            <div class="expert-form-group_input">-->
+<!--                                <div class="edit-user-info_form-item_field">-->
+<!--                                    <input placeholder="https://ohou.se" class="form-control" value="">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="edit-user-info_form-item">-->
+<!--                    <div class="edit-user-info_form-item_title">성별</div>-->
+<!--                    <div class="expert-form-group edit-user-info_form-item_group">-->
+<!--                        <div class="expert-form-group_content">-->
+<!--                            <div class="expert-form-group_input">-->
+<!--                                <div class="edit-user-info_form-item_field edit-user-info_form-item_field-sex">-->
+<!--                                    <ul class="radio-group-input">-->
+<!--                                        <li>-->
+<!--                                            <div class="form-radio">-->
+<!--                                                <label class="form-radio-label">-->
+<!--                                                    <input class="form-radio" type="radio">-->
+<!--                                                    <span class="radio-img"></span>-->
+<!--                                                    <span>남성</span>-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <div class="form-radio">-->
+<!--                                                <label class="form-radio-label">-->
+<!--                                                    <input class="form-radio" type="radio">-->
+<!--                                                    <span class="radio-img"></span>-->
+<!--                                                    <span>여성</span>-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="edit-user-info_form-item">-->
+<!--                    <div class="edit-user-info_form-item_title">생년월일</div>-->
+<!--                    <div class="expert-form-group edit-user-info_form-item_group">-->
+<!--                        <div class="expert-form-group_content">-->
+<!--                            <div class="expert-form-group_input">-->
+<!--                                <div class="edit-user-info_form-item_field">-->
+<!--                                    <div class="DayPickerInput">-->
+<!--                                        <input placeholder="YYYY-MM-DD" class="form-control date-input_text" value="">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
                 <div class="edit-user-info_form-item">
                     <div class="edit-user-info_form-item_title">프로필 이미지</div>
                     <div class="expert-form-group edit-user-info_form-item_group">
@@ -166,7 +320,7 @@
                         <div class="expert-form-group_content">
                             <div class="expert-form-group_input">
                                 <div class="edit-user-info_form-item_field">
-                                    <input maxlength="41" class="form-control" value="">
+                                    <input maxlength="41" class="form-control" value="" th:field="*{userIntro}">
                                 </div>
                             </div>
                         </div>
@@ -181,5 +335,7 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/js/modal/modal.js"></script>
+<script src="/js/mypage/profile-modify.js"></script>
 
 </html>

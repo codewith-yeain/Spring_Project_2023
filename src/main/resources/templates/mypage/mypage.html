@@ -20,26 +20,26 @@
             <nav class="page-navigation myhome-nav-owner">
                 <ul>
                     <li class="page-navigation-item">
-                        <a href="" class="active">아이디어</a>
+                        <a th:href="@{/mypage/mypage}" class="active">아이디어</a>
                     </li>
                     <li class="page-navigation-item">
-                        <a href="">설정</a>
+                        <a th:href="@{/mypage/profile-modify}">설정</a>
                     </li>
                     <li class="page-navigation-item">
-                        <a href="">사업자 등록</a>
+                        <a th:href="@{/mypage/business-registration}">사업자 등록</a>
                     </li>
                 </ul>
             </nav>
             <nav class="page-navigation">
                 <ul>
                     <li class="page-navigation-item">
-                        <a href="" class="active">홈</a>
+                        <a th:href="@{/mypage/mypage}" class="active">홈</a>
                     </li>
                     <li class="page-navigation-item">
-                        <a href="">내 아이디어</a>
+                        <a th:href="@{/mypage/mying}">내 아이디어</a>
                     </li>
                     <li class="page-navigation-item">
-                        <a href="">구현 목록</a>
+                        <a th:href="@{/mypage/ict}">구현 목록</a>
                     </li>
                     <li class="page-navigation-item">
                         <a href="">내 게시글 </a>
@@ -66,7 +66,7 @@
                                             <div id="mypage-profile-id" class="mypage-profile-id">홍김동</div>
                                             <div class="mypage-profile-text">
                                                 <div class="">
-                                                    <a class="lay3 lay2 lay1 mypage-profile-button" href="/users/5412458/edit">설정</a>
+                                                    <a class="lay3 lay2 lay1 mypage-profile-button" th:href="@{/mypage/profile-modify}">설정</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,12 +151,13 @@
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
-
+<script src="/js/mypage/mypage.js"></script>
 <script th:inline="javascript">
-    let files = [[${mypageInfos.files}]];
-    let postId = [[${mypageInfos.id}]];
-    let memberId = [[${session.userId}]];
+    let myId = [[${mypageInfos}]];
+    let memberId = [[${session.id}]];
 </script>
 
-<script src="/js/mypage/mypage.js"></script>
+
+
+
 </html>

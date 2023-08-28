@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,6 +8,7 @@
     <title>iContact</title>
     <link rel="icon" href="/images/icon/favicon.png">
     <link rel="stylesheet" href="/css/mypage/business-registration.css">
+    <link rel="stylesheet" href="../../static/css/mypage/business-registration.css">
 
     <style>
         /*돋보기 아이콘을 위한 폰트*/
@@ -65,8 +66,64 @@
         </div>
 
         <div class="container">
-            <form action="">
+            <form th:action="@{/mypage/business-registration}" method="post" name="businessRegisterationForm" th:object="${businessDTO}" enctype="multipart/form-data">
                 <div class="sales-form-section">
+<!--                    <div class="row">-->
+<!--                        <div class="offset seller-layout-divider-col">-->
+<!--                            <p class="sales-form-section-title">영업담당자 정보</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row sales-form-group">-->
+<!--                        <div class="offset sales-form-group-layout">-->
+<!--                            <label class="form-label sales-form-label">-->
+<!--                                이름-->
+<!--                                <span class="sales-form-group-required">*</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <div class="sales-form-group-col">-->
+<!--                            <div class="sales-form-control-wrap">-->
+<!--                                <input type="text" class="form-control" placeholder="홍길동" th:field="*{businessName}">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row sales-form-group">-->
+<!--                        <div class="offset sales-form-group-col-number">-->
+<!--                            <label class="form-label sales-form-label">-->
+<!--                                전화번호-->
+<!--                                <span class="sales-form-group-required">*</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--&lt;!&ndash;                        <input type="tel" name="businessNumber" hidden th:field="*{businessNumber}">&ndash;&gt;-->
+<!--                        <div class="sales-form-group-col">-->
+<!--                            <div class="sales-form-control-wrap">-->
+<!--                                <input type="tel" class="form-control" placeholder="010" value="" maxlength="3">-->
+<!--                                <span class="sales-form-divider">-</span>-->
+<!--                                <input type="tel" class="form-control" placeholder="1234" value="" maxlength="4">-->
+<!--                                <span class="sales-form-divider">-</span>-->
+<!--                                <input type="tel" class="form-control" placeholder="5678" value="" maxlength="4">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row sales-form-group">-->
+<!--                        <div class="offset sales-form-group-col-number">-->
+<!--                            <label class="form-label sales-form-label">-->
+<!--                                이메일-->
+<!--                                <span class="sales-form-group-required">*</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <div class="sales-form-group-col">-->
+<!--                            <div class="sales-form-control-wrap">-->
+<!--                                <input type="text" class="form-control" placeholder="hong@icontact.com" value="">-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="row justify-center seller-layout-divider">-->
+<!--                    <hr class="seller-layout-divider-col seller-layout-hr">-->
+<!--                </div>-->
+
+<!--                    ===============================================================================================         -->
                     <div class="row">
                         <div class="offset seller-layout-divider-col">
                             <p class="sales-form-section-title">영업담당자 정보</p>
@@ -81,7 +138,7 @@
                         </div>
                         <div class="sales-form-group-col">
                             <div class="sales-form-control-wrap">
-                                <input type="text" class="form-control" placeholder="홍길동">
+                                <input type="text" class="form-control" placeholder="홍길동" field="*{userName}">
                             </div>
                         </div>
                     </div>
@@ -92,6 +149,7 @@
                                 <span class="sales-form-group-required">*</span>
                             </label>
                         </div>
+                        <!--                        <input type="tel" name="businessNumber" hidden th:field="*{businessNumber}">-->
                         <div class="sales-form-group-col">
                             <div class="sales-form-control-wrap">
                                 <input type="tel" class="form-control" placeholder="010" value="" maxlength="3">
@@ -111,7 +169,7 @@
                         </div>
                         <div class="sales-form-group-col">
                             <div class="sales-form-control-wrap">
-                                <input type="text" class="form-control" placeholder="hong@icontact.com" value="">
+                                <input type="text" class="form-control" placeholder="hong@icontact.com"  field="*{userEmail}">   <!--    value=""    -->
                             </div>
                         </div>
                     </div>
@@ -120,6 +178,7 @@
                 <div class="row justify-center seller-layout-divider">
                     <hr class="seller-layout-divider-col seller-layout-hr">
                 </div>
+<!--                    ===================================================-->
 
                 <div class="sales-form-section">
                     <div class="row">
@@ -136,7 +195,7 @@
                         </div>
                         <div class="sales-form-group-col">
                             <div class="sales-form-control-wrap">
-                                <input type="text" class="form-control" placeholder="아이컨택" value="">
+                                <input type="text" class="form-control" placeholder="아이컨택" value="" th:field="*{businessName}">
                                 <p class="sales-form-description">※ 사업자등록증의 법인명 또는 상호명을 입력하세요.</p>
                             </div>
                         </div>
@@ -149,6 +208,7 @@
                             </label>
                         </div>
                         <div class="sales-form-group-col">
+                            <input type="tel" name="businessNumber" hidden th:field="*{businessNumber}">
                             <div class="sales-form-control-wrap">
                                 <input type="tel" class="form-control" placeholder="123" value="" maxlength="3">
                                 <span class="sales-form-divider">-</span>
@@ -167,7 +227,7 @@
                         </div>
                         <div class="sales-form-group-col">
                             <div class="sales-form-control-wrap">
-                                <input type="email" class="form-control" placeholder="www.icontact.com" value="">
+                                <input type="email" class="form-control" placeholder="www.icontact.com" value="" th:field="*{businessSite}">
                             </div>
                         </div>
                     </div>
@@ -184,19 +244,8 @@
                         </div>
                     </div>
 
-                    <div class="row sales-form-group">
-                        <div class="offset sales-form-group-col-number">
-                            <label class="form-label sales-form-label">
-                                대표브랜드 이름
-                                <span class="sales-form-group-required">*</span>
-                            </label>
-                        </div>
-                        <div class="sales-form-group-col">
-                            <div class="sales-form-control-wrap">
-                                <input type="text" class="form-control" placeholder="입력해주세요" value="">
-                            </div>
-                        </div>
-                    </div>
+<!--
+-->
 
                     <div class="row sales-form-group">
                         <div class="offset sales-form-group-col-number">
@@ -260,13 +309,14 @@
 
                     <div class="row sales-form-group">
                         <div class="offset sales-form-group-col-number">
+<!--                            상품 소개   -->
                             <label class="form-label sales-form-label">
-                                상품 소개
+                                회사 소개
                                 <span class="sales-form-group-required">*</span>
                             </label>
                         </div>
                         <div class="sales-form-group-col">
-                            <textarea class="form-control" placeholder="판매하시는 상품에 대한 설명을 입력해주세요."></textarea>
+                            <textarea class="form-control" placeholder="회사에 대한 설명을 입력해주세요." th:field="*{businessIntro}"></textarea>   <!--    판매하시는 상품에 대한 설명을 입력해주세요.    -->
                         </div>
                     </div>
 

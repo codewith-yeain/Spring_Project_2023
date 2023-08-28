@@ -28,5 +28,6 @@
         <typeAlias type="com.app.icontact.DTO.IdeaDTO3" alias="ideaDTO3" />
         <typeAlias type="com.app.icontact.DTO.CommunityDTO2" alias="communityDTO2" />
         <typeAlias type="com.app.icontact.DTO.IdeaDTO4" alias="ideaDTO4" />
+        <typeAlias type="com.app.icontact.DTO.BusinessDTO" alias="businessDTO" />
     </typeAliases>
 </configuration>

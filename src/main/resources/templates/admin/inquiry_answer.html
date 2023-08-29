@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 페이지- 공지사항 작성</title>
-    <link rel="stylesheet" href="../../static/css/admin/sidemenu.css">
-    <link rel="stylesheet" href="../../static/css/admin/admin_board_notice_write.css">
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <title>관리자 페이지- 문의 답변 작성</title>
+    <link rel="stylesheet" href="/css/admin/sidemenu.css">
+    <link rel="stylesheet" href="/css/admin/admin_board_proposal_modify.css">
+    <link rel="icon" href="/images/icon/favicon.png">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <div class="info-title-box info-title-box-flex">
             <div class="logo-box-layout">
                 <div class="logo-box">
-                    <img src="../../static/images/icon/logo.png">
+                    <img src="/images/icon/logo.png">
                 </div>
                 <div class="logo-title">
                     <span>Jar</span>
@@ -24,7 +24,7 @@
             </div>
             <div>
                 <div class="select-name">
-                    <span>공지사항 관리</span>
+                    <span>문의 관리</span>
                 </div>
             </div>
         </div>
@@ -46,22 +46,17 @@
                             <li class="menu">
                                 <div class="menu-flex">
                                     <div>
-                                        <img src="../../static/images/admin/board_icon.png" class="icon">
+                                        <img src="/images/admin/board_icon.png" class="icon">
                                     </div>
                                     <a href="">
                                         <span>게시판 관리</span>
                                     </a>
                                     <div class="triangle-button">
-                                        <img src="../../static/images/admin/arrow_icon.png"
+                                        <img src="/images/admin/arrow_icon.png"
                                              class="icon triangle-icon triangle">
                                     </div>
                                 </div>
                                 <ul class="menus1 menus" style="display: none;">
-                                    <!-- <li class="select-menu">
-                                        <a href="adminPage-boardList.jsp">
-                                            <span>전체 게시판</span>
-                                        </a>
-                                    </li> -->
                                     <li class="select-menu">
                                         <a th:href="@{/admin/board/challenge/list}">
                                             <span>커뮤니티 관리</span>
@@ -77,35 +72,30 @@
                                             <span>FAQ 관리</span>
                                         </a>
                                     </li>
-                                    <!--<li class="select-menu">
-                                        <a th:href="@{/admin/board/proposal/list}">
-                                            <span>제안 게시판</span>
-                                        </a>
-                                    </li>-->
                                 </ul>
                             </li>
 
                             <li class="menu">
                                 <div class="menu-flex">
                                     <div>
-                                        <img src="../../static/images/admin/notice_icon.png" class="icon">
+                                        <img src="/images/admin/notice_icon.png" class="icon">
                                     </div>
                                     <a>
                                         <span>공지사항 관리</span>
                                     </a>
                                     <div class="triangle-button">
-                                        <img src="../../static/images/admin/arrow_icon.png"
+                                        <img src="/images/admin/arrow_icon.png"
                                              class="icon triangle-icon triangle">
                                     </div>
                                 </div>
                                 <ul class="menus2 menus" style="display:none;">
                                     <li class="select-menu"> <!--수정/삭제 버튼-->
-                                        <a th:href="@{/admin/board/notice/list}">
+                                        <a th:href="@{/admin/notice}">
                                             <span>공지사항 목록</span>
                                         </a>
                                     </li>
                                     <li class="select-menu">
-                                        <a th:href="@{/admin/board/notice/write}">
+                                        <a th:href="@{/admin/notice_write}">
                                             <span>공지사항 작성</span>
                                         </a>
                                     </li>
@@ -114,9 +104,9 @@
                             <li class="menu">
                                 <div class="menu-flex">
                                     <div>
-                                        <img src="../../static/images/admin/user_icon.png" class="icon">
+                                        <img src="/images/admin/user_icon.png" class="icon">
                                     </div>
-                                    <a th:href="@{/admin/member/list}">
+                                    <a th:href="@{/admin/member}">
                                         <span>회원정보 관리</span>
                                     </a>
                                 </div>
@@ -132,38 +122,72 @@
                     <!-- 헤더 -->
                     <div class="prev-button-layout">
                         <div>
-                            <a th:href="@{/admin/board/notice/list}">
-                                <img src="../../static/images/admin/prev_icon.png" class="prev-icon">
+                            <a href="">
+                                <img src="/images/admin/prev_icon.png" class="prev-icon">
+                                <span class="prev-title">목록로 돌아가기</span>
                             </a>
-                            <a class="back-page" th:href="@{/admin/board/notice/list}">공지사항 목록 확인</a>
                         </div>
                     </div>
 
                     <!-- 내용 섹션 -->
                     <section class="board-info-box-layout">
-
                         <div class="board-info-box">
                             <div class="board-info-title-box">
-                                <span>공지사항 등록하기</span>
+                                <span>문의글</span>
                             </div>
-                            <hr>
                             <div class="info-table">
-                                <form th:action="@{/admin/board/notice/write}" method="post">
+                                <div class="board_title">
+                                    <span class="span-bold">제목 :</span>
+                                    <!-- 제목  -->
+                                    <span>문의 제목</span>
+                                </div>
+                                <div class="board_info board_writer">
+                                    <span class="span-bold">작성자 :</span>
+                                    <!-- 작성자 명  -->
+                                    <span>문의자 이름</span>
+                                </div>
+                                <!-- <div class="info-member">
+									<span class="span-bold">좋아요 :</span>
+									<span>3</span>
+								</div> -->
+                                <div class="board_info board_register_date">
+                                    <span class="span-bold">작성 날짜 :</span>
+                                    <!-- 작성 날짜  -->
+                                    <span>2023.04.23 11:01</span>
+                                </div>
+                                <hr>
+                                <div class="board_content">
+                                    <!-- 게시판 내용 -->
+                                    문의글 내용
+                                    문의글 내용
+                                    문의글 내용
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="board-info-box-layout">
+                        <div class="board-info-box">
+                            <div class="board-info-title-box">
+                                <span>문의 답변하기</span>
+                            </div>
+                            <div class="info-table">
+                                <form th:action="@{/inquiry/answer}" name="answer" method="post" th:object="${answerVO}"><!--action=""-->
+                                    <input type="hidden" name="boardId" value="">
+                                    <!-- <input type="hidden" name="page" value=""> -->
                                     <div>
-                                        <input type="text" class="board-title" name="noticeTitle" placeholder="제목을 입력해주세요."
-                                               autocomplete="off" th:value="${noticeDTO.noticeTitle}">
+                                        <input type="text" class="board-title" name="boardTitle"
+                                            placeholder="제목을 입력해주세요." autocomplete="off" value="">
                                     </div>
                                     <hr>
                                     <div>
-                                        <textarea class="board-content" name="noticeContent"
-                                                  placeholder="내용을 입력해주세요." th:text="${noticeDTO.noticeContent}"></textarea>
+                                        <textarea class="board-content"  name="answerContent" th:field="*{answerContent}"
+                                            placeholder="내용을 입력해주세요."><!--name="boardContent"--></textarea>
                                     </div>
                                     <hr>
                                     <div>
-                                        <button class="btn_done" type="submit">등록</button>
+                                        <button class="btn_done">등록</button>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
                     </section>
@@ -173,6 +197,7 @@
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="../../static/js/admin/sidemenu.js"></script>
+<script src="/js/admin/sidemenu.js"></script>
+<script src="/js/modal/modal.js"></script>
 
 </html>

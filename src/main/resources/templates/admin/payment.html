@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 페이지-결제 관리</title>
-    <link rel="stylesheet" href="../../static/css/common.css">
-    <link rel="stylesheet" href="../../static/css/admin/sidemenu.css">
-    <link rel="stylesheet" href="../../static/css/admin/admin_board.css">
-    <link rel="stylesheet" href="../../static/css/admin/admin_board_proposal.css">
-    <link rel="icon" href="../../static/images/icon/favicon.png">
+    <!--<link rel="stylesheet" href="/css/common.css">-->
+    <link rel="stylesheet" href="/css/admin/sidemenu.css">
+    <link rel="stylesheet" href="/css/admin/admin_board.css">
+    <link rel="stylesheet" href="/css/admin/admin_board_proposal.css">
+    <link rel="icon" href="/images/icon/favicon.png">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <div class="info-title-box info-title-box-flex">
             <div class="logo-box-layout">
                 <div class="logo-box">
-                    <img src="../../static/images/icon/logo.png">
+                    <img src="/images/icon/logo.png">
                 </div>
                 <div class="logo-title">
                     <span>Jar</span>
@@ -48,13 +48,13 @@
                             <li class="menu">
                                 <div class="menu-flex">
                                     <div>
-                                        <img src="../../static/images/admin/board_icon.png" class="icon">
+                                        <img src="/images/admin/board_icon.png" class="icon">
                                     </div>
                                     <a href="">
                                         <span>게시판 관리</span>
                                     </a>
                                     <div class="triangle-button">
-                                        <img src="../../static/images/admin/arrow_icon.png"
+                                        <img src="/images/admin/arrow_icon.png"
                                              class="icon triangle-icon triangle">
                                     </div>
                                 </div>
@@ -65,17 +65,17 @@
                                         </a>
                                     </li> -->
                                     <li class="select-menu">
-                                        <a th:href="@{/admin/board/challenge/list}">
+                                        <a th:href="@{/admin/community}">
                                             <span>커뮤니티 관리</span>
                                         </a>
                                     </li>
                                     <li class="select-menu">
-                                        <a th:href="@{/admin/board/inquiry/list}">
+                                        <a th:href="@{/admin/inquiry-list}">
                                             <span>문의 관리</span>
                                         </a>
                                     </li>
                                     <li class="select-menu">
-                                        <a th:href="@{/admin/board/inquiry/list}">
+                                        <a th:href="@{/admin/notice_write}">
                                             <span>FAQ 관리</span>
                                         </a>
                                     </li>
@@ -90,24 +90,24 @@
                             <li class="menu">
                                 <div class="menu-flex">
                                     <div>
-                                        <img src="../../static/images/admin/notice_icon.png" class="icon">
+                                        <img src="/images/admin/notice_icon.png" class="icon">
                                     </div>
                                     <a>
                                         <span>공지사항 관리</span>
                                     </a>
                                     <div class="triangle-button">
-                                        <img src="../../static/images/admin/arrow_icon.png"
+                                        <img src="/images/admin/arrow_icon.png"
                                              class="icon triangle-icon triangle">
                                     </div>
                                 </div>
                                 <ul class="menus2 menus" style="display:none;">
                                     <li class="select-menu"> <!--수정/삭제 버튼-->
-                                        <a th:href="@{/admin/board/notice/list}">
+                                        <a th:href="@{/about/notice}">
                                             <span>공지사항 목록</span>
                                         </a>
                                     </li>
                                     <li class="select-menu">
-                                        <a th:href="@{/admin/board/notice/write}">
+                                        <a th:href="@{/admin/notice_write}">
                                             <span>공지사항 작성</span>
                                         </a>
                                     </li>
@@ -116,9 +116,9 @@
                             <li class="menu">
                                 <div class="menu-flex">
                                     <div>
-                                        <img src="../../static/images/admin/user_icon.png" class="icon">
+                                        <img src="/images/admin/user_icon.png" class="icon">
                                     </div>
-                                    <a th:href="@{/admin/member/list}">
+                                    <a th:href="@{/admin/member}">
                                         <span>회원정보 관리</span>
                                     </a>
                                 </div>
@@ -160,15 +160,16 @@
                                             <th>No</th>
                                             <th>회원 아이디</th>
                                             <th>결제 액</th>
-                                            <th>결제 수단</th>
+                                            <!--<th>결제 수단</th>-->
                                             <th>결제 날짜 및 시간</th>
                                             <th>결제 종류</th>
-                                            <th>결제 수수료</th>
-                                            <!--<th>상태</th>-->
+                                            <!--<th>결제 수수료</th>-->
+                                            <th>상태</th>
                                         </tr>
                                     </thead>
-
-                                    <tr>
+                                    <tbody id="payment-list">
+                                    <!--<section id="payment-list">-->
+                                   <!-- <tr>
                                         <td class="checkbox-line">
                                             <input type="checkbox" name="check">
                                         </td>
@@ -253,8 +254,8 @@
                                         <td>
                                             3%
                                         </td>
-                                    </tr>
-
+                                    </tr>-->
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -296,7 +297,7 @@
                             <div class="">
                                 <div class="page-button-margin">
                                     <div>
-                                        <img src="../../static/images/admin/left_icon.png"
+                                        <img src="/images/admin/left_icon.png"
                                             class="left-button">
                                     </div>
                                 </div>
@@ -325,7 +326,7 @@
                             <div class="">
                                 <div class="page-button-margin">
                                     <div>
-                                        <img src="../../static/images/admin/right_icon.png"
+                                        <img src="/images/admin/right_icon.png"
                                             class="right-button">
                                     </div>
                                 </div>
@@ -339,8 +340,11 @@
     </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="../../static/js/admin/checkbox.js"></script>
-<script src="../../static/js/admin/board_proposal.js"></script>
-<script src="../../static/js/admin/sidemenu.js"></script>
+<!--<script src="/js/admin/checkbox.js"></script>
+<script src="/js/admin/board_proposal.js"></script>-->
+<script th:inline="javascript">
+    let posts = [[${posts}]];
+</script>
+<script src="/js/admin/payment_list.js"></script>
 
 </html>

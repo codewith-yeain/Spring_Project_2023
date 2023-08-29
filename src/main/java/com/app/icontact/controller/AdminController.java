@@ -20,23 +20,8 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/admin/*")
 public class AdminController {
     private final AdminService adminService;
-    private final HttpSession session;
-    private final CommunityService communityService;
-
-    /* //커뮤니티 관리목록
-     @GetMapping("communitygetList")*/
-   @GetMapping("community")
-   public void goToComListAll(Model model){
-       model.addAttribute("lists", communityService.getListComAll());
-   }
-
-    //커뮤니티 글 삭제
-    @GetMapping("community")
-    public void communitydelete(Long id){
-        adminService.communitydelete(id);
-        return ;
-    }
-
+    private Long id;
+    private Long inquiryVO;
 
     //공지사항 글 작성
     @GetMapping("notice_write")
@@ -49,13 +34,45 @@ public class AdminController {
         return new RedirectView("/about/notice");
     }
 
+    //Q&A 등록
+
+
+    //결제 목록
+    @GetMapping("payment")
+    public void paymentGetList(Model model) {
+        model.addAttribute("posts", adminService.paymentGetList());
+    }
+
+    //회원목록보기
+    @GetMapping("member")
+    public void goToMember(Model model){
+        model.addAttribute("lists",adminService.showUserList());
+    }
+
+  /*  //커뮤니티 관리목록
+   @GetMapping("community")
+   public void goToCommuList(Model model){
+       model.addAttribute("communitys", adminService.commuList());
+   }*/
 
     //문의목록보기
     @GetMapping("inquiry-list")
-    public void showList(Pagination pagination, Model model){
-        pagination.progress();
-        model.addAttribute("inquiries", adminService.getList(pagination));
+    public void showList(Model model){
+        model.addAttribute("inquiries", adminService.getList());
     }
+
+    //커뮤니티 글 삭제
+    @GetMapping("community")
+    public void removeCommu(Long id){
+        adminService.communityDelete(id);
+
+    }
+
+  /*  //문의보기
+    @GetMapping("inquiry_answer")
+    public void choiceInquiry(Model model){
+        model.addAttribute("inquiry",adminService.read(inquiryVO));
+    }*/
 
     //답변하기
     @GetMapping("inquiry_answer")
@@ -70,10 +87,6 @@ public class AdminController {
         return new RedirectView("/inquiry/inquiry-list");
     }*/
 
-    @GetMapping("member")
-    public void goToMember(Model model){
-        model.addAttribute("lists",adminService.showUserList());
-    }
 
     /*@PostMapping("member")
     public ResponseEntity<String> deleteMembers(@RequestBody List<String> memberIds) {
@@ -99,9 +112,4 @@ public class AdminController {
         */
 
 
-
-    @GetMapping("payment")
-    public void paymentGetList(Model model) {
-        model.addAttribute("posts", adminService.paymentGetList());
-    }
 }

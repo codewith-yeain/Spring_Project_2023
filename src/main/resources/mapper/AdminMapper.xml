@@ -70,10 +70,23 @@
             WHERE ID = {id}
     </update>
 
-    <!-- 회원 탈퇴-->
+    <!-- 회원 탈퇴 복구-->
     <update id="updateUserStatus">
         UPDATE TBL_USER
             SET USER_STATUS = '일반'
             WHERE ID = {id}
     </update>
+
+    <!-- 회원 탈퇴-->
+    <update id="deleteUser">
+        UPDATE TBL_USER
+            SET USER_STATUS = '탙퇴'
+            WHERE ID = {id}
+    </update>
+
+    <!-- 공지사항 삭제 -->
+    <delete id="deleteNotice">
+        DELETE FROM TBL_NOTICE
+        WHERE ID = #{id}
+    </delete>
 </mapper>

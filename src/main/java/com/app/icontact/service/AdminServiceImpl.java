@@ -16,43 +16,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
     private final AdminDAO adminDAO;
-
-    //커뮤니티 관리목록 보기
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public List<CommunityDTO> communitygetList (Pagination pagination){
-        final List<CommunityDTO> posts = adminDAO.showCommunityList(pagination);
-        return posts;
-    }
-
-    //커뮤니티 글 삭제
-    public void communitydelete(Long id){ adminDAO.delete(id);}
-
     //공지사항 글 작성
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void notice_write(NoticeVO noticeVO) { adminDAO.writeNotice(noticeVO); }
 
-    //문의목록보기
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public List<InquiryDTO> getList(Pagination pagination) {
-        final List<InquiryDTO> inquires = adminDAO.showInquiryList(pagination);
-        return inquires;
-    }
+  /*  //Q&A 글등록
+    @Override*/
 
-    //문의 보기
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public Optional<InquiryVO> read(Long id) {
-        final Optional<InquiryVO> foundInquiry = adminDAO.showInquiry(id);
-        return foundInquiry;
-    }
-
-   /* //문의 답변하기
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void answer(AnswerVO answerVO) { adminDAO.answers(answerVO);}*/
 
     //결제목록
     @Override
@@ -62,11 +33,6 @@ public class AdminServiceImpl implements AdminService {
         return adminDAO.showPaymentList();
     }
 
-    //결제취소
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void cencelPayment(Long id) {adminDAO.cencel(id);}
-
     //회원목록보기
     @Override
     @Transactional(rollbackFor = Exception.class)
@@ -74,22 +40,57 @@ public class AdminServiceImpl implements AdminService {
         return adminDAO.showUserList();
     }
 
+    //커뮤니티 관리목록 보기
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public List<CommunityDTO> commuList(){
+        return adminDAO.showCommunityList();
+    }
+
+    //문의목록보기
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public List<InquiryDTO> getList() {
+        return adminDAO.showInquiryList();
+    }
+
+
+    //문의 보기
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public Optional<InquiryVO> read(Long id) {
+        return adminDAO.showInquiry(id);
+    }
+
+   //문의 답변하기
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void inquiryAnswer(AnswerVO answerVO) { adminDAO.answers(answerVO);}
+
+
+    //결제취소
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void cencelPayment(Long id) {adminDAO.cencel(id);}
+
     //회원상태변경
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void updateUserType (Long id){adminDAO.updateUserType(id);}
+    public void updateUserType(Long id){adminDAO.updateUserType(id);}
 
     //회원탈퇴 복구
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void updateUserStatus (Long id) {adminDAO.updateUserStatus(id);}
-
-
+    public void updateUserStatus(Long id) {adminDAO.updateUserStatus(id);}
 
     //회원탈퇴
-        /*public void deleteMember(String memberId) {
-            memberRepository.deleteById(memberId);
-        }*/
+        public void deleteMember(Long id) {
+            adminDAO.RemoveUser(id);
+        }
 
 
+    //커뮤니티 글 삭제
+    public void communityDelete(Long id){ adminDAO.deletecom(id);}
+
+    //공지사항 삭제
 }

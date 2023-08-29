@@ -1,12 +1,8 @@
 $(document).ready(function(){
-    const $paymentList = $("#payment-list tr");
+    const $paymentList = $("#payment-list");
     let text = "";
     console.log(posts);
     posts.forEach(post => {
-
-        console.log("----------");
-        console.log(post);
-        console.log("----------22");
 
         text += `
             <tr>
@@ -28,8 +24,6 @@ $(document).ready(function(){
         text += `
             </tr>
         `
-        console.log("44----------");
     });
-    console.log("----------55");
     $paymentList.append(text);
 });

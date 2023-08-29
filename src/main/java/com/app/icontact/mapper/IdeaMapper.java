@@ -11,13 +11,13 @@ import java.util.Optional;
 public interface IdeaMapper {
 
     // 조회수 상위 4개 아이디어 조회
-    public List<IdeaDTO2> selectByIdeaCategory(Long ideaCategory);
+    public List<IdeaDTO4> selectByIdeaCategory(Long ideaCategory);
 
     // 프리미엄 아이디어 랜덤 4개 조회
-    public List<IdeaDTO2> selectPremiumIdeaByIdeaCategory(Long ideaCategory);
+    public List<IdeaDTO4> selectPremiumIdeaByIdeaCategory(Long ideaCategory);
 
     // 스크랩수 상위 4개 조회
-    public List<IdeaDTO3> selectByScrap();
+    public List<IdeaDTO4> selectByScrap();
 
     // 아이디어 추가
     public void insert(IdeaDTO4 ideaDTO4);

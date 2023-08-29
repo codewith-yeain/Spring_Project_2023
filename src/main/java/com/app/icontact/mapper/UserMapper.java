@@ -3,6 +3,7 @@ package com.app.icontact.mapper;
 import com.app.icontact.domain.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
 import java.util.Optional;
 
 @Mapper
@@ -28,4 +29,6 @@ public interface UserMapper {
     // 로그인 시 비밀번호 변경
     public void updatePasswordByUserId(Long id, String userPassword);
 
+    // 특정 유저의 관심분야 3개 id 조회
+    public List<Long> selectInterestsByUserId(Long userId);
 }

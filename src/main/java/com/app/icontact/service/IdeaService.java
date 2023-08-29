@@ -7,11 +7,11 @@ import java.util.Optional;
 
 public interface IdeaService {
 
-    public List<IdeaDTO2> getMostReadIdeas(Long ideaCategory);
+    public List<IdeaDTO4> getMostReadIdeas(Long ideaCategory);
 
-    public List<IdeaDTO2> getPremiumIdeas(Long ideaCategory);
+    public List<IdeaDTO4> getPremiumIdeas(Long ideaCategory);
 
-    public List<IdeaDTO3> getTopScrapIdeas();
+    public List<IdeaDTO4> getTopScrapIdeas();
 
     public void write(IdeaDTO4 ideaDTO4);
 

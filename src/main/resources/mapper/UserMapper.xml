@@ -39,4 +39,8 @@
         WHERE ID = #{id}
     </update>
 
+    <select id="selectInterestsByUserId" resultType="long">
+        SELECT SUB_CATEGORY_ID FROM TBL_INTEREST WHERE USER_ID = #{userId}
+    </select>
+
 </mapper>

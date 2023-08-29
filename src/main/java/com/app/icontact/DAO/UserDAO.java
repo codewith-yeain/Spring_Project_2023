@@ -5,6 +5,7 @@ import com.app.icontact.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -43,6 +44,10 @@ public class UserDAO {
     // 로그인 시 비밀번호 변경
     public void changePasswordByUserIdAndUserPassword(Long id, String userPassword){
         userMapper.updatePasswordByUserId(id, userPassword);
+    }
+
+    public List<Long> findInterestsByUserId(Long userId){
+        return userMapper.selectInterestsByUserId(userId);
     }
 
 

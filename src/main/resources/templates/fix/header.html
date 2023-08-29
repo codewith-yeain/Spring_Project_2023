@@ -34,8 +34,10 @@
                             <div class="search-bar-layout">
                                 <div class="full-flex">
                                     <div class="search-bar-wrapper">
-                                        <span class="magnifier"></span>
-                                        <input type="text" class="search-bar">
+                                        <form th:action="@{/post/list}">
+                                            <input type="text" class="search-bar">
+                                            <button class="magnifier"></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -158,8 +160,10 @@
                             <div class="search-bar-layout">
                                 <div class="full-flex">
                                     <div class="search-bar-wrapper">
-                                        <span class="magnifier"></span>
-                                        <input type="text" class="search-bar">
+                                        <form th:action="@{/post/list}">
+                                            <input type="text" class="search-bar">
+                                            <button class="magnifier"></button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

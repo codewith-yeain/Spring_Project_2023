@@ -280,6 +280,9 @@ body, div, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, td,
     vertical-align: middle;
     padding-right: 6px;
     color: #828C94;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .magnifier:before{

@@ -46,7 +46,9 @@ public class AboutController {
     }
 
     @GetMapping("notice")
-    public void goToNotice(){;}
+    public void goToNotice(Model model){
+        model.addAttribute("notices",aboutService.noticeList());
+    }
 
     @GetMapping("qna")
     public void goToQna(){;}

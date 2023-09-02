@@ -5,6 +5,7 @@
     font-family: 'Pretendard Variable';
 }
 
+
 a {
     color: inherit;
     text-decoration: none;
@@ -302,7 +303,7 @@ footer{
 }
 
 .index-page-info-count-item-number{
-    color: #35c5f0;
+    color: #eacaff;
     font-size: 24px;
     font-weight: 800;
     letter-spacing: -.48px;
@@ -432,7 +433,7 @@ footer{
 
 @media (min-width: 768px){
     .index-page-app-info-content-list-item-img{
-        height: 320px;
+        height: 400px;
         margin-right: 60px;
         width: 460px;
     }
@@ -490,9 +491,9 @@ footer{
 
 .index-page-app-info-button-list-item{
     align-items: center;
-    background-color: #35c5f0;
+    background-color: #eacaff;
     border-radius: 4px;
-    box-shadow: 0 4px 14px 0 rgba(15,157,200,.26);
+    box-shadow: 0 4px 16px 0 rgba(151,54,151,.48);
     color: #fff;
     display: flex;
     font-size: 18px;

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.icontact.mapper.AdminMapper">
-<!--    커뮤니티 관리목록 보기-->
+    <!--    커뮤니티 관리목록 보기-->
     <select id="selectAllCommunity" resultType="CommunityDTO">
         SELECT C.ID, COMMUNITY_TITLE, COMMUNITY_REGISTER_DATE, COMMUNITY_UPDATE_DATE, U.ID, USER_NAME
         FROM TBL_COMMUNITY C JOIN TBL_USER U
         ON U.ID = C.USER_ID
     </select>
 
-<!--    커뮤니티 글 삭제-->
+    <!--    커뮤니티 글 삭제-->
     <delete id="delete">
         DELETE FROM TBL_COMMUNITY
         WHERE id = #{communityId}
     </delete>
 
-<!--    공지사항 작성-->
+    <!--    공지사항 작성-->
     <insert id="insertNotice">
         INSERT INTO TBL_NOTICE(ID, NOTICE_TITLE, NOTICE_CONTENT)
         VALUES (SEQ_NOTICE.NEXTVAL, #{noticeTitle}, #{noticeContent})
@@ -50,11 +50,11 @@
     </select>
 
     <!-- 결제취소 -->
-        <update id="updateCancel">
-            UPDATE TBL_PAYMENT
-            SET PAYMENT_CANCEL_DATE = SYSDATE
-            WHERE ID = {iDEA_ID}
-        </update>
+    <update id="updateCancel">
+        UPDATE TBL_PAYMENT
+        SET PAYMENT_CANCEL_DATE = SYSDATE
+        WHERE ID = {iDEA_ID}
+    </update>
 
     <!-- 회원목록보기 -->
     <select id="selelctAllUser" resultType="UserVO">

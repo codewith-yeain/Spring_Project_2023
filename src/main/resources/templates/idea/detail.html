@@ -385,8 +385,8 @@
                                                         <div class="production-selling-production-list-item-wrap" th:each="otherIdea : ${idea.otherIdeas}" th:unless="${otherIdea.id == idea.id}">
                                                             <article class="production-item">
                                                                 <a th:href="@{/idea/detail(id=${otherIdea.id})}" class="production-item-overlay"></a>
-                                                                <div class="production-item-image">
-                                                                    <img class="image" src="https://image.ohou.se/i/bucketplace-v2-development/uploads/productions/167947266202951167.jpg?gif=1&w=360&h=360&c=c&q=0.8&webp=1">
+                                                                <div class="production-item-image" th:each="file : ${otherIdea.files}" th:if="${file.ideaFileType} == 'REPRESENTATIVE'">
+                                                                    <img class="image" th:src="@{'/idea-files/display?fileName=' + ${file.ideaFilePath} + '/t_' + ${file.ideaFileUuid} + '_' + ${file.ideaFileName}}">
                                                                     <div class="production-item-image-dark-overlay"></div>
                                                                 </div>
                                                                 <div class="production-item-content">

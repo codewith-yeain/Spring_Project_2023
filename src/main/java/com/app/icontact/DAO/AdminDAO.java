@@ -72,6 +72,6 @@ public class AdminDAO {
     //커뮤니티 글 삭제
     public void deletecom(Long id){adminMapper.delete(id);}
 
-   //공지사항 삭제
+    //공지사항 삭제
     public void removeNotice(Long id){adminMapper.deleteNotice(id);};
 }

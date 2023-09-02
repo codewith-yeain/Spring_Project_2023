@@ -24,7 +24,7 @@ public class AdminController {
     private Long inquiryVO;
 
     //공지사항 글 작성
-    @GetMapping("notice_write")
+    @GetMapping("notice-write")
     public void goToSaveForm(NoticeVO noticeVO){;}
 
     @PostMapping("notice_write")
@@ -39,8 +39,8 @@ public class AdminController {
 
     //결제 목록
     @GetMapping("payment")
-    public void paymentGetList(Model model) {
-        model.addAttribute("posts", adminService.paymentGetList());
+    public void goToPayment(Model model) {
+        model.addAttribute("posts",adminService.paymentGetList());
     }
 
     //회원목록보기
@@ -58,7 +58,7 @@ public class AdminController {
     //문의목록보기
     @GetMapping("inquiry-list")
     public void showList(Model model){
-        model.addAttribute("inquiries", adminService.getList());
+        model.addAttribute("inquiries",adminService.getList());
     }
 
     //커뮤니티 글 삭제

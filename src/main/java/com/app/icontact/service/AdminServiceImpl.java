@@ -29,7 +29,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public List<PaymentVO> paymentGetList (){
-       /* *//*final List<PaymentVO> = *//*adminDAO.showPaymentList(paymentVO);*/
+        /* *//*final List<PaymentVO> = *//*adminDAO.showPaymentList(paymentVO);*/
         return adminDAO.showPaymentList();
     }
 
@@ -62,7 +62,7 @@ public class AdminServiceImpl implements AdminService {
         return adminDAO.showInquiry(id);
     }
 
-   //문의 답변하기
+    //문의 답변하기
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void inquiryAnswer(AnswerVO answerVO) { adminDAO.answers(answerVO);}
@@ -84,9 +84,9 @@ public class AdminServiceImpl implements AdminService {
     public void updateUserStatus(Long id) {adminDAO.updateUserStatus(id);}
 
     //회원탈퇴
-        public void deleteMember(Long id) {
-            adminDAO.RemoveUser(id);
-        }
+    public void deleteMember(Long id) {
+        adminDAO.RemoveUser(id);
+    }
 
 
     //커뮤니티 글 삭제

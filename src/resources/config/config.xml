@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.app.icontact.domain.UserVO" alias="userVO" />
+        <typeAlias type="com.app.icontact.DTO.UserDTO" alias="userDTO" />
+        <typeAlias type="com.app.icontact.domain.ProfileVO" alias="profileVO" />
+        <typeAlias type="com.app.icontact.domain.PaymentVO" alias="paymentVO" />
+        <typeAlias type="com.app.icontact.domain.IdeaVO" alias="ideaVO" />
+        <typeAlias type="com.app.icontact.DTO.IdeaDTO" alias="ideaDTO" />
+        <typeAlias type="com.app.icontact.domain.IdeaFileVO" alias="ideaFileVO" />
+        <typeAlias type="com.app.icontact.domain.CommunityVO" alias="communityVO" />
+        <typeAlias type="com.app.icontact.DTO.CommunityDTO" alias="communityDTO" />
+        <typeAlias type="com.app.icontact.domain.CommunityFileVO" alias="communityFileVO" />
+        <typeAlias type="com.app.icontact.domain.CommentVO" alias="commentVO" />
+        <typeAlias type="com.app.icontact.domain.CertificateVO" alias="certificateVO" />
+        <typeAlias type="com.app.icontact.domain.BusinessVO" alias="businessVO" />
+        <typeAlias type="com.app.icontact.domain.SortVO" alias="sortVO" />
+        <typeAlias type="com.app.icontact.domain.AnswerVO" alias="answerVO" />
+        <typeAlias type="com.app.icontact.domain.IdeaStatusVO" alias="ideaStatusVO" />
+        <typeAlias type="com.app.icontact.domain.InquiryVO" alias="inquiryVO" />
+        <typeAlias type="com.app.icontact.DTO.InquiryDTO" alias="inquiryDTO" />
+        <typeAlias type="com.app.icontact.domain.InterestVO" alias="interestVO" />
+        <typeAlias type="com.app.icontact.domain.NoticeVO" alias="noticeVO" />
+        <typeAlias type="com.app.icontact.domain.SubCategoryVO" alias="subCategoryVO" />
+        <typeAlias type="com.app.icontact.domain.TopCategoryVO" alias="topCategoryVO" />
+        <typeAlias type="com.app.icontact.DTO.IdeaDTO2" alias="ideaDTO2" />
+        <typeAlias type="com.app.icontact.DTO.IdeaDTO3" alias="ideaDTO3" />
+        <typeAlias type="com.app.icontact.DTO.CommunityDTO2" alias="communityDTO2" />
+        <typeAlias type="com.app.icontact.DTO.IdeaDTO4" alias="ideaDTO4" />
+        <typeAlias type="com.app.icontact.DTO.BusinessDTO" alias="businessDTO" />
+        <typeAlias type="com.app.icontact.DTO.IdeaDTO5" alias="ideaDTO5" />
+        <typeAlias type="com.app.icontact.domain.IdeaCategoryNames" alias="ideaCategoryNames" />
+    </typeAliases>
+</configuration>

@@ -22,155 +22,151 @@
                     <span>Jar</span>
                 </div>
             </div>
-            <div>
-                <div class="select-name">
-                    <span>공지사항 관리</span>
+        </div>
+    </div>
+    <div class="wrap">
+
+        <!-- 사이드 바 -->
+        <!--<div th:replace="~{admin/side_bar :: sidebar}"></div>-->
+        <div id="side-bar">
+            <div class="side-menu">
+                <div>
+                    <div class="menu-title-layout">
+                        <div class="menu-title">
+                            <div class="menu-name">
+                                MENU
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="menu-bar">
+                        <li class="menu">
+                            <div class="menu-flex">
+                                <div>
+                                    <img src="/images/admin/board_icon.png" class="icon">
+                                </div>
+                                <a href="">
+                                    <span>게시판 관리</span>
+                                </a>
+                                <div class="triangle-button">
+                                    <img src="/images/admin/arrow_icon.png"
+                                         class="icon triangle-icon triangle">
+                                </div>
+                            </div>
+                            <ul class="menus1 menus" style="display: none;">
+                                <!-- <li class="select-menu">
+                                    <a href="adminPage-boardList.jsp">
+                                        <span>전체 게시판</span>
+                                    </a>
+                                </li> -->
+                                <li class="select-menu">
+                                    <a th:href="@{/admin/community}">
+                                        <span>커뮤니티 관리</span>
+                                    </a>
+                                </li>
+                                <li class="select-menu">
+                                    <a th:href="@{/admin/inquiry-list}">
+                                        <span>문의 관리</span>
+                                    </a>
+                                </li>
+                                <li class="select-menu">
+                                    <a th:href="@{/admin/board/inquiry/list}">
+                                        <span>FAQ 관리</span>
+                                    </a>
+                                </li>
+                                <!--<li class="select-menu">
+                                    <a th:href="@{/admin/board/proposal/list}">
+                                        <span>제안 게시판</span>
+                                    </a>
+                                </li>-->
+                            </ul>
+                        </li>
+
+                        <li class="menu">
+                            <div class="menu-flex">
+                                <div>
+                                    <img src="/images/admin/notice_icon.png" class="icon">
+                                </div>
+                                <a>
+                                    <span>공지사항 관리</span>
+                                </a>
+                                <div class="triangle-button">
+                                    <img src="/images/admin/arrow_icon.png"
+                                         class="icon triangle-icon triangle">
+                                </div>
+                            </div>
+                            <ul class="menus2 menus" style="display:none;">
+                                <li class="select-menu"> <!--수정/삭제 버튼-->
+                                    <a th:href="@{/admin/board/notice/list}">
+                                        <span>공지사항 목록</span>
+                                    </a>
+                                </li>
+                                <li class="select-menu">
+                                    <a th:href="@{/admin/board/notice/write}">
+                                        <span>공지사항 작성</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu">
+                            <div class="menu-flex">
+                                <div>
+                                    <img src="/images/admin/user_icon.png" class="icon">
+                                </div>
+                                <a th:href="@{/admin/member/list}">
+                                    <span>회원정보 관리</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="wrap">
 
-            <!-- 사이드 바 -->
-            <!--<div th:replace="~{admin/side_bar :: sidebar}"></div>-->
-            <div id="side-bar">
-                <div class="side-menu">
+        <div class="container">
+            <div class="container-margin">
+                <!-- 헤더 -->
+                <div class="prev-button-layout">
                     <div>
-                        <div class="menu-title-layout">
-                            <div class="menu-title">
-                                <div class="menu-name">
-                                    MENU
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="menu-bar">
-                            <li class="menu">
-                                <div class="menu-flex">
-                                    <div>
-                                        <img src="/images/admin/board_icon.png" class="icon">
-                                    </div>
-                                    <a href="">
-                                        <span>게시판 관리</span>
-                                    </a>
-                                    <div class="triangle-button">
-                                        <img src="/images/admin/arrow_icon.png"
-                                             class="icon triangle-icon triangle">
-                                    </div>
-                                </div>
-                                <ul class="menus1 menus" style="display: none;">
-                                    <!-- <li class="select-menu">
-                                        <a href="adminPage-boardList.jsp">
-                                            <span>전체 게시판</span>
-                                        </a>
-                                    </li> -->
-                                    <li class="select-menu">
-                                        <a th:href="@{/admin/community}">
-                                            <span>커뮤니티 관리</span>
-                                        </a>
-                                    </li>
-                                    <li class="select-menu">
-                                        <a th:href="@{/admin/inquiry-list}">
-                                            <span>문의 관리</span>
-                                        </a>
-                                    </li>
-                                    <li class="select-menu">
-                                        <a th:href="@{/admin/board/inquiry/list}">
-                                            <span>FAQ 관리</span>
-                                        </a>
-                                    </li>
-                                    <!--<li class="select-menu">
-                                        <a th:href="@{/admin/board/proposal/list}">
-                                            <span>제안 게시판</span>
-                                        </a>
-                                    </li>-->
-                                </ul>
-                            </li>
-
-                            <li class="menu">
-                                <div class="menu-flex">
-                                    <div>
-                                        <img src="/images/admin/notice_icon.png" class="icon">
-                                    </div>
-                                    <a>
-                                        <span>공지사항 관리</span>
-                                    </a>
-                                    <div class="triangle-button">
-                                        <img src="/images/admin/arrow_icon.png"
-                                             class="icon triangle-icon triangle">
-                                    </div>
-                                </div>
-                                <ul class="menus2 menus" style="display:none;">
-                                    <li class="select-menu"> <!--수정/삭제 버튼-->
-                                        <a th:href="@{/admin/board/notice/list}">
-                                            <span>공지사항 목록</span>
-                                        </a>
-                                    </li>
-                                    <li class="select-menu">
-                                        <a th:href="@{/admin/board/notice/write}">
-                                            <span>공지사항 작성</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="menu">
-                                <div class="menu-flex">
-                                    <div>
-                                        <img src="/images/admin/user_icon.png" class="icon">
-                                    </div>
-                                    <a th:href="@{/admin/member/list}">
-                                        <span>회원정보 관리</span>
-                                    </a>
-                                </div>
-                            </li>
-
-                        </ul>
+                        <a th:href="@{/admin/board/notice/list}">
+                            <img src="/images/admin/prev_icon.png" class="prev-icon">
+                        </a>
+                        <a class="back-page" th:href="@{/admin/board/notice/list}">공지사항 목록 확인</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="container">
-                <div class="container-margin">
-                    <!-- 헤더 -->
-                    <div class="prev-button-layout">
-                        <div>
-                            <a th:href="@{/admin/board/notice/list}">
-                                <img src="/images/admin/prev_icon.png" class="prev-icon">
-                            </a>
-                            <a class="back-page" th:href="@{/admin/board/notice/list}">공지사항 목록 확인</a>
+                <!-- 내용 섹션 -->
+                <section class="board-info-box-layout">
+
+                    <div class="board-info-box">
+                        <div class="board-info-title-box">
+                            <span>공지사항 등록하기</span>
                         </div>
-                    </div>
-
-                    <!-- 내용 섹션 -->
-                    <section class="board-info-box-layout">
-
-                        <div class="board-info-box">
-                            <div class="board-info-title-box">
-                                <span>공지사항 등록하기</span>
-                            </div>
-                            <hr>
-                            <div class="info-table">
-                                <form th:action="@{/admin/notice_write}" name="notice_write" method="post" th:object="${noticeVO}">
-                                    <div>
-                                        <input type="text" class="board-title" name="noticeTitle" placeholder="제목을 입력해주세요."
-                                               autocomplete="off" th:field="*{noticeTitle}">
-                                    </div>
-                                    <hr>
-                                    <div>
+                        <hr>
+                        <div class="info-table">
+                            <form th:action="@{/admin/notice_write}" name="notice_write" method="post" th:object="${noticeVO}">
+                                <div>
+                                    <input type="text" class="board-title" name="noticeTitle" placeholder="제목을 입력해주세요."
+                                           autocomplete="off" th:field="*{noticeTitle}">
+                                </div>
+                                <hr>
+                                <div>
                                         <textarea class="board-content" name="noticeContent"
                                                   placeholder="내용을 입력해주세요." th:field="*{noticeContent}"></textarea>
-                                    </div>
-                                    <hr>
-                                    <div>
-                                        <button class="btn_done" type="submit">등록</button>
-                                    </div>
-                                </form>
+                                </div>
+                                <hr>
+                                <div>
+                                    <button class="btn_done" type="submit">등록</button>
+                                </div>
+                            </form>
 
-                            </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <script src="/js/admin/sidemenu.js"></script>

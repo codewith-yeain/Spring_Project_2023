@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>커뮤니티</title>
+    <link rel="icon" href="/images/icon/favicon.png">
+    <link rel="stylesheet" href="/css/community/listAll.css">
+
+    <style>
+        /*돋보기 아이콘을 위한 폰트*/
+        @font-face{
+            font-family:OhouseIcon;
+            src:url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2");
+        }
+
+
+        @font-face {
+            font-family: 'Pretendard Variable';
+            src: url('/font/PretendardVariable.woff2');
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="~{/fix/sub-header :: sub-header}"></div>
+
+<div class="blog-page">
+    <div class="blog-page-wrap">
+        <h1 class="blog-page-title">iContact의 이야기</h1>
+        <p class="blog-page-sub-title">iContact 사용자들에게 들려드릴 이야기입니다.</p>
+
+        <section class="blog-page-post-list" id="notice-list">
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+<!--            <a href="" class="blog-page-post-list-item">-->
+<!--                <div class="blog-page-post-list-item-wrap">-->
+<!--                    <div class="blog-page-post-list-item-title">공지사항</div>-->
+<!--                    <div class="blog-page-post-list-item-explain">-->
+<!--                        <div>2023년 7월 28일</div>-->
+<!--                        <span class="blog-page-post-list-item-explain-bar"></span>-->
+<!--                        <div>Admin</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </a>-->
+
+        </section>
+    </div>
+    <button type="button" class="top-button">
+        <svg class="top-button-icon" width="45" height="45" viewBox="0 0 45 45">
+            <g fill="none" fill-rule="evenodd">
+                <circle cx="22.5" cy="22.5" r="22.5" fill="#FEFFFE" fill-opacity="90%"></circle>
+                <path d="M12.5 12.5h20v20h-20z"></path>
+                <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 20l6.5-6 6.5 6m-6.5-5v15.999"></path>
+            </g>
+        </svg>
+    </button>
+</div>
+<ul class="paginator">
+    <li> <!--이전버튼-->
+        <a href="" class="button prev">
+            <svg viewBox="0 0 25 25">
+                <g fill="none" fill-rule="evenodd">
+                    <path fill="none" d="M0 0h25v25H0z"></path>
+                    <path fill="#C2C8CC" fill-rule="nonzero" d="M7.3 20.3l7.5-7.8-7.5-7.8L8.7 3l9 9.4-9 9.4z"></path>
+                </g>
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a href="" class="page selected">1</a>
+    </li>
+    <li>
+        <a href="" class="page">2</a>
+    </li>
+    <li>
+        <a href="" class="page">3</a>
+    </li>
+    <li>
+        <a href="" class="page">4</a>
+    </li>
+    <li>
+        <a href="" class="page">5</a>
+    </li>
+    <li> <!--다음버튼-->
+        <a href="" class="button next">
+            <svg viewBox="0 0 25 25">
+                <g fill="none" fill-rule="evenodd">
+                    <path fill="none" d="M0 0h25v25H0z"></path>
+                    <path fill="#C2C8CC" fill-rule="nonzero" d="M7.3 20.3l7.5-7.8-7.5-7.8L8.7 3l9 9.4-9 9.4z"></path>
+                </g>
+            </svg>
+        </a>
+    </li>
+</ul>
+
+<a href="" class="register-button">
+    게시글 등록하기
+    <svg class="register-button-icon" width="16" height="14" viewBox="0 0 16 14">
+        <path fill="#FFFFFF" d="M9.26 0L16 7.01 9.26 14 8.2 12.9l4.96-5.16H0V6.2h13.1L8.2 1.1 9.26 0z"></path>
+    </svg>
+</a>
+
+
+<footer th:replace="~{/fix/sub-footer :: sub-footer}"></footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script th:inline="javascript">
+    let posts = [[${notices}]];
+    let memberId = [[${session.userId}]];
+</script>
+<script src="/js/about/notice_list.js"></script>
+</html>

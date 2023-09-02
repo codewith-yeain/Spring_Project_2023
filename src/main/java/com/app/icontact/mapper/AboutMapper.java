@@ -11,10 +11,12 @@ import java.util.List;
 @Mapper
 public interface AboutMapper {
     //공지사항 목록
-    public List<NoticeVO> selectAllNotice (@Param("pagination") Pagination pagination);
+    public List<NoticeVO> selectAllNotice();
 
     //공지사항 상세보기
-    public NoticeVO selectNotice(NoticeVO noticeVO);
+    public NoticeVO selectNotice(String noticeTitle);
+
+    //공지사항 삭제
 
     //공지사항 삭제
     

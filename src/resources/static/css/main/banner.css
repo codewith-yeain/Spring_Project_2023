@@ -1,0 +1,66 @@
+@charset "utf-8";
+
+/* 슬라이더의 스타일 설정 */
+#slider {
+    width: 13440px;
+    display: flex;
+    transition: transform 2s;
+}
+
+.img-wrap{
+    width: 1920px;
+    height: 500px;
+    overflow: hidden;
+}
+
+
+/* 이미지의 스타일 설정 */
+#slider img {
+    width: 1920px;
+    height: 100%;
+    object-fit: cover;
+    float: left;
+}
+
+.slider-container{
+    position: relative;
+    width: 1920px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.slide-button-wrapper{
+    cursor: pointer;
+    touch-action: manipulation;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+    background: rgb(255, 255, 255);
+    border: none;
+    left: 0px;
+    transform: translate(-50%, -50%);
+}
+
+.slide-button{
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.prev:before{
+    content: "\e964";
+    font-family: OhouseIcon;
+    vertical-align: top;
+}
+
+.next:before{
+    content: "\e968";
+    font-family: OhouseIcon;
+    vertical-align: top;
+}
+

@@ -24,7 +24,7 @@ public class AdminController {
     private Long inquiryVO;
 
     //공지사항 글 작성
-    @GetMapping("notice-write")
+    @GetMapping("notice_write")
     public void goToSaveForm(NoticeVO noticeVO){;}
 
     @PostMapping("notice_write")

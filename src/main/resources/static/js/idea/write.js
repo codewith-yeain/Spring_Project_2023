@@ -180,7 +180,7 @@ $(".idea-write-btn").on("click", function(e){
     $(".idea-img").each((i, img) => {
         let fullPath = $(img).attr("src");
         if(!fullPath) {return;}
-        alert(i + '으악' + fullPath);
+        /*alert(i + '으악' + fullPath);*/
 
         // /idea-files/display?fileName=2023/08/26/t_6b9ac53a-bae6-449a-92bb-14899d753f05_IMG_8240.PNG
 

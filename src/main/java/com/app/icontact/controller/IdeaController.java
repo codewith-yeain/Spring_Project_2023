@@ -42,9 +42,11 @@ public class IdeaController {
 
     @GetMapping("ideaBank")
     public void ideaList(Pagination pagination, Search search, Model model){
-        if(search.getIdeaCategory() == null){
-            search.setIdeaCategory(1L);
-        }
+//        if(search.getIdeaCategory() == null){
+//            search.setIdeaCategory(1L);
+//        }
+
+        search.setIdeaCategory(1L);
 
         pagination.setTotal(ideaService.getTotal(search));
         pagination.progress();

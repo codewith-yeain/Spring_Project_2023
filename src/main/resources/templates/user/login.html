@@ -38,7 +38,7 @@
                 </div>
                 <button class="lay3 lay4 lay5 login-button" type="button" onclick="send()">로그인</button>
                 <section class="login-join">
-                    <a class="new" href="">비밀번호 재설정</a>
+                    <a class="new" th:href="@{/user/email-auth}">비밀번호 재설정</a>
                     <a th:href="@{/user/join}" class="new">회원가입</a>
                 </section>
             </form>

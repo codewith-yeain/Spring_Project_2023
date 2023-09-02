@@ -9,4 +9,8 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 public class IdeaStatusVO {
     private Long id;
+    private String ideaStatusType;
+    private Long ideaId;
+    private Long ideaUserId;
+    private Long userId;
 }

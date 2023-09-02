@@ -33,4 +33,22 @@
         WHERE ID = #{id}
     </select>
 
+    <update id="updatePasswordByUserId">
+        UPDATE TBL_USER
+        SET USER_PASSWORD = #{userPassword}
+        WHERE ID = #{id}
+    </update>
+
+    <select id="selectInterestsByUserId" resultType="long">
+        SELECT SUB_CATEGORY_ID FROM TBL_INTEREST WHERE USER_ID = #{userId}
+    </select>
+
+    <select id="search" resultType="userVO">
+        SELECT ID, USER_EMAIL, USER_PASSWORD, USER_NAME, USER_NICKNAME,
+        USER_TYPE, USER_INTRO, USER_PHONE, USER_STATUS
+        FROM TBL_USER
+        WHERE (USER_NICKNAME LIKE '%'||#{keyword}||'%')
+        OR (USER_INTRO LIKE '%'||#{keyword}||'%')
+    </select>
+
 </mapper>

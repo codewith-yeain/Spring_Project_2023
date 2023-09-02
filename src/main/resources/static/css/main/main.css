@@ -270,9 +270,9 @@ ol, ul {
     flex-flow: column;
 }
 
-.product-img:hover {
-    transform:scale(1.2);
-}
+/*.product-img:hover {*/
+/*    transform:scale(1.2);*/
+/*}*/
 
 .product-img {
     overflow: hidden;

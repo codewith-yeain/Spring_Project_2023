@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.icontact.mapper.IdeaMapper">
-    <select id="selectByIdeaCategory" resultType="ideaDTO2">
+    <select id="selectByIdeaCategory" resultType="ideaDTO4">
         <![CDATA[
         SELECT *
         FROM (
@@ -15,7 +15,7 @@
         ]]>
     </select>
 
-    <select id="selectPremiumIdeaByIdeaCategory" resultType="ideaDTO2">
+    <select id="selectPremiumIdeaByIdeaCategory" resultType="ideaDTO4">
         <![CDATA[
         SELECT *
         FROM (
@@ -30,7 +30,7 @@
         ]]>
     </select>
 
-    <select id="selectByScrap" resultType="ideaDTO3">
+    <select id="selectByScrap" resultType="ideaDTO4">
         <![CDATA[
         SELECT I2.*, U.USER_NICKNAME
         FROM (
@@ -165,4 +165,16 @@
         SELECT COUNT(ID) FROM TBL_IDEA
         WHERE USER_ID = #{userId}
     </select>
+
+    <select id="search" resultType="ideaDTO4">
+        SELECT I.ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY,
+        IDEA_REGISTER_DATE, IDEA_UPDATE_DATE, IDEA_TYPE,
+        IDEA_PRICE, IDEA_READ_COUNT, IDEA_MAX, USER_ID, U.USER_NICKNAME
+        FROM TBL_USER U JOIN TBL_IDEA I
+        ON I.USER_ID = U.ID
+        WHERE (IDEA_TITLE LIKE '%'||#{keyword}||'%')
+        OR (IDEA_INTRO LIKE '%'||#{keyword}||'%')
+        OR (IDEA_DETAIL LIKE '%'||#{keyword}||'%')
+    </select>
+
 </mapper>

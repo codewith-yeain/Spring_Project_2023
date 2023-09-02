@@ -14,17 +14,17 @@ public class IdeaDAO {
     private final IdeaMapper ideaMapper;
 
     // 조회수 상위 4개 아이디어 조회
-    public List<IdeaDTO2> findMostReadIdeasByIdeaCategory(Long ideaCategory){
+    public List<IdeaDTO4> findMostReadIdeasByIdeaCategory(Long ideaCategory){
         return ideaMapper.selectByIdeaCategory(ideaCategory);
     }
 
     // 프리미엄 아이디어 랜덤 4개 조회
-    public List<IdeaDTO2> findPremiumIdeaByIdeaCategory(Long ideaCategory){
+    public List<IdeaDTO4> findPremiumIdeaByIdeaCategory(Long ideaCategory){
         return ideaMapper.selectPremiumIdeaByIdeaCategory(ideaCategory);
     }
 
-    // 조회수 상위 4개 조회
-    public List<IdeaDTO3> findIdeaByScrap(){
+    // 스크랩수 상위 4개 조회
+    public List<IdeaDTO4> findIdeaByScrap(){
         return ideaMapper.selectByScrap();
     }
 
@@ -71,6 +71,11 @@ public class IdeaDAO {
     // 특정 유저가 등록한 아이디어의 총 개수
     public int getCountOfIdeasByUserId(Long userId){
         return ideaMapper.selectCountOfIdeasByUserId(userId);
+    }
+
+    // 아이디어 검색
+    public List<IdeaDTO4> findIdea(String keyword){
+        return ideaMapper.search(keyword);
     }
 
 }

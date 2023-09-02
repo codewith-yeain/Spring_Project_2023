@@ -81,10 +81,7 @@ public class UserController {
     // 로그아웃 상태에서 비밀번호 변경
     @GetMapping("change-password")
     public String goToChangePasswordForm(@RequestParam("userEmail") String userEmail, Model model) {
-        // userEmail 값을 Model에 추가하여 뷰에서 사용할 수 있게 합니다.
         model.addAttribute("userEmail", userEmail);
-        // 비밀번호 변경 페이지 뷰 이름을 반환합니다.
-        // (예: "changePassword"는 실제 뷰 파일 이름이 될 것입니다. 예: changePassword.html)
         return "user/change-password";
     }
 
@@ -98,5 +95,14 @@ public class UserController {
 //    로그인 후 비밀번호 변경
 
     @GetMapping("find-password")
-    public void goToFindPasswordForm(UserVO userVO){;}
+    public void goToFindPasswordForm(String userPassword){;}
+
+    @PostMapping("find-password")
+    public void changePasswordWhileLogin(String userPassword, HttpSession session){
+        String sessionId = (String)session.getAttribute("id");
+        Long id = Long.parseLong(sessionId);
+
+        userService.changePasswordWhileLogin(id, userPassword);
+        log.info("{}.......", userPassword);
+    }
 }

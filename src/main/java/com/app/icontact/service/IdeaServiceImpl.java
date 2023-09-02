@@ -24,18 +24,33 @@ public class IdeaServiceImpl implements IdeaService {
     private final SubCategoryDAO subCategoryDAO;
 
     @Override
-    public List<IdeaDTO2> getMostReadIdeas(Long ideaCategory) {
-        return ideaDAO.findMostReadIdeasByIdeaCategory(ideaCategory);
+    public List<IdeaDTO4> getMostReadIdeas(Long ideaCategory) {
+        List<IdeaDTO4> mostReadIdeas = ideaDAO.findMostReadIdeasByIdeaCategory(ideaCategory);
+        mostReadIdeas.forEach(mostReadIdea -> mostReadIdea.setFiles(ideaFileDAO.findAll(mostReadIdea.getId())));
+        mostReadIdeas.forEach(mostReadIdea -> mostReadIdea.setIdeaScarpCount(ideaDAO.findCountOfScraps(mostReadIdea.getId())));
+        mostReadIdeas.forEach(mostReadIdea -> mostReadIdea.setIdeaCount(ideaDAO.findFinishUserCountOfIdea(mostReadIdea.getId())));
+
+        return mostReadIdeas;
     }
 
     @Override
-    public List<IdeaDTO2> getPremiumIdeas(Long ideaCategory) {
-        return ideaDAO.findPremiumIdeaByIdeaCategory(ideaCategory);
+    public List<IdeaDTO4> getPremiumIdeas(Long ideaCategory) {
+        List<IdeaDTO4> premiumIdeas = ideaDAO.findPremiumIdeaByIdeaCategory(ideaCategory);
+        premiumIdeas.forEach(premiumIdea -> premiumIdea.setFiles(ideaFileDAO.findAll(premiumIdea.getId())));
+        premiumIdeas.forEach(premiumIdea -> premiumIdea.setIdeaScarpCount(ideaDAO.findCountOfScraps(premiumIdea.getId())));
+        premiumIdeas.forEach(premiumIdea -> premiumIdea.setIdeaCount(ideaDAO.findFinishUserCountOfIdea(premiumIdea.getId())));
+
+        return premiumIdeas;
     }
 
     @Override
-    public List<IdeaDTO3> getTopScrapIdeas() {
-        return ideaDAO.findIdeaByScrap();
+    public List<IdeaDTO4> getTopScrapIdeas() {
+        List<IdeaDTO4> topScrapIdeas = ideaDAO.findIdeaByScrap();
+        topScrapIdeas.forEach(topScrapIdea -> topScrapIdea.setFiles(ideaFileDAO.findAll(topScrapIdea.getId())));
+        topScrapIdeas.forEach(topScrapIdea -> topScrapIdea.setIdeaScarpCount(ideaDAO.findCountOfScraps(topScrapIdea.getId())));
+        topScrapIdeas.forEach(topScrapIdea -> topScrapIdea.setIdeaCount(ideaDAO.findFinishUserCountOfIdea(topScrapIdea.getId())));
+
+        return topScrapIdeas;
     }
 
     @Override
@@ -99,5 +114,17 @@ public class IdeaServiceImpl implements IdeaService {
         }
         ideaDAO.updateReadCount(id);
         return foundIdea;
+    }
+
+    @Override
+    public List<IdeaDTO4> findIdea(String keyword) {
+        final List<IdeaDTO4> foundIdeas = ideaDAO.findIdea(keyword);
+
+        foundIdeas.forEach(foundIdea -> foundIdea.setFiles(ideaFileDAO.findAll(foundIdea.getId())));
+        foundIdeas.forEach(foundIdea -> foundIdea.setIdeaScarpCount(ideaDAO.findCountOfScraps(foundIdea.getId())));
+        foundIdeas.forEach(foundIdea -> foundIdea.setIdeaCount(ideaDAO.findFinishUserCountOfIdea(foundIdea.getId())));
+        log.info("{}.............", foundIdeas);
+
+        return foundIdeas;
     }
 }

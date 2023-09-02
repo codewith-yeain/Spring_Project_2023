@@ -206,7 +206,7 @@
                 <!--아래의 div가 게시글 수만큼 반복-->
                 <div class="products">
                     <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168649136443965580.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
+                        <img src="/images/icon/community1.jpg" class="product-img1">
                         <div class="product-img22">
                             <div class="product-img3"></div>
                         </div>
@@ -225,7 +225,7 @@
                 </div>
                 <div class="products">
                     <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168649136443965580.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
+                        <img src="/images/icon/community2.jpg" class="product-img1">
                         <div class="product-img22">
                             <div class="product-img3"></div>
                         </div>
@@ -244,7 +244,7 @@
                 </div>
                 <div class="products">
                     <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/cards/expert_reviews/168649136443965580.jpg?w=480&amp;h=321&amp;c=c" class="product-img1">
+                        <img src="/images/icon/community3.jpg" class="product-img1">
                         <div class="product-img22">
                             <div class="product-img3"></div>
                         </div>
@@ -279,78 +279,18 @@
         <div>
             <div class="product-nav">
                 <!--아래의 div가 아이디어 수만큼 반복-->
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
+                <div class="products" th:each="idea : ${scrapTopIdeas}">
+                    <div class="product-img" th:each="file : ${idea.files}" th:if="${file.ideaFileType} == 'REPRESENTATIVE'">
+                        <img th:src="@{'/idea-files/display?fileName=' + ${file.ideaFilePath} + '/t_' + ${file.ideaFileUuid} + '_' + ${file.ideaFileName}}" class="product-img1">
                     </div>
                     <div class="product-title margin10">
                         <div>
-                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[0].ideaTitle}"></p>
+                            <p class="product-exp" style="font-size: 20px" th:text="${idea.ideaTitle}"></p>
                             <div style="display:flex; justify-content: space-between; margin-top: 5px">
-                                <p class="product-exp" th:text="${scrapTopIdeas[0].userNickname}"></p>
-                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[0].scrapCount}"></p>
+                                <p class="product-exp" th:text="${idea.userNickname}"></p>
+                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${idea.ideaScarpCount}"></p>
                             </div>
-                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[0].ideaIntro}"></p>
-                        </div>
-                    </div>
-                    <a class="product-ex" href=""></a>
-                </div>
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <div>
-                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[1].ideaTitle}"></p>
-                            <div style="display:flex; justify-content: space-between; margin-top: 5px">
-                                <p class="product-exp" th:text="${scrapTopIdeas[1].userNickname}"></p>
-                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[1].scrapCount}"></p>
-                            </div>
-                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[1].ideaIntro}"></p>
-                        </div>
-                    </div>
-                    <a class="product-ex" href=""></a>
-                </div>
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <div>
-                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[2].ideaTitle}"></p>
-                            <div style="display:flex; justify-content: space-between; margin-top: 5px">
-                                <p class="product-exp" th:text="${scrapTopIdeas[2].userNickname}"></p>
-                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[2].scrapCount}"></p>
-                            </div>
-                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[2].ideaIntro}"></p>
-                        </div>
-                    </div>
-                    <a class="product-ex" href=""></a>
-                </div>
-                <div class="products">
-                    <div class="product-img">
-                        <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/projects/cover_images/167575583412558125.jpg?w=360&h=240&c=c" srcset="" class="product-img1">
-                        <div class="product-img2">
-                            <div class="product-img3"></div>
-                        </div>
-                    </div>
-                    <div class="product-title margin10">
-                        <div>
-                            <p class="product-exp" style="font-size: 20px" th:text="${scrapTopIdeas[3].ideaTitle}"></p>
-                            <div style="display:flex; justify-content: space-between; margin-top: 5px">
-                                <p class="product-exp" th:text="${scrapTopIdeas[3].userNickname}"></p>
-                                <p class="product-exp" style="color: mediumpurple" th:text="'스크랩 ' + ${scrapTopIdeas[3].scrapCount}"></p>
-                            </div>
-                            <p class="product-exp2" style="margin-top: 2px" th:text="${scrapTopIdeas[3].ideaIntro}"></p>
+                            <p class="product-exp2" style="margin-top: 2px" th:text="${idea.ideaIntro}"></p>
                         </div>
                     </div>
                     <a class="product-ex" href=""></a>
@@ -415,6 +355,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <!--<script src="/js/main/main.js"></script>-->
 <script src="/js/main/banner.js"></script>
+
 
 <script>
     $(".product-exp2").each(function() {

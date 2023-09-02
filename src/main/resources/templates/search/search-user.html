@@ -30,21 +30,21 @@
                                     <span>
                                         <label class="search-tag">
                                             <input type="checkbox" class="search-tag-checkbox">
-                                            <span class="search-tag-text">전체</span>
+                                            <span class="search-tag-text" id="search-all">전체</span>
                                         </label>
                                     </span>
 
                                     <span>
                                         <label class="search-tag">
                                             <input type="checkbox" class="search-tag-checkbox">
-                                            <span class="search-tag-text">아이디어</span>
+                                            <span class="search-tag-text" id="search-idea">아이디어</span>
                                         </label>
                                     </span>
 
                                     <span>
                                         <label class="search-tag-active">
                                             <input type="checkbox" class="search-tag-checkbox">
-                                            <span class="search-tag-text">유저</span>
+                                            <span class="search-tag-text" id="search-user">유저</span>
                                         </label>
                                     </span>
 
@@ -60,380 +60,19 @@
             <div>
                 <div class="search-result-summary-wrapper">
                     <p class="search-result">
-                        '디자인'에 대한 유저 검색 결과
+                        '<span th:text="${keyword}"></span>'에 대한 유저 검색 결과
                     </p>
                 </div>
 
                 <div class="search-user-list-wrapper">
                     <!--아래의 div 태그를 검색 결과만큼 반복-->
-                    <div>
+                    <div th:each="user : ${users}">
                         <li class="search-user-item-wrapper">
                             <a href="">
                                 <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                    <span class="search-user-name">사용자 이름</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
-                                </div>
-                            </a>
-                            <div class="user-profile-btn-wrapper">
-                                <button class="user-profile-btn">
-                                    <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" class="user-profile-more-btn">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path>
-                                    </svg>
-                                    프로필 더보기
-                                </button>
-                            </div>
-                        </li>
-                    </div>
-
-                    <div>
-                        <li class="search-user-item-wrapper">
-                            <a href="">
-                                <div class="search-user-profile-wrapper">
-                                    <img src="https://image.ohou.se/i/bucketplace-v2-development/uploads/default_images/avatar.png?gif=1&w=360&webp=1" class="search-user-profile">
-                                    <span class="search-user-name">사용자 닉네임</span>
+                                    <img src="/images/icon/null.png" class="search-user-profile">
+                                    <span class="search-user-name" th:text="${user.userNickname}"></span>
+                                    <span class="search-user-name" style="color: #7d7d7d;" th:text="${user.userIntro}"></span>
                                 </div>
                             </a>
                             <div class="user-profile-btn-wrapper">
@@ -461,6 +100,21 @@
 
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script th:inline="javascript">
+    let ideas = [[${ideas}]];
+    console.log(ideas);
+
+    let users = [[${users}]];
+    console.log(users);
+
+    let keyword = [[${keyword}]];
+    console.log(keyword);
+
+    if (keyword && keyword.length > 0) {
+        $('#search-bar').val(keyword);
+    }
+</script>
+<script src="/js/search/search.js"></script>
 
 
 </html>

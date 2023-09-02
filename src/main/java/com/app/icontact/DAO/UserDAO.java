@@ -50,5 +50,10 @@ public class UserDAO {
         return userMapper.selectInterestsByUserId(userId);
     }
 
+    // 유저 검색
+    public List<UserVO> findUser(String keyword){
+        return userMapper.search(keyword);
+    }
+
 
 }

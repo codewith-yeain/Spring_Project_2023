@@ -5,6 +5,7 @@ import com.app.icontact.domain.UserVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -49,4 +50,10 @@ public class UserServiceImpl implements UserService {
     public void changePasswordWhileLogin(Long id, String userPassword) {
         userDAO.changePasswordByUserIdAndUserPassword(id, userPassword);
     }
+
+    @Override
+    public List<UserVO> findUser(String keyword) {
+        return userDAO.findUser(keyword);
+    }
+
 }

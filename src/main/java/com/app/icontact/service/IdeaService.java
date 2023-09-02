@@ -23,4 +23,6 @@ public interface IdeaService {
     public Long getScraps(Long ideaId);
 
     public Optional<IdeaDTO5> read(Long id);
+
+    public List<IdeaDTO4> findIdea(String keyword);
 }

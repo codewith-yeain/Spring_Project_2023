@@ -1,6 +1,7 @@
 package com.app.icontact.mapper;
 
 import com.app.icontact.DTO.*;
+import com.app.icontact.domain.IdeaVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -46,5 +47,7 @@ public interface IdeaMapper {
     // 특정 유저가 등록한 아이디어의 총 개수
     public int selectCountOfIdeasByUserId(Long userId);
 
+    // 아이디어 검색
+    public List<IdeaDTO4> search(String keyword);
 
 }

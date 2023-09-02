@@ -31,4 +31,7 @@ public interface UserMapper {
 
     // 특정 유저의 관심분야 3개 id 조회
     public List<Long> selectInterestsByUserId(Long userId);
+
+    // 유저 검색
+    public List<UserVO> search(String keyword);
 }

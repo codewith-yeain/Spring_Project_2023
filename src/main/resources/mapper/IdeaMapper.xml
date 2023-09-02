@@ -165,4 +165,16 @@
         SELECT COUNT(ID) FROM TBL_IDEA
         WHERE USER_ID = #{userId}
     </select>
+
+    <select id="search" resultType="ideaDTO4">
+        SELECT I.ID, IDEA_TITLE, IDEA_INTRO, IDEA_DETAIL, IDEA_CATEGORY,
+        IDEA_REGISTER_DATE, IDEA_UPDATE_DATE, IDEA_TYPE,
+        IDEA_PRICE, IDEA_READ_COUNT, IDEA_MAX, USER_ID, U.USER_NICKNAME
+        FROM TBL_USER U JOIN TBL_IDEA I
+        ON I.USER_ID = U.ID
+        WHERE (IDEA_TITLE LIKE '%'||#{keyword}||'%')
+        OR (IDEA_INTRO LIKE '%'||#{keyword}||'%')
+        OR (IDEA_DETAIL LIKE '%'||#{keyword}||'%')
+    </select>
+
 </mapper>

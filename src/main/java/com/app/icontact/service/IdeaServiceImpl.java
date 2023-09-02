@@ -115,4 +115,16 @@ public class IdeaServiceImpl implements IdeaService {
         ideaDAO.updateReadCount(id);
         return foundIdea;
     }
+
+    @Override
+    public List<IdeaDTO4> findIdea(String keyword) {
+        final List<IdeaDTO4> foundIdeas = ideaDAO.findIdea(keyword);
+
+        foundIdeas.forEach(foundIdea -> foundIdea.setFiles(ideaFileDAO.findAll(foundIdea.getId())));
+        foundIdeas.forEach(foundIdea -> foundIdea.setIdeaScarpCount(ideaDAO.findCountOfScraps(foundIdea.getId())));
+        foundIdeas.forEach(foundIdea -> foundIdea.setIdeaCount(ideaDAO.findFinishUserCountOfIdea(foundIdea.getId())));
+        log.info("{}.............", foundIdeas);
+
+        return foundIdeas;
+    }
 }

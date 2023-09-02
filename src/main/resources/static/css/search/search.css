@@ -9,6 +9,11 @@ button{
 
 }
 
+.keyword-highlight {
+    color: mediumpurple;
+}
+
+
 .flex-full-width{ /*.css-15y92lb*/
     flex: 1;
     width: 100%;
@@ -370,6 +375,7 @@ button{
 }
 
 .search-project-item-img-wrap {
+    overflow: hidden;
     width: 100%;
     position: relative;
 }
@@ -437,7 +443,6 @@ button{
     overflow: hidden;
     line-height: 19px;
     text-overflow: ellipsis;
-    display: -webkit-box;
 }
 
 @media (min-width: 768px){
@@ -638,7 +643,11 @@ button{
 }
 
 .user-feed-card-footer-introduce-prefix{
-
+    width: 153px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
 }
 
 .container {
@@ -793,7 +802,6 @@ button{
     display: none;
     padding-right: 7.5px;
     box-sizing: border-box;
-    z-index: 3;
 }
 
 @media (min-width: 768px){
@@ -1018,13 +1026,6 @@ button{
     }
 }
 
-@media (min-width: 1024px){
-    .user-feed-full-card-profile-image{
-        width: 76px;
-        height: 76px;
-    }
-}
-
 .user-feed-full-card-profile-content{
     width: 100%;
     min-width: 0;
@@ -1046,7 +1047,7 @@ button{
 
 @media (min-width: 1024px){
     .user-feed-full-card-profile-header{
-        font-size: 24px;
+        font-size: 20px;
         margin: 10px 0 12px;
     }
 }
@@ -1230,6 +1231,10 @@ button{
     margin-right: 20px;
     font-size: 14px;
     font-weight: 700;
+}
+
+.content{
+    font-weight: 600;
 }
 
 .user-profile-btn-wrapper{

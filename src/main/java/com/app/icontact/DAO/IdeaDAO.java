@@ -73,4 +73,9 @@ public class IdeaDAO {
         return ideaMapper.selectCountOfIdeasByUserId(userId);
     }
 
+    // 아이디어 검색
+    public List<IdeaDTO4> findIdea(String keyword){
+        return ideaMapper.search(keyword);
+    }
+
 }

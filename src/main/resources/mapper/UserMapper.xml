@@ -43,4 +43,12 @@
         SELECT SUB_CATEGORY_ID FROM TBL_INTEREST WHERE USER_ID = #{userId}
     </select>
 
+    <select id="search" resultType="userVO">
+        SELECT ID, USER_EMAIL, USER_PASSWORD, USER_NAME, USER_NICKNAME,
+        USER_TYPE, USER_INTRO, USER_PHONE, USER_STATUS
+        FROM TBL_USER
+        WHERE (USER_NICKNAME LIKE '%'||#{keyword}||'%')
+        OR (USER_INTRO LIKE '%'||#{keyword}||'%')
+    </select>
+
 </mapper>

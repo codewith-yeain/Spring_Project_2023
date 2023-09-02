@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="logo-layout">
-                        <a href="" class="logo-wrapper">
+                        <a th:href="@{/icontact/}" class="logo-wrapper">
                             <img src="/images/icon/logo.png" class="logo">
                         </a>
                     </div>
@@ -34,9 +34,9 @@
                             <div class="search-bar-layout">
                                 <div class="full-flex">
                                     <div class="search-bar-wrapper">
-                                        <form th:action="@{/post/list}">
-                                            <input type="text" class="search-bar">
-                                            <button class="magnifier"></button>
+                                        <form th:action="@{/search/search-all}">
+                                            <input type="text" class="search-bar" name="keyword" autocomplete="off" id="search-bar">
+                                            <button type="submit" class="magnifier"></button>
                                         </form>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="logo-layout">
-                        <a href="" class="logo-wrapper">
+                        <a th:href="@{/icontact/}" class="logo-wrapper">
                             <img src="/images/icon/logo.png" class="logo">
                         </a>
                     </div>
@@ -161,7 +161,7 @@
                                 <div class="full-flex">
                                     <div class="search-bar-wrapper">
                                         <form th:action="@{/post/list}">
-                                            <input type="text" class="search-bar">
+                                            <input type="text" class="search-bar" autocomplete="off">
                                             <button class="magnifier"></button>
                                         </form>
                                     </div>

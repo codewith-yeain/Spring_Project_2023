@@ -1,0 +1,655 @@
+/* business-registration.html */
+@charset "utf-8";
+
+* {
+    font-family: 'Pretendard Variable';
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button{
+    cursor: pointer;
+}
+
+input:focus {outline: none;} /* outline 테두리 없애기 */
+textarea:focus {outline: none;}
+
+.logo-wrapper{ /*css-48o8iw*/
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    margin-top: 20px;
+}
+
+@media (min-width: 768px){
+    .logo-wrapper{
+        margin-top: 40px;
+    }
+}
+
+.logo-container{ /*css-loslz5*/
+    border: none;
+    background: none;
+    font: inherit;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0;
+    line-height: 0;
+    outline: none;
+    margin: 0 auto;
+}
+
+
+@media (min-width: 768px){
+    .logo-container{
+        height: 30px;
+    }
+}
+
+
+
+.logo{ /*css-bsbra5*/
+    width: 127px;
+    height: 42px;
+}
+
+
+@media (min-width: 768px){
+    .logo{
+        width: 127px;
+        height: 39px;
+    }
+}
+
+.seller-layout{
+    margin-bottom: 100px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    width: calc(100% - 30px);
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1px
+}
+
+@media (min-width: 375px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        box-sizing: border-box;
+        width: calc(100% - 30px);
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        box-sizing: border-box;
+        width: calc(100% - 80px);
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        box-sizing: border-box;
+        width: calc(100% - 120px);
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+@media (min-width: 1256px) {
+    .container {
+        margin-right:auto;
+        margin-left: auto;
+        box-sizing: border-box;
+        width: 1136px;
+        max-width: 100%;
+        box-sizing: border-box;
+        min-height: 1px
+    }
+}
+
+.container {
+    min-width: 688px
+}
+
+.seller-layout-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.seller-layout-header-title {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: #292929;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-right: -5px;
+    margin-left: -5px
+}
+
+@media (min-width: 375px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin-right: -5px;
+        margin-left: -5px
+    }
+}
+
+@media (min-width: 768px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin-right: -7.5px;
+        margin-left: -7.5px
+    }
+}
+
+@media (min-width: 1024px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin-right: -10px;
+        margin-left: -10px
+    }
+}
+
+@media (min-width: 1256px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        margin-right: -10px;
+        margin-left: -10px
+    }
+}
+
+
+.seller-layout-header-explain{
+    text-align: left;
+}
+
+.seller-layout-header-explain-list {
+    margin: 0px auto -30px;
+    list-style-type: disc;
+    font-size: 15px;
+    color: #292929;
+}
+
+.seller-layout-header-explain-list>li {
+    line-height: 38px;
+}
+
+.seller-layout-header-explain-list a {
+    color: mediumpurple;
+    text-decoration: underline;
+}
+
+.seller-layout-divider{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+
+.row.justify-center {
+    justify-content: center;
+}
+
+
+.seller-layout-divider-col {  /*col-10*/
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+    padding-right: 5px;
+    padding-left: 5px
+}
+
+@media (min-width: 375px) {
+    .seller-layout-divider-col {
+        padding-right:5px;
+        padding-left: 5px
+    }
+}
+
+@media (min-width: 768px) {
+    .seller-layout-divider-col {
+        padding-right:7.5px;
+        padding-left: 7.5px
+    }
+}
+
+@media (min-width: 1024px) {
+    .seller-layout-divider-col {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+@media (min-width: 1256px) {
+    .seller-layout-divider-col {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+
+.seller-layout-hr {
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.offset { /*offset-1*/
+    margin-left: 8.3333333333%;
+}
+
+.sales-form-section-title {
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.sales-form-group {
+    margin-bottom: 20px;
+}
+
+
+.sales-form-group-layout {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+    padding-right: 5px;
+    padding-left: 5px
+}
+
+@media (min-width: 375px) {
+    .sales-form-group-layout {
+        padding-right:5px;
+        padding-left: 5px
+    }
+}
+
+@media (min-width: 768px) {
+    .sales-form-group-layout {
+        padding-right:7.5px;
+        padding-left: 7.5px
+    }
+}
+
+@media (min-width: 1024px) {
+    .sales-form-group-layout {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+@media (min-width: 1256px) {
+    .sales-form-group-layout {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+.form-label {
+    flex-basis: 100%;
+}
+
+.sales-form-label {
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.sales-form-group-required {
+    color: #f77;
+}
+
+.sales-form-group-col { /*col-8*/
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    padding-right: 5px;
+    padding-left: 5px
+}
+
+@media (min-width: 375px) {
+    .sales-form-group-col {
+        padding-right:5px;
+        padding-left: 5px
+    }
+}
+
+@media (min-width: 768px) {
+    .sales-form-group-col {
+        padding-right:7.5px;
+        padding-left: 7.5px
+    }
+}
+
+@media (min-width: 1024px) {
+    .sales-form-group-col {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+@media (min-width: 1256px) {
+    .sales-form-group-col {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+.sales-form-control-wrap {
+    width: 360px;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+
+.form-control {
+    transition: .2s border-color, .2s box-shadow, .2s background-color;
+    display: block;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+    padding: 0 15px;
+    line-height: 40px;
+    border-radius: 4px;
+    border: solid 1px #dbdbdb;
+    background-color: #ffffff;
+    color: #424242;
+    font-size: 12px;
+    flex: 1 0 auto;
+}
+
+@media (min-width: 768px) {
+    .form-control {
+        font-size: 14px;
+    }
+}
+
+.sales-form-control-wrap>.form-control {
+    flex: 1;
+}
+
+.form-control:hover, .form-control:active {
+    background-color: #fafafa;
+    border-color: #bdbdbd;
+}
+
+.sales-form-group-col-number { /*col-2*/
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+    padding-right: 5px;
+    padding-left: 5px
+}
+
+@media (min-width: 375px) {
+    .sales-form-group-col-number {
+        padding-right:5px;
+        padding-left: 5px
+    }
+}
+
+@media (min-width: 768px) {
+    .sales-form-group-col-number {
+        padding-right:7.5px;
+        padding-left: 7.5px
+    }
+}
+
+@media (min-width: 1024px) {
+    .sales-form-group-col-number {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+@media (min-width: 1256px) {
+    .sales-form-group-col-number {
+        padding-right:10px;
+        padding-left: 10px
+    }
+}
+
+.sales-form-description{
+    width: 100%;
+    font-size: 12px;
+    line-height: 16px;
+    color: #757575;
+    margin-top: 8px;
+}
+
+.btn {
+    user-select: none;
+    transition: .2s ease;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn-sm {
+    line-height: 1;
+    height: 40px;
+    padding: 12px 0 13px;
+    font-size: 15px;
+}
+
+.btn-priority {
+    cursor: pointer;
+    background-color: mediumpurple;
+    border-color: mediumpurple;
+    color: #ffffff;
+}
+
+.form-check{
+    flex: 1 1 auto;
+}
+
+@media (min-width: 768px){
+    .form-check{
+        font-size: 15px;
+    }
+}
+
+
+.sales-form-check {
+    flex: unset;
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+.form-check .form-check-label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 32px;
+    min-height: 22px;
+    line-height: 22px;
+    position: relative;
+}
+
+.form-check .form-check-label .form-check {
+    left: -1000px;
+    position: absolute;
+    opacity: 0;
+}
+
+.form-check .form-check-label .check-img {
+    box-sizing: border-box;
+    height: 22px;
+    width: 22px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: solid 1px #dbdbdb;
+    display: block;
+    transition: .2s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.form-check .form-check-label .check-img:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-size: 14px;
+    opacity: 0;
+    background-image: url(https://partners.ohou.se/assets/icon_map/v3/ic-checkbox.png);
+}
+
+.form-check .form-check-label .form-check:not(:disabled):checked+.check-img:after {
+    opacity: 1;
+}
+
+.form-check .form-check-label .form-check:not(:disabled):checked+.check-img {
+    background-color: mediumpurple;
+    border-color: mediumpurple;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+textarea.form-control {
+    resize: none;
+    line-height: 20px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.sales-form-file-btn {
+    width: 135px;
+}
+
+.sales-form-file-uploader{
+    display: none;
+}
+
+.sales-form-file-name{
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.sales-form-file-caption{
+    font-size: 12px;
+    line-height: 16px;
+    color: #757575;
+    margin-top: 15px;
+}
+
+
+.sales-form-private-policy {
+    text-align: center;
+}
+
+.sales-form-private-policy-caption {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.sales-form-private-policy-info {
+    width: 100%;
+    margin-bottom: 40px;
+    line-height: 21px;
+}
+
+.sales-form-private-policy-info thead {
+    background-color: #fafafa;
+}
+
+.sales-form-private-policy-info td {
+    width: 33.3333333333%;
+    border: 1px solid #dbdbdb;
+    margin-top: 40px;
+    padding: 10px 13px;
+}
+
+.sales-form-private-policy-info td>strong {
+    font-size: 18px;
+}
+
+.sales-form-private-policy-agree{
+    font-size: 18px;
+    display: inline-block;
+}
+
+
+.sales-form-private-policy-agree-require{
+    color: mediumpurple;
+    font-weight: 700;
+}
+
+.sales-form-btn-apply{
+    margin-top: 60px;
+    text-align: center;
+}
+
+.sales-form-btn-apply>button {
+    width: 360px;
+    display: inline-block;
+}
+.btn-lg {
+    line-height: 1;
+    height: 50px;
+    font-size: 18px;
+}

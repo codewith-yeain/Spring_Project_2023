@@ -1,0 +1,357 @@
+/* scrap-list.html */
+@charset "utf-8";
+
+* {
+    font-family: 'Pretendard Variable';
+}
+
+[role=button], a, button, input[type=button], input[type=reset], input[type=submit] {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+@media (min-width: 768px){
+body, html {
+    font-size: 15px;
+}}
+
+
+figure {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a * {
+    border: none;
+}
+
+footer, header, main {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+}
+
+.main-body {
+    width: 100%;
+    max-width: 1136px;
+    margin: 0px auto;
+}
+
+@media (min-width: 0px){
+.main-body > div {
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    margin-bottom: 15px;
+}}
+
+@media (min-width: 768px){
+.main-body > div {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}}
+
+@media (min-width: 1024px){
+.main-body > div {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}}
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px 30px;
+    padding: 0px 16px;
+}
+
+@media (min-width: 768px){
+.main-header {
+    margin: 40px 0px;
+}}
+
+.main-header-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.main-header-title-text {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+}
+
+@media (min-width: 768px){
+.main-header-title-text {
+    font-size: 24px;
+    line-height: 32px;
+}}
+
+.proflie {
+    margin-top: 12px;
+    text-align: center;
+}
+
+@media (min-width: 768px){
+.proflie {
+    margin-top: 8px;
+
+}}
+
+
+.profile-img {
+    display: inline-block;
+    border-radius: 50%;
+    width: 86px;
+}
+
+.profile-img2 {
+    height: 100px;
+    display: block;
+    padding-top: 100%;
+}
+
+.profile-name {
+    display: block;
+    margin-top: 8px;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+}
+
+@media (min-width: 768px){
+ .profile-name {
+     font-size: 25px;
+     line-height: 46px;
+ }}
+
+.count {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/*.scrap-count {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0px -5px;
+    padding: 0px 16px;
+    background: rgb(255, 255, 255);
+}*/
+
+/*@media (min-width: 768px){
+.scrap-count {
+    justify-content: center;
+}}*/
+
+.count > * {
+    margin: 0px 5px;
+}
+
+.scrap-button {
+    margin: 0px;
+    border: none;
+    background: none;
+    font: inherit;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: top;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 12px 6px;
+    font-weight: 700;
+}
+
+.scrap-button * {
+    font-weight: 700;
+}
+
+.scrap-button-text {
+    padding: 4px;
+    margin: -4px;
+}
+
+.scrap-button-text2 {
+    font-size: 16px;
+    line-height: 20px;
+    position: relative;
+    font-weight: 700;
+    color: #eacaff;
+}
+
+.scrap-button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: #eacaff;
+    transition: transform 0.2s ease 0s;
+    transform: scale(1);
+}
+
+.under-line {
+    margin: 0px;
+    padding: 0px;
+    height: 1px;
+    border: none;
+    background-color: rgb(234, 237, 239);
+}
+
+.scrap-body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    padding: 0px 16px;
+}
+
+@media (min-width: 0px){
+.scrap-body {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}}
+
+@media (min-width: 768px){
+.scrap-body {
+    margin-left: -10px;
+    margin-right: -10px;
+}}
+
+@media (min-width: 1024px){
+.scrap-body {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 0px;
+}}
+
+@media (min-width: 0px){
+.scrap-body > div {
+    width: calc(50% - 15px);
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    margin-bottom: 15px;
+}}
+
+@media (min-width: 768px){
+.scrap-body > div {
+    width: calc(33.3333% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}}
+
+@media (min-width: 1024px){
+.scrap-body > div {
+    width: calc(25% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}}
+
+.scrap-parts {
+    position: relative;
+    z-index: 0;
+    padding: 10px;
+/*    overflow: hidden;
+    border-radius: 6px;*/
+}
+
+.scrap-parts-img {
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+    background: rgb(234, 237, 239);
+}
+
+.scrap-parts-img::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.scrap-parts-img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    transition: width 300ms ease;
+}
+
+/** 스크랩 버튼 */
+
+.production-item-scrap-badge{
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    z-index: 2;
+    transition: opacity .1s;
+}
+
+@media (min-width: 768px){
+    .production-item-scrap-badge{
+        bottom: 12px;
+        right: 12px;
+    }
+}
+
+.production-item-scrap-badge>.inactive-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity .1s;
+}
+
+/*------------------------------------------------------*/
+
+
+
+
+.goods {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+}
+
+.goods-bg {
+    font-size: 12px;
+    padding: 0px 6px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(33, 38, 41, 0.8);
+    display: inline-block;
+    font-weight: 700;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+}
+
+.scrap-parts::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease 0s;
+}

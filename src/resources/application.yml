@@ -1,0 +1,36 @@
+#server
+server:
+  port: 10000
+  servlet:
+    session:
+      tracking-modes: cookie
+
+#MyBatis
+spring:
+  datasource:
+    hikari:
+      driver-class-name: oracle.jdbc.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@//54.180.96.205:1521/XE
+      username: hr
+      password: hr
+
+  mail:
+    # Google smtp server 사용
+    host: smtp.gmail.com
+    port: 587
+    username: dev.yeain@gmail.com
+    password: jxvdhsvwajkyhobh
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+
+#multipart
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 40MB
+      max-file-size: 40MB
+      file-size-threshold: 100MB

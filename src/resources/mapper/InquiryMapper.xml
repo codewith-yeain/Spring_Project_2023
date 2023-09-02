@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.icontact.mapper.InquiryMapper">
+<!--    문의 작성-->
+    <insert id="insertInquiry">
+        insert into TBL_INQUIRY (ID, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_TITLE, INQUIRY_CONTENT)
+        values (SEQ_INQUIRY.NEXTVAL, #{inquiryWriterName}, #{inquiryWriterEmail}, #{inquiryTitle}, #{inquiryContent})
+    </insert>
+
+</mapper>

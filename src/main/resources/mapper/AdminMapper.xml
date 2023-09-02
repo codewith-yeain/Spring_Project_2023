@@ -1,33 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.icontact.mapper.AdminMapper">
-<!--    커뮤니티 관리목록 보기-->
+    <!--    커뮤니티 관리목록 보기-->
     <select id="selectAllCommunity" resultType="CommunityDTO">
         SELECT C.ID, COMMUNITY_TITLE, COMMUNITY_REGISTER_DATE, COMMUNITY_UPDATE_DATE, U.ID, USER_NAME
         FROM TBL_COMMUNITY C JOIN TBL_USER U
         ON U.ID = C.USER_ID
     </select>
 
-<!--    커뮤니티 글 삭제-->
-    <delete id="deleteCommunity">
+    <!--    커뮤니티 글 삭제-->
+    <delete id="delete">
         DELETE FROM TBL_COMMUNITY
         WHERE id = #{communityId}
     </delete>
 
-<!--    공지사항 작성-->
+    <!--    공지사항 작성-->
     <insert id="insertNotice">
         INSERT INTO TBL_NOTICE(ID, NOTICE_TITLE, NOTICE_CONTENT)
         VALUES (SEQ_NOTICE.NEXTVAL, #{noticeTitle}, #{noticeContent})
     </insert>
 
-<!--    결제목록 보기-->
-    <select id="selectAllPayment" resultType="PaymentVO"></select>
-<!--    public List<PaymentVO> selectAllPayment(@Param("pagination") Pagination pagination);-->
 
-<!--    결제 취소-->
-  <!--  <update id="updateCancel">
-        UPDATE TBL_PAYMENT
-        SET
+    <!--    문의목록 보기-->
+    <select id="selectAllInquiry" resultType="inquiryDTO">
+        SELECT I.ID, INQUIRY_TITLE, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_DATE, INQUIRY_CONTENT, A.ID
+        FROM TBL_INQUIRY I JOIN TBL_ANSWER A
+        ON I.ID = A.INQUIRY_ID
+        ORDER BY I.ID DESC
+    </select>
+
+
+    <!--    문의 보기-->
+    <select id="selectInquiry" resultType="answerVO">
+        SELECT ID, INQUIRY_TITLE, INQUIRY_WRITER_NAME, INQUIRY_WRITER_EMAIL, INQUIRY_DATE, INQUIRY_CONTENT
+        FROM TBL_INQUIRY WHERE ID = #{inquiryId}
+    </select>
+
+    <!--    문의 답변하기-->
+    <insert id="insertAnswer">
+        INSERT INTO TBL_ANSWER (ID, ANSWER_TITLE, ANSWER_CONTENT, USER_ID, INQUIRY_ID)
+        VALUES (SEQ_ANSWER.NEXTVAL, #{inquiryTitle}, #{answerContent}, #{userId}, #{inquiryId})
+    </insert>
+
+
+    <!--    결제목록 보기-->
+    <select id="selectAllPayment" resultType="PaymentVO">
+        SELECT ID, PAYMENT_AMOUNT, PAYMENT_STATUS, PAYMENT_APPROVE_DATE, PAYMENT_SORT, USER_ID, IDEA_ID
+        FROM TBL_PAYMENT
+    </select>
+
+    <!-- 결제취소 -->
+    <update id="updateCancel">
+            UPDATE TBL_PAYMENT
+            SET PAYMENT_CANCEL_DATE = SYSDATE
+            WHERE ID = {iDEA_ID}
+        </update>
+
+    <!-- 회원목록보기 -->
+    <select id="selelctAllUser" resultType="UserVO">
+    SELECT ID, USER_NAME, USER_NICKNAME, USER_EMAIL, USER_STATUS, USER_TYPE
+    FROM TBL_USER
+    ORDER BY ID DESC
+    </select>
+
+    <!-- 회원상태변경 -->
+    <update id="updateUserType">
+        UPDATE TBL_USER
+            SET USER_TYPE = '회원'
+            WHERE ID = {id}
     </update>
-    public String updateCancel(String paymentId);-->
+
+    <!-- 회원 탈퇴 복구-->
+    <update id="updateUserStatus">
+        UPDATE TBL_USER
+            SET USER_STATUS = '일반'
+            WHERE ID = {id}
+    </update>
+
+    <!-- 회원 탈퇴-->
+    <update id="deleteUser">
+        UPDATE TBL_USER
+            SET USER_STATUS = '탙퇴'
+            WHERE ID = {id}
+    </update>
+
+    <!-- 공지사항 삭제 -->
+    <delete id="deleteNotice">
+        DELETE FROM TBL_NOTICE
+        WHERE ID = #{id}
+    </delete>
 </mapper>
